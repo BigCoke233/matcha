@@ -8,6 +8,11 @@ body {
 	font-family: 'Noto Serif SC', serif!important;
 }
 
+body,
+html {
+	scroll-behavior:smooth
+}
+
 a {
 	color: #c5c56a;
 	text-decoration: none;
