@@ -1209,3 +1209,15 @@ table tr:hover {
 	cursor: pointer
 }
 
+/* ScrollBar */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 5px
+}
+::-webkit-scrollbar-button {
+	display: none
+}
+::-webkit-scrollbar-thumb {
+	background: #c5c56a;
+	transition: .2s
+}
