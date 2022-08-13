@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&family=ZCOOL+XiaoWei&display=swap');
 
+:root {
+	--theme-color: #c5c56a
+}
+
 body {
 	background: #fcfcfc;
 	margin: 0;
@@ -14,7 +18,7 @@ html {
 }
 
 a {
-	color: #c5c56a;
+	color: var(--theme-color);
 	text-decoration: none;
 }
 
@@ -634,14 +638,14 @@ img.alignright {
 	border: 1px solid #0000;
 }
 .more:hover {
-	border: 1px solid #c5c56a;
+	border: 1px solid var(--theme-color);
 	/* text-decoration: underline;	 */
 }
 .more a { 
 	color: #999 !important;
 }
 .more:hover a {
-	color: #c5c56a !important;
+	color: var(--theme-color) !important;
 	text-decoration: none;	
 }
 /* index - 文章聚合 */
@@ -669,7 +673,7 @@ img.alignright {
 	color: #999 !important;
 }
 .post-meta a:hover {
-	color: #c5c56a !important;
+	color: var(--theme-color) !important;
 }
 .post-atpage {
 	border-bottom: none;
@@ -687,7 +691,7 @@ img.alignright {
 	padding: 40px 40px 28px;
 	background: rgba(159,86,58,.03);
 	box-shadow: 0 0 24px rgba(0,0,0,0.12);
-	border-bottom: 2px solid #c5c56a;
+	border-bottom: 2px solid var(--theme-color);
 }
 #header {
 	position: fixed;
@@ -701,7 +705,7 @@ img.alignright {
 	padding-bottom: 40px;
 	padding-right: 13px;
 	border-bottom: none;
-	border-right: 2px solid #c5c56a;
+	border-right: 2px solid var(--theme-color);
 	cursor: pointer
 }
 #sidebar {
@@ -712,12 +716,7 @@ img.alignright {
 	width: 180px;
 	padding-right: 20px;
 }
-#helpbar {
-	position: fixed;
-	left: calc(50% + 600px);
-	bottom: 40px;
-	padding-left: 20px;
-}
+
 #body .container {
 	margin-left: calc(50% - 400px);
 	margin-right: calc(50% - 600px);
@@ -743,9 +742,6 @@ img.alignright {
 	#sidebar {
 		left: calc(50% - 400px);
 	}
-	#helpbar {
-		left: calc(50% + 400px);
-	}
 	#body .container {
 		margin-left: calc(50% - 200px);
 		margin-right: calc(50% - 400px);
@@ -762,9 +758,6 @@ img.alignright {
 		display: none;
 	}
 	#sidebar {
-		display: none;
-	}
-	#helpbar {
 		display: none;
 	}
 	#body .container {
@@ -914,22 +907,11 @@ img.alignright {
 }
 .page-navigator a:hover {
 	text-decoration: none;
-	background: #c5c56a;
-	border-color: #c5c56a;
+	background: var(--theme-color);
+	border-color: var(--theme-color);
 	color: #fff
 }
 /* page navigator - 选页器 */
-
-/* HELPBAR */
-#helpbar #back2top {
-	border: none;
-	color: #999;
-	background: none;
-	font-size: 150%;
-	padding: 0;
-	outline: none;
-}
-/* HELPBAR */
 
 /* archive page - 归档页面 */
 .archive-model {
@@ -939,7 +921,7 @@ img.alignright {
 }
 .archive-model a:hover {
 	text-decoration: none;
-	color: #c5c56a
+	color: var(--theme-color)
 }
 .archive-year {
 	color: #444;
@@ -1108,7 +1090,7 @@ table tr:hover {
 }
 
 #nprogress .bar {
-  background: #c5c56a;
+  background: var(--theme-color);
 
   position: fixed;
   z-index: 1031;
@@ -1148,8 +1130,8 @@ table tr:hover {
   box-sizing: border-box;
 
   border: solid 2px transparent;
-  border-top-color: #c5c56a;
-  border-left-color: #c5c56a;
+  border-top-color: var(--theme-color);
+  border-left-color: var(--theme-color);
   border-radius: 50%;
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;
@@ -1207,7 +1189,7 @@ table tr:hover {
 }
 #search input:active,
 #search input:hover {
-	border-color:#c5c56a;
+	border-color:var(--theme-color);
 	outline: none
 }
 #search button {
@@ -1223,6 +1205,6 @@ table tr:hover {
 	display: none
 }
 ::-webkit-scrollbar-thumb {
-	background: #c5c56a;
+	background: var(--theme-color);
 	transition: .2s
 }

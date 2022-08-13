@@ -19,9 +19,3 @@
         </ul>
     </section>
 </div><!--end #sidebar -->
-
-<div id="helpbar">
-    <div class="back-to-top">
-        <button id="back2top">↑</button>
-    </div>
-</div><!--end #helpbar -->
