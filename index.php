@@ -9,7 +9,7 @@
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('header.php');
+$this->need('includes/header.php');
 ?>
 <div class="col-12" id="main" role="main">
 	<?php /* $access = new Access_Core(); echo $access->overview['pv']['all']['total']; */?>
@@ -33,4 +33,4 @@ $this->need('header.php');
     	</div>
 </div><!-- end #main-->
 
-<?php $this->need('footer.php'); ?>
+<?php $this->need('includes/footer.php'); ?>

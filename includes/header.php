@@ -30,10 +30,8 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>?2019081002">
-    <!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('ripple.css'); ?>"> -->
-    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cinzel Decorative:700"> -->
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/grid.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/style.css'); ?>?2019081002">
     
     <!--[if lt IE 9]>
     <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
@@ -49,7 +47,7 @@
 <![endif]-->
 
 <!-- 移动端适配 -->
-<link rel="stylesheet" href="<?php $this->options->themeUrl('compatible.css'); ?>">
+<link rel="stylesheet" href="<?php $this->options->themeUrl('assets/compatible.css'); ?>">
 
 <!-- 也显示出一遍正常标题来以便适配移动端 -->
 <div style="display:none" class="compatible">

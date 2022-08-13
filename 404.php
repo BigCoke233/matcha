@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php $this->need('includes/header.php'); ?>
 
     <div class="col-mb-12 col-tb-8 col-tb-offset-2">
 
@@ -13,4 +13,4 @@
         </div>
 
     </div><!-- end #content-->
-	<?php $this->need('footer.php'); ?>
+	<?php $this->need('includes/footer.php'); ?>

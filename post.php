@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php $this->need('includes/header.php'); ?>
 
 <div class="col-12" id="main" role="main">
     <article class="post post-atpage" itemscope itemtype="http://schema.org/BlogPosting">
@@ -21,7 +21,7 @@
         <?php endif; ?>
     </article>
 
-    <?php $this->need('comments.php'); ?>
+    <?php $this->need('includes/comments.php'); ?>
 
     <div class="post-near">
         <div class="post-near-child post-near-child-left "><?php $this->theNext('%s', 'None'); ?> <br /> 上一篇 &laquo;</div>
@@ -29,4 +29,4 @@
     </div>
 </div><!-- end #main-->
 
-<?php $this->need('footer.php'); ?>
+<?php $this->need('includes/footer.php'); ?>

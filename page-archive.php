@@ -6,7 +6,7 @@
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('header.php');
+$this->need('includes/header.php');
 ?>
 
 	<!-- <?php while($this->next()): ?>
@@ -90,4 +90,4 @@ endwhile;
 	</div>
 </div><!-- end #main-->
 
-<?php $this->need('footer.php'); ?>
+<?php $this->need('includes/footer.php'); ?>
