@@ -76,7 +76,7 @@
     </div>
 </header><!-- end #header -->
 
-<?php $this->need('sidebar.php'); ?>
+<?php $this->need('includes/sidebar.php'); ?>
 
 <div id="body">
     <div class="container">
