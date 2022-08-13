@@ -14,7 +14,7 @@
 
 	<section class="widget sidebar-foot">
         <ul class="widget-list">
-            <li>Theme <a rel="nofollow" target="_blank" href="https://github.com/memset0/typecho-theme-ringo">Ringo</a> by <a  target="_blank" href="https://memset0.cn">memset0</a></li>
+            <li>Theme <a rel="nofollow" target="_blank" href="https://github.com/BigCoke233/matcha">Matcha</a> by <a  target="_blank" href="https://https://github.com/BigCoke233/">Eltrac</a></li>
             <li>Powered by <a rel="nofollow" target="_blank" href="http://www.typecho.org">Typecho</a></li>
         </ul>
     </section>
