@@ -59,9 +59,11 @@ pre code {
 
 blockquote {
 	margin: 1em 0;
-	padding-left: 1.5em;
-	border-left: 4px solid #ddd;
-	color: #666;
+	color: #9a9a9a;
+    position: relative;
+    font-size: 0.96em;
+    padding-left: 18px;
+    border-left: 10px solid rgba(0, 0, 0, 0.05);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -189,6 +191,7 @@ textarea {
 .post {
 	padding: 15px 0 20px;
 	border-bottom: 1px solid #EEE;
+	font-size: 1.05em;
 }
 .post:nth-last-of-type(1) {
 	border: none;
@@ -390,10 +393,18 @@ textarea {
 }
 
 .post-content hr,.comment-content hr {
-	margin: 2em auto;
-	width: 100px;
-	border: 1px solid #E9E9E9;
-	border-width: 2px 0 0 0;
+	margin: 2.6em auto;
+	margin-top: 1.7em;
+	border: none;
+	display:block
+}
+.post-content hr:before {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    display: block;
+    content: "* * *";
+    text-align: center;
+	letter-spacing: .3em;
 }
 
 .aligncenter,div.aligncenter {
