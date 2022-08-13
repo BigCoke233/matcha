@@ -21,6 +21,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - 给站点标题加上了艺术字体
 - 在导航栏前加上了「首页」的链接
 - 增加了 Pjax 无刷新功能
+- 使用 Pangu.js 在中英文之间自动用空格分隔
 - 动画等细节上的调整
 
 具体的外观可以访问[我的博客](https://blog.guhub.cn/)查看。
