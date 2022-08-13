@@ -23,11 +23,5 @@
 <div id="helpbar">
     <div class="back-to-top">
         <button id="back2top">↑</button>
-        <script>
-            back2top.onclick = function() {
-                var movement = document.body.scrollTop || document.documentElement.scrollTop;
-                scrollBy(0, -movement);
-            }
-        </script>
     </div>
 </div><!--end #helpbar -->
