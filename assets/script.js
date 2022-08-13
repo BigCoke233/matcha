@@ -20,7 +20,7 @@ function GoTop() {
  */
  
 //Must load when page finish
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
 panguLoad();
 
 //Load Pjax
@@ -34,7 +34,7 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax])
         NProgress.start();
     }).on('pjax:complete', function() {
         $("#main").addClass("fadein").hide().fadeIn(300);
-        hljs.initHighlightingOnLoad();
+        hljs.highlightAll();
 		panguLoad();
 		//加载条完成
         NProgress.done();
