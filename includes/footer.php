@@ -10,8 +10,8 @@
 	<?php endif;?>
 
 	<?php if ($this->options->EnableBusuanzi == 'able' ): ?>
-		<span id="busuanzi_value_site_pv">......</span> visits ·
-		<span id="busuanzi_value_site_uv">......</span> visitors 
+		<span id="busuanzi_value_site_pv">......</span> 次访问 ·
+		<span id="busuanzi_value_site_uv">......</span> 位访客 
 	<?php endif; ?>
 	<?php if ($this->options->EnableBusuanzi == 'able' && $this->options->EnableWordsCounter == 'able' ): ?>
 	·
