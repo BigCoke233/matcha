@@ -21,6 +21,8 @@
     <!--[if lt IE 9]>
     　　<script src="https://cdn.jsdelivr.net/gh/livingston/css3-mediaqueries-js@master/css3-mediaqueries.min.js"></script>
     <![endif]-->
+	
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
