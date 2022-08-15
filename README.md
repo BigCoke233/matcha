@@ -47,3 +47,7 @@ Enjoy~
   - 强调框
   - 注音
   - ...
+
+---
+
+Copyright &copy; 2022 SumiMakito, memset0 & Eltrac, under GPL v3.0 License.
