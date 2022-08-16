@@ -22,11 +22,6 @@
     </article>
 
     <?php $this->need('includes/comments.php'); ?>
-
-    <div class="post-near">
-        <div class="post-near-child post-near-child-left "><?php $this->theNext('%s', 'None'); ?> <br /> 上一篇 &laquo;</div>
-        <div class="post-near-child post-near-child-right"><?php $this->thePrev('%s', 'None'); ?> <br /> &raquo; 下一篇</div>
-    </div>
 </div><!-- end #main-->
 
 <?php $this->need('includes/footer.php'); ?>
