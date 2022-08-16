@@ -596,24 +596,6 @@ img.alignright {
 }
 /* 评论 */
 
-/* 标签 */
-.tags a {
-	color: #333;
-	background: #fff;
-	padding: 4px 10px;
-	border-radius: 20040725px;
-	transition: 0.25s;
-	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-}
-.tags a:hover {
-	background: #eee;
-	text-decoration: none;
-}
-.tags .none-tag {
-	
-}
-/* 标签 */ 
-
 /* index - 文章聚合 */
 .post-title {
 	margin: 0.5em 0;
@@ -1131,13 +1113,15 @@ table tr:hover {
 
 .tags-list {
 	margin: 0!important;
-	padding: 0!important
+	padding: 0!important;
+	vertical-align: middle;
 }
 .tags-list li {
 	display: inline-block;
 	list-style: none
 }
-.tags-list li a {
+.tags-list li a,
+.tags-list a {
 	color: #000;
 	display: inline-block;
 	padding: .2em .5em;
@@ -1145,11 +1129,30 @@ table tr:hover {
 	transition: .3s
 }
 
-.tags-list li a:hover {
-	background-color: rgb(235,235,235);
+.tags-list li a:hover,
+.tags-list a:hover {
+	background-color: rgb(0,0,0,.06);
 	text-decoration: none
 }
-
+.tags-title {
+	color: #999;
+	font-size: 1.2em;
+	margin-right: .2em
+}
+.post-tags-list {
+	margin-top: 1.5em!important
+}
+.post-tags-list a {
+	font-size: .95em;
+	padding: .1em .5em;
+	margin-right: .2em;
+	border-radius: 3px;
+	background: rgb(0,0,0,.035);
+}
+.post-tags-list a:hover {
+	background: var(--theme-color);
+	color: #fff
+}
 
 #search input {
 	border-color: rgb(40,40,40);
