@@ -19,3 +19,7 @@
         </ul>
     </section>
 </div><!--end #sidebar -->
+
+<div id="gotop">
+    <button id="back2top"><span class="iconfont">&#xe749;</span></button>
+</div>

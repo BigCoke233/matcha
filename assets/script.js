@@ -39,9 +39,32 @@ var scrollSmoothTo = function (position) {
 };
 
 /**
+ * Animation
+ */
+scaleIn = function(object, time) {
+    object.css('transition', time).css('transform', 'scale(0)');
+    object.show();
+    object.css('transform', 'scale(1)');
+}
+
+scaleOut = function(object, time) {
+    object.css('transition', time).css('transform', 'scale(0)')
+}
+
+/**
  * Event Listenr
  */
+
+//Back2Top Button
+$('#back2top').hide();
 $("#back2top").on("click",function(){scrollSmoothTo(0)});
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 450) {
+        scaleIn($('#back2top'), '0.7');
+    } else {
+        scaleOut($('#back2top'), '0.7');
+    }
+});
 
 /**
  * JS Lib Loader
