@@ -51,8 +51,9 @@ pre,code {
 }
 
 code {
-	padding: 2px 4px;
-	color: #B94A48;
+	padding: 0.1em 0.4em;
+    color: var(--theme-color);
+    border-radius: 2px;
 }
 
 pre {
@@ -398,6 +399,29 @@ textarea {
     content: "* * *";
     text-align: center;
 	letter-spacing: .3em;
+}
+
+.post-content ul,
+.post-content ol {
+	padding-left: 1.2em!important
+}
+
+.post-content ul li {
+	list-style-type: square
+}
+
+.post-content ol li {
+	list-style-type: decimal
+}
+
+.post-content ul>ul li,
+.post-content ol>ul li {
+	list-style-type: disc
+}
+
+.post-content ol>ol li,
+.post-content ul>ol li {
+	list-style-type: lower-roman
 }
 
 .aligncenter,div.aligncenter {
