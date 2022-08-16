@@ -28,8 +28,8 @@ $this->need('includes/header.php');
 	<?php endwhile; ?>
 
 	<div class="page-navigator">
-	  <span id="previous"><?php $this->pageLink('←'); ?></span>
-    	  <span id="next"><?php $this->pageLink('→','next'); ?></span>
+	  <span id="previous"><?php $this->pageLink('<span class="iconfont">&#xe628;</span>'); ?></span>
+    	  <span id="next"><?php $this->pageLink('<span class="iconfont">&#xe642;</span>','next'); ?></span>
     	</div>
 </div><!-- end #main-->
 

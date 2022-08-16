@@ -872,7 +872,7 @@ img.alignright {
 	border: 1px solid #ddd;
 	border-radius: 100%;
 	display: inline-block;
-	padding: .7em .8em;
+	padding: .7em .9em;
 	font-weight: bold;
 	transition: .3s
 }
