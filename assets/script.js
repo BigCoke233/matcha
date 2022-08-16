@@ -71,8 +71,12 @@ $(window).scroll(function() {
  */
  
 //Must load when page finish
-hljs.highlightAll();
-panguLoad();
+JSLoad = function(){
+    hljs.highlightAll();
+    panguLoad();
+    SmoothScroll();
+}
+JSLoad();
 
 //Load Pjax
 $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax])', {
@@ -85,8 +89,7 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax])
         NProgress.start();
     }).on('pjax:complete', function() {
         $("#main").addClass("fadein").hide().fadeIn(300);
-        hljs.highlightAll();
-		panguLoad();
+        JSLoad();
 		//加载条完成
         NProgress.done();
     })

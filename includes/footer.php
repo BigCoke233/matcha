@@ -55,6 +55,7 @@ MathJax.Hub.Config({
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <script src="<?php Utils::indexTheme('assets/pangu.js'); ?>"></script>
+<script src="<?php Utils::indexTheme('assets/smoothscroll.js'); ?>"></script>
 <script>siteurl='<?php Utils::indexHome(); ?>';</script>
 <script src="<?php Utils::indexTheme('assets/script.js'); ?>"></script>
 
