@@ -15,10 +15,8 @@
             <?php $this->content(); ?>
         </div>
 
-        <?php if ($this->options->IfDisplayNone == 'disable' ): ?>
+        <?php if (if($this->tags)): ?>
         <p itemprop="keywords" class="tags-list post-tags-list"><span class="tags-title iconfont">&#xe7ae;</span> <?php $this->tags(' ', true, ''); ?></p>
-        <?php else: ?>
-        <p itemprop="keywords" class="tags-list post-tags-list"><span class="tags-title iconfont">&#xe7ae;</span> <?php $this->tags(' ', true, '<a href="#" class="none-tag">本文没有标签。</a>'); ?></p>
         <?php endif; ?>
     </article>
 
