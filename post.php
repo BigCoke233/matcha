@@ -15,7 +15,7 @@
             <?php $this->content(); ?>
         </div>
 
-        <?php if (if($this->tags)): ?>
+        <?php if ($this->tags): ?>
         <p itemprop="keywords" class="tags-list post-tags-list"><span class="tags-title iconfont">&#xe7ae;</span> <?php $this->tags(' ', true, ''); ?></p>
         <?php endif; ?>
     </article>
