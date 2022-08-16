@@ -1,10 +1,10 @@
 <?php
 /**
- * 你愿意，等我回来吗？
+ * 简洁清新的纯文字 Typecho 主题
  * 
- * @package Typecho Theme Ringo
- * @author memset0, abc1763613206
- * @version 0.2.4
+ * @package Typecho Theme Matcha
+ * @author memset0, Eltrac
+ * @version 0.1.0
  * @link https://github.com/memset0/typecho-theme-ringo
  */
 
