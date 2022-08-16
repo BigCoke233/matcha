@@ -7,24 +7,7 @@
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('includes/header.php');
-?>
 
-	<!-- <?php while($this->next()): ?>
-		<article class="post post-atmain" itemscope itemtype="http://schema.org/BlogPosting">
-			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
-			<ul class="post-meta">
-				<li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
-				<li><?php $this->category(','); ?></li>
-				<li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 comment', '1 comment', '%d comments'); ?></a></li>
-			</ul>
-			<div class="post-content" itemprop="articleBody">
-				<?php $this->content('READ MORE'); ?>
-			</div>
-		</article>
-	<?php endwhile; ?> -->
-
-
-<?php
 $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);
 $year = 0;
 $mon = 0;
@@ -71,7 +54,7 @@ endwhile;
 <div class="col-12" id="main" role="main">
 	<div id="search">
 	  <input type="text" placeholder="搜索博客文章" name="" id="input_search" value="" onkeydown="key_search(event);"/>
-       <button onclick="button_search()"><i>搜索</i></button>
+       <button onclick="button_search()"><span class="iconfont">&#xe82e;</span></button>
 	</div>
 	<div id="tag">
 	  <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags); 	

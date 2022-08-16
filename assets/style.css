@@ -1,4 +1,13 @@
+@charset 'utf-8';
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&family=ZCOOL+XiaoWei&display=swap');
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 :root {
 	--theme-color: #c5c56a
@@ -166,21 +175,16 @@ textarea {
 
 #search button {
 	position: absolute;
+	background: transparent;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	border: none;
-	padding: 2em;
-     width: 1.2em;
-     height: 1.2em;
-	background: transparent url(img/icon-search.png) no-repeat center center;
-	direction: ltr;
-	text-indent: -9999em
+    width: 3em
 }
 
 @media(-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) {
 	#search button {
-		background-image: url(img/icon-search@2x.png);
 		-webkit-background-size: 24px 24px;
 		-moz-background-size: 24px 24px;
 		-o-background-size: 24px 24px;
@@ -228,17 +232,6 @@ textarea {
 
 .post .tags {
 	clear: both;
-}
-
-.post-near {
-	list-style: none;
-	margin: 30px 0;
-	padding: 0;
-	color: #999;
-}
-
-.post-near li {
-	margin: 10px 0;
 }
 
 .archive-title {
@@ -867,39 +860,6 @@ img.alignright {
 	outline: none;
 }
 /* 搜索 */
-
-
-/* POST NEAR */
-.post-near {
-	margin-top: 40px;
-	width: calc(100% + 80px);
-	margin-left: -40px;
-	margin-right: -40px;
-}
-.post-near-child {
-	width: calc(50% - 40px);
-	float: left;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	font-size: 12px;
-	transition: 0.25s;
-}
-.post-near-child > a {
-	font-size: 16px;
-}
-.post-near-child:hover {
-	background-color: #eee;
-	text-decoration: none;
-}
-.post-near-child-left {
-	padding-left: 40px;
-	text-align: left;
-}
-.post-near-child-right {
-	text-align: right;
-	padding-right: 40px;
-}
-/* POST NEAR */
 
 /* page navigator - 选页器 */
 .page-navigator {

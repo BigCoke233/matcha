@@ -34,6 +34,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/grid.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/style.css'); ?>?2019081002">
+
+    <style>
+    @font-face {
+	    font-family: 'iconfont';  /* Project id 3593200 */
+	    src: url('<?php Utils::indexTheme('assets/iconfont.woff2'); ?>') format('woff2'),
+		     url('<?php Utils::indexTheme('assets/iconfont.woff'); ?>') format('woff'),
+		     url('<?php Utils::indexTheme('assets/iconfont.ttf'); ?>') format('truetype');
+    }
+    </style>
     
     <!--[if lt IE 9]>
     <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
