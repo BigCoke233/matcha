@@ -30,7 +30,6 @@ function themeConfig($form) {
     $form->addInput($hideStatCode->addRule('required', _t('此处必须设置')));
 
     //附加功能相关
-
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
             'disable' => _t('停用'),
@@ -45,15 +44,17 @@ function themeConfig($form) {
 
     //实验性功能
     $IndexDisplayMode = new Typecho_Widget_Helper_Form_Element_Radio('IndexDisplayMode', array(
-            'FullText' => _t('显示全文'),
-            'Excerpt200' => _t('总是截断前200字符'),
-            'Title' => _t('仅显示标题')
+            'FullText' => _t('根据 more 标签截断'),
+            'Excerpt200' => _t('截断前 200 字符'),
+            'Title' => _t('不输出摘要')
         ),
         'FullText',
-        _t('首页文章显示模式'),
+        _t('文章摘要显示模式'),
         _t('
-            <p class="description"><b>实验性功能</b>:重写了文章的显示部分，运用<code>excerpt</code>和<code>summary</code>标签断开</p>
-            <p class="description"><b>默认为显示全文，在其他模式下more标签可能失效。</b></p>
+        <p class="description">该设置相会影响首页的文章列表内的文章内容摘要如何显示。</p>
+        <p class="description">若选择 根据 more 标签截断，主题会截取 <code><!--more--></code> 标签之前的内容，这样能保留这一文段的样式，而不是单调的文字。</p>
+        <p class="description">若选择 截断前200字符，主题总是会截取文章前 200 字纯文本，且不保留原本样式。</p>
+        <p class="description">若选择 不输出摘要，文章列表中只会显示文章标题和元信息。</p>
         ')
     );
     $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
