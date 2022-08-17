@@ -29,18 +29,6 @@ function themeConfig($form) {
     );
     $form->addInput($displayCoTitle);
 
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text(
-        'logoUrl',
-        NULL,
-        NULL,
-        _t('站点 LOGO 地址'),
-        _t('
-            <p class="description">在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO。</p>
-            <p class="description"><b>如果填写会将替换标题和副标题！</b></p>
-        ')
-    );
-    $form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-
     //footer 相关
     
     $IfDisplayPages = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayPages', array(
@@ -151,19 +139,4 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
-
-    //现阶段下该设置基本无用，注释掉好了
-    /*
-    $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
-    array('ShowRecentPosts' => _t('显示最新文章'),
-    'ShowRecentComments' => _t('显示最近回复'),
-    'ShowCategory' => _t('显示分类'),
-    'ShowArchive' => _t('显示归档'),
-    'ShowOther' => _t('显示其它杂项')),
-    array('ShowRecentPosts', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'), _t('侧边栏显示'));
-
-    
-    
-    $form->addInput($sidebarBlock->multiMode());
-    */
 }

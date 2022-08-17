@@ -72,18 +72,12 @@
 
 <header id="header" class="clearfix">
     <div class="site-name">
-    <?php if ($this->options->logoUrl): ?>
-        <a id="logo" href="<?php $this->options->siteUrl(); ?>">
-            <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
-        </a>
-    <?php else: ?>
         <a id="logo" href="<?php Utils::indexHome(); ?>" class="site-title">
             <?php if ($this->options->displayTitle) { $this->options->displayTitle(); }else{ $this->options->title();}?> 
         </a>
         <p class="description site-description">
             <?php if ($this->options->displayCoTitle) { $this->options->displayCoTitle(); }else{ $this->options->description();}?>
         </p>
-    <?php endif; ?>
     </div>
 </header><!-- end #header -->
 
