@@ -13,12 +13,6 @@
 		<span id="busuanzi_value_site_pv">......</span> 次访问 ·
 		<span id="busuanzi_value_site_uv">......</span> 位访客 
 	<?php endif; ?>
-	<?php if ($this->options->EnableBusuanzi == 'able' && $this->options->EnableWordsCounter == 'able' ): ?>
-	·
-	<?php endif; ?>
-	<?php if ($this->options->EnableWordsCounter == 'able' ): ?>
-		<span id="words_counter"><?php WordsCounter_Plugin::allOfCharacters(); ?></span> words
-	<?php endif; ?>
 
 </footer><!-- end #footer -->
 
@@ -33,22 +27,10 @@
 <?php endif; ?>
 	</div>
 
-</div><!-- end #body -->
+</div>
 <?php if ($this->options->EnableBusuanzi == 'able' ): ?>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <?php endif; ?>
-
-<!-- <style>.MathJax:focus {outline: none;}</style>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-	extensions: ["tex2jax.js"],
-	jax: ["input/TeX","output/HTML-CSS"],
-	"fast-preview": {disabled: true},
-	tex2jax: {inlineMath:[ ["$", "$"] ],displayMath:[ ["$$","$$"] ],processEscapes: true},
-	"HTML-CSS": { availableFonts: ["TeX"] }
-});
-</script>
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
 
 <script src="<?php Utils::indexTheme('assets/jquery.min.js'); ?>"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>

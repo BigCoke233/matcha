@@ -1,60 +1,10 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-require('libs/Utils.php');
+require_once('libs/Utils.php');
+require_once('libs/Matcha.php');
 
 function themeConfig($form) {
-    //header 相关
-    
-    $displayTitle = new Typecho_Widget_Helper_Form_Element_Text(
-        'displayTitle',
-        NULL,
-        NULL,
-        _t('显示站点标题'),
-        _t('
-            <p class="description">在这里填入在侧边栏显示的站点标题，如不设置 <b>默认为当前站点标题</b> ，可以通过插入 <code>&lt;br&gt;</code> 换行！</p>
-            <p class="description"><b>建议一行内不超过 10 字符以确保最佳体验</b></p>
-        ')
-    );
-    $form->addInput($displayTitle);
-
-    $displayCoTitle = new Typecho_Widget_Helper_Form_Element_Text(
-        'displayCoTitle',
-        NULL,
-        NULL,
-        _t('显示站点描述'),
-        _t('
-            <p class="description">在这里填入在侧边栏显示的站点副标题（站点标题下方一行灰色小字），如不设置 <b>默认为站点描述</b> ，可以通过插入 <code>&lt;br&gt;</code> 换行！
-            <p class="description"><b>建议一行内不超过 10 字符以确保最佳体验</b></p>
-        ')
-    );
-    $form->addInput($displayCoTitle);
-
     //footer 相关
-    
-    $IfDisplayPages = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayPages', array(
-            'able' => _t('显示'),
-            'disable' => _t('不显示'),
-        ),
-        'able',
-        _t('是否在侧边栏显示创建的页面'),
-        _t('
-            <p class="description">是否显示侧边栏的页面（多用于关于&&友情链接），<b>默认显示</b></p>
-        ')
-    );
-    $form->addInput($IfDisplayPages->addRule('required', _t('此处必须设置')));
-
-    $WhereToDisplaySearch = new Typecho_Widget_Helper_Form_Element_Radio('WhereToDisplaySearch', array(
-            'top' => _t('顶部'),
-            'bottom' => _t('底部'),
-            'none' => _t('不显示'),
-        ),
-        'none',
-        _t('搜索框显示位置'),
-        _t('
-            <p class="description">因个人口味而异，<b>默认不显示</b></p>
-        ')
-    );
-    $form->addInput($WhereToDisplaySearch->addRule('required', _t('此处必须设置')));
     
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
@@ -82,7 +32,6 @@ function themeConfig($form) {
 
     //附加功能相关
 
-
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
             'disable' => _t('停用'),
@@ -95,35 +44,7 @@ function themeConfig($form) {
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
 
-    $EnableWordsCounter = new Typecho_Widget_Helper_Form_Element_Radio('EnableWordsCounter', array(
-            'able' => _t('启用'),
-            'disable' => _t('停用'),
-        ),
-        'disable',
-        _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 适配功能'),
-        _t('
-            <p class="description">与插件 <a rel="nofollow" href="https://github.com/elatisy/Typecho_WordsCounter">WordsCounter</a> 配合使用，显示在侧边栏下方，可以统计文章字数。<b>默认停用</b></p>
-            <p class="description"><b>启用前请务必确保您安装启用好了这个插件！</b></p>
-        ')
-    );
-    $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
-
-
     //实验性功能
-    $IfDisplayNone = new Typecho_Widget_Helper_Form_Element_Radio('IfDisplayNone', array(
-            'able' => _t('显示'),
-            'disable' => _t('不显示'),
-        ),
-        'disable',
-        _t('是否显示 none 标签'),
-        _t('
-            <p class="description"><b>实验性功能</b>:是否显示文章中的 none 标签，<b>默认不显示</b></p>
-            <p class="description">Typecho 的文章如果没有标签，默认会显示一个无样式的 none</p>
-            <p class="description">本主题已经对 none 标签进行了特殊优化使其更加美观，当然你也可以直接将其移除</p>
-        ')
-    );
-    $form->addInput($IfDisplayNone->addRule('required', _t('此处必须设置')));
-
     $IndexDisplayMode = new Typecho_Widget_Helper_Form_Element_Radio('IndexDisplayMode', array(
             'FullText' => _t('显示全文(可使用more标签截断)'),
             'Title' => _t('仅显示标题'),
