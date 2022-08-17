@@ -118,4 +118,18 @@ class Matcha
         Utils::indexHome();
         echo '" class="site-title">'.Helper::options()->title.'</a><p class="description site-description">'.Helper::options()->description.'</p></div>';
     }
+
+    /**
+     * 首页文章列表摘要显示
+     * html 结构
+     */
+    public static function excerpt(Widget_Archive $archive) 
+    {
+        if(Helper::options()->IndexDisplayMode=='FullText'){
+            $archive->content('');
+        }
+        elseif(Helper::options()->IndexDisplayMode=='Excerpt200'){
+            $archive->excerpt(200);
+        }
+    }
 }

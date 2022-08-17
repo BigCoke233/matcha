@@ -10,7 +10,7 @@
 				<li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 评论', '1 评论', '%d 评论'); ?></a></li>
 			</ul>
             <div class="post-content" itemprop="articleBody">
-				<?php $this->content(''); ?>
+				<?php Matcha::excerpt($this); ?>
             </div>
 		</article>
 	<?php endwhile; ?>
