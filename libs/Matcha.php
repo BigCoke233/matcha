@@ -55,15 +55,14 @@ class Matcha
     }
 
     /**
-     * 输出尾部
-     * 包括 js
+     * 输出 js 引用
      */
     public static function script() {
         //要引入的 js 文件名
-        $includes=array("grid", "style", "normalize", "compatible");
+        $includes=array("jquery.min","jquery.pjax.min","smoothscroll","nprogress.min","highlight.min","pangu","script");
         foreach($includes as $value){
             echo '<script src="';
-            Utils::indexTheme('assets/'.$value.'.css');
+            Utils::indexTheme('assets/'.$value.'.js');
             echo '"></script>';
             echo PHP_EOL;
         }
@@ -120,7 +119,7 @@ class Matcha
     }
 
     /**
-     * 首页文章列表摘要显示
+     * 首页文章摘要显示
      * html 结构
      */
     public static function excerpt(Widget_Archive $archive) 
