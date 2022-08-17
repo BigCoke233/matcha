@@ -41,15 +41,29 @@ var scrollSmoothTo = function (position) {
 /**
  * Animation
  */
+//通用的缩放动画
 scaleIn = function(object, time) {
     object.css('transition', time).css('transform', 'scale(0)');
     object.show();
     object.css('transform', 'scale(1)');
 }
-
 scaleOut = function(object, time) {
     object.css('transition', time).css('transform', 'scale(0)')
 }
+
+//details 标签，适配 BracketDown 插件
+$('details').on("click",function(e){
+    e.preventDefault();//阻止 details 直接显示内容
+    if(!$(this).attr('open')){
+        $(this).attr('open','');
+    }else{
+        $(this).addClass('closing');
+        setTimeout(() => { 
+            $(this).removeClass('closing');
+            $(this).removeAttr('open');
+        }, 300);
+    }
+});
 
 /**
  * Event Listenr

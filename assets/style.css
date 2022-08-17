@@ -98,16 +98,6 @@ textarea {
 	resize: vertical;
 }
 
-/*
-.post-meta a,.post-content a,.widget a,.comment-content a {
-	border-bottom: 1px solid #EEE;
-}
-
-.post-meta a:hover,.post-content a:hover,.widget a:hover,.comment-content a:hover {
-	border-bottom-color: transparent;
-}
-*/
-
 .browsehappy {
 	padding: 8px 0;
 	background: #FBE3E4;
@@ -427,6 +417,69 @@ textarea {
 .post-content ul>ol li {
 	list-style-type: lower-roman
 }
+
+/* 适配 BracketDown 插件 */
+
+.post-content details summary {
+	list-style-type: none
+}
+.post-content details summary::before {
+	content: '\e642';
+	font-family: "iconfont" !important;
+	display: inline-block;
+	transition: transform .3s;
+	margin-right: .5em
+}
+.post-content details[open]:not(.closing) summary::before {
+	transform: rotate(90deg)
+}
+
+.post-content details[open] summary ~ * {
+	animation: sweepIn .3s ease-in-out;
+}
+
+.post-content details.closing .bracketdown-details-content {
+	animation: sweepOut .3s ease-in-out;
+}
+.post-content details .bracketdown-details-content {
+	margin-left: 1.5em!important
+}
+
+@keyframes sweepIn {
+	0%    {opacity: 0; transform: translateY(-10px); margin-bottom: -10px}
+  	100%  {opacity: 1; transform: translateY(0)}
+}
+
+@keyframes sweepOut {
+	0%    {opacity: 1; transform: translateY(0);}
+  	100%  {opacity: 0; transform: translateY(-10px); margin-bottom: -1.5em}
+}
+
+.post-content details summary::-webkit-details-marker {
+    display: none /* for Chrome */
+}
+
+.bracketdown-block {
+	background: rgb(0,50,20,.03)!important;
+	border: 1px dashed var(--theme-color)!important;
+	position: relative;
+	color: rgba(120,120,40);
+	margin-top: .8em
+}
+.bracketdown-block::before {
+	content: 'NOTICE';
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: .7em;
+	color: #fff;
+	position: absolute;
+	top: -.7em;
+	left: 1.1em;
+	background: rgba(197,197,106,.9);
+	font-weight: 400;
+	padding: 0 .5em
+}
+
+/* end BracketDown */
 
 .aligncenter,div.aligncenter {
 	display: block;
@@ -930,7 +983,6 @@ div.archive-model {
 
 /* highlight.js - 代码高亮 */
 .hljs {
-	padding: 10px;
 	font-family: "Fira Mono","Monaco","Menlo","Ubuntu Mono","Consolas","source-code-pro",monospace !important;
 }
 pre {
