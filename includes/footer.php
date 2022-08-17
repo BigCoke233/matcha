@@ -18,13 +18,16 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <?php endif; ?>
 
-<script>siteurl='<?php Utils::indexHome(); ?>';</script>
-<?php Matcha::footer(); //输出页脚
+<script>siteurl='<?php Utils::indexHome(); ?>';
+pjaxCallback=function(){<?php $this->options->pjaxCallback(); ?>}</script>
+
+<?php
 //输出统计代码
 if ($this->options->hideStatCode == 'able' ): ?><div style="display:none"><?php endif; 
 if ($this->options->statCode) { $this->options->statCode(); }
 if ($this->options->hideStatCode == 'able'): ?></div><?php endif; 
 //其他
- $this->footer(); ?>
+Matcha::footer();
+$this->footer(); ?>
 </body>
 </html>

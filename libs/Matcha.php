@@ -15,6 +15,7 @@ class Matcha
     public static function head() {
         Matcha::linkCSS();
         Matcha::iconfont();
+        Helper::options()->customHead();
     }
 
     /**
@@ -52,6 +53,7 @@ class Matcha
      */
     public static function footer() {
         Matcha::script();
+        Helper::options()->customFooter();
     }
 
     /**

@@ -104,6 +104,7 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
     }).on('pjax:complete', function() {
         $("#main").addClass("fadein").hide().fadeIn(300);
         JSLoad();
+        pjaxCallback();
 		//加载条完成
         NProgress.done();
     })

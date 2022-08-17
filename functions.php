@@ -55,7 +55,18 @@ function themeConfig($form) {
         <p class="description">若选择 根据 more 标签截断，主题会截取 <code><!--more--></code> 标签之前的内容，这样能保留这一文段的样式，而不是单调的文字。</p>
         <p class="description">若选择 截断前200字符，主题总是会截取文章前 200 字纯文本，且不保留原本样式。</p>
         <p class="description">若选择 不输出摘要，文章列表中只会显示文章标题和元信息。</p>
-        ')
+        <hr>')
     );
     $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
+
+    //自定义
+    $customHead = new Typecho_Widget_Helper_Form_Element_Textarea('customHead', NULL, NULL, _t('自定义 head 头部信息'), _t('
+        <p class="description">将会输出在 head 标签结束之前，通常用于引入 css 文件。</p>'));
+    $form->addInput($customHead);
+    $customFooter = new Typecho_Widget_Helper_Form_Element_Textarea('customFooter', NULL, NULL, _t('自定义 footer 页脚信息'), _t('
+        <p class="description">将会输出在 body 标签结束之前，通常用于引入 js 文件。</p>'));
+    $form->addInput($customFooter);
+    $pjaxCallback = new Typecho_Widget_Helper_Form_Element_Textarea('pjaxCallback', NULL, NULL, _t('Pjax 回调函数'), _t('
+        <p class="description">用于在 Pjax 切换页面后刷新某些元素，避免失效。如果你没有使用其他插件或者没有遇到问题，这里应当留空。</p>'));
+    $form->addInput($pjaxCallback);
 }
