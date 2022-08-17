@@ -44,10 +44,8 @@
     }
     </style>
     
-    <!--[if lt IE 9]>
-    <script src="//cdn.jsdelivr.net/gh/aFarkas/html5shiv@latest/dist/html5shiv.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/scottjehl/Respond@latest/dest/respond.min.js"></script>
-    <![endif]-->
+    <!-- 移动端适配 -->
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/compatible.css'); ?>">
 
     <?php $this->header(); ?>
 </head>
@@ -57,8 +55,7 @@
     <div class="browsehappy" role="dialog"><?php _e('当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>'); ?>.</div>
 <![endif]-->
 
-<!-- 移动端适配 -->
-<link rel="stylesheet" href="<?php $this->options->themeUrl('assets/compatible.css'); ?>">
+
 
 <!-- 也显示出一遍正常标题来以便适配移动端 -->
 <div style="display:none" class="compatible">
