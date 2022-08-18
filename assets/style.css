@@ -1307,5 +1307,6 @@ table tr:hover {
 /* other */
 .external-icon {
 	font-size: .9em;
-	margin-right: .12em
+	margin-right: .12em;
+	color: #ccc
 }
