@@ -47,7 +47,8 @@ Enjoy~
 [Highlight.js](https://highlightjs.org/) | 
 [Bootstrap Grid](https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-grid.css) | 
 [nprogress](https://github.com/rstacruz/nprogress) | 
-[smoothscroll.js](https://www.smoothscroll.net/)
+[smoothscroll.js](https://www.smoothscroll.net/) | 
+[bigfoot.js](http://bigfootjs.com/)
 
 感谢以上开源项目的开发者！
 

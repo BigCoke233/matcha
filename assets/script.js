@@ -8,12 +8,21 @@ function panguLoad() {
         pangu.autoSpacingPage();
     });
 }
-
+//bigfoot.js
+var bigfoodLoad = function(){
+    var bigfoot = $.bigfoot(
+        {
+            deleteOnUnhover: true,
+            activeOnHover: true,
+            actionOriginalFN: 'ignore'
+        }
+    );
+}
 //auto set archor link target
 var linkTarget = function() {
     host_url=window.location.host;
     $('a').each(function(){
-        if($(this).attr('href').indexOf(host_url) < 0 && !$(this).hasClass('no-linkTarget')) {
+        if($(this).attr('href').indexOf(host_url) < 0 && $(this).attr('href').indexOf('#') < 0 && !$(this).hasClass('no-linkTarget')) {
             $(this).attr('target','_blank');
             $(this).prepend('<span class="iconfont external-icon">&#xe832;</span>').addClass('no-linkTarget');
         }
@@ -102,6 +111,7 @@ JSLoad = function(){
     panguLoad();
     SmoothScroll();
     linkTarget();
+    bigfoodLoad();
 }
 JSLoad();
 
