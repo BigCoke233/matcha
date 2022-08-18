@@ -16,10 +16,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<link rel="icon" type="image/x-icon" href="favicon.png">
-
+	<?php //设置 favicon
+    if($this->options->favicon){ ?>
+    <link rel="icon" type="image/x-icon" href="<?php $this->options->favicon(); ?>">
+    <?php } 
+    //输出网站标题、css 引用和其他 head 内容 ?>
     <title><?php Matcha::title($this); ?></title>
-    <?php Matcha::head(); ?>
-    <?php $this->header(); ?>
+    <?php Matcha::head(); $this->header(); ?>
 </head>

@@ -4,11 +4,13 @@ require_once('libs/Utils.php');
 require_once('libs/Matcha.php');
 
 function themeConfig($form) {
+    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, 'favicon.png', _t('浏览器图标（Favicon）'), _t('在这里填入一个指向图片文件的 url 来自定义浏览器标签栏显示的图标，留空则默认为 favicon.ico'));
+    $form->addInput($favicon);
+
     //footer 相关
     
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
-
     $startYear = new Typecho_Widget_Helper_Form_Element_Text('startYear', NULL, '2022', _t('网站建立年份'), _t('在这里填入您网站建立年份（显示在页面底部），<b>必须填写</b>'));
     $form->addInput($startYear->addRule('required', _t('此处必须填写')));
     $statCode = new Typecho_Widget_Helper_Form_Element_Textarea('statCode', NULL, NULL, _t('站点统计代码'), _t('
