@@ -30,6 +30,12 @@ html {
 a {
 	color: var(--theme-color);
 	text-decoration: none;
+	transition-property: opacity;
+	transition: .3s
+}
+
+a:hover {
+	opacity: .8
 }
 
 a:hover,a:active {
@@ -416,6 +422,18 @@ textarea {
 .post-content ol>ol li,
 .post-content ul>ol li {
 	list-style-type: lower-roman
+}
+
+.post-content a,
+.comment-content a {
+	border-bottom: 2px solid #dfdfdf;
+	transition-property: border, opacity, color;
+	box-sizing: border-box
+}
+
+.post-content a:hover,
+.comment-content a:hover {
+	border-color: var(--theme-color);
 }
 
 /* 适配 BracketDown 插件 */
@@ -1277,4 +1295,10 @@ table tr:hover {
 ::-webkit-scrollbar-thumb {
 	background: var(--theme-color);
 	transition: .2s
+}
+
+/* other */
+.external-icon {
+	font-size: .9em;
+	margin-right: .12em
 }
