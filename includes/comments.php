@@ -1,47 +1,100 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+function threadedComments($comments, $options) {
+    $commentClass = '';
+    if ($comments->authorId) {
+        if ($comments->authorId == $comments->ownerId) {
+            $commentClass .= ' comment-by-author';  //如果是文章作者的评论添加 .comment-by-author 样式
+        } else {
+            $commentClass .= ' comment-by-user';  //如果是评论作者的添加 .comment-by-user 样式
+        }
+    } 
+    $commentLevelClass = $comments->_levels > 0 ? ' comment-child' : ' comment-parent';  //评论层数大于0为子级，否则是父级
+?>
+<div role="comment" id="<?php $comments->theId(); ?>" class="comment-body<?php 
+if ($comments->_levels > 0) {
+    echo ' comment-child';
+    $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
+} else {
+    echo ' comment-parent';
+}
+$comments->alt(' comment-odd', ' comment-even');
+echo $commentClass; 
+?>">
+    <div class="comment-body-inner">
+      <div class="comment-avatar">
+        <?php $comments->gravatar('40', ''); ?>
+        <span class="comment-reply">
+		  <?php $comments->reply('回复'); ?>
+		</span>
+      </div>
+	  <div class="comment-main comment-author-info">
+		<div class="comment-content">
+		  <?php $comments->content(); ?>
+	    </div>
+		<p class="comment-meta">
+		  <span class="comment-author"><a href="<?php echo $comments->url; ?>" target="_blank"><?php echo $comments->author; ?></a></span>
+		  <span class="comment-date">
+		    <?php if ('waiting' == $comments->status) { ?>
+            <em class="comment-waiting">您的评论正在审核中。</em>
+            <?php } else { ?>
+		    <?php echo Matcha::date($comments->created); ?>
+			<?php } ?>
+		  </span>
+		</p>
+	  </div>
+	</div>
+	  <?php if ($comments->children) { ?>
+        <div class="comment-children">
+          <?php $comments->threadedComments($options); ?>
+        </div>
+      <?php } ?>
+</div>
+<?php } ?>
+
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
-    <?php if ($comments->have()): ?>
-	<h3><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></h3>
-    
-    <?php $comments->listComments(); ?>
-
-    <?php $comments->pageNav('&laquo;', '&raquo;'); ?>
-    
-    <?php endif; ?>
-
     <?php if($this->allow('comment')): ?>
     <div id="<?php $this->respondId(); ?>" class="respond">
-        <div class="cancel-comment-reply">
-        <?php $comments->cancelReply(); ?>
-        </div>
+        <h2 class="comments-form-title">添加新评论<span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span></h2>
     
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
-            <?php if($this->user->hasLogin()): ?>
-            <p>
-                <?php _e('登录身份: '); ?>
-                <a href="<?php $this->options->profileUrl(); ?>">
-                    <?php $this->user->screenName(); ?>
-                </a>
-                .
-                <a href="<?php $this->options->logoutUrl(); ?>" title="Logout">
-                    <?php _e('退出'); ?>
-                    &raquo;
-                </a>
-            </p>
-            <div class="submit-area">
-            <?php else: ?>
-            <div class="submit-area">
-                <input type="text" name="author" id="author" class="text" placeholder="用户名" value="<?php $this->remember('author'); ?>" required />
-                <input type="email" name="mail" id="mail" class="text" placeholder="邮箱" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
-                <input type="url" name="url" id="url" class="text" placeholder="网址 (选填) " value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
-            <?php endif; ?>
-                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="可以在这里写评论哦 ~" required ><?php $this->remember('text'); ?></textarea>
-                <button type="submit" class="ripple submit"><?php _e('提交评论'); ?></button>
+              <div class="submit-text submit-section">
+                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="留下你的智慧 ~" required ><?php $this->remember('text'); ?></textarea>
+              </div>
+              <div class="submit-action submit-section">
+                <?php if($this->user->hasLogin()): ?>
+                <div class="comments-profile">
+                  <?php $this->author->gravatar(32); ?>
+                  <div class="comments-profile-author">
+                    <a class="comments-profile-name" href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a><br>
+                    <a class="comments-logout" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
+                    <?php _e('退出'); ?></a>
+                  </div>
+                </div>
+                <?php else: ?>
+                <input class="input-username" type="text" name="author" id="author" class="text" placeholder="用户名" value="<?php $this->remember('author'); ?>" required />
+                <input class="input-email" type="email" name="mail" id="mail" class="text" placeholder="邮箱" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
+                <input class="input-url" type="url" name="url" id="url" class="text" placeholder="网址 (选填) " value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
+                <?php endif; ?>
+                <button type="submit" class="submit"><?php _e('提交评论'); ?></button>
+              </div>
+              <div class="submit-extra">
+                <div class="owo"></div>
+                <?php if(Utils::isPluginAvailable('CommentToMail') || Utils::isPluginAvailable('Mailer') || Utils::isPluginAvailable('Comment2Mail')): ?>
+                <div class="comments-mail-me">
+                  <input aria-label="有回复时通知我" name="receiveMail" type="checkbox" value="yes" id="receiveMail" checked />
+                  <label for="receiveMail">有回复时通知我</label>
+                </div>
+                <?php endif; ?>
             </div>
         </form>
     </div>
     <?php else: ?>
     <h3><?php _e('评论已关闭'); ?></h3>
+    <?php endif; ?>
+
+    <?php if ($comments->have()): ?>
+    <?php $comments->listComments(); ?>
+    <div class="comment-pagenav"><?php $comments->pageNav('&laquo;', '&raquo;'); ?></div>
     <?php endif; ?>
 </div>

@@ -20,6 +20,7 @@ body {
 	color: #444;
 	font-size: 100%;
 	font-family: 'Noto Serif SC', serif!important;
+	word-break: break-all
 }
 
 body,
@@ -88,20 +89,6 @@ blockquote {
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
-}
-
-input[type="text"],input[type="email"],input[type="url"],input[type="password"],textarea {
-	padding: 5px;
-	border: 1px solid #E9E9E9;
-	width: 100%;
-	border-radius: 2px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-textarea {
-	resize: vertical;
 }
 
 .browsehappy {
@@ -254,10 +241,6 @@ textarea {
 	width: 50%;
 }
 
-#comments {
-	padding-top: 15px;
-}
-
 .comment-list,.comment-list ol {
 	list-style: none;
 	margin: 0;
@@ -313,23 +296,6 @@ textarea {
 .comment-list .respond {
 	margin-top: 15px;
 	border-top: 1px solid #EEE;
-}
-
-.respond .cancel-comment-reply {
-	float: right;
-	margin-top: 15px;
-	font-size: .92857em;
-}
-
-#comment-form label {
-	display: block;
-	margin-bottom: .5em;
-	font-weight: bold;
-}
-
-#comment-form .required:after {
-	content: " *";
-	color: #C00;
 }
 
 #secondary {
@@ -621,80 +587,219 @@ img.alignright {
 /* header */
 
 /* 评论 */
-#comments .submit-area {
-	border: 1px solid #EEE;
+#comment-form .submit-area {
+	background: transparent
 }
-#comments .text {
-	display: block;
-	width: 100%;
-	max-height: 40px;
-	padding: 16px;
-	resize: vertical;
-	max-width: 100%;
-	margin: 0;
-	font-size: 14px;
-	line-height: 1.6;
+#comment-form .text {
 	background-color: #fff;
 	color: #333;
-	vertical-align: middle;
-	border: none;
-	border-radius: 0;
-	outline: none;
-	box-shadow: none;
-	overflow: visible;
-	border-radius: 0;
-	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
-	border-bottom: 1px solid #EEE;
-	transition: 0.25s;
 }
-#comments .textarea {
-	display: block;
-	width: 100%;
+#comment-form .textarea {
 	min-height: 150px;
 	max-height: 500px;
-	padding: 16px;
 	resize: vertical;
-	max-width: 100%;
 	margin: 0;
-	font-size: 14px;
-	line-height: 1.6;
 	background-color: #fff;
 	color: #333;
-	vertical-align: middle;
-	border: none;
-	border-radius: 0;
-	outline: none;
-	box-shadow: none;
-	overflow: visible;
-	border-radius: 0;
-	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
-	transition: 0.25s;
+	resize: none;
 }
-#comments .submit {
+#comment-form .submit {
 	outline: none;
 	font-size: 100%;
-	display: block;
-	width: 100%;
-	color: #333;
-	background: #fff;
-	padding: 8px;
-	transition: 0.25s;
+	color: #fff;
+	background: var(--theme-color);
 	border: none;
-	border-top: 1px solid #EEE;
-	border-radius: 0;
-	font-size: 14px;
-	outline: none;
+	cursor: pointer;
+	margin-top: .6em
 }
-#comments .avatar {
+#comment-form .submit,
+#comment-form .textarea,
+#comment-form input:not(.submit-extra input) {
+	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
+	border-radius: 2px;
+	font-size: 1em;
+	transition: 0.3s;
+	outline: none!important;
+	display: block;
+	line-height: 1.5;
+	padding: .8em;
+	flex-grow: 1;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#comment-form .textarea, 
+#comment-form input:not(.submit-extra input) {
+	border: 2px solid #eee!important
+}
+#comment-form .submit-section {
+	margin: .8em 0;
+}
+@media (min-width: 992px){
+	#comment-form .submit-action {
+		display: flex
+	}
+	#comment-form .input-email {
+		margin: 0 .6em
+	}
+	#comment-form .submit {
+		margin-left: .6em;
+		margin-top: 0
+	}
+}
+#comment-form .comments-form-title {
+	font-weight: 400!important;
+	display: flex;
+	align-items: center
+}
+#comment-form .comments-profile {
+	vertical-align: middle;
+	flex-grow: 3!important;
+	width: 300%;
+	margin-right: 1.2em;
+	display: flex;
+	align-items: center
+}
+#comment-form .comments-profile img {
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 100%
+}
+#comment-form .comments-profile-author {
+	margin-left: .6em
+}
+#comment-form .comments-profile-name{
+	font-size: 1.2em;
+	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
+	font-weight: 600;
+	color: #222
+}
+#comment-form .comments-logout {
+	font-size: .8em;
+	color: #fff;
+	background: var(--theme-color);
+	display: inline-block;
+	padding: .1em .3em;
+	border-radius: 2px
+}
+.submit-extra {
+	display: flex;
+	justify-content: space-between;
+	margin-top: -.5em
+}
+.comments-mail-me {
+	display: block
+}
+.comments-mail-me label
+.comments-mail-me input {
+	display: inline!important;
+	width: auto!important
+}
+.cancel-comment-reply a {
+	font-size: .7em;
+	margin-left: .5em;
+	font-weight: 200;
+	background: var(--theme-color);
+	color: #fff;
+	padding: .2em .4em;
+	border-radius: 2px
+
+}
+/* 评论列表 */
+.avatar {
 	width: 40px;
 	height: 40px;
-	border-radius: 20040725px;
+	border-radius: 100%;
 }
-#comments .submit:hover {
-	background: #EEE;
+.comment-list {
+	margin-top: 2em
 }
-/* 评论 */
-
+.comment-body-inner {
+	display: flex;
+	margin: 1em 0;
+}
+.comment-body:not(.comment-children .comment-body) {
+	border-bottom: 1px solid #eee;
+	padding-top: .2em
+}
+.comment-body:last-child {
+	border: none!important
+}
+.comment-main {
+	padding: 0 1em;
+	display: block;
+	width: 100%
+}
+.comment-meta {
+	display: flex
+}
+.comment-meta span {
+	display: block
+}
+.comment-content {
+	display: block;
+	font-size: 1.1em
+}
+.comment-content p {
+	margin: 0!important
+}
+.comment-meta {
+	margin-top: .2em
+}
+.comment-meta .comment-author a {
+	padding: .2em .4em;
+	display: inline-block;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 2px;
+	line-height: 1;
+	margin-right: .5em
+}
+.comment-meta .comment-author a:hover {
+	color: #fff;
+	background: var(--theme-color)
+}
+.comment-date {
+	color: #aaa
+}
+.comment-reply {
+	display: block;
+	text-align: center;
+	margin-top: .5em
+}
+.comment-reply a {
+	color: #222
+}
+.comment-children {
+	margin-left: 3.5em
+}
+.comment-children .comment-children {
+	margin-left: 0;
+}
+.comment-pagenav ol {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	justify-content: center
+}
+.comment-pagenav ol li {
+	display: inline-block;
+	margin: 0 .2em;
+}
+.comment-pagenav ol li a {
+	color: #444;
+	font-size: 1.1em;
+	border: 1px solid #ddd;
+	border-radius: 100%;
+	display: inline-block;
+	padding: .3em .65em;
+	transition-property: color, background;
+	transition-duration:.3s
+}
+.comment-pagenav ol li a:hover {
+	color: #fff;
+	background: var(--theme-color)
+}
 /* index - 文章聚合 */
 .post-title {
 	margin: 0.5em 0;
@@ -778,12 +883,10 @@ img.alignright {
 /* layout - 布局 & 定位 */
 #small-header {
 	display: none;
-	margin: -40px;
 	margin-bottom: 0;
 	padding: 40px 40px 28px;
-	background: rgba(159,86,58,.03);
-	box-shadow: 0 0 24px rgba(0,0,0,0.12);
 	border-bottom: 2px solid var(--theme-color);
+	margin: 0 -1em
 }
 #header {
 	position: fixed;
@@ -814,8 +917,13 @@ img.alignright {
 	margin-right: calc(50% - 600px);
 	width: 1000px !important;
 	max-width: 1000px !important;
-	padding: 40px;
+	padding: 1em;
 	background: #fcfcfc;
+}
+@media (min-width: 992px){
+	#body .container {
+		padding: 2.8em;
+	}
 }
 .widget-list li ul {
 	margin-left: 0px;
@@ -950,11 +1058,11 @@ img.alignright {
 /* 搜索 */
 
 /* page navigator - 选页器 */
-.page-navigator {
+.page-navigator:not(.comment-pagenav .page-navigator) {
 	display: flex;
 	justify-content: space-between
 }
-.page-navigator a {
+.page-navigator:not(.comment-pagenav .page-navigator) a {
 	color: #444;
 	font-size: 1.1em;
 	border: 1px solid #ddd;
@@ -964,12 +1072,13 @@ img.alignright {
 	font-weight: bold;
 	transition: .3s
 }
-.page-navigator a:hover {
+.page-navigator:not(.comment-pagenav .page-navigator) a:hover {
 	text-decoration: none;
 	background: var(--theme-color);
 	border-color: var(--theme-color);
 	color: #fff
 }
+
 /* page navigator - 选页器 */
 
 /* archive page - 归档页面 */

@@ -14,7 +14,7 @@ var bigfoodLoad = function(){
 //auto set archor link target
 var linkTarget = function() {
     host_url=window.location.host;
-    $('a').each(function(){
+    $('.post a').each(function(){
         if($(this).attr('href').indexOf(host_url) < 0 && $(this).attr('href').indexOf('#') < 0 && !$(this).hasClass('no-linkTarget')) {
             $(this).attr('target','_blank');
             $(this).prepend('<span class="iconfont external-icon">&#xe832;</span>').addClass('no-linkTarget');

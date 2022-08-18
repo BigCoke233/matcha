@@ -31,4 +31,16 @@ class Utils
     {
         Helper::options()->themeUrl($path);
     }
+
+    /**
+     * 判断插件是否可用
+     * 
+     * @return bool
+     */
+    public static function isPluginAvailable($name) 
+    {
+        $plugins = Typecho_Plugin::export();
+        $plugins = $plugins['activated'];
+        return is_array($plugins) && array_key_exists($name, $plugins);
+    }
 }
