@@ -66,18 +66,20 @@ scaleOut = function(object, time) {
 }
 
 //details 标签，适配 BracketDown 插件
-$('details').on("click",function(e){
-    e.preventDefault();//阻止 details 直接显示内容
-    if(!$(this).attr('open')){
-        $(this).attr('open','');
-    }else{
-        $(this).addClass('closing');
-        setTimeout(() => { 
-            $(this).removeClass('closing');
-            $(this).removeAttr('open');
-        }, 300);
-    }
-});
+var detailsAnimate = function() {
+    $('details').on("click",function(e){
+        e.preventDefault();//阻止 details 直接显示内容
+        if(!$(this).attr('open')){
+            $(this).attr('open','');
+        }else{
+            $(this).addClass('closing');
+            setTimeout(() => { 
+                $(this).removeClass('closing');
+                $(this).removeAttr('open');
+            }, 300);
+        }
+    });
+}
 
 /**
  * Event Listenr
@@ -104,6 +106,7 @@ JSLoad = function(){
     SmoothScroll();
     linkTarget();
     bigfoodLoad();
+    detailsAnimate();
 }
 JSLoad();
 
