@@ -6,7 +6,7 @@ $this->need("includes/head.php"); ?>
 <div id="body">
     <div class="container">
         <!-- 移动端导航 -->
-        <div class="small-header" id="small-header"  onclick="window.open('<?php $this->options->siteUrl(); ?>','_self')">
+        <div class="small-header" id="small-header">
             <div class="site-name"><?php Matcha::siteName(); ?></div>
             <div class="page-links"><?php Matcha::pageNav($this, "span"); ?></div>
         </div>
