@@ -7,8 +7,7 @@ var bigfoodLoad = function(){
     var bigfoot = $.bigfoot(
         {
             deleteOnUnhover: true,
-            activeOnHover: true,
-            actionOriginalFN: 'ignore'
+            activeOnHover: true
         }
     );
 }
