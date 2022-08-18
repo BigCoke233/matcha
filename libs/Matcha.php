@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-
+require_once("Pangu.php");
 /**
  * Matcha.php
  * 处理主题显示的内容
@@ -61,7 +61,7 @@ class Matcha
      */
     public static function script() {
         //要引入的 js 文件名
-        $includes=array("jquery.min","jquery.pjax.min","smoothscroll","nprogress.min","highlight.min","pangu","bigfoot","script");
+        $includes=array("jquery.min","jquery.pjax.min","smoothscroll","nprogress.min","highlight.min","bigfoot","script");
         foreach($includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');
@@ -152,5 +152,17 @@ class Matcha
         else {
             return date('Y-m-d', $created);
         }
+    }
+
+    /**
+     * 解析文章内容
+     */
+    static public function parseContent($data, $widget, $last)
+    {
+        $text = empty($last) ? $data : $last;
+        if ($widget instanceof Widget_Archive) {
+			$text = pangu($text);
+        }
+        return $text;
     }
 }

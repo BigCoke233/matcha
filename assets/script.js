@@ -2,12 +2,6 @@
  * Functions
  */
  
-//Pangu.js
-function panguLoad() {
-    document.addEventListener('DOMContentLoaded', () => {
-        pangu.autoSpacingPage();
-    });
-}
 //bigfoot.js
 var bigfoodLoad = function(){
     var bigfoot = $.bigfoot(
@@ -108,7 +102,6 @@ $(window).scroll(function() {
 //Must load when page finish
 JSLoad = function(){
     hljs.highlightAll();
-    panguLoad();
     SmoothScroll();
     linkTarget();
     bigfoodLoad();
