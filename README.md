@@ -43,7 +43,7 @@ Enjoy~
 
 [jQuery](https://jquery.com/) | 
 [Pjax](https://github.com/defunkt/jquery-pjax) | 
-[Pangu.js](https://github.com/vinta/pangu.js) | 
+[Pangu.php](https://github.com/cchlorine/pangu.php) | 
 [Highlight.js](https://highlightjs.org/) | 
 [Bootstrap Grid](https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-grid.css) | 
 [nprogress](https://github.com/rstacruz/nprogress) | 
