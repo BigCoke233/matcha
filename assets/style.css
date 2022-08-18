@@ -1103,6 +1103,7 @@ table tr:hover {
 .hljs {
   background: #002451;
   color: white;
+  padding: 0;
 }
 
 .hljs-emphasis {
