@@ -133,4 +133,24 @@ class Matcha
             $archive->excerpt(200);
         }
     }
+
+    /**
+     * 人性化的时间显示
+     */
+    public static function date($created)
+    {
+        $Y = date('Y', $created);
+        if(date('Y-m-d', $created)==date('Y-m-d')){
+            return '今天';
+        }
+        elseif(date('Y-m', $created)==date('Y-m') && intval(date('d', $created))==intval(date('d')-1)){
+            return '昨天';
+        }
+        elseif($Y==date('Y')) {
+            return date('m-d', $created);
+        }
+        else {
+            return date('Y-m-d', $created);
+        }
+    }
 }
