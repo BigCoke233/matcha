@@ -913,7 +913,7 @@ img.alignright {
 	margin-right: calc(50% - 600px);
 	width: 1000px !important;
 	max-width: 1000px !important;
-	padding: 1em;
+	padding: 1em 2em;
 	padding-top: 2.8em;
 	background: #fcfcfc;
 	box-sizing: border-box
