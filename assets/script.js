@@ -112,6 +112,15 @@ $(window).scroll(function() {
         scaleOut($('#back2top'), '0.7');
     }
 });
+//Comment Closed Feedback
+$('#comment-closed').click(function(){
+    $('#comment-closed').addClass('fade');
+    setTimeout(function(){
+        $('#comment-closed').remove();
+    },300);
+    document.cookie = 'commentsClosedKnown=y';
+    Toaster.send('短期内不会再显示此类信息');
+});
 
 /**
  * JS Lib Loader

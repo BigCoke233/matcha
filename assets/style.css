@@ -243,10 +243,22 @@ h1,h2,h3,h4,h5,h6 {
 	width: 50%;
 }
 
-.comment-list,.comment-list ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+h3.comment-closed {
+	font-weight: 400;
+	color: #fff;
+	background: var(--theme-color);
+	text-align: center;
+	padding: .5em 1em;
+	width: fit-content;
+	margin: 0 auto;
+	border-radius: 3px;
+	user-select: none;
+	cursor: pointer;
+
+	transition: opacity .3s
+}
+h3.comment-closed.fade {
+	opacity: 0;
 }
 
 .comment-list li {

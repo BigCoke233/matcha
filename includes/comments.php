@@ -89,9 +89,10 @@ echo $commentClass;
             </div>
         </form>
     </div>
-    <?php else: ?>
-    <h3><?php _e('评论已关闭'); ?></h3>
-    <?php endif; ?>
+    <?php else: 
+    if($_COOKIE["commentsClosedKnown"]!='y'){  ?>
+    <h3 class="comment-closed" id="comment-closed">本页的评论功能已关闭</h3>
+    <?php } endif; ?>
 
     <?php if ($comments->have()): ?>
     <?php $comments->listComments(); ?>
