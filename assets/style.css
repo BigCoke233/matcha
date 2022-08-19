@@ -788,8 +788,10 @@ img.alignright {
 .comment-children {
 	margin-left: 3.5em
 }
-.comment-children .comment-children {
-	margin-left: 0;
+.comment-children .comment-children,
+.comment-children .comment-list {
+	margin-left: 0!important;
+	padding-left: 0!important
 }
 .comment-pagenav ol {
 	list-style-type: none;
