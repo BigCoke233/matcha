@@ -728,7 +728,8 @@ img.alignright {
 	border-radius: 100%;
 }
 .comment-list {
-	margin-top: 2em
+	margin-top: 2em;
+	padding-left: 0
 }
 .comment-body-inner {
 	display: flex;
@@ -788,10 +789,8 @@ img.alignright {
 .comment-children {
 	margin-left: 3.5em
 }
-.comment-children .comment-children,
-.comment-children .comment-list {
-	margin-left: 0!important;
-	padding-left: 0!important
+.comment-children .comment-children {
+	margin-left: 0!important
 }
 .comment-pagenav ol {
 	list-style-type: none;
