@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
-if(!$this->options->customStyle=='journal'): ?>
+if($this->options->customStyle=='ringo'): ?>
 <div id="sidebar" class="sidebar" role="complementary">
     <header id="header" class="header clearfix"><?php Matcha::siteName(); ?></header>
     <!-- 侧边栏页面导航 -->
