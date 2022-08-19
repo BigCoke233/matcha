@@ -809,12 +809,6 @@ img.alignright {
 	font-weight: 400;
 	color: #444 !important;
 }
-.post-atmain {
-	margin-left: -40px;
-	margin-right: -40px;
-	padding-left: 40px;
-	padding-right: 40px;
-}
 .post-atmain,
 .post-atmain .post-title {
 	transition: 0.25s;
@@ -1423,24 +1417,3 @@ table tr:hover {
 }
 
 /* style journal */
-.style-journal {
-	background: #fafafa
-}
-.style-journal .container {
-	box-shadow: 0 0 1em rgba(0,0,0,.1);
-	background: #fff
-}
-.style-journal #header {
-	border-width: 4px;
-	background: rgba(0,0,0,.03)
-}
-
-.style-journal #sidebar {
-	width: calc(50% - 400px);
-	left: auto!important
-}
-@media (max-width: 1200px) {
-	.style-journal #sidebar {
-		width: calc(50% - 200px);
-	}
-}
