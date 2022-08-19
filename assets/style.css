@@ -914,6 +914,7 @@ img.alignright {
 	width: 1000px !important;
 	max-width: 1000px !important;
 	padding: 1em;
+	padding-top: 2.8em;
 	background: #fcfcfc;
 	box-sizing: border-box
 }
@@ -1365,20 +1366,35 @@ table tr:hover {
 	color: #fff
 }
 
-#search input {
-	border-color: rgb(40,40,40);
-	padding: 1em 1.2em;
-	outline: none;
-	transition: .3s;
-	font-size: 1em
+#search{
+	overflow: hidden;
+	border: 2px solid #666;
+	border-radius: 2px;
+	transition: border-color .3s
 }
-#search input:active,
-#search input:hover {
+#search:active,
+#search:hover,
+#search:focus {
 	border-color:var(--theme-color);
 	outline: none
 }
+#search input {
+	border: none;
+	padding: 1em 1.2em;
+	outline: none;
+	transition: .3s;
+	font-size: 1em;
+	display: block;
+	width: 100%;
+	margin: 0!important
+}
 #search button {
-	cursor: pointer
+	cursor: pointer;
+	color: #666;
+	transition: color .3s
+}
+#search button:hover {
+	color: var(--theme-color)
 }
 
 /* back-to-top button */
