@@ -21,6 +21,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
     - 去除了页面中部分元素突兀的阴影
     - 页面字体采用「思源宋体」，并给站点标题加上了艺术字体
     - 删除了一些设置项，化繁为简
+    - Ringo 主题并不是完全复刻的 journal 主题，Matcha 设置了一个选项，可以在 Ringo 和 Journal 主题的样式之间自由切换
 - 用户体验的提升
     - 给归档页面加上了搜索和标签云，并且排列更加紧凑
     - 增加了 Pjax 无刷新功能
