@@ -1386,6 +1386,52 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	font-weight: 800
 }
 
+/* links 友情链接 */
+
+.links-anchor {
+	color: #fff;
+}
+.links-anchor:hover {
+	opacity: 1
+}
+
+.links-item {
+	position: relative;
+	border-radius: 3px;
+	overflow: hidden;
+	height: 100%;
+	width: 100%
+}
+
+.link-name {
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 1.8em;
+	line-height: 1.8em;
+	font-size: 1.1em;
+	background: rgba(0,0,0,.3);
+	text-align: center;
+	font-weight: 400;
+	white-space: nowrap;
+
+	transform: translateY(2em);
+	transition: transform .3s
+}
+
+.links-anchor:hover .link-name {
+	transform: translateY(0)
+}
+
+.link-img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	margin-bottom: -2px
+}
+
 /* other */
 .external-icon {
 	font-size: .9em;

@@ -31,7 +31,7 @@ var prismLoad = function(){
 //auto set archor link target
 var linkTarget = function() {
     host_url=window.location.host;
-    $('.post a').each(function(){
+    $('.post a:not([no-linkTarget])').each(function(){
         if($(this).attr('href').indexOf(host_url) < 0 && $(this).attr('href').indexOf('#') < 0 && !$(this).hasClass('no-linkTarget')) {
             $(this).attr('target','_blank');
             $(this).prepend('<span class="iconfont external-icon">&#xe832;</span>').addClass('no-linkTarget');

@@ -1,6 +1,6 @@
 <?php
 /**
- * 文章汇总输出
+ * 归档页面
  *
  * @package custom
  */
