@@ -1114,20 +1114,6 @@ div.archive-model {
 }
 /* archive page - 归档页面 */
 
-/* highlight.js - 代码高亮 */
-.hljs {
-	font-family: "Fira Mono","Monaco","Menlo","Ubuntu Mono","Consolas","source-code-pro",monospace !important;
-}
-pre {
-	background: rgba(0,10,0,.8);
-	font-size: 80%;
-	max-height: none;
-}
-pre code{
-	background: transparent!important
-}
-/* highlight.js - 代码高亮 */
-
 /* images - 插图 / 图片 */
 .post-content img {
 	display: block;
@@ -1172,81 +1158,6 @@ table tr:hover {
 	background: #eee;
 }
 /* table - 表格 */
-
-/* highlight */
-/* Tomorrow Night Blue Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #7285b7;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #ff9da4;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #ffc58f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-  color: #ffeead;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: #d1f1a9;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-  color: #bbdaff;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #ebbbff;
-}
-
-.hljs {
-  background: #002451;
-  color: white;
-  padding: 0;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-/* highlight end  */
 
 /* nprogress */
 /* Make clicks pass-through */
@@ -1425,6 +1336,41 @@ table tr:hover {
 ::-webkit-scrollbar-thumb {
 	background: var(--theme-color);
 	transition: .2s
+}
+pre::-webkit-scrollbar {
+	width: 4px!important
+}
+pre::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,.1)!important
+}
+pre::-webkit-scrollbar-corner {
+	background: #f5f2f0!important
+}
+
+/* prism toolbar */
+div.code-toolbar>.toolbar {
+	right: .5em
+}
+div.code-toolbar>.toolbar>.toolbar-item>button {
+	box-shadow: none;
+	border-radius: 3px;
+	background: transparent;
+	color: rgba(0,0,0,.1);
+	cursor: pointer;
+	border: none;
+	font-size: 1.1em;
+	transition: background .3s;
+	padding: 0 .2em
+}
+div.code-toolbar>.toolbar>.toolbar-item>button:hover,
+div.code-toolbar>.toolbar>.toolbar-item>button:focus {
+	background: rgba(0, 0, 0, 0.05);
+	color: #aaa
+}
+div.code-toolbar>.toolbar>.toolbar-item>button::before {
+	content: '\e94c';
+	font-family: 'iconfont'!important;
+	font-weight: 800
 }
 
 /* other */

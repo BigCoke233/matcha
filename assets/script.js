@@ -1,7 +1,10 @@
 /**
  * Functions
  */
- 
+//toast notification
+var toast = function(m) {
+    
+}
 //bigfoot.js
 var bigfoodLoad = function(){
     var bigfoot = $.bigfoot(
@@ -10,6 +13,24 @@ var bigfoodLoad = function(){
             activeOnHover: true
         }
     );
+}
+//prismJS
+var prismLoad = function(){
+    if (typeof Prism !== 'undefined') {
+        var pres = document.getElementsByTagName('pre');
+        for (var i = 0; i < pres.length; i++){
+        if (pres[i].getElementsByTagName('code').length > 0)
+        pres[i].className  = 'line-numbers';}
+        Prism.highlightAll(true,null);
+    }
+    Prism.plugins.toolbar.registerButton('copy', {
+        text: '',
+        onClick: function (env) {
+            var text = env.element.innerText;
+            navigator.clipboard.writeText(text);
+            toast('已将代码复制到剪切板');
+        }
+    });
 }
 //auto set archor link target
 var linkTarget = function() {
@@ -101,12 +122,12 @@ $(window).scroll(function() {
  */
  
 //Must load when page finish
-JSLoad = function(){
-    hljs.highlightAll();
+var JSLoad = function(){
     SmoothScroll();
     linkTarget();
     bigfoodLoad();
     detailsAnimate();
+    prismLoad();
 }
 JSLoad();
 

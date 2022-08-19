@@ -54,7 +54,7 @@ Enjoy~
 [jQuery](https://jquery.com/) | 
 [Pjax](https://github.com/defunkt/jquery-pjax) | 
 [Pangu.php](https://github.com/cchlorine/pangu.php) | 
-[Highlight.js](https://highlightjs.org/) | 
+[Prism.js](https://prismjs.com/) | 
 [Bootstrap Grid](https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-grid.css) | 
 [nprogress](https://github.com/rstacruz/nprogress) | 
 [smoothscroll.js](https://www.smoothscroll.net/) | 
