@@ -30,6 +30,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
     - 完全重写了返回顶部按钮
     - 替换 Highlight.js，使用更轻量级的 Prism.js
     - 显示代码行数，增加一键复制功能
+    - 自动检测文章中的链接是否是外部链接，如果是，则自动设置为`在新标签页打开`，并且在链接前加上明显的标识
 - 文章可读性提高
     - 使用 Pangu.php 在中英文之间自动用空格分隔
     - 使用 bigfoot.js 优化文章脚注的显示
@@ -49,6 +50,8 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 3. 将主题文件夹放入主题安装目录 `/ust/themes/`
 4. 登入后台进行简单的配置
 
+如果在使用过程中遇到任何问题，请先查看 [FAQ](doc.md)，若没能解决，再询问作者。
+
 Enjoy~
 
 ## 引用
@@ -60,7 +63,8 @@ Enjoy~
 [Bootstrap Grid](https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-grid.css) | 
 [nprogress](https://github.com/rstacruz/nprogress) | 
 [smoothscroll.js](https://www.smoothscroll.net/) | 
-[bigfoot.js](http://bigfootjs.com/)
+[bigfoot.js](http://bigfootjs.com/) | 
+[toaster.js](https://github.com/bigcoke233/toaster.js)
 
 感谢以上开源项目的开发者！
 
@@ -69,9 +73,9 @@ Enjoy~
 - [x] 平滑滚动
 - [x] 优化页面滚动条的样式
 - [x] 重写评论板块的样式
+- [x] 优化代码高亮功能（考虑换成 Prism.js）
 - [ ] 增加「友情链接」功能
 - [ ] 增加「自定义导航栏」功能
-- [ ] 优化代码高亮功能（考虑换成 Prism.js）
 - [ ] ~~ajax 评论无刷新~~（暂时搁置）
 
 ---

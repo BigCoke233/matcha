@@ -1,7 +1,7 @@
 /**
  * Toaster.js
  * 
- * Repository: https://github.com/BigCoke233/toaster
+ * Repository: https://github.com/BigCoke233/toaster.js
  * Version: 0.1
  * 
  * jQuery required!
