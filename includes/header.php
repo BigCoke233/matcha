@@ -1,7 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need("includes/head.php"); ?>
-<body>
-<header id="header" class="clearfix"><?php Matcha::siteName(); ?></header>
+<body<?php if($this->options->customStyle=='journal'): ?> class="style-journal"<?php endif; ?>>
 <?php $this->need('includes/sidebar.php'); ?>
 <div id="body">
     <div class="container">

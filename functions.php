@@ -7,6 +7,18 @@ Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Matcha',
 Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('Matcha','parseContent');
 
 function themeConfig($form) {
+    //个性化
+    $customStyle = new Typecho_Widget_Helper_Form_Element_Radio('customStyle', array(
+        'ringo' => _t('Ringo'),
+        'journal' => _t('Journal'),
+    ),
+    'ringo',
+    _t('选择主题样式'),
+        _t('选择 Ringo 则使用 Ringo 主题的整体设计，更加简洁；<br>
+        选择 Journal 则使用 Journal 主题的整体设计，更加大气')
+    );
+    $form->addInput($customStyle->addRule('required', _t('此处必须设置')));
+
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, 'favicon.png', _t('浏览器图标（Favicon）'), _t('在这里填入一个指向图片文件的 url 来自定义浏览器标签栏显示的图标，留空则默认为 favicon.ico'));
     $form->addInput($favicon);
 

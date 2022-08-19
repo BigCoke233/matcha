@@ -20,7 +20,8 @@ body {
 	color: #444;
 	font-size: 100%;
 	font-family: 'Noto Serif SC', serif!important;
-	word-break: break-all
+	word-break: break-all;
+	box-sizing: border-box
 }
 
 body,
@@ -610,7 +611,8 @@ img.alignright {
 	background: var(--theme-color);
 	border: none;
 	cursor: pointer;
-	margin-top: .6em
+	margin-top: .6em;
+	max-width: 225px
 }
 #comment-form .submit,
 #comment-form .textarea,
@@ -656,7 +658,6 @@ img.alignright {
 #comment-form .comments-profile {
 	vertical-align: middle;
 	flex-grow: 3!important;
-	width: 300%;
 	margin-right: 1.2em;
 	display: flex;
 	align-items: center
@@ -919,6 +920,7 @@ img.alignright {
 	max-width: 1000px !important;
 	padding: 1em;
 	background: #fcfcfc;
+	box-sizing: border-box
 }
 @media (min-width: 992px){
 	#body .container {
@@ -1418,4 +1420,27 @@ table tr:hover {
 	font-size: .9em;
 	margin-right: .12em;
 	color: #ccc
+}
+
+/* style journal */
+.style-journal {
+	background: #fafafa
+}
+.style-journal .container {
+	box-shadow: 0 0 1em rgba(0,0,0,.1);
+	background: #fff
+}
+.style-journal #header {
+	border-width: 4px;
+	background: rgba(0,0,0,.03)
+}
+
+.style-journal #sidebar {
+	width: calc(50% - 400px);
+	left: auto!important
+}
+@media (max-width: 1200px) {
+	.style-journal #sidebar {
+		width: calc(50% - 200px);
+	}
 }
