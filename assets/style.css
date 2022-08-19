@@ -105,12 +105,13 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: bold;
 }
 
-#header {
+.header {
 	padding-top: 35px;
 	border-bottom: 1px solid #EEE;
 }
 
-#header a {
+.header a,
+.header-journal a {
 	font-family: 'ZCOOL XiaoWei', serif!important;
 }
 
@@ -501,7 +502,7 @@ img.alignright {
 }
 
 @media(max-width:768px) {
-	#header,.post-title,.post-meta {
+	.header,.post-title,.post-meta {
 		text-align: center;
 	}
 }
@@ -543,8 +544,9 @@ img.alignright {
 /* = = = = = = = = = = */
 
 /* header */
-#header,
-#small-header {
+.header,
+#small-header,
+.sidebar-journal .header-journal {
 	/* transition: 0.25s; */
 	font-family: "Droid Serif",
 		Georgia,
@@ -556,15 +558,15 @@ img.alignright {
 		"Microsoft Yahei",
 		serif;
 }
-#header .site-title,
-#small-header .site-title {
-	/* letter-spacing: 2px; */
-	/* text-align: center; */
+.header .site-title,
+#small-header .site-title,
+.sidebar-journal .header-journal .site-title {
 	font-weight: 400;
 	color: #333 !important;
 }
-#header .site-description,
-#small-header .site-description {
+.header .site-description,
+#small-header .site-description,
+.sidebar-journal .header-journal .site-description {
 	color: #666;
 	font-style: normal;
 	font-size: 14px;
@@ -883,7 +885,7 @@ img.alignright {
 	border-bottom: 2px solid var(--theme-color);
 	margin: 0 -1em
 }
-#header {
+.header {
 	position: fixed;
 	text-align: right;
 	left: calc(50% - 600px);
@@ -895,10 +897,9 @@ img.alignright {
 	padding-bottom: 40px;
 	padding-right: 13px;
 	border-bottom: none;
-	border-right: 2px solid var(--theme-color);
-	cursor: pointer
+	border-right: 2px solid var(--theme-color)
 }
-#sidebar {
+.sidebar {
 	position: fixed;
 	text-align: right;
 	left: calc(50% - 600px);
@@ -930,12 +931,12 @@ img.alignright {
 }
 
 @media (max-width: 1200px) {
-	#header {
+	.header {
 		left: calc(50% - 400px);
 		margin-left: calc(200px - 50%);
 		padding-left: calc(50% - 200px);
 	}
-	#sidebar {
+	.sidebar {
 		left: calc(50% - 400px);
 	}
 	#body .container {
@@ -950,11 +951,12 @@ img.alignright {
 	#small-header {
 		display: block;
 	}
-	#header {
+	.header {
 		display: none;
 	}
-	#sidebar {
-		display: none;
+	.sidebar,
+	.sidebar-journal {
+		display: none!important;
 	}
 	#body .container {
 		margin-left: 0;
@@ -1417,3 +1419,63 @@ table tr:hover {
 }
 
 /* style journal */
+.style-journal {
+	background: #fafafa
+}
+.style-journal .container {
+	box-shadow: 0 0 1em rgba(0,0,0,.1);
+	background: #fff!important
+}
+.style-journal #footer {
+	padding-bottom: 0
+}
+.style-journal .post:first-child {
+	padding-top: 0
+}
+.style-journal .page-title-atpage {
+	margin-top: 0
+}
+
+.sidebar-journal {
+	position: fixed;
+	top: 2.8em;
+	left: 0;
+	bottom: 0;
+	text-align: right;
+	width: calc(50% - 400px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+}
+@media (max-width: 1200px) {
+	.sidebar-journal {
+		width: calc(50% - 200px)
+	}
+}
+.sidebar-journal .header-journal {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-right: 13px;
+	border-bottom: none;
+	border-right: 4px solid var(--theme-color);
+	background: rgba(0,0,0,.03)
+}
+.sidebar-journal .sidebar-foot {
+	margin-right: 20px
+}
+.sidebar-journal .sidebar-nav .widget-list li,
+.sidebar-journal .sidebar-nav .widget-list {
+	margin: 0
+}
+.sidebar-journal .sidebar-nav .widget-list {
+	margin-top: .3em
+}
+.sidebar-journal .sidebar-nav .widget-list li a {
+	display: block;
+	padding: .3em 20px;
+	font-size: 1.1em;
+	color: #222;
+}
+.sidebar-journal .sidebar-nav .widget-list li a:hover {
+	background: rgba(0,0,0,.03)
+}
