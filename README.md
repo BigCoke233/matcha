@@ -28,6 +28,8 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
     - 页面滚动更加平滑
     - 完全重写了评论区的样式
     - 完全重写了返回顶部按钮
+    - 替换 Highlight.js，使用更轻量级的 Prism.js
+    - 显示代码行数，增加一键复制功能
 - 文章可读性提高
     - 使用 Pangu.php 在中英文之间自动用空格分隔
     - 使用 bigfoot.js 优化文章脚注的显示

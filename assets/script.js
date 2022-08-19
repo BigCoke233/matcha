@@ -1,10 +1,6 @@
 /**
  * Functions
  */
-//toast notification
-var toast = function(m) {
-    
-}
 //bigfoot.js
 var bigfoodLoad = function(){
     var bigfoot = $.bigfoot(
@@ -28,7 +24,7 @@ var prismLoad = function(){
         onClick: function (env) {
             var text = env.element.innerText;
             navigator.clipboard.writeText(text);
-            toast('已将代码复制到剪切板');
+            Toaster.send('已将代码复制到剪切板');
         }
     });
 }
@@ -146,4 +142,6 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         pjaxCallback();
 		//加载条完成
         NProgress.done();
+
+        return Toaster;
     });

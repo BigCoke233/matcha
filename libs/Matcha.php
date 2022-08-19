@@ -23,7 +23,7 @@ class Matcha
      */
     public static function linkCSS() {
         //要引入的 css 文件名
-        $includes=array("normalize", "prism", "grid", "style", "bigfoot");
+        $includes=array("normalize", "prism", "grid", "toaster", "style", "bigfoot");
         foreach($includes as $value){
             echo '<link rel="stylesheet" href="';
             Utils::indexTheme('assets/'.$value.'.css');
@@ -61,7 +61,7 @@ class Matcha
      */
     public static function script() {
         //要引入的 js 文件名
-        $includes=array("jquery.min","jquery.pjax.min","smoothscroll","nprogress.min","prism","bigfoot","script");
+        $includes=array("jquery.min","jquery.pjax.min","smoothscroll","nprogress.min","prism","toaster","bigfoot","script");
         foreach($includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');
