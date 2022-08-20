@@ -1335,7 +1335,8 @@ table tr:hover {
 	position: fixed;
 	bottom: 1.5em;
 	right: 1em;
-	transition: .4s
+	transition: .4s;
+	z-index: 20220820
 }
 
 /* ScrollBar */
@@ -1437,10 +1438,17 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 }
 .style-journal .container {
 	box-shadow: 0 0 1em rgba(0,0,0,.1);
-	background: #fff!important
+	background: #fff!important;
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 8em!important
 }
 .style-journal #footer {
-	padding-bottom: 0
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	bottom: 1em
 }
 .style-journal .post:first-child {
 	padding-top: 0
