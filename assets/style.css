@@ -865,9 +865,14 @@ img.alignright {
 .page-title-atpage {
 	font-size: 2em
 }
+.page-title-atpage::before {
+	content: '「';
+}
+.page-title-atpage::after {
+	content: '」';
+}
 .page-title-atpage::before,
 .page-title-atpage::after {
-	content: '·';
 	color: var(--theme-color);
 	margin: 0 .3em;
 	font-weight: 800
