@@ -1388,49 +1388,41 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 
 /* links 友情链接 */
 
-.links-anchor {
-	color: #fff;
-}
-.links-anchor:hover {
-	opacity: 1
+.links-container .row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border: 1px solid var(--theme-color);
+	margin: 0;
+	box-sizing: border-box
 }
 
 .links-item {
-	position: relative;
-	border-radius: 3px;
-	overflow: hidden;
-	height: 100%;
-	width: 100%
-}
-
-.link-name {
-	margin: 0;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 1.8em;
-	line-height: 1.8em;
-	font-size: 1.1em;
-	background: rgba(0,0,0,.3);
+	border: 1px solid var(--theme-color);
+	display: inline-block;
+	font-size: 1.15em;
+	padding: .5em .8em;
+	flex-grow: 1;
+	flex-shrink: 1;
 	text-align: center;
-	font-weight: 400;
-	white-space: nowrap;
-
-	transform: translateY(2em);
-	transition: transform .3s
+	transition-property: background, color;
+	transition-duration: .3s;
+	font-weight: 600;
+	box-sizing: border-box
 }
 
-.links-anchor:hover .link-name {
-	transform: translateY(0)
+.links-item:nth-child(even),
+.links-item:nth-child(odd):hover {
+	color: var(--theme-color);
+	background: #fff;
+}
+.links-item:nth-child(even):hover,
+.links-item:nth-child(odd) {
+	background: var(--theme-color);
+	color: #fff;
 }
 
-.link-img {
-	object-fit: cover;
-	height: 100%;
-	width: 100%;
-	margin-bottom: -2px
-}
+
 
 /* other */
 .external-icon {

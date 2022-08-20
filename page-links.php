@@ -15,13 +15,7 @@ $this->need('includes/header.php');?>
         </div>
         <div class="links-container container-fluid">
           <div class="row">
-            <?php Links_Plugin::output('<div class="col-mb-4 col-tb-3 col-wd-2">
-            <a href="{url}" target="_blank" title="{title}" class="links-anchor" no-linkTarget>
-            <div class="links-item">
-                <img class="link-img" src="{image}" />
-                <h4 class="link-name">{name}</h4>
-            </div>
-            </a></div>'); ?>
+            <?php Links_Plugin::output('<a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>{name}</a>'); ?>
           </div>
         </div>
         <div class="post-content" itemprop="articleBody">
