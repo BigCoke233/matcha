@@ -38,6 +38,16 @@ var linkTarget = function() {
         }
     });
 }
+//links
+var linkFlow = function(){
+    if($('.links-container').length>0){
+        $('.links-container').masonry({
+            // options
+            itemSelector: '.links-item',
+            percentPosition: true
+        });
+    }
+}
 
 //Go to Top
 /**
@@ -133,6 +143,7 @@ var JSLoad = function(){
     bigfoodLoad();
     detailsAnimate();
     prismLoad();
+    linkFlow();
 }
 JSLoad();
 

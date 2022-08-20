@@ -14,9 +14,18 @@ $this->need('includes/header.php');?>
             <h1 class="post-title post-title-atpage page-title-atpage" itemprop="name headline"><?php $this->title() ?></h1>
         </div>
         <div class="links-container container-fluid">
-          <div class="row">
-            <?php Links_Plugin::output('<a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>{name}</a>'); ?>
-          </div>
+            <?php Links_Plugin::output('
+            <a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
+                <div class="links-content">
+                    <section class="links-avatar">
+                        <img src="{image}" class="links-img" />
+                    </section>
+                    <section class="links-profile">
+                        <h4 class="links-name">{name}</h4>
+                        <p class="links-description">{title}</p>
+                    </section>
+                </div>
+            </a>'); ?>
         </div>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>

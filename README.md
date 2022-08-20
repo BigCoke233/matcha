@@ -64,7 +64,8 @@ Enjoy~
 [nprogress](https://github.com/rstacruz/nprogress) | 
 [smoothscroll.js](https://www.smoothscroll.net/) | 
 [bigfoot.js](http://bigfootjs.com/) | 
-[toaster.js](https://github.com/bigcoke233/toaster.js)
+[toaster.js](https://github.com/bigcoke233/toaster.js) | 
+[Masonry](https://github.com/desandro/masonry)
 
 感谢以上开源项目的开发者！
 

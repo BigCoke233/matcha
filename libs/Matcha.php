@@ -61,7 +61,7 @@ class Matcha
      */
     public static function script() {
         //要引入的 js 文件名
-        $includes=array("jquery.min","jquery.pjax.min","smoothscroll","nprogress.min","prism","toaster","bigfoot","script");
+        $includes=array("jquery.min","jquery.pjax.min","masonry.pkgd.min","smoothscroll","nprogress.min","prism","toaster","bigfoot","script");
         foreach($includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');
