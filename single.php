@@ -18,6 +18,7 @@
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
+		<?php if($this->is('post')) $this->copyDog($this);?>
 
         <?php if ($this->is('post') && $this->tags): ?>
         <p itemprop="keywords" class="tags-list post-tags-list"><span class="tags-title iconfont">&#xe7ae;</span> <?php $this->tags(' ', true, ''); ?></p>

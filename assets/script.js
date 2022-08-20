@@ -48,6 +48,10 @@ var linkFlow = function(){
         });
     }
 }
+//适配 CopyDog 插件
+copydog_copied=function(){
+    Toaster.send('成功复制到剪切板');
+}
 
 //Go to Top
 /**
