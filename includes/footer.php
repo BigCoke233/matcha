@@ -1,6 +1,19 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <footer id="footer" role="contentinfo">
-	&copy; <?php _e($this->options->startYear) ?> - <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
+	&copy; <?php 
+		if($this->options->startDate==''){
+			echo date('Y');
+		}else{
+			$date=explode('-', $this->options->startDate);
+			if($date[0]==date('Y')){
+				echo date('Y');
+			}elseif($date[0]<date('Y')){
+				echo $date[0].' - '.date('Y');
+			}else{
+				echo '<span style="cursor:help" onclick="Toaster.send(\'博主把建站日期写错啦\');">偷偷告诉你，其实我是时空旅行者</span>';
+			}
+		}
+	 ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
 	<br />
 	<?php if ($this->options->icpNum):?>
 	<a rel="nofollow" href="http://beian.miit.gov.cn"> <?php $this->options->icpNum(); ?> </a>
