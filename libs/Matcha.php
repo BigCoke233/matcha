@@ -161,9 +161,18 @@ class Matcha
         if(date('Y-m-d', $created)==date('Y-m-d')){
             return '今天';
         }
-        elseif(date('Y-m', $created)==date('Y-m') && intval(date('d', $created))==intval(date('d')-1)){
-            return '昨天';
+        elseif(date('Y-m', $created)==date('Y-m')){
+            if(intval(date('d', $created))==intval(date('d')-1)){
+                return '昨天';
+            }
+            elseif(intval(date('d', $created))==intval(date('d')-2)){
+                return '前天';
+            }
+            elseif(intval(date('d', $created))<intval(date('d'))){
+                return strval(intval(date('d'))-intval(date('d', $created))).' 天前';
+            }
         }
+        
         elseif($Y==date('Y')) {
             return date('m-d', $created);
         }
