@@ -51,7 +51,6 @@ echo $commentClass;
 </div>
 <?php } 
 replyScript($this); ?>
-<span class="throbber-loader"></span>
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
     <?php if($this->allow('comment')): ?>

@@ -32,15 +32,11 @@
 <?php endif; ?>
 
 <script>siteurl='<?php Utils::indexHome(); ?>';
-pjaxCallback=function(){<?php $this->options->pjaxCallback(); ?>}</script>
+pjaxCallback=function(){<?php $this->options->pjaxCallback(); ?>};
+AjaxCommentEnabled='<?php $this->options->EnableAjaxComment(); ?>';</script>
 
-<?php
-//输出统计代码
-if ($this->options->hideStatCode == 'able' ): ?><div style="display:none"><?php endif; 
-if ($this->options->statCode) { $this->options->statCode(); }
-if ($this->options->hideStatCode == 'able'): ?></div><?php endif; 
-//其他
-Matcha::footer();
-$this->footer(); ?>
+<?php //输出统计代码、js 引用等
+if ($this->options->statCode) { $this->options->statCode(); } ?></div>
+<?php Matcha::footer(); $this->footer(); ?>
 </body>
 </html>

@@ -150,8 +150,10 @@ var JSLoad = function(){
     detailsAnimate();
     prismLoad();
     linkFlow();
-    matchaComment.bindButton();
-    matchaComment.core();
+    if(AjaxCommentEnabled=='able'){
+        matchaComment.bindButton();
+        matchaComment.core();
+    }
     CommentClosedBtn();
 }
 JSLoad();

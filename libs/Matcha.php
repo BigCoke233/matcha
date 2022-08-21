@@ -75,10 +75,10 @@ class Matcha
             "nprogress/nprogress.min",
             "prism/prism",
             "toaster/toaster",
-            "bigfoot/bigfoot",
-            "matcha.comment", 
-            "matcha"
+            "bigfoot/bigfoot"
         );
+        if(Helper::options()->EnableAjaxComment=='able') array_push($includes, 'matcha.comment');
+        array_push($includes, 'matcha'); //主题核心文件在最后引入
         foreach($includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');

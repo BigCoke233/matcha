@@ -51,22 +51,21 @@ function themeConfig($form) {
         <hr class="line"></hr>
         '));
     $form->addInput($statCode);
-    $hideStatCode = new Typecho_Widget_Helper_Form_Element_Radio('hideStatCode', array(
-            'able' => _t('隐藏'),
-            'disable' => _t('显示'),
-        ),
-        'able',
-        _t('是否隐藏统计标志'),
-        _t('
-            <p class="description">是否将统计标志用 CSS 的 display 函数隐藏起来（常用于隐藏 CNZZ 等统计站点显示的标志，防止影响美观），<b>默认隐藏</b></p>
-            <p class="description"><b>现阶段暂没有对显示内容的统计标志做特别优化，因而会出现显示错乱的问题，建议隐藏。</b></p>
-        ')
-    );
-    $form->addInput($hideStatCode->addRule('required', _t('此处必须设置')));
 
     /**
-     * 附加功能
+     * 附加功能 & 实验性功能
      */
+    $EnableAjaxComment = new Typecho_Widget_Helper_Form_Element_Radio('EnableAjaxComment', array(
+            'able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('是否启用 Ajax 评论无刷新功能（Beta）'),
+        _t('
+            启用后将使用 Ajax 异步提交评论，提交评论后页面不会刷新。这个功能目前还在测试中。
+        ')
+    );
+    $form->addInput($EnableAjaxComment->addRule('required', _t('此处必须设置')));
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
             'disable' => _t('停用'),
