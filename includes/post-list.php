@@ -9,7 +9,7 @@
 	<!-- 文章列表 -->
 	<?php while($this->next()): ?>
 		<article class="post post-atmain" itemscope itemtype="http://schema.org/BlogPosting">
-			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a></h2>
 			<ul class="post-meta">
 				<li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
 				<li><?php $this->category(','); ?></li>
