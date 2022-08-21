@@ -76,6 +76,7 @@ class Matcha
             "prism/prism",
             "toaster/toaster",
             "bigfoot/bigfoot",
+            "matcha.comment", 
             "matcha"
         );
         foreach($includes as $value){

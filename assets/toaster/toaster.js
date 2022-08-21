@@ -35,6 +35,10 @@
         }, 2000);
     };
 
+    Toaster.error = function(m) {
+        Toaster.send(m, 'rgb(244,66,54)');
+    }
+
     Toaster.dismiss = function(toast) {
         $(toast).removeClass('toasting').addClass('toast-dismissed');
         setTimeout(function(){

@@ -24,8 +24,8 @@ echo $commentClass;
       <div class="comment-avatar">
         <?php $comments->gravatar('40', ''); ?>
         <span class="comment-reply">
-		  <?php $comments->reply('回复'); ?>
-		</span>
+		      <?php $comments->reply('回复'); ?>
+		    </span>
       </div>
 	  <div class="comment-main comment-author-info">
 		<div class="comment-content">
@@ -49,14 +49,14 @@ echo $commentClass;
         </div>
       <?php } ?>
 </div>
-<?php } ?>
-
+<?php } 
+replyScript($this); ?>
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
     <?php if($this->allow('comment')): ?>
     <div id="<?php $this->respondId(); ?>" class="respond">
+        <script>login=false;</script>
         <h2 class="comments-form-title">添加新评论<span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span></h2>
-    
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
               <div class="submit-text submit-section">
                 <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="留下你的智慧 ~" required ><?php $this->remember('text'); ?></textarea>
@@ -71,12 +71,13 @@ echo $commentClass;
                     <?php _e('退出'); ?></a>
                   </div>
                 </div>
+                <script>login=true;</script>
                 <?php else: ?>
                 <input class="input-username" type="text" name="author" id="author" class="text" placeholder="用户名" value="<?php $this->remember('author'); ?>" required />
                 <input class="input-email" type="email" name="mail" id="mail" class="text" placeholder="邮箱" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
                 <input class="input-url" type="url" name="url" id="url" class="text" placeholder="网址 (选填) " value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
                 <?php endif; ?>
-                <button type="submit" class="submit"><?php _e('提交评论'); ?></button>
+                <button class="submit" id="comment-submit"><?php _e('提交评论'); ?></button>
               </div>
               <div class="submit-extra">
                 <div class="owo"></div>
@@ -87,6 +88,7 @@ echo $commentClass;
                 </div>
                 <?php endif; ?>
             </div>
+            <?php if($this->options->commentsAntiSpam) Miracle_Comments_Archive::AntiSpam($this); ?>
         </form>
     </div>
     <?php else: 

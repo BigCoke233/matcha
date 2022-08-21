@@ -150,12 +150,14 @@ var JSLoad = function(){
     detailsAnimate();
     prismLoad();
     linkFlow();
+    matchaComment.bindButton();
+    matchaComment.core();
     CommentClosedBtn();
 }
 JSLoad();
 
 //Load Pjax
-$(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax], #cancel-comment-reply-link, #comment-form a)', {
+$(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax], .cancel-comment-reply a, .comment-reply a, .comment-form a)', {
         container: '#main',
         fragment: '#main',
         timeout: 8000
