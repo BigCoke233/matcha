@@ -88,7 +88,6 @@ replyScript($this); ?>
                 </div>
                 <?php endif; ?>
             </div>
-            <?php if($this->options->commentsAntiSpam) Miracle_Comments_Archive::AntiSpam($this); ?>
         </form>
     </div>
     <?php else: 
