@@ -54,6 +54,15 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 
 Enjoy~
 
+## 拓展
+
+这些插件可以拓展主题的功能，并且主题已经适配了它们，可以放心使用
+
+- [Links](http://www.imhan.com/archives/typecho_links_20141214/)：友情链接插件，如果要使用友情链接功能就必须安装这个插件
+- [Sticky](https://github.com/jazzi/sticky-for-typecho)：文章置顶插件，如果想要置顶一篇或多篇文章就可以使用这个插件
+- [BracketDown](https://github.com/BigCoke233/typecho-plugin-BracketDown)：语法拓展插件，如果想要在文章里使用短代码就需要安装这个插件
+- [CopyDog](https://github.com/BigCoke233/typecho-plugin-CopyDog)：版权狗插件，可以在文章末尾生成一个显示版权信息的卡片
+
 ## 引用
 
 [jQuery](https://jquery.com/) | 
