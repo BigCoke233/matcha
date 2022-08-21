@@ -2,25 +2,26 @@
  * 前端实现异步提交评论
  */
 
-var replyTo;
+var replyTo='';
 var matchaComment = {};
 
 matchaComment.bindButton = function() {
     $(".comment-reply a").click(function () {
             replyTo = $(this).parent().parent().parent().parent().attr("id");
-            console.log(replyTo);
         });
     $(".cancel-comment-reply a").click(function () { replyTo = ''; });
 }
 
 matchaComment.before = function(){
     //禁用评论表单
+    $('#comment-form .submit').html('提交评论<span class="throbber-loader"></span>');
     $("#comment-form input,#comment-form textarea,#comment-form .submit").attr('disabled', true).css('cursor', 'not-allowed');
     $('#comment-form').animate({ opacity: .5 }, 300);
 }
  
 matchaComment.after = function(ok){
     //先取消对表单的禁用
+    $('#comment-form .submit').html('提交评论');
     $("#comment-form input,#comment-form textarea,#comment-form .submit").attr('disabled', false).css('cursor', 'pointer');
     $('#comment-form').animate({ opacity: 1 }, 300);
     if(ok){
@@ -48,7 +49,7 @@ matchaComment.core = function() {
             }
         }
         //如果是回复
-        if(replyTo!=''){
+        if(replyTo!==''){
             commentData['parent']=replyTo.replace('comment-','');
         }
         //如果开启了评论邮件提醒插件
@@ -127,7 +128,7 @@ matchaComment.core = function() {
                 }
                 matchaComment.after(true);
                 Toaster.send('评论发送成功');
-                //淡入动画
+                matchaComment.bindButton();
             }
         });
     });
