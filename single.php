@@ -7,7 +7,7 @@
             <h1 class="post-title post-title-atpage<?php if($this->is('page')): ?> page-title-atpage<?php endif; ?>" itemprop="name headline"><?php $this->title() ?></h1>
             <?php if($this->is('post')): ?>
             <ul class="post-meta post-meta-atpage">
-                <li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
+                <li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
                 <li><?php $this->category(','); ?></li>
                 <?php if($this->user->hasLogin()):?>
                 <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" no-pjax>编辑</a></li>

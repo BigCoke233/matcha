@@ -172,7 +172,6 @@ class Matcha
                 return strval(intval(date('d'))-intval(date('d', $created))).' 天前';
             }
         }
-        
         elseif($Y==date('Y')) {
             return date('m-d', $created);
         }
