@@ -822,37 +822,20 @@ img.alignright {
 }
 .post-title > a {
 	font-weight: 400;
-	color: #444 !important;
+	color: #444;
 }
 .post-atmain,
 .post-atmain .post-title {
 	transition: 0.25s;
-}
-
-.more {
-	font-size: 80%;
-	margin: auto;
-	display: block;
-	width: 120px;
-	letter-spacing: 2px;
-	border: 1px solid #0000;
-}
-.more:hover {
-	border: 1px solid var(--theme-color);
-	/* text-decoration: underline;	 */
-}
-.more a { 
-	color: #999 !important;
-}
-.more:hover a {
-	color: var(--theme-color) !important;
-	text-decoration: none;	
 }
 /* index - 文章聚合 */
 
 /* 文章 */
 .post-title {
 	font-size: 20px;
+}
+.post-title:not(.post-title-atpage):hover>a {
+	color: var(--theme-color)
 }
 .post-meta {
 	margin-top: 0px !important;
