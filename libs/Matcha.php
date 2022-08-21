@@ -23,7 +23,13 @@ class Matcha
      */
     public static function linkCSS() {
         //要引入的 css 文件名
-        $includes=array("normalize", "prism", "grid", "toaster", "style", "bigfoot");
+        $includes=array(
+            "normalize", 
+            "prism/prism", 
+            "grid", 
+            "toaster/toaster", 
+            "matcha", 
+            "bigfoot/bigfoot");
         foreach($includes as $value){
             echo '<link rel="stylesheet" href="';
             Utils::indexTheme('assets/'.$value.'.css');
@@ -37,11 +43,11 @@ class Matcha
      */
     public static function iconfont() {
         echo "<style>@font-face {font-family: 'iconfont';src: url('";
-        Utils::indexTheme('assets/iconfont.woff2');
+        Utils::indexTheme('assets/iconfont/iconfont.woff2');
         echo "') format('woff2'),url('";
-        Utils::indexTheme('assets/iconfont.woff'); 
+        Utils::indexTheme('assets/iconfont/iconfont.woff'); 
         echo "') format('woff'),url('";
-        Utils::indexTheme('assets/iconfont.ttf');
+        Utils::indexTheme('assets/iconfont/iconfont.ttf');
         echo "') format('truetype');}</style>";
     }
 
@@ -61,7 +67,17 @@ class Matcha
      */
     public static function script() {
         //要引入的 js 文件名
-        $includes=array("jquery.min","jquery.pjax.min","masonry.pkgd.min","smoothscroll","nprogress.min","prism","toaster","bigfoot","script");
+        $includes=array(
+            "jquery/jquery.min",
+            "jquery/jquery.pjax.min",
+            "masonry/masonry.pkgd.min",
+            "smoothscroll/smoothscroll",
+            "nprogress/nprogress.min",
+            "prism/prism",
+            "toaster/toaster",
+            "bigfoot/bigfoot",
+            "matcha"
+        );
         foreach($includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');
