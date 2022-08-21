@@ -312,6 +312,20 @@ h3.comment-closed.fade {
 	border-top: 1px solid #EEE;
 }
 
+.fadeIn {
+	animation: fadeIn .3s
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateX(3em)
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
 #secondary {
 	padding-top: 15px;
 	word-wrap: break-word;

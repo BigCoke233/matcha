@@ -2,12 +2,13 @@
  * 前端实现异步提交评论
  */
 
-replyTo = '';
+var replyTo;
 var matchaComment = {};
 
 matchaComment.bindButton = function() {
     $(".comment-reply a").click(function () {
             replyTo = $(this).parent().parent().parent().parent().attr("id");
+            console.log(replyTo);
         });
     $(".cancel-comment-reply a").click(function () { replyTo = ''; });
 }
@@ -94,18 +95,18 @@ matchaComment.core = function() {
                 var newComment; 
                 if(''===replyTo) {
                     if(!$('.comment-list').length) {
-                        $('.respond').after($(htmlData)[0].querySelector('.comment-list'));
+                        $('.respond').after($(htmlData)[0].querySelector('.comment-list').addClass('fadeIn'));
                     }
                     else if($('.prev').length) {
                         $('.comments-pagenav li a').eq(1).click();
                     }else{
-                        newComment  = $("#comment-" + newCommentId, data);
+                        newComment  = $("#comment-" + newCommentId, data).addClass('fadeIn');
                         //然后将新评论压入评论列表
                         $('.comment-list').first().prepend(newComment);
                     }
                 }
                 else {
-                    newComment = $("#comment-" + newCommentId, data);
+                    newComment = $("#comment-" + newCommentId, data).addClass('fadeIn');
                     if($('#' + replyTo).hasClass('comment-parent')){
                         //如果回复的对象是父级评论
                         if ($('#' + replyTo).find('.comment-children').length) {
@@ -126,6 +127,7 @@ matchaComment.core = function() {
                 }
                 matchaComment.after(true);
                 Toaster.send('评论发送成功');
+                //淡入动画
             }
         });
     });
