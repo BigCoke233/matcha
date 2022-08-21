@@ -36,25 +36,10 @@ while ($archives->next()):
 	'; //输出文章日期和标题
 endwhile;
 ?>
-<script type="text/javascript">
-        function button_search(){
-            var G=document.getElementById('input_search').value;
-            G="http://"+window.location.host+"/index.php/search/"+G+"/";
-            window.location.href=G;
-        }
-        function key_search(e){
-          var evt = window.event || e;
-          if (evt.keyCode == 13){
-            var G=document.getElementById('input_search').value;
-            G="http://"+window.location.host+"/index.php/search/"+G+"/";
-            window.location.href=G;
-          }
-        }
-    </script>
 <div class="col-12" id="main" role="main">
 	<div id="search">
-	  <input type="text" placeholder="搜索博客文章" name="" id="input_search" value="" onkeydown="key_search(event);"/>
-       <button onclick="button_search()"><span class="iconfont">&#xe82e;</span></button>
+	  	<input type="text" placeholder="搜索博客文章" name="" id="input_search" value="" />
+        <a id="search-button"><span class="iconfont">&#xe82e;</span></a>
 	</div>
 	<div id="tag">
 	  <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags); 	

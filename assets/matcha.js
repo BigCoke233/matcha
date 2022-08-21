@@ -59,6 +59,31 @@ var linkFlow = function(){
         });
     }
 }
+//搜索功能
+var searchInit = function(){
+    $('#input_search').on("input propertychange", function(){
+        $('#search-button').attr('href','http://'+window.location.host+'/index.php/search/'+$('#input_search').val()+'/')
+    });
+    $('#search-button').click(function(){
+        if($('#search-button').attr('href')==null){
+            Toaster.error('请输入关键词');
+        }
+    });
+    //当浏览器返回时，以上代码会失效，这里自动刷新一下页面
+    if($('#input_search').length){
+        $(document).ready(function () {
+            if (window.history && window.history.pushState) {
+                $(window).on('popstate', function () {
+                    if($('#input_search').length){
+                        $('#input_search').val('');
+                        $('body').append('<a href="'+ window.location.href +'" id="pjax-refresh" style="display:none"> </a>');
+                        $('#pjax-refresh').click()
+                    }
+                });
+            }
+        });
+    }
+}
 //适配 CopyDog 插件
 copydog_copied=function(){
     Toaster.send('成功复制到剪切板');
@@ -162,6 +187,7 @@ var JSLoad = function(){
     prismLoad();
     linkFlow();
     lazyloader();
+    searchInit();
     if(AjaxCommentEnabled=='able'){
         matchaComment.bindButton();
         matchaComment.core();
