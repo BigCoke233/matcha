@@ -9,7 +9,7 @@ var bigfoodLoad = function(){
             activeOnHover: true
         }
     );
-}
+};
 //prismJS
 var prismLoad = function(){
     if (typeof Prism !== 'undefined') {
@@ -27,7 +27,18 @@ var prismLoad = function(){
             Toaster.send('已将代码复制到剪切板');
         }
     });
-}
+};
+//jquery.lazy.js loader
+lazyloader = function(){
+    $('.lazy').Lazy({
+        effect: 'fadeIn',
+        visibleOnly: true,
+        effectTime: 300,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        }
+    });
+};
 //auto set archor link target
 var linkTarget = function() {
     host_url=window.location.protocol+'//'+window.location.host;
@@ -150,6 +161,7 @@ var JSLoad = function(){
     detailsAnimate();
     prismLoad();
     linkFlow();
+    lazyloader();
     if(AjaxCommentEnabled=='able'){
         matchaComment.bindButton();
         matchaComment.core();

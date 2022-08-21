@@ -70,6 +70,7 @@ class Matcha
         $includes=array(
             "jquery/jquery.min",
             "jquery/jquery.pjax.min",
+            "jquery/jquery.lazy.min",
             "masonry/masonry.pkgd.min",
             "smoothscroll/smoothscroll",
             "nprogress/nprogress.min",
@@ -172,13 +173,24 @@ class Matcha
     }
 
     /**
+     * LazyLoad
+     */
+    static public function lazyLoad($text){
+        $text = preg_replace(
+			'/\<img(.*?)src(.*?)alt=\"(.*?)\"(.*?)\>/s',
+			'<figure><img${1}data-src${2}class="lazy"${4}><figcaption>${3}</figcaption></figure>',
+		$text);
+        return $text;
+    }
+
+    /**
      * 解析文章内容
      */
     static public function parseContent($data, $widget, $last)
     {
         $text = empty($last) ? $data : $last;
         if ($widget instanceof Widget_Archive) {
-			$text = pangu($text);
+			$text = Matcha::lazyLoad(pangu($text));
         }
         return $text;
     }

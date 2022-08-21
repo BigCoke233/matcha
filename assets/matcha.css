@@ -92,6 +92,23 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
 }
 
+
+figure {
+	margin: 0
+}
+
+figcaption {
+	font-size: .9em;
+	color: rgba(0,0,0,.5);
+	text-align: center;
+	display: block;
+	line-height: 2
+}
+
+img[src=""], img:not([src]) {
+	display: none
+}
+
 .browsehappy {
 	padding: 8px 0;
 	background: #FBE3E4;
@@ -372,6 +389,7 @@ h3.comment-closed.fade {
 
 .post-content img,.comment-content img,.post-content video,.comment-content video {
 	max-width: 100%;
+	border-radius: 3px
 }
 
 .post-content a img,.comment-content a img {
@@ -1138,13 +1156,6 @@ div.archive-model {
 	margin-bottom: .5em
 }
 /* archive page - 归档页面 */
-
-/* images - 插图 / 图片 */
-.post-content img {
-	display: block;
-	margin: auto;
-}
-/* images - 插图 / 图片 */
 
 .sidebar-foot {
 	color: #888;

@@ -18,7 +18,7 @@ $this->need('includes/header.php');?>
             <a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
                 <div class="links-content">
                     <section class="links-avatar">
-                        <img src="{image}" class="links-img" />
+                        <img data-src="{image}" class="links-img lazy" />
                     </section>
                     <section class="links-profile">
                         <h4 class="links-name">{name}</h4>

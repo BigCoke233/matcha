@@ -57,6 +57,7 @@ Enjoy~
 ## 引用
 
 [jQuery](https://jquery.com/) | 
+[jQuery Lazy](http://jquery.eisbehr.de/lazy/) |
 [Pjax](https://github.com/defunkt/jquery-pjax) | 
 [Pangu.php](https://github.com/cchlorine/pangu.php) | 
 [Prism.js](https://prismjs.com/) | 
