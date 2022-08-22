@@ -14,7 +14,7 @@ matchaComment.bindButton = function() {
 
 matchaComment.before = function(){
     //禁用评论表单
-    $('#comment-form .submit').html('提交评论<span class="throbber-loader"></span>');
+    $('#comment-form .submit').html('<span class="throbber-loader"></span>');
     $("#comment-form input,#comment-form textarea,#comment-form .submit").attr('disabled', true).css('cursor', 'not-allowed');
     $('#comment-form').animate({ opacity: .5 }, 300);
 }
@@ -34,6 +34,16 @@ matchaComment.after = function(ok){
 
 matchaComment.core = function() {
     $('#comment-submit').click(function(e) {
+        //判断信息是否完整
+        if(!$('#comment-form [name="text"]').val().length>0) {
+            Toaster.error('请填写评论内容');
+            return false;
+        }
+        if(!$('#comment-form [name="author"]').val().length>0 || !$('#comment-form [name="mail"]').val().length>0) {
+            Toaster.error('用户名和邮箱不能为空');
+            return false;
+        }
+        //发送 POST 之前的操作
         matchaComment.before();
         //POST 基本信息
         if(login){
@@ -61,8 +71,13 @@ matchaComment.core = function() {
             type: 'POST',
             url: $('#comment-form').attr('action'),
             data: commentData,
-            error: function(e) {
-                Toaster.error('评论发送失败，请尝试刷新');
+            error: function(jqXHR, textStatus, error) {
+                if(error=='Forbidden') {
+                    Toaster.error('评论发送过于频繁，请稍后再试');
+                }else{
+                    Toaster.error('评论发送失败，请尝试刷新');
+                }
+                matchaComment.after(false);
             },
             success: function(data) {
                 //通过传过来的 data 是否包含评论区 html 判断是否成功
