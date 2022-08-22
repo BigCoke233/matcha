@@ -92,7 +92,6 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 [Pangu.php](https://github.com/cchlorine/pangu.php) | 
 [Prism.js](https://prismjs.com/) | 
 [Bootstrap Grid](https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-grid.css) | 
-[nprogress](https://github.com/rstacruz/nprogress) | 
 [smoothscroll.js](https://www.smoothscroll.net/) | 
 [bigfoot.js](http://bigfootjs.com/) | 
 [toaster.js](https://github.com/bigcoke233/toaster.js) | 

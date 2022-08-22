@@ -1238,81 +1238,6 @@ table tr:nth-child(even) {
 
 /* table - 表格 */
 
-/* nprogress */
-/* Make clicks pass-through */
-#nprogress {
-  pointer-events: none;
-}
-
-#nprogress .bar {
-  background: var(--theme-color);
-
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 2px;
-}
-
-/* Fancy blur effect */
-#nprogress .peg {
-  display: block;
-  position: absolute;
-  right: 0px;
-  width: 100px;
-  height: 100%;
-  opacity: 1.0;
-
-  -webkit-transform: rotate(3deg) translate(0px, -4px);
-      -ms-transform: rotate(3deg) translate(0px, -4px);
-          transform: rotate(3deg) translate(0px, -4px);
-}
-
-/* Remove these to get rid of the spinner */
-#nprogress .spinner {
-  display: block;
-  position: fixed;
-  z-index: 1031;
-  top: 15px;
-  right: 15px;
-}
-
-#nprogress .spinner-icon {
-  width: 18px;
-  height: 18px;
-  box-sizing: border-box;
-
-  border: solid 2px transparent;
-  border-top-color: var(--theme-color);
-  border-left-color: var(--theme-color);
-  border-radius: 50%;
-
-  -webkit-animation: nprogress-spinner 400ms linear infinite;
-          animation: nprogress-spinner 400ms linear infinite;
-}
-
-.nprogress-custom-parent {
-  overflow: hidden;
-  position: relative;
-}
-
-.nprogress-custom-parent #nprogress .spinner,
-.nprogress-custom-parent #nprogress .bar {
-  position: absolute;
-}
-
-@-webkit-keyframes nprogress-spinner {
-  0%   { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-@keyframes nprogress-spinner {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-/* nprogress end */
-
 .tags-list {
 	margin: 0!important;
 	padding: 0!important;
@@ -1533,73 +1458,6 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	color: #ccc
 }
 
-.throbber-loader:not(:required) {
-	-moz-animation: throbber-loader 1000ms 300ms infinite ease-out;
-	-webkit-animation: throbber-loader 1000ms 300ms infinite ease-out;
-	animation: throbber-loader 1000ms 300ms infinite ease-out;
-	background: #E6E6AD;
-	display: inline-block;
-	position: relative;
-	text-indent: -9999px;
-	width: 0.9em;
-	height: 1.5em;
-	margin: 0 1.6em;
-}
-.throbber-loader:not(:required):before, .throbber-loader:not(:required):after {
-	background: #E6E6AD;
-	content: '\x200B';
-	display: inline-block;
-	width: 0.9em;
-	height: 1.5em;
-	position: absolute;
-	top: 0;
-}
-.throbber-loader:not(:required):before {
-	-moz-animation: throbber-loader 1000ms 150ms infinite ease-out;
-	-webkit-animation: throbber-loader 1000ms 150ms infinite ease-out;
-	animation: throbber-loader 1000ms 150ms infinite ease-out;
-	left: -1.6em;
-}
-.throbber-loader:not(:required):after {
-	-moz-animation: throbber-loader 1000ms 450ms infinite ease-out;
-	-webkit-animation: throbber-loader 1000ms 450ms infinite ease-out;
-	animation: throbber-loader 1000ms 450ms infinite ease-out;
-	right: -1.6em;
-  }
-@-moz-keyframes throbber-loader {
-	0% {
-	  background: #E6E6AD;
-	}
-	10% {
-	  background: var(--theme-color);
-	}
-	40% {
-	  background: #E6E6AD;
-	}
-}
-@-webkit-keyframes throbber-loader {
-	0% {
-		background: #E6E6AD;
-	}
-	10% {
-		background: var(--theme-color);
-	}
-	40% {
-		background: #E6E6AD;
-	}
-}
-@keyframes throbber-loader {
-	0% {
-		background: #E6E6AD;
-	}
-	10% {
-		background: var(--theme-color);
-	}
-	40% {
-		background: #E6E6AD;
-	}
-}
-
 /* style journal */
 .style-journal {
 	background: #fafafa
@@ -1669,8 +1527,106 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	background: rgba(0,0,0,.03)
 }
 
-/* fade in/out */
+/* animation */
 .fadeout {
-	transition: .5s;
+	transition: .7s;
 	opacity: 0
+}
+
+.spinner {
+	/* from nprogress, edited */
+	display: block;
+	position: fixed;
+	z-index: 1031;
+	top: 8px;
+	right: 8px;
+}
+.spinner-icon {
+	width: 22px;
+	height: 22px;
+	box-sizing: border-box;
+  
+	border: solid 4px transparent;
+	border-top-color: var(--theme-color);
+	border-left-color: var(--theme-color);
+	border-radius: 50%;
+  
+	-webkit-animation: nprogress-spinner 400ms linear infinite;
+			animation: nprogress-spinner 400ms linear infinite;
+}
+  
+@-webkit-keyframes nprogress-spinner {
+	0%   { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+	0%   { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.throbber-loader:not(:required) {
+	-moz-animation: throbber-loader 1000ms 300ms infinite ease-out;
+	-webkit-animation: throbber-loader 1000ms 300ms infinite ease-out;
+	animation: throbber-loader 1000ms 300ms infinite ease-out;
+	background: #E6E6AD;
+	display: inline-block;
+	position: relative;
+	text-indent: -9999px;
+	width: 0.9em;
+	height: 1.5em;
+	margin: 0 1.6em;
+}
+.throbber-loader:not(:required):before, .throbber-loader:not(:required):after {
+	background: #E6E6AD;
+	content: '\x200B';
+	display: inline-block;
+	width: 0.9em;
+	height: 1.5em;
+	position: absolute;
+	top: 0;
+}
+.throbber-loader:not(:required):before {
+	-moz-animation: throbber-loader 1000ms 150ms infinite ease-out;
+	-webkit-animation: throbber-loader 1000ms 150ms infinite ease-out;
+	animation: throbber-loader 1000ms 150ms infinite ease-out;
+	left: -1.6em;
+}
+.throbber-loader:not(:required):after {
+	-moz-animation: throbber-loader 1000ms 450ms infinite ease-out;
+	-webkit-animation: throbber-loader 1000ms 450ms infinite ease-out;
+	animation: throbber-loader 1000ms 450ms infinite ease-out;
+	right: -1.6em;
+  }
+@-moz-keyframes throbber-loader {
+	0% {
+	  background: #E6E6AD;
+	}
+	10% {
+	  background: var(--theme-color);
+	}
+	40% {
+	  background: #E6E6AD;
+	}
+}
+@-webkit-keyframes throbber-loader {
+	0% {
+		background: #E6E6AD;
+	}
+	10% {
+		background: var(--theme-color);
+	}
+	40% {
+		background: #E6E6AD;
+	}
+}
+@keyframes throbber-loader {
+	0% {
+		background: #E6E6AD;
+	}
+	10% {
+		background: var(--theme-color);
+	}
+	40% {
+		background: #E6E6AD;
+	}
 }

@@ -73,7 +73,6 @@ class Matcha
             "jquery/jquery.lazy.min",
             "masonry/masonry.pkgd.min",
             "smoothscroll/smoothscroll",
-            "nprogress/nprogress.min",
             "prism/prism",
             "toaster/toaster",
             "bigfoot/bigfoot"
