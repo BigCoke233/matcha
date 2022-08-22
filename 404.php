@@ -1,16 +1,12 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('includes/header.php'); ?>
-
-    <div class="col-mb-12 col-tb-8 col-tb-offset-2">
-
-        <div class="error-page">
-            <h2 class="post-title">404 - <?php _e('页面没找到'); ?></h2>
-            <p><?php _e('你想查看的页面已被转移或删除了, 要不要搜索看看: '); ?></p>
-            <form method="post">
-                <p><input type="text" name="s" class="text" autofocus /></p>
-                <p><button type="submit" class="submit"><?php _e('搜索'); ?></button></p>
-            </form>
+    <div class="error-page">
+        <object width="200" height="200" class="error-img" data="<?php Utils::indexTheme('assets/404.svg'); ?>" type="image/svg+xml"></object>
+        <div class="error-info">
+            <h1 class="error-404"><?php _e('404'); ?></h1>
+            <h2 class="error-title"><?php _e('页面... 我页面呢？'); ?></h2>
+            <p>我那么大一个页面怎么不见了？</p>
+            <a href="<?php Utils::indexHome() ?>">返回首页</a>
         </div>
-
-    </div><!-- end #content-->
-	<?php $this->need('includes/footer.php'); ?>
+    </div>
+<?php $this->need('includes/footer.php'); ?>

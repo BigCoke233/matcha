@@ -94,10 +94,7 @@ var searchInit = function(){
     }
 }
 //适配 CopyDog 插件
-copydog_copied=function(){
-    Toaster.send('成功复制到剪切板');
-}
-
+copydog_copied=function(){Toaster.send('成功复制到剪切板');}
 //Go to Top
 /**
  @description 页面垂直平滑滚动到指定滚动高度
@@ -109,13 +106,9 @@ var scrollSmoothTo = function (position) {
             return setTimeout(callback, 17);
         };
     }
-    // 当前滚动高度
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    // 滚动step方法
     var step = function () {
-        // 距离目标滚动距离
         var distance = position - scrollTop;
-        // 目标滚动位置
         scrollTop = scrollTop + distance / 5;
         if (Math.abs(distance) < 1) {
             window.scrollTo(0, position);

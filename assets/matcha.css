@@ -357,8 +357,48 @@ h3.comment-closed.fade {
 }
 
 .error-page {
-	margin-top: 100px;
-	margin-bottom: 100px;
+	display: flex;
+	flex-direction: row;
+	max-height: 100vh;
+	clear: both;
+	max-width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 7em;
+	left: 0;
+	right: 0;
+}
+.error-page .error-img {
+	width: 15em;
+	height: 15em;
+	margin-right: 1em;
+	opacity: .75
+}
+.error-page .error-info {
+	overflow: hidden
+}
+.error-page .error-info .error-title {
+	font-weight: 500;
+	margin: .5em 0;
+	margin-top:0
+}
+.error-page .error-info .error-404 {
+	color: var(--theme-color);
+	font-size: 6em;
+	margin: 0;
+}
+@media (max-width:800px) {
+	.error-page {
+		display: block;
+		text-align: center;
+		position: static
+	}
+	.error-page .error-img {
+		display: block;
+		margin: 0 auto
+	}
 }
 
 .post-content,.comment-content {
