@@ -199,7 +199,7 @@ var JSLoad = function(){
 JSLoad();
 
 //Load Pjax
-$(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax], .cancel-comment-reply a, .comment-reply a, #comment-form a)', {
+$(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax], .cancel-comment-reply a, .comment-reply a)', {
         container: '#main',
         fragment: '#main',
         timeout: 8000
