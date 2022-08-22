@@ -67,7 +67,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 
 1. 直接 `clone` 或者下载仓库 `main` 分支
 2. 将文件夹重命名为 `matcha`
-3. 将主题文件夹放入主题安装目录 `/ust/themes/`
+3. 将主题文件夹放入主题安装目录 `/usr/themes/`
 4. 登入后台进行简单的配置
 
 如果在使用过程中遇到任何问题，请先查看 [FAQ](doc.md)，若没能解决，再询问作者。<br>
