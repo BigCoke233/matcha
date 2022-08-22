@@ -699,6 +699,7 @@ img.alignright {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	margin-bottom: .5em
 }
 #comment-form .textarea, 
 #comment-form input:not(.submit-extra input) {
