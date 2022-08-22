@@ -35,14 +35,16 @@ matchaComment.after = function(ok){
 matchaComment.core = function() {
     $('#comment-submit').click(function(e) {
         //判断信息是否完整
-        if(!$('#comment-form [name="text"]').val().length>0) {
+        if($('#comment-form [name="text"]').length && !$('#comment-form [name="text"]').val().length>0) {
             Toaster.error('请填写评论内容');
             return false;
         }
-        if(!$('#comment-form [name="author"]').val().length>0 || !$('#comment-form [name="mail"]').val().length>0) {
+        
+        if($('#comment-form [name="author"]').length && (!$('#comment-form [name="author"]').val().length>0 || !$('#comment-form [name="mail"]').val().length>0)) {
             Toaster.error('用户名和邮箱不能为空');
             return false;
         }
+
         //发送 POST 之前的操作
         matchaComment.before();
         //POST 基本信息
