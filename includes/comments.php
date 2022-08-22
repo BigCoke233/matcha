@@ -67,8 +67,7 @@ replyScript($this); ?>
                   <?php $this->author->gravatar(32); ?>
                   <div class="comments-profile-author">
                     <a class="comments-profile-name" href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a><br>
-                    <a class="comments-logout" href="<?php $this->options->logoutUrl(); ?>" title="Logout">
-                    <?php _e('退出'); ?></a>
+                    <a class="comments-logout" href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?></a>
                   </div>
                 </div>
                 <script>login=true;</script>
