@@ -13,7 +13,19 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 
 ## 特色
 
-相较于 Ringo 和 Journal，Matcha 做了以下修改
+- **响应式设计**，在常见的屏幕尺寸下表现良好
+- **全站无刷新**，应用了 Pjax 和 Ajax，切换页面和发表评论时更流畅
+- **有两种样式可供选择**，一种更加简洁，另一种则更大气
+- **平滑滚动**，翻阅页面时滚动更加自然
+- **图片懒加载**，延迟加载图片，提升页面速度
+- **带行号的代码高亮**，采用轻量级的 Prism.js
+- **更好的字体**，借助 Google Font，采用思源系列字体
+- **访客统计**，即插即用的统计功能
+- **增强可读性**，精心设计的文字排版
+- More to find
+
+<details>
+<summary>相较于 Ringo 所做的修改</summary>
 
 - 整体设计上的改动
     - 主题的强调色从原来的棕褐色改为抹茶色
@@ -21,7 +33,6 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
     - 去除了页面中部分元素突兀的阴影
     - 页面字体采用「思源宋体」，并给站点标题加上了艺术字体
     - 删除了一些设置项，化繁为简
-    - Ringo 主题并不是完全复刻的 journal 主题，Matcha 设置了一个选项，可以在 Ringo 和 Journal 主题的样式之间自由切换
 - 用户体验的提升
     - 增加了 Pjax 全站无刷新功能
 	- 增加了 Ajax 评论无刷新功能
@@ -48,6 +59,8 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - 修复了一些原主题遗留的 bug
 - ......
 
+</details>
+
 具体的外观可以访问[我的博客](https://blog.guhub.cn/)查看。
 
 ## 使用
@@ -57,9 +70,8 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 3. 将主题文件夹放入主题安装目录 `/ust/themes/`
 4. 登入后台进行简单的配置
 
-如果在使用过程中遇到任何问题，请先查看 [FAQ](doc.md)，若没能解决，再询问作者。
-
-Enjoy~
+如果在使用过程中遇到任何问题，请先查看 [FAQ](doc.md)，若没能解决，再询问作者。<br>
+你也可以加入 QQ 群（924171480）与各路大佬交流。当然这并不是主题用户交流群，只要是与我作品相关的内容都可以在群里讨论，就当作是一个随意的交流群吧。
 
 ## 拓展
 
@@ -70,7 +82,9 @@ Enjoy~
 - [BracketDown](https://github.com/BigCoke233/typecho-plugin-BracketDown)：语法拓展插件，如果想要在文章里使用短代码就需要安装这个插件
 - [CopyDog](https://github.com/BigCoke233/typecho-plugin-CopyDog)：版权狗插件，可以在文章末尾生成一个显示版权信息的卡片
 
-## 引用
+## 鸣谢
+
+#### 开源项目
 
 [jQuery](https://jquery.com/) | 
 [jQuery Lazy](http://jquery.eisbehr.de/lazy/) |
@@ -84,7 +98,9 @@ Enjoy~
 [toaster.js](https://github.com/bigcoke233/toaster.js) | 
 [Masonry](https://github.com/desandro/masonry)
 
-感谢以上开源项目的开发者！
+#### 矢量图
+
+[Pixabay 用户 - OpenClipart-Vectors](https://pixabay.com/zh/vectors/screaming-surprised-smiley-emotion-146426/)：提供 404 页面使用的矢量图
 
 ## 计划
 
