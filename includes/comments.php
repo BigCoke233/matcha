@@ -97,6 +97,8 @@ replyScript($this); ?>
 
     <?php if ($comments->have()): ?>
     <?php $comments->listComments(); ?>
-    <div class="comment-pagenav"><?php $comments->pageNav('&laquo;', '&raquo;'); ?></div>
+    <div class="comment-pagenav"><?php $comments->pageNav(
+      '<span class="iconfont">&#xe628;</span>', 
+      '<span class="iconfont">&#xe642;</span>'); ?></div>
     <?php endif; ?>
 </div>

@@ -876,7 +876,12 @@ img.alignright {
 	display: inline-block;
 	padding: .3em .65em;
 	transition-property: color, background;
-	transition-duration:.3s
+	transition-duration:.3s;
+	overflow: hidden;
+	height: 1.5em;
+	width: .9em;
+	line-height: 1.5em;
+	text-align: center
 }
 .comment-pagenav ol li a:hover {
 	color: #fff;
@@ -1131,9 +1136,13 @@ img.alignright {
 	border: 1px solid #ddd;
 	border-radius: 100%;
 	display: inline-block;
-	padding: .7em .9em;
 	font-weight: bold;
-	transition: .3s
+	transition: .3s;
+	height: 2.5em;
+	width: 2.6em;
+	overflow: hidden;
+	text-align: center;
+	line-height: 2.5em
 }
 .page-navigator:not(.comment-pagenav .page-navigator) a:hover {
 	text-decoration: none;
@@ -1141,7 +1150,6 @@ img.alignright {
 	border-color: var(--theme-color);
 	color: #fff
 }
-
 /* page navigator - 选页器 */
 
 /* archive page - 归档页面 */
