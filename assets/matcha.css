@@ -1398,7 +1398,8 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	padding: .6em;
 	border-radius: 5px;
 	float: left;
-	width: 22.5%
+	width: 22.5%;
+	margin: .5em 0
 }
 @media (max-width: 1200px) {
 	.links-item {
@@ -1417,12 +1418,6 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 }@media (max-width: 478px) {
 	.links-item {
 		width: 95%
-	}
-}
-
-@media (min-width: 1200px) {
-	.links-item {
-		margin: .4em 0
 	}
 }
 
@@ -1463,6 +1458,11 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	font-size: .9em;
 	line-height: 1.1;
 	margin-top: .4em
+}
+
+.links-container {
+	clear: both;
+	margin: 2em 0;
 }
 /* other */
 .external-icon {

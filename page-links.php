@@ -14,7 +14,8 @@ $this->need('includes/header.php');?>
             <h1 class="post-title post-title-atpage page-title-atpage" itemprop="name headline"><?php $this->title() ?></h1>
         </div>
         <div class="links-container container-fluid">
-            <?php Links_Plugin::output('
+            <?php if(Utils::isPluginAvailable('Links')) {
+            Links_Plugin::output('
             <a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
                 <div class="links-content">
                     <section class="links-avatar">
@@ -25,7 +26,10 @@ $this->need('includes/header.php');?>
                         <p class="links-description">{title}</p>
                     </section>
                 </div>
-            </a>'); ?>
+            </a>'); }
+            else {
+                echo 'Links 插件未启用，若要使用友情连接功能，请安装并启用 Links 插件。';
+            }?>
         </div>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>

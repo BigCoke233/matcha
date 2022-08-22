@@ -55,6 +55,19 @@ function themeConfig($form) {
     /**
      * 附加功能 & 实验性功能
      */
+    //友情链接随机排序
+    $EnableRandomLinks = new Typecho_Widget_Helper_Form_Element_Radio('EnableRandomLinks', array(
+            'able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('是否启用友情链接随机排序'),
+        _t('
+            启用后，友情链接页面的友情链接列表将会随机排序，每次刷新后得到的顺序都不一样。
+        ')
+    );
+    $form->addInput($EnableRandomLinks->addRule('required', _t('此处必须设置')));
+    //启用 ajax 评论
     $EnableAjaxComment = new Typecho_Widget_Helper_Form_Element_Radio('EnableAjaxComment', array(
             'able' => _t('启用'),
             'disable' => _t('停用'),
@@ -66,6 +79,7 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($EnableAjaxComment->addRule('required', _t('此处必须设置')));
+    //启用不蒜子统计
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
             'disable' => _t('停用'),

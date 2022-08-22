@@ -51,6 +51,15 @@ var linkTarget = function() {
 }
 //links
 var linkFlow = function(){
+    if(RandomLinks=='able'){
+        //先打乱友情链接的顺序
+        $(".links-item").each(function(){
+            if(Math.random() <= 0.5){
+                $(this).prependTo($(this).parent());            
+            }
+        });
+    }
+    //再启用瀑布流布局
     if($('.links-container').length>0){
         $('.links-container').masonry({
             // options

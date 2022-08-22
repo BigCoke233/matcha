@@ -33,7 +33,8 @@
 
 <script>siteurl='<?php Utils::indexHome(); ?>';
 pjaxCallback=function(){<?php $this->options->pjaxCallback(); ?>};
-AjaxCommentEnabled='<?php $this->options->EnableAjaxComment(); ?>';</script>
+AjaxCommentEnabled='<?php $this->options->EnableAjaxComment(); ?>';
+RandomLinks='<?php $this->options->EnableRandomLinks(); ?>';</script>
 
 <?php //输出统计代码、js 引用等
 if ($this->options->statCode) { $this->options->statCode(); } ?></div>
