@@ -113,7 +113,7 @@ matchaComment.core = function() {
                 var newComment; 
                 if(''===replyTo) {
                     if(!$('.comment-list').length) {
-                        $('.respond').after($(htmlData)[0].querySelector('.comment-list').addClass('fadeIn'));
+                        $('.respond').after($('.comment-list', data));
                     }
                     else if($('.prev').length) {
                         $('.comments-pagenav li a').eq(1).click();

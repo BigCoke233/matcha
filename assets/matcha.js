@@ -214,4 +214,4 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         $('#pjax-loading').remove()
 
         return Toaster;
-    });
+});
