@@ -1606,3 +1606,9 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 .sidebar-journal .sidebar-nav .widget-list li a:hover {
 	background: rgba(0,0,0,.03)
 }
+
+/* fade in/out */
+.fadeout {
+	transition: .5s;
+	opacity: 0
+}

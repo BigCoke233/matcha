@@ -211,11 +211,12 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         fragment: '#main',
         timeout: 8000
     }).on('pjax:send', function() {
+        $("#main").removeClass("fadein").addClass("fadeout");
         scrollSmoothTo(0);
 		//开始显示加载条
         NProgress.start();
     }).on('pjax:complete', function() {
-        $("#main").addClass("fadein").hide().fadeIn(300);
+        $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(500);
         JSLoad();
         pjaxCallback();
 		//加载条完成
