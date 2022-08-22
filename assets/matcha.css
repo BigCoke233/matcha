@@ -1200,28 +1200,42 @@ div.archive-model {
 		serif;
 }
 
-/* table - 表格 */
+/* table - 表格
+ * from textretty.css
+ */
 table {
-	border: 1px solid #eee;
-	width: 100%;
 	border-collapse: collapse;
-	border-spacing: 0 !important;
-	/* box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08); */
+	border-spacing: 0;
+	overflow: auto;
+	width: 100%;
 }
-table th,table td {
-	padding: 5px 10px;
-	line-height: 30px;
-	border: 1px solid #eee;
+  
+td,
+th {
+	padding: 0;
 }
+  
 table th {
-	background: #eee;
+	font-weight: 600;
+	background: #fff;
+	background-color: #bcbc6518;
 }
+  
+table td,
+table th {
+	border: 1px solid #dfe2e5;
+	padding: 6px 13px;
+}
+  
 table tr {
-	transition: 0.15s ease;
+	background-color: #fff;
+	border-top: 1px solid #c6cbd1;
 }
-table tr:hover {
-	background: #eee;
+  
+table tr:nth-child(even) {
+	background-color: #bcbc6518;
 }
+
 /* table - 表格 */
 
 /* nprogress */
