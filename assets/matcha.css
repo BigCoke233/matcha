@@ -235,22 +235,6 @@ h3.comment-closed.fade {
 	font-size: .92857em;
 }
 
-.comment-author {
-	display: block;
-	margin-bottom: 3px;
-	color: #444;
-}
-
-.comment-author .avatar {
-	float: left;
-	margin-right: 10px;
-}
-
-.comment-author cite {
-	font-weight: bold;
-	font-style: normal;
-}
-
 .comment-list .respond {
 	margin-top: 15px;
 	border-top: 1px solid #EEE;
@@ -877,6 +861,17 @@ img.alignright {
 	color: #fff;
 	background: var(--theme-color)
 }
+
+.comment-meta span.comment-at {
+	color: #444;
+	margin: 0;
+	display: inline;
+	font-size: .9em
+}
+.comment-meta span.comment-at a {
+	color: #444
+}
+
 .comment-date {
 	color: #aaa
 }

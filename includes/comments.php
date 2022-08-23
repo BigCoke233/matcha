@@ -32,13 +32,16 @@ echo $commentClass;
 		  <?php $comments->content(); ?>
 	    </div>
 		<p class="comment-meta">
-		  <span class="comment-author"><a href="<?php echo $comments->url; ?>" target="_blank"><?php echo $comments->author; ?></a></span>
+		  <span class="comment-author">
+        <a href="<?php echo $comments->url; ?>" target="_blank"><?php echo $comments->author; ?></a>
+      </span>
 		  <span class="comment-date">
 		    <?php if ('waiting' == $comments->status) { ?>
             <em class="comment-waiting">您的评论正在审核中。</em>
             <?php } else { ?>
-		    <?php echo Matcha::date($comments->created); ?>
-			<?php } ?>
+		    <?php echo Matcha::date($comments->created); 
+              Comments::getParent($comments->coid); 
+			  } ?>
 		  </span>
 		</p>
 	  </div>
@@ -50,7 +53,7 @@ echo $commentClass;
       <?php } ?>
 </div>
 <?php } 
-replyScript($this); ?>
+Comments::replyScript($this); ?>
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
     <?php if($this->allow('comment')): ?>
