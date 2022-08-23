@@ -931,9 +931,8 @@ img.alignright {
 	font-weight: 400;
 	color: #444;
 }
-.post-atmain,
-.post-atmain .post-title {
-	transition: 0.25s;
+.post-atmain .post-title a {
+	font-weight: bolder
 }
 /* index - 文章聚合 */
 
