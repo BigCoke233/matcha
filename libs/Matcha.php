@@ -134,7 +134,7 @@ class Matcha
                 "jquery/jquery.pjax.min",
                 "jquery/jquery.lazy.min",
                 "jquery/jquery.fluidbox.min",
-                'jquery.ba-throttle-debounce.min.js',
+                'jquery/jquery.ba-throttle-debounce.min',
                 "masonry/masonry.pkgd.min",
                 "bigfoot/bigfoot"
             );
