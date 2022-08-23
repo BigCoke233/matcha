@@ -88,11 +88,6 @@ blockquote {
     border-left: 10px solid rgba(0, 0, 0, 0.05);
 }
 
-h1,h2,h3,h4,h5,h6 {
-	font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
-}
-
-
 figure {
 	margin: 0
 }
@@ -406,8 +401,33 @@ h3.comment-closed.fade {
 	word-wrap: break-word;
 }
 
-.post-content h2,.comment-content h2 {
+.post-content h2,
+.comment-content h2 {
+	margin: 1em 0;
 	font-size: 1.28571em;
+	border-left: .3em solid var(--theme-color);
+	padding-left: .5em;
+	margin-left: -.8em;
+	line-height: 1;
+	font-weight: 600
+}
+@media (min-width: 1200px) {
+	.post-content h2,
+	.comment-content h2 {
+		font-size: 1.4em;
+	}
+}
+
+.post-content h3,
+.comment-content h3 {
+	font-weight: 600;
+	margin-left: -.95em
+}
+.post-content h3::before,
+.comment-content h3::before {
+	content: '#';
+	color: var(--theme-color);
+	margin-right: .4em
 }
 
 .post-content img,.comment-content img,.post-content video,.comment-content video {
@@ -427,7 +447,8 @@ h3.comment-closed.fade {
 	border: none;
 	display:block
 }
-.post-content hr:before {
+.post-content hr:before,
+.comment-content hr:before {
     color: rgba(0, 0, 0, 0.2);
     font-size: 1.1em;
     display: block;
@@ -437,25 +458,33 @@ h3.comment-closed.fade {
 }
 
 .post-content ul,
-.post-content ol {
+.post-content ol,
+.comment-content ul,
+.comment-content ol {
 	padding-left: 1.2em!important
 }
 
-.post-content ul li {
+.post-content ul li,
+.comment-content ul li {
 	list-style-type: square
 }
 
-.post-content ol li {
+.post-content ol li,
+.comment-content ol li {
 	list-style-type: decimal
 }
 
 .post-content ul>ul li,
-.post-content ol>ul li {
+.post-content ol>ul li,
+.comment-content ul>ul li,
+.comment-content ol>ul li {
 	list-style-type: disc
 }
 
 .post-content ol>ol li,
-.post-content ul>ol li {
+.post-content ul>ol li,
+.comment-content ol>ol li,
+.comment-content ul>ol li {
 	list-style-type: lower-roman
 }
 
