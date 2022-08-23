@@ -381,7 +381,9 @@ h3.comment-closed.fade {
 
 .post-content img,.comment-content img,.post-content video,.comment-content video {
 	max-width: 100%;
-	border-radius: 3px
+	border-radius: 3px;
+	display: block;
+	margin: 1em auto
 }
 
 .post-content a img,.comment-content a img {
@@ -1681,7 +1683,8 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 
 /* Fluidbox */
 .fluidbox-anchor {
-	border: none;
+	border: none!important;
+	display: block
 }
 .fluidbox-anchor:hover {
 	opacity: 1
