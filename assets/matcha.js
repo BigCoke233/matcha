@@ -215,3 +215,13 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
 
         return Toaster;
 });
+
+/**
+ * Copyright
+ */
+console.log(
+    "%c 🍵 Theme Matcha %c by Eltrac https://guhub.cn %c ",
+    "color: #fff; margin: 1em 0; padding: 5px 0; background: rgb(197,197,106);",
+    "margin: 1em 0; padding: 5px 0; background: #efefef;",
+    "display: block;margin-left:-0.5em;"
+);
