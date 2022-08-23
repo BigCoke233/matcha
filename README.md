@@ -67,10 +67,23 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 
 ## 使用
 
+1. 前往 [Releases](https://github.com/BigCoke233/matcha/releases) 页面
+2. 找到最新的发行版，即第一个 Release
+3. 下载打包好的 `.zip` 压缩文件
+4. 解压到 `usr/themes/` 目录
+5. 登陆后台启用主题并更改设置
+
+Enjoy~
+
+<details>
+<summary>使用开发版</summary>
+
 1. 直接 `clone` 或者下载仓库 `main` 分支
 2. 将文件夹重命名为 `matcha`
 3. 将主题文件夹放入主题安装目录 `/usr/themes/`
 4. 登入后台进行简单的配置
+
+</details>
 
 如果在使用过程中遇到任何问题，请先查看 [FAQ](doc.md)，若没能解决，再询问作者。<br>
 你也可以加入 QQ 群（924171480）与各路大佬交流。当然这并不是主题用户交流群，只要是与我作品相关的内容都可以在群里讨论，就当作是一个随意的交流群吧。
