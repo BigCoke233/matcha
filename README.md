@@ -21,6 +21,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - **带行号的代码高亮**，采用轻量级的 Prism.js
 - **更好的字体**，借助 Google Font，采用思源系列字体
 - **访客统计**，即插即用的统计功能
+- **文章阅览量统计**，查看有多少人点开了你的文章
 - **增强可读性**，精心设计的文字排版
 - More to find
 

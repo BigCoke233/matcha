@@ -22,19 +22,48 @@ class Matcha
      * 输出 link 标签引用 css
      */
     public static function linkCSS() {
-        //要引入的 css 文件名
-        $includes=array(
-            "normalize", 
-            "prism/prism", 
-            "grid", 
-            "toaster/toaster", 
-            "matcha", 
-            "bigfoot/bigfoot");
-        foreach($includes as $value){
+        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='local'){
+            if(Helper::options()->StaticCDN=='bytedance'){
+                $src_link = array(
+                    'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/normalize/8.0.1/normalize.min.css',
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
+                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css'
+                );
+            }
+            elseif(Helper::options()->StaticCDN=='cdnjs'){
+                $src_link = array(
+                    'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css'
+                );
+            }
+
+            foreach($src_link as $value){
+                echo '<link rel="stylesheet" href="'.$value.'" />';
+            }
+            
+            $local_includes=array();//没有额外的本地文件
+        }else{
+            //要引入的 css 文件名
+            $local_includes=array(
+                "normalize", 
+                "bigfoot/bigfoot",
+                "prism/prism"
+            );
+        }
+        //必须要在本地引入的文件
+        array_push($local_includes,
+            "toaster/toaster",
+            "matcha.grid",  
+            "matcha");
+        foreach($local_includes as $value){
             echo '<link rel="stylesheet" href="';
             Utils::indexTheme('assets/'.$value.'.css');
             echo '" />';
-            echo PHP_EOL;
         }
     }
 
@@ -66,24 +95,53 @@ class Matcha
      * 输出 js 引用
      */
     public static function script() {
-        //要引入的 js 文件名
-        $includes=array(
-            "jquery/jquery.min",
-            "jquery/jquery.pjax.min",
-            "jquery/jquery.lazy.min",
-            "masonry/masonry.pkgd.min",
-            "smoothscroll/smoothscroll",
+        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='local'){
+            if(Helper::options()->StaticCDN=='bytedance'){
+                $src_link = array(
+                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js',
+                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
+                    'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
+                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js',
+                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js'
+                );
+            }
+            elseif(Helper::options()->StaticCDN=='cdnjs'){
+                $src_link = array(
+                    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js'
+                );
+            }
+
+            foreach($src_link as $value){
+                echo '<script src="'.$value.'"></script>';
+            }
+            
+            $local_includes=array();//没有额外的本地文件
+        }else{
+            //要引入的 js 文件名
+            $local_includes=array(
+                "jquery/jquery.min",
+                "jquery/jquery.pjax.min",
+                "jquery/jquery.lazy.min",
+                "masonry/masonry.pkgd.min",
+                "bigfoot/bigfoot"
+            );
+        }
+        //必须要在本地引入的文件
+        array_push($local_includes,
             "prism/prism",
-            "toaster/toaster",
-            "bigfoot/bigfoot"
+            "smoothscroll/smoothscroll",
+            "toaster/toaster"
         );
-        if(Helper::options()->EnableAjaxComment=='able') array_push($includes, 'matcha.comment');
-        array_push($includes, 'matcha'); //主题核心文件在最后引入
-        foreach($includes as $value){
+        if(Helper::options()->EnableAjaxComment=='able') array_push($local_includes, 'matcha.comment');
+        array_push($local_includes, 'matcha'); //主题核心文件在最后引入
+        foreach($local_includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');
             echo '"></script>';
-            echo PHP_EOL;
         }
     }
 

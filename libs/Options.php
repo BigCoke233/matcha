@@ -55,6 +55,17 @@ function themeConfig($form) {
     /**
      * 附加功能 & 实验性功能
      */
+    //启用 CDN 加速
+    $StaticCDN = new Typecho_Widget_Helper_Form_Element_Select('StaticCDN', array(
+            'local' => _t('本地资源（不加速）'),
+            'bytedance' => _t('字节跳动资源库（推荐）'),
+            'cdnjs' => _t('CDNJS'),
+        ),
+        'local',
+        _t('选择静态文件加速 CDN'),
+        _t('如果你的服务器速度较慢，可以选择一个 CDN 引用静态文件资源库，可以一定程度地提高页面加载速度。')
+    );
+    $form->addInput($StaticCDN->addRule('required', _t('此处必须设置')));
     //友情链接随机排序
     $EnableRandomLinks = new Typecho_Widget_Helper_Form_Element_Radio('EnableRandomLinks', array(
             'able' => _t('启用'),
