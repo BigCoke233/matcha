@@ -53,57 +53,6 @@ p {
 	margin-inline-end: 0px;
 }
 
-pre,code {
-	background: #F3F3F3;
-	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
-	font-size: 100%;
-}
-
-code {
-	padding: 0.1em 0.4em;
-    color: var(--theme-color);
-    border-radius: 2px;
-}
-
-pre {
-	padding: 8px;
-	overflow: auto;
-	max-height: 400px;
-	overflow: auto;
-	padding: 1.2em;
-	border-radius: 3px
-}
-
-pre code {
-	padding: 3px;
-	color: #444;
-}
-
-blockquote {
-	margin: 1em 0;
-	color: #444;
-    position: relative;
-    font-size: 0.96em;
-    padding-left: 18px;
-    border-left: 10px solid rgba(0, 0, 0, 0.05);
-}
-
-figure {
-	margin: 0
-}
-
-figcaption {
-	font-size: .9em;
-	color: rgba(0,0,0,.5);
-	text-align: center;
-	display: block;
-	line-height: 2
-}
-
-img[src=""], img:not([src]) {
-	display: none
-}
-
 .browsehappy {
 	padding: 8px 0;
 	background: #FBE3E4;
@@ -498,6 +447,61 @@ h3.comment-closed.fade {
 .post-content a:hover,
 .comment-content a:hover {
 	border-color: var(--theme-color);
+}
+
+.post-content pre,
+.post-content code,
+.comment-content pre,
+.comment-content code {
+	background: #F3F3F3;
+	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
+	font-size: 100%;
+}
+.post-content code,
+.comment-content code {
+	padding: 0.1em 0.4em;
+    color: var(--theme-color);
+    border-radius: 2px;
+}
+.post-content pre,
+.comment-content pre {
+	padding: 8px;
+	overflow: auto;
+	max-height: 400px;
+	overflow: auto;
+	padding: 1.2em;
+	border-radius: 3px
+}
+.post-content pre code,
+.comment-content pre code {
+	padding: 3px;
+	color: #444;
+}
+
+.post-content blockquote,
+.comment-content blockquote {
+	margin: 1em 0;
+	color: #666;
+    position: relative;
+    padding-left: .8em;
+    border-left: 8px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-content figure {
+	margin: 0
+}
+
+.post-content figcaption {
+	font-size: .9em;
+	color: rgba(0,0,0,.5);
+	text-align: center;
+	display: block;
+	line-height: 2
+}
+
+.post-content img[src=""], 
+.post-content img:not([src]) {
+	display: none
 }
 
 /* 适配 BracketDown 插件 */
