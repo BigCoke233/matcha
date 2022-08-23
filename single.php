@@ -10,7 +10,7 @@
                 <li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
                 <li><?php $this->category(','); ?></li>
                 <?php if($this->user->hasLogin()):?>
-                <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" no-pjax>编辑</a></li>
+                <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" target="_blank" no-pjax>编辑</a></li>
                 <?php endif ?>
             </ul>
         <?php endif; ?>
