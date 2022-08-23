@@ -13,6 +13,7 @@
 			<ul class="post-meta">
 				<li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
 				<li><?php $this->category(','); ?></li>
+				<?php if($this->options->EnableViewsCount=='able'){ ?><li><?php Matcha::views($this); ?></li><?php } ?>
 				<li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 评论', '1 评论', '%d 评论'); ?></a></li>
 			</ul>
             <div class="post-content" itemprop="articleBody">

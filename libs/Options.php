@@ -79,6 +79,18 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($EnableAjaxComment->addRule('required', _t('此处必须设置')));
+    //启用文章浏览量统计
+    $EnableViewsCount = new Typecho_Widget_Helper_Form_Element_Radio('EnableViewsCount', array(
+            'able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('是否启用文章浏览量统计'),
+        _t('
+            启用后，将在文章列表和文章内页显示当前文章的浏览量，并实时统计。
+        ')
+    );
+    $form->addInput($EnableViewsCount->addRule('required', _t('此处必须设置')));
     //启用不蒜子统计
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
