@@ -36,7 +36,14 @@ lazyloader = function(){
         effectTime: 300,
         onError: function(element) {
             console.log('error loading ' + element.data('src'));
+        },
+        onFinishedAll: function() {
+            $('.fluidbox-anchor').fluidbox();//完成后加载 Fluidbox
         }
+    });
+    //设置 Fluidbox
+    $(window).scroll(function() {
+        $('.fluidbox-anchor').fluidbox('close');
     });
 };
 //auto set archor link target
@@ -211,9 +218,7 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
         JSLoad();
         pjaxCallback();
-        $('#pjax-loading').remove()
-
-        return Toaster;
+        $('#pjax-loading').remove();
 });
 
 /**

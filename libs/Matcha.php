@@ -29,7 +29,8 @@ class Matcha
                     'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
                     'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
                     'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
-                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css'
+                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css',
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css'
                 );
             }
             elseif(Helper::options()->StaticCDN=='cdnjs'){
@@ -38,7 +39,8 @@ class Matcha
                     'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
                     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
                     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css'
+                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css'
                 );
             }
 
@@ -52,13 +54,14 @@ class Matcha
             $local_includes=array(
                 "normalize", 
                 "bigfoot/bigfoot",
-                "prism/prism"
+                "prism/prism",
+                "jquery/jquery.fluidbox.min"
             );
         }
         //必须要在本地引入的文件
         array_push($local_includes,
             "toaster/toaster",
-            "matcha.grid",  
+            "matcha.grid",
             "matcha");
         foreach($local_includes as $value){
             echo '<link rel="stylesheet" href="';
@@ -102,7 +105,9 @@ class Matcha
                     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
                     'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
                     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js',
-                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js'
+                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
+                    'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
+                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js'
                 );
             }
             elseif(Helper::options()->StaticCDN=='cdnjs'){
@@ -111,7 +116,9 @@ class Matcha
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js'
+                    'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js'
                 );
             }
 
@@ -126,6 +133,8 @@ class Matcha
                 "jquery/jquery.min",
                 "jquery/jquery.pjax.min",
                 "jquery/jquery.lazy.min",
+                "jquery/jquery.fluidbox.min",
+                'jquery.ba-throttle-debounce.min.js',
                 "masonry/masonry.pkgd.min",
                 "bigfoot/bigfoot"
             );
@@ -242,8 +251,8 @@ class Matcha
      */
     static public function lazyLoad($text){
         $text = preg_replace(
-			'/\<img(.*?)src(.*?)alt=\"(.*?)\"(.*?)\>/s',
-			'<figure><img${1}data-src${2}class="lazy"${4}><figcaption>${3}</figcaption></figure>',
+			'/\<img(.*?)src=\"(.*?)\"(.*?)alt=\"(.*?)\"(.*?)\>/s',
+			'<figure><a href="${2}" class="fluidbox-anchor" no-linkTarget><img${1}data-src="${2}"${3}class="lazy"${4}></a><figcaption>${3}</figcaption></figure>',
 		$text);
         return $text;
     }

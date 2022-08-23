@@ -1678,3 +1678,15 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 .bigfoot-footnote__button:focus {
 	background: var(--theme-color)
 }
+
+/* Fluidbox */
+.fluidbox-anchor {
+	border: none;
+}
+.fluidbox-anchor:hover {
+	opacity: 1
+}
+
+.fluidbox__overlay {
+	background: #fff
+}
