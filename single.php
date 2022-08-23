@@ -9,6 +9,7 @@
             <ul class="post-meta post-meta-atpage">
                 <li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
                 <li><?php $this->category(','); ?></li>
+                <li><?php echo '阅读 '.Matcha::views($this).' 次'; ?></li>
                 <?php if($this->user->hasLogin()):?>
                 <li><a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>" target="_blank" no-pjax>编辑</a></li>
                 <?php endif ?>

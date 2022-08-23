@@ -201,4 +201,49 @@ class Matcha
         }
         return $text;
     }
+
+    /**
+     * 文章浏览量统计
+     */
+
+    static public function views($archive)
+    {
+        $cid = $archive->cid;
+        $db = Typecho_Db::get();
+        $prefix = $db->getPrefix();
+
+        //若不存在 vies 项，则创建并返回 0
+        if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
+            $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+            return 0;
+        }
+
+        //获取 cookie 中用户已阅读的文章列表
+        $viewed = Typecho_Cookie::get('__post_viewed');
+        if(empty($viewed)){
+            $viewed=array();
+        }else{
+            $viewed=explode(',',$viewed);
+        }
+
+        //获取文章阅览量
+        $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
+        if(!in_array($cid, $viewed)){
+            if ($archive->is('single')) {
+                //浏览量加一
+                $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
+                //将本篇文章 cid 加入 Cookie
+                array_push($viewed, $cid);
+                $viewed=implode($viewed, ',');
+                Typecho_Cookie::set('__post_viewed', $viewed);
+            }
+        }
+
+        //返回阅览量
+        if (array_key_exists('viewsNum', $db->fetchRow($db->select()->from('table.contents')))) {
+            //兼容部分主题/插件的阅览量统计
+            return $row['views']+$row['viewsNum'];
+        }
+        return $row['views'];
+    }
 }
