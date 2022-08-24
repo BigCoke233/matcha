@@ -300,7 +300,7 @@ class Matcha
             $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
             //将本篇文章 cid 加入 Cookie
             array_push($viewed, $cid);
-            $viewed=implode($viewed, ',');
+            $viewed=implode(',', $viewed);
             Typecho_Cookie::set('__post_viewed', $viewed);
         }
 
