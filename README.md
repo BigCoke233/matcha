@@ -23,6 +23,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - **更好的字体**，借助 Google Font，采用思源系列字体
 - **访客统计**，即插即用的统计功能
 - **文章阅览量统计**，查看有多少人点开了你的文章
+- **人性化的时间显示**，是今天、昨天，还是几天前，而不是枯燥的日期
 - **增强可读性**，精心设计的文字排版
 - More to find
 
