@@ -551,6 +551,81 @@ h3.comment-closed.fade {
 	padding: 0 .5em
 }
 
+.post-content .bracketdown-underline {
+	text-decoration: none;
+	position: relative;
+	z-index: 1
+}
+.post-content .bracketdown-underline::before{
+	content: "";
+    position: absolute;
+    height: .8em;
+    bottom: .2em;
+    width: 100%;
+    background-color: var(--theme-color);
+    opacity: .7;
+	z-index: -1
+}
+
+.post-content [data-github] {
+	border-radius: 3px;
+	background: #fffffd;
+	border-color: #ddd
+}
+
+.post-content [data-github]::before {
+	content: '\e885';
+	font-family: 'iconfont';
+
+	position: absolute;
+	font-size: 10em;
+	bottom: -.5em;
+	right: -.1em;
+	color: rgba(0, 0, 0, 0.05);
+	z-index: -1
+}
+
+.post-content [data-github] {
+	min-width: 50%;
+	position: relative;
+	overflow: hidden;
+	z-index: 1
+}
+@media (max-width: 1200px) {
+	.post-content [data-github],
+	.post-content .bracketdown-post {
+		max-width: 100%
+	}
+}
+
+.post-content .bracketdown-post {
+	border-width: 2px;
+	padding: 1em 1.5em
+}
+
+.post-content .bracketdown-post:hover {
+	transition: border .3s;
+	border-color: var(--theme-color)
+}
+.post-content .bracketdown-post:hover .bracketdown-post-meta a {
+	border-color: var(--theme-color)
+}
+
+.post-content .bracketdown-post .bracketdown-post-title a:hover {
+	color: var(--theme-color)
+}
+
+.post-content .bracketdown-post .bracketdown-post-meta a {
+	border-width: 2px;
+	border-color: #ccc;
+	border-radius: 3px;
+	padding: .3em 1em
+}
+.post-content .bracketdown-post .bracketdown-post-meta a:hover {
+	background: var(--theme-color);
+	border-color: var(--theme-color)
+}
+
 /* end BracketDown */
 
 .aligncenter,div.aligncenter {
