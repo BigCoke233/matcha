@@ -98,6 +98,10 @@ Enjoy~
 - [BracketDown](https://github.com/BigCoke233/typecho-plugin-BracketDown)：语法拓展插件，如果想要在文章里使用短代码就需要安装这个插件
 - [CopyDog](https://github.com/BigCoke233/typecho-plugin-CopyDog)：版权狗插件，可以在文章末尾生成一个显示版权信息的卡片
 
+## 日志
+
+具体的更新日志请查看 [change-log.md](change-log.md)。
+
 ## 鸣谢
 
 #### 开源项目
@@ -118,20 +122,6 @@ Enjoy~
 #### 矢量图
 
 [Pixabay 用户 - OpenClipart-Vectors](https://pixabay.com/zh/vectors/screaming-surprised-smiley-emotion-146426/)：提供 404 页面使用的矢量图
-
-## 计划
-
-- [x] 平滑滚动
-- [x] 优化页面滚动条的样式
-- [x] 重写评论板块的样式
-- [x] 优化代码高亮功能
-- [x] 增加「友情链接」功能
-- [x] ajax 评论无刷新
-- [ ] 支持自定义主题色
-- [ ] 增加「日落模式」和「夜间模式」
-- [ ] 添加说说页面
-- [ ] 支持显示文章目录
-- [ ] 兼容 ExSearch 插件
 
 ---
 
