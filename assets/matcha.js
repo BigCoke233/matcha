@@ -155,8 +155,10 @@ var detailsAnimate = function() {
     $('details').on("click",function(e){
         e.preventDefault();//阻止 details 直接显示内容
         if(!$(this).attr('open')){
+            $(this).children('.bracketdown-details-content').slideDown();
             $(this).attr('open','');
         }else{
+            $(this).children('.bracketdown-details-content').slideUp();
             $(this).addClass('closing');
             setTimeout(() => { 
                 $(this).removeClass('closing');
