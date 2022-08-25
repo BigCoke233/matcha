@@ -100,6 +100,15 @@ var searchInit = function(){
         });
     }
 }
+//归档页面展开收起
+var archiveInit = function(){
+    //监听归档页面展开收起按钮
+    $('.archive-button').click(function(){
+        var target = $(this).attr('id').replace('button', 'list');
+        $('#'+target).slideToggle();
+        $(this).toggleClass('closed');
+    });
+}
 //适配 CopyDog 插件
 copydog_copied=function(){Toaster.send('成功复制到剪切板');}
 //Go to Top
@@ -197,6 +206,7 @@ var JSLoad = function(){
     linkFlow();
     lazyloader();
     searchInit();
+    archiveInit();
     if(AjaxCommentEnabled=='able'){
         matchaComment.bindButton();
         matchaComment.core();

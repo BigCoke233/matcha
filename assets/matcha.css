@@ -1257,36 +1257,57 @@ img.alignright {
 /* page navigator - 选页器 */
 
 /* archive page - 归档页面 */
-.archive-model {
-	padding-top: .5em;
-	padding-bottom: .5em;
-	border: none
-}
-.archive-model a:hover {
-	text-decoration: none;
-	color: var(--theme-color)
-}
-.archive-year {
-	color: #444;
-	font-size: 1.6em
-}
-.archive-title {
+.archive-list {
 	margin: 0;
-	margin-bottom: 10px;
-	padding: 0;
-	font-size: 16px;
-	font-weight: normal;
+	padding: .2em 0;
 }
-.archive-title > a {
-	color: #444 !important;
+.archive-list.closed {
+	display: none
 }
-div.archive-model {
-	padding-top: .2em;
-	padding-bottom: .2em
+
+.archive-item {
+	list-style-type: none;
+	line-height: 1.5;
 }
+.archive-item a {
+	color: #333;
+	font-size: 1.1em;
+	padding: .3em .6em;
+	display: block;
+	border-radius: 3px
+}
+.archive-item a:hover {
+	background: rgb(0,0,0,.035)
+}
+
 .archive-year {
 	margin: 0;
-	margin-bottom: .5em
+	padding: .5em 0
+}
+
+.archive-button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: .9em;
+	line-height: 1em;
+	border-radius: 4px;
+	transition-property: color, background;
+	transition-duration: .3s;
+}
+.archive-button:hover {
+	background: var(--theme-color);
+	color: #fff
+}
+
+.archive-button span.iconfont {
+	display: inline-block;
+	transition: transform .3s;
+	transform: rotate(-90deg)
+}
+.archive-button.closed span.iconfont {
+	transform: rotate(0)
 }
 /* archive page - 归档页面 */
 

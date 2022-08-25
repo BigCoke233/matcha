@@ -7,34 +7,6 @@
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('includes/header.php');
-
-$this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);
-$year = 0;
-$mon = 0;
-$output = ''; 
-while ($archives->next()):
-	$year_tmp = date('Y', $archives->created);
-	$mon_tmp = date('m', $archives->created);
-	if ($year != $year_tmp) {   
-		$year = $year_tmp;
-		$mon = $mon_tmp;
-		$output .= '
-			<div class="post post-atmain archive-model">
-				<h3 class="archive-year">'.$year.'</h3>
-			</div>
-		';
-	} //输出年份   
-	$output .= '
-		<article class="post post-atmain archive-model" itemscope itemtype="http://schema.org/BlogPosting">
-			<h2 class="archive-title" itemprop="name headline">
-				<a itemprop="url" href="'.$archives->permalink .'">
-					<time class="archive-time" datetime="'.date('c',$archives->created).'" itemprop="datePublished">'.date('m-d', $archives->created).'</time>
-					· '. $archives->title .'
-				</a>
-			</h2>
-		</article>
-	'; //输出文章日期和标题
-endwhile;
 ?>
 <div class="col-12" id="main" role="main">
 	<div id="search">
@@ -47,14 +19,29 @@ endwhile;
 	   <h2>标签云</h2>
 	   <ul class="tags-list">
 		<?php while ($tags->next()): ?>
-    		<li><a href="<?php $tags->permalink(); ?>" rel="tag" title="<?php $tags->count(); ?> 个话题"><?php $tags->name(); ?></a></li>
+    		<li><a href="<?php $tags->permalink(); ?>" rel="tag" title="<?php $tags->count(); ?> 个话题">#<?php $tags->name(); ?></a></li>
 		<?php endwhile; ?>
     	   </ul>
 	   <?php endif; ?>
 	</div>
-	<div id="post-list">
-		<h2>文章列表</h2>
-		<?php echo $output; ?>
+	<br>
+	<div class="archive-post" id="post-list">
+	<?php
+    $archives = Matcha::archives($this);
+    $number = 0;
+    foreach($archives as $year => $posts) {
+        $open = ($number === 0) ? NULL : ' closed';
+		echo '<h2 class="archive-year">'.$year.' 年 <button id="archive-button-'.$year.'" class="archive-button'.$open.'"><span class="iconfont">&#xe628;</span></button></h2>';
+        echo '<ol id="archive-list-'.$year.'" class="archive-list'.$open.'">';
+    		foreach($posts as $created => $post) {
+        		echo '<li class="archive-item"><a href="'.$post['permalink'].'" class="no-line">
+				<span class="archive-date">'.date('m-d', $created).'</span> · 
+				'.$post['title'].'
+				</a></li>';
+			}
+        echo '</ol>';
+        $number++;
+      }?>
 	</div>
 </div><!-- end #main-->
 
