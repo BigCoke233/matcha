@@ -9,17 +9,7 @@ function themeConfig($form) {
     /**
      * 个性化
      */
-    //样式选择
-    $customStyle = new Typecho_Widget_Helper_Form_Element_Radio('customStyle', array(
-        'ringo' => _t('Ringo'),
-        'journal' => _t('Journal'),
-    ),
-    'ringo',
-    _t('选择主题样式'),
-        _t('选择 Ringo 则使用 Ringo 主题的整体设计，更加简洁；<br>
-        选择 Journal 则使用 Journal 主题的整体设计，更加大气')
-    );
-    $form->addInput($customStyle->addRule('required', _t('此处必须设置')));
+
     //首页摘要显示模式
     $IndexDisplayMode = new Typecho_Widget_Helper_Form_Element_Radio('IndexDisplayMode', array(
         'FullText' => _t('根据 more 标签截断'),
