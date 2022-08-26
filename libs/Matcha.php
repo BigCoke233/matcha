@@ -94,6 +94,18 @@ class Matcha
     }
 
     /**
+     * 将主题设置传递给前端
+     */
+    static public function footerSetting() {
+        echo '<script>';
+        echo 'siteurl="'; Utils::indexHome(); echo '";'; //站点 url
+        echo 'pjaxCallback=function(){'.Helper::options()->pjaxCallback.'};';
+        echo 'AjaxCommentEnabled="'.Helper::options()->EnableAjaxComment.'";';
+        echo 'RandomLinks="'.Helper::options()->EnableRandomLinks.'";';
+        echo '</script>';
+    }
+
+    /**
      * 输出 js 引用
      */
     public static function script() {
@@ -242,6 +254,44 @@ class Matcha
         }
         else {
             return date('Y-m-d', $created);
+        }
+    }
+
+    /**
+     * 页脚版权信息 年份
+     */
+    static public function copyrightYear() 
+    {
+        if(Helper::options()->startDate==''){
+			echo date('Y');
+		}else{
+			$date=explode('-', Helper::options()->startDate);
+			if($date[0]==date('Y')){
+				echo date('Y');
+			}elseif($date[0]<date('Y')){
+				echo $date[0].' - '.date('Y');
+			}else{
+				echo '<span style="cursor:help" onclick="Toaster.send(\'博主把建站日期写错啦\');">[偷偷告诉你，其实我是时空旅行者]</span>';
+			}
+		}
+    }
+
+    /**
+     * 页脚 额外信息
+     */
+    static public function footerInfo() 
+    {
+        //备案号
+        if (Helper::options()->icpNum!='') {
+            echo '<br />';
+            echo '<a rel="nofollow" href="http://beian.miit.gov.cn"> '.Helper::options()->icpNum.' </a>';
+        }
+        //不蒜子统计
+        if (Helper::options()->EnableBusuanzi=='able') {
+            echo '<br />';
+            echo '<span id="busuanzi_value_site_pv">......</span> 次访问 ·
+                  <span id="busuanzi_value_site_uv">......</span> 位访客 ';
+            echo '<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>';
         }
     }
 

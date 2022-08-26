@@ -12,8 +12,3 @@
     </ul>
   </section>
 </div>
-
-<!-- 返回顶部按钮 -->
-<div id="gotop">
-    <button id="back2top"><span class="iconfont">&#xe749;</span></button>
-</div>

@@ -36,11 +36,6 @@ function themeConfig($form) {
     $form->addInput($icpNum);
     $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d'));
     $form->addInput($startDate);
-    $statCode = new Typecho_Widget_Helper_Form_Element_Textarea('statCode', NULL, NULL, _t('站点统计代码'), _t('
-        <p class="description">在这里填入 <b>带 script 标签的</b> 站点统计代码，留空则不显示。</p>
-        <hr class="line"></hr>
-        '));
-    $form->addInput($statCode);
 
     /**
      * 附加功能 & 实验性功能
