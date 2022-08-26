@@ -1,6 +1,5 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-require_once("Pangu.php");
 /**
  * Matcha.php
  * 处理主题显示的内容
@@ -264,7 +263,7 @@ class Matcha
     {
         $text = empty($last) ? $data : $last;
         if ($widget instanceof Widget_Archive) {
-			$text = Matcha::lazyLoad(pangu($text));
+			$text = Matcha::lazyLoad($text);
         }
         return $text;
     }
