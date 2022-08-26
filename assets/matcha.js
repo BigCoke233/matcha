@@ -161,14 +161,34 @@ $(window).scroll(function() {
     }
 });
 //Light Switch
-$('#light-switch').click(function(){
-    $('body').toggleClass('matcha-dark');
-    if($('body').hasClass('matcha-dark')){
-        $(this).html('<span class="iconfont">&#xe7ee;</span>');
-    }else{
-        $(this).html('<span class="iconfont">&#xe7ac;</span>');
-    }
-});
+if(allowDarkMode){
+    $('#light-switch').click(function(){
+        $('body').toggleClass('matcha-dark');
+        if($('body').hasClass('matcha-dark')){
+            $(this).html('<span class="iconfont">&#xe7ee;</span>');
+            localStorage.setItem('matchaDark', 'yes'); //localStorage 供前端调用
+            document.cookie = 'matchaDark=y'; //cookie 供后端调用
+        }else{
+            $(this).html('<span class="iconfont">&#xe7ac;</span>');
+            localStorage.setItem('matchaDark', 'no');
+            document.cookie = 'matchaDark=n';
+        }
+    });
+    $(document).ready(function(){
+        var matchaDark = localStorage.getItem('matchaDark');
+        var time = new Date();
+        var hour = time.getHours();
+        if(matchaDark=='yes' && !$('body').hasClass('matcha-dark')){
+            $('body').addClass('matcha-dark');
+            $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            toast('已为您自动关灯');
+        }
+        else if((hour>18 || hour<7) && $('body').hasClass('matcha-dark')){
+            $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            toast('天晚了，已为您自动关灯');
+        }
+    });
+}
 
 //Comment Closed Feedback
 var CommentClosedBtn = function(){

@@ -104,6 +104,9 @@ class Matcha
         echo 'pjaxCallback=function(){'.Helper::options()->pjaxCallback.'};';
         echo 'AjaxCommentEnabled="'.Helper::options()->EnableAjaxComment.'";';
         echo 'RandomLinks="'.Helper::options()->EnableRandomLinks.'";';
+        if(Helper::options()->DarkMode=='default' || Helper::options()->DarkMode=='dark'){
+            echo 'allowDarkMode=true;';
+        }
         echo '</script>';
     }
 
@@ -386,5 +389,27 @@ class Matcha
             $stat[date('Y', $row['created'])][$row['created']] = $arr;
         }
         return $stat;
+    }
+
+    /**
+     * 判断是否打开夜间模式
+     */
+    public static function ifDark() {
+        $ifDark=false;
+        
+        if($_COOKIE['matchaDark']=='y') {
+            $ifDark=true;
+        }
+        elseif(Helper::options()->DarkMode=='default' && date('H')>18 && date('H')<7 && $_COOKIE['matchaDark']=='n') {
+            $ifDark=true;
+        }
+        elseif(Helper::options()->DarkMode=='dark' && !$_COOKIE['matchaDark']=='n'){
+            $ifDark=true;
+        }
+        elseif(Helper::options()->DarkMode=='always') {
+            $ifDark=true;
+        }
+        
+        if($ifDark) echo ' class="matcha-dark"';
     }
 }

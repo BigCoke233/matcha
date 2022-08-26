@@ -7,7 +7,7 @@
 function themeConfig($form) {
 
     /**
-     * 个性化
+     * 基本信息
      */
 
     //首页摘要显示模式
@@ -26,15 +26,12 @@ function themeConfig($form) {
     );
     $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
     //Favicon 设置
-    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, 'favicon.png', _t('浏览器图标（Favicon）'), _t('在这里填入一个指向图片文件的 url 来自定义浏览器标签栏显示的图标，留空则默认为 favicon.ico<hr>'));
+    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, 'favicon.png', _t('浏览器图标（Favicon）'), _t('在这里填入一个指向图片文件的 url 来自定义浏览器标签栏显示的图标，留空则默认为 favicon.ico'));
     $form->addInput($favicon);
 
-    /**
-     * 基本信息
-     */
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
-    $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d'));
+    $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d<hr>'));
     $form->addInput($startDate);
 
     /**
@@ -51,18 +48,18 @@ function themeConfig($form) {
         _t('如果你的服务器速度较慢，可以选择一个 CDN 引用静态文件资源库，可以一定程度地提高页面加载速度。')
     );
     $form->addInput($StaticCDN->addRule('required', _t('此处必须设置')));
-    //友情链接随机排序
-    $EnableRandomLinks = new Typecho_Widget_Helper_Form_Element_Radio('EnableRandomLinks', array(
-            'able' => _t('启用'),
-            'disable' => _t('停用'),
-        ),
-        'able',
-        _t('是否启用友情链接随机排序'),
-        _t('
-            启用后，友情链接页面的友情链接列表将会随机排序，每次刷新后得到的顺序都不一样。
-        ')
+    //夜间模式设置
+    $DarkMode = new Typecho_Widget_Helper_Form_Element_Select('DarkMode', array(
+        'default' => _t('默认日间模式，自动+手动开关（默认）'),
+        'dark' => _t('默认夜间模式，自动+手动开关'),
+        'no' => _t('总是日间模式，不可开关（不启用夜间模式）'),
+        'always' => _t('总是夜间模式，不可开关'),
+    ),
+    'default',
+    _t('选择「夜间模式」应用方式'),
+    _t('选择如何在你的网站上应用夜间模式')
     );
-    $form->addInput($EnableRandomLinks->addRule('required', _t('此处必须设置')));
+    $form->addInput($DarkMode->addRule('required', _t('此处必须设置')));
     //启用 ajax 评论
     $EnableAjaxComment = new Typecho_Widget_Helper_Form_Element_Radio('EnableAjaxComment', array(
             'able' => _t('启用'),
@@ -87,6 +84,18 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($EnableViewsCount->addRule('required', _t('此处必须设置')));
+    //友情链接随机排序
+    $EnableRandomLinks = new Typecho_Widget_Helper_Form_Element_Radio('EnableRandomLinks', array(
+            'able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('是否启用友情链接随机排序'),
+        _t('
+            启用后，友情链接页面的友情链接列表将会随机排序，每次刷新后得到的顺序都不一样。
+        ')
+    );
+    $form->addInput($EnableRandomLinks->addRule('required', _t('此处必须设置')));
     //启用不蒜子统计
     $EnableBusuanzi = new Typecho_Widget_Helper_Form_Element_Radio('EnableBusuanzi', array(
             'able' => _t('启用'),
@@ -95,7 +104,7 @@ function themeConfig($form) {
         'able',
         _t('是否启用 <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a> 统计功能'),
         _t('
-            <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b>
+            <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b><hr>
         ')
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));

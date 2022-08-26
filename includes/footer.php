@@ -4,7 +4,7 @@
 	<?php Matcha::footerInfo(); ?>
 	<!-- 返回顶部按钮 -->
 	<div id="helpbar">
-		<button id="light-switch" title="开关灯"><span class="iconfont">&#xe7ac;</span></button>
+		<?php if($this->options->DarkMode=='default' || $this->options->DarkMode=='dark'){ ?><button id="light-switch" title="开关灯"><span class="iconfont">&#xe7ac;</span></button><?php } ?>
 		<button id="back2top" title="返沪顶部"><span class="iconfont">&#xe749;</span></button>
 	</div>
 </footer>
