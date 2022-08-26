@@ -15,7 +15,7 @@
 }
 
 body {
-	background: #fcfcfc;
+	background: #fafafa;
 	margin: 0;
 	color: #444;
 	font-size: 100%;
@@ -67,12 +67,16 @@ p {
 }
 
 .header {
-	padding-top: 35px;
-	border-bottom: 1px solid #EEE;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-right: 13px;
+	border-bottom: none;
+	border-right: 4px solid var(--theme-color);
+	background: rgba(0,0,0,.03)
 }
 
 .header a,
-.header-journal a {
+#small-header a {
 	font-family: 'ZCOOL XiaoWei', serif!important;
 }
 
@@ -145,6 +149,10 @@ p {
 }
 .post:nth-last-of-type(1) {
 	border: none;
+}
+
+.post:first-child {
+	padding-top: 0
 }
 
 .post-title {
@@ -259,6 +267,40 @@ h3.comment-closed.fade {
 	word-wrap: break-word;
 }
 
+/* sidebar */
+
+#small-header {
+	display: none;
+	padding: 40px 40px 28px;
+	border-bottom: 2px solid var(--theme-color);
+	margin-bottom: 2em
+}
+.header {
+	padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 13px;
+    border-bottom: none;
+    border-right: 4px solid var(--theme-color);
+    background: rgba(0,0,0,.03);
+}
+.sidebar {
+	position: fixed;
+	top: 2.8em;
+	left: 0;
+	bottom: 0;
+	text-align: right;
+	width: calc(50% - 400px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+	
+}
+@media (max-width: 1200px) {
+	.sidebar {
+		width: calc(50% - 200px)
+	}
+}
+
 .widget {
 	margin-bottom: 30px;
 }
@@ -277,11 +319,33 @@ h3.comment-closed.fade {
 	margin-left: 15px;
 }
 
+.sidebar-nav .widget-list li,
+.sidebar-nav .widget-list {
+	margin: 0
+}
+.sidebar-nav .widget-list {
+	margin-top: .3em
+}
+.sidebar-nav .widget-list li a {
+	display: block;
+	padding: .3em 20px;
+	font-size: 1.1em;
+	color: #222;
+}
+.sidebar-nav .widget-list li a:hover {
+	background: rgba(0,0,0,.03)
+}
+
 #footer {
 	padding: 2em 0;
 	line-height: 1.5;
 	text-align: center;
 	color: #999;
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	bottom: 1em
 }
 
 .error-page {
@@ -706,8 +770,7 @@ img.alignright {
 
 /* header */
 .header,
-#small-header,
-.sidebar-journal .header-journal {
+#small-header {
 	/* transition: 0.25s; */
 	font-family: "Droid Serif",
 		Georgia,
@@ -720,14 +783,12 @@ img.alignright {
 		serif;
 }
 .header .site-title,
-#small-header .site-title,
-.sidebar-journal .header-journal .site-title {
+#small-header .site-title {
 	font-weight: 400;
 	color: #333 !important;
 }
 .header .site-description,
-#small-header .site-description,
-.sidebar-journal .header-journal .site-description {
+#small-header .site-description {
 	color: #666;
 	font-style: normal;
 	font-size: 14px;
@@ -1021,7 +1082,8 @@ img.alignright {
 	font-weight: 400
 }
 .page-title-atpage {
-	font-size: 2em
+	font-size: 2em;
+	margin-top: 0
 }
 .page-title-atpage::before {
 	content: '「';
@@ -1054,35 +1116,6 @@ img.alignright {
 /* 文章 */
 
 /* layout - 布局 & 定位 */
-#small-header {
-	display: none;
-	padding: 40px 40px 28px;
-	border-bottom: 2px solid var(--theme-color);
-	margin-bottom: 2em
-}
-.header {
-	position: fixed;
-	text-align: right;
-	left: calc(50% - 600px);
-	top: 40px;
-	width: 185px;
-	margin-left: calc(400px - 50%);
-	padding-left: calc(50% - 400px);
-	padding-top: 40px;
-	padding-bottom: 40px;
-	padding-right: 13px;
-	border-bottom: none;
-	border-right: 2px solid var(--theme-color)
-}
-.sidebar {
-	position: fixed;
-	text-align: right;
-	left: calc(50% - 600px);
-	bottom: 40px;
-	width: 180px;
-	padding-right: 20px;
-}
-
 #body .container {
 	margin-left: calc(50% - 400px);
 	margin-right: calc(50% - 600px);
@@ -1090,8 +1123,12 @@ img.alignright {
 	max-width: 1000px !important;
 	padding: 1em 2em;
 	padding-top: 2.8em;
-	background: #fcfcfc;
-	box-sizing: border-box
+	box-sizing: border-box;
+	box-shadow: 0 0 1em rgba(0,0,0,.1);
+	background: #fff!important;
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 8em!important
 }
 @media (min-width: 992px){
 	#body .container {
@@ -1107,14 +1144,6 @@ img.alignright {
 }
 
 @media (max-width: 1200px) {
-	.header {
-		left: calc(50% - 400px);
-		margin-left: calc(200px - 50%);
-		padding-left: calc(50% - 200px);
-	}
-	.sidebar {
-		left: calc(50% - 400px);
-	}
 	#body .container {
 		margin-left: calc(50% - 200px);
 		margin-right: calc(50% - 400px);
@@ -1130,8 +1159,7 @@ img.alignright {
 	.header {
 		display: none;
 	}
-	.sidebar,
-	.sidebar-journal {
+	.sidebar {
 		display: none!important;
 	}
 	#body .container {
@@ -1323,6 +1351,7 @@ img.alignright {
 		"WenQuanYi Micro Hei",
 		"Microsoft Yahei",
 		serif;
+	margin-right: 20px
 }
 
 /* table - 表格
@@ -1581,75 +1610,6 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	font-size: .9em;
 	margin-right: .12em;
 	color: #ccc
-}
-
-/* style journal */
-.style-journal {
-	background: #fafafa
-}
-.style-journal .container {
-	box-shadow: 0 0 1em rgba(0,0,0,.1);
-	background: #fff!important;
-	min-height: 100vh;
-	position: relative;
-	padding-bottom: 8em!important
-}
-.style-journal #footer {
-	position: absolute;
-	display: block;
-	left: 0;
-	right: 0;
-	bottom: 1em
-}
-.style-journal .post:first-child {
-	padding-top: 0
-}
-.style-journal .page-title-atpage {
-	margin-top: 0
-}
-
-.sidebar-journal {
-	position: fixed;
-	top: 2.8em;
-	left: 0;
-	bottom: 0;
-	text-align: right;
-	width: calc(50% - 400px);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between
-}
-@media (max-width: 1200px) {
-	.sidebar-journal {
-		width: calc(50% - 200px)
-	}
-}
-.sidebar-journal .header-journal {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	padding-right: 13px;
-	border-bottom: none;
-	border-right: 4px solid var(--theme-color);
-	background: rgba(0,0,0,.03)
-}
-.sidebar-journal .sidebar-foot {
-	margin-right: 20px
-}
-.sidebar-journal .sidebar-nav .widget-list li,
-.sidebar-journal .sidebar-nav .widget-list {
-	margin: 0
-}
-.sidebar-journal .sidebar-nav .widget-list {
-	margin-top: .3em
-}
-.sidebar-journal .sidebar-nav .widget-list li a {
-	display: block;
-	padding: .3em 20px;
-	font-size: 1.1em;
-	color: #222;
-}
-.sidebar-journal .sidebar-nav .widget-list li a:hover {
-	background: rgba(0,0,0,.03)
 }
 
 /* animation */
