@@ -1,5 +1,10 @@
 @charset 'utf-8';
 
+/**
+ * matcha.css
+ * Matcha 主题核心 CSS 文件
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&family=ZCOOL+XiaoWei&display=swap');
 
 .iconfont {
@@ -11,7 +16,12 @@
 }
 
 :root {
-	--theme-color: #c5c56a
+	--theme-color: #c5c56a;
+	--text-color: #333;
+	--text-gray: #999;
+	--light-bg: rgb(242,242,242);
+	--light-gray-bg: rgba(0,0,0,.05);
+	--gray-bg: rgba(0,0,0,.2);
 }
 
 body {
@@ -72,7 +82,7 @@ p {
 	padding-right: 13px;
 	border-bottom: none;
 	border-right: 4px solid var(--theme-color);
-	background: rgba(0,0,0,.03)
+	background: var(--light-gray-bg)
 }
 
 .header a,
@@ -81,7 +91,7 @@ p {
 }
 
 #logo {
-	color: #333;
+	color: var(--text-color);
 	font-size: 2rem;
 }
 
@@ -108,16 +118,16 @@ p {
 	display: block;
 	margin-right: -1px;
 	padding: 0 20px;
-	border: 1px solid #EEE;
+	border: 1px solid var(--gray-bg);
 	border-bottom: none;
 	height: 32px;
 	line-height: 32px;
-	color: #444;
+	color: var(--text-color);
 	float: left;
 }
 
 #nav-menu a:hover,#nav-menu .current {
-	background: #F6F6F6;
+	background: var(--light-bg);
 }
 
 #search {
@@ -138,13 +148,13 @@ p {
     width: 2em;
 	display: inline-block;
 	line-height: 3em;
-	color: #666;
+	color: var(--text-gray);
 	cursor: pointer
 }
 
 .post {
 	padding: 15px 0 20px;
-	border-bottom: 1px solid #EEE;
+	border-bottom: 1px solid var(--light-bg);
 	font-size: 1.05em;
 }
 .post:nth-last-of-type(1) {
@@ -163,7 +173,7 @@ p {
 .post-meta {
 	margin-top: -0.5em;
 	padding: 0;
-	color: #999;
+	color: var(--text-gray);
 	font-size: .92857em;
 }
 
@@ -171,7 +181,7 @@ p {
 	display: inline-block;
 	margin: 0 8px 0 0;
 	padding-left: 12px;
-	border-left: 1px solid #EEE;
+	border-left: 1px solid var(--light-bg);
 }
 
 .post-meta li:first-child {
@@ -191,7 +201,7 @@ p {
 .archive-title {
 	margin: 1em 0;
 	padding-top: 20px;
-	color: #999;
+	color: var(--text-gray);
 	font-size: 1em;
 }
 
@@ -230,7 +240,6 @@ h3.comment-closed.fade {
 	padding-left: 30px;
 	padding-right: 0;
 	margin-top: 10px;
-	/* border: 1px solid #EEE; */
 }
 
 .comment-list li .comment-reply {
@@ -239,13 +248,13 @@ h3.comment-closed.fade {
 }
 
 .comment-meta a {
-	color: #999;
+	color: var(--text-gray);
 	font-size: .92857em;
 }
 
 .comment-list .respond {
 	margin-top: 15px;
-	border-top: 1px solid #EEE;
+	border-top: 1px solid var(--light-bg);
 }
 
 .fadeIn {
@@ -330,17 +339,17 @@ h3.comment-closed.fade {
 	display: block;
 	padding: .3em 20px;
 	font-size: 1.1em;
-	color: #222;
+	color: var(--text-color);
 }
 .sidebar-nav .widget-list li a:hover {
-	background: rgba(0,0,0,.03)
+	background: var(--light-gray-bg)
 }
 
 #footer {
 	padding: 2em 0;
 	line-height: 1.5;
 	text-align: center;
-	color: #999;
+	color: var(--text-gray);
 	position: absolute;
 	display: block;
 	left: 0;
@@ -489,7 +498,7 @@ h3.comment-closed.fade {
 
 .post-content a,
 .comment-content a {
-	border-bottom: 2px solid #dfdfdf;
+	border-bottom: 2px solid var(--light-bg);
 	transition-property: border, opacity, color;
 	box-sizing: border-box
 }
@@ -503,7 +512,7 @@ h3.comment-closed.fade {
 .post-content code,
 .comment-content pre,
 .comment-content code {
-	background: #F3F3F3;
+	background: var(--light-bg);
 	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
 	font-size: 100%;
 }
@@ -525,7 +534,7 @@ h3.comment-closed.fade {
 .post-content pre code,
 .comment-content pre code {
 	padding: 3px;
-	color: #444;
+	color: var(--text-color);
 }
 
 .post-content blockquote,
@@ -534,7 +543,7 @@ h3.comment-closed.fade {
 	color: #666;
     position: relative;
     padding-left: .8em;
-    border-left: 8px solid rgba(0, 0, 0, 0.05);
+    border-left: 8px solid var(--light-bg);
 }
 
 .post-content figure {
@@ -596,7 +605,7 @@ h3.comment-closed.fade {
 }
 
 .bracketdown-block {
-	background: rgb(0,50,20,.03)!important;
+	background: rgb(0,50,20,.03);
 	border: 1px dashed var(--theme-color)!important;
 	position: relative;
 	color: rgba(120,120,40);
@@ -633,8 +642,8 @@ h3.comment-closed.fade {
 
 .post-content [data-github] {
 	border-radius: 3px;
-	background: #fffffd;
-	border-color: #ddd
+	background: #fffffe;
+	border-color: var(--gray-bg)
 }
 
 .post-content [data-github]::before {
@@ -645,7 +654,7 @@ h3.comment-closed.fade {
 	font-size: 10em;
 	bottom: -.5em;
 	right: -.1em;
-	color: rgba(0, 0, 0, 0.05);
+	color: var(--light-bg);
 	z-index: -1
 }
 
@@ -661,10 +670,18 @@ h3.comment-closed.fade {
 		max-width: 100%
 	}
 }
+.post-content [data-github] a {
+	color: var(--text-color)!important
+}
 
 .post-content .bracketdown-post {
+	border-color: var(--gray-bg);
 	border-width: 2px;
 	padding: 1em 1.5em
+}
+
+.post-content .bracketdown-post-title a {
+	color: var(--text-color)
 }
 
 .post-content .bracketdown-post:hover {
@@ -681,13 +698,15 @@ h3.comment-closed.fade {
 
 .post-content .bracketdown-post .bracketdown-post-meta a {
 	border-width: 2px;
-	border-color: #ccc;
+	border-color: var(--gray-bg);
 	border-radius: 3px;
-	padding: .3em 1em
+	padding: .3em 1em;
+	color: var(--text-gray)
 }
 .post-content .bracketdown-post .bracketdown-post-meta a:hover {
 	background: var(--theme-color);
-	border-color: var(--theme-color)
+	border-color: var(--theme-color);
+	color: #fff
 }
 
 /* end BracketDown */
@@ -785,7 +804,7 @@ img.alignright {
 .header .site-title,
 #small-header .site-title {
 	font-weight: 400;
-	color: #333 !important;
+	color: var(--text-color);
 }
 .header .site-description,
 #small-header .site-description {
@@ -793,6 +812,9 @@ img.alignright {
 	font-style: normal;
 	font-size: 14px;
 	line-height: 20px;
+}.header .site-name a,
+#small-header .site-name a {
+	color: var(--text-color)
 }
 #small-header {
 	text-align: center;
@@ -817,7 +839,7 @@ img.alignright {
 }
 #comment-form .text {
 	background-color: #fff;
-	color: #333;
+	color: var(--text-color);
 }
 #comment-form .textarea {
 	min-height: 150px;
@@ -825,7 +847,7 @@ img.alignright {
 	resize: vertical;
 	margin: 0;
 	background-color: #fff;
-	color: #333;
+	color: var(--text-color);
 	resize: none;
 }
 #comment-form .submit {
@@ -858,7 +880,8 @@ img.alignright {
 }
 #comment-form .textarea, 
 #comment-form input:not(.submit-extra input) {
-	border: 2px solid #eee!important
+	border: 2px solid var(--light-bg);
+	color: var(--text-color);
 }
 #comment-form .submit-section {
 	margin: .8em 0;
@@ -899,7 +922,7 @@ img.alignright {
 	font-size: 1.2em;
 	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
 	font-weight: 600;
-	color: #222
+	color: var(--text-color)
 }
 #comment-form .comments-logout {
 	font-size: .8em;
@@ -958,7 +981,7 @@ img.alignright {
 	margin: 1em 0;
 }
 .comment-body:not(.comment-children .comment-body) {
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--light-bg);
 	padding-top: .2em
 }
 .comment-body:last-child {
@@ -988,7 +1011,7 @@ img.alignright {
 .comment-meta .comment-author a {
 	padding: .2em .4em;
 	display: inline-block;
-	background: rgba(0, 0, 0, 0.05);
+	background: var(--light-bg);
 	border-radius: 2px;
 	line-height: 1;
 	margin-right: .5em
@@ -999,16 +1022,16 @@ img.alignright {
 }
 
 .comment-meta span.comment-at {
-	color: #444;
+	color: var(--text-color);
 	margin: 0;
 	display: inline;
 }
 .comment-meta span.comment-at a {
-	color: #444
+	color: var(--text-color)
 }
 
 .comment-date {
-	color: #aaa
+	color: var(--text-gray)
 }
 .comment-reply {
 	display: block;
@@ -1016,7 +1039,7 @@ img.alignright {
 	margin-top: .5em
 }
 .comment-reply a {
-	color: #222
+	color: var(--text-color)
 }
 .comment-children {
 	margin-left: 3.5em
@@ -1035,9 +1058,9 @@ img.alignright {
 	margin: 0 .2em;
 }
 .comment-pagenav ol li a {
-	color: #444;
+	color: var(--text-color);
 	font-size: 1.1em;
-	border: 1px solid #ddd;
+	border: 1px solid var(--gray-bg);
 	border-radius: 100%;
 	display: inline-block;
 	padding: .3em .65em;
@@ -1059,7 +1082,7 @@ img.alignright {
 }
 .post-title > a {
 	font-weight: 400;
-	color: #444;
+	color: var(--text-color);
 }
 .post-atmain .post-title a {
 	font-weight: bolder
@@ -1102,7 +1125,7 @@ img.alignright {
 	margin-bottom: 2em
 }
 .post-meta * {
-	color: #999 !important;
+	color: var(--text-gray) !important;
 }
 .post-meta a:hover {
 	color: var(--theme-color) !important;
@@ -1116,7 +1139,7 @@ img.alignright {
 /* 文章 */
 
 /* layout - 布局 & 定位 */
-#body .container {
+.container {
 	margin-left: calc(50% - 400px);
 	margin-right: calc(50% - 600px);
 	width: 1000px !important;
@@ -1125,13 +1148,13 @@ img.alignright {
 	padding-top: 2.8em;
 	box-sizing: border-box;
 	box-shadow: 0 0 1em rgba(0,0,0,.1);
-	background: #fff!important;
+	background: #fff;
 	min-height: 100vh;
 	position: relative;
 	padding-bottom: 8em!important
 }
 @media (min-width: 992px){
-	#body .container {
+	.container {
 		padding: 2.8em;
 	}
 }
@@ -1171,101 +1194,15 @@ img.alignright {
 }
 /* layout - 布局 & 定位 */
 
-/* 搜索 */
-.site-search {
-	width: 100%;
-	margin-left: -40px;
-	margin-right: -40px;
-	margin-bottom: -40px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	transition: 0.25s;
-	background-color: #fff;
-}
-.site-search:hover {
-	background-color: #eee;
-}
-.site-search #s {
-	display: block;
-	width: 100%;
-	max-height: 40px;
-	padding: 16px;
-	resize: vertical;
-	max-width: 100%;
-	margin: 0;
-	font-size: 14px;
-	background-color: #0000;
-	line-height: 1.6;
-	color: #333;
-	border: none;
-	border-radius: 0;
-	outline: none;
-	box-shadow: none;
-	overflow: visible;
-	border-radius: 0;
-	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
-	border-bottom: 1px solid #EEE;
-	transition: 0.25s;
-}
-.site-search .submit {
-	outline: none;
-}
-/* 搜索 */
-
-/* 搜索(顶部) beta */
-.site-search-top {
-	width: 100%;
-	margin-left: -40px;
-	margin-right: -40px;
-	/*margin-bottom: -40px;*/
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	transition: 0.25s;
-	background-color: #fff;
-}
-.site-search-top:hover {
-	background-color: #eee;
-}
-.site-search-top #s {
-	display: block;
-	width: 100%;
-	max-height: 40px;
-	padding: 16px;
-	resize: vertical;
-	max-width: 100%;
-	margin: 0;
-	font-size: 14px;
-	background-color: #0000;
-	line-height: 1.6;
-	color: #333;
-	border: none;
-	border-radius: 0;
-	outline: none;
-	box-shadow: none;
-	overflow: visible;
-	border-radius: 0;
-	font-family: /*Menlo,*/Monaco,Consolas,"Lucida Console","Courier New",monospace;
-	border-bottom: 1px solid #EEE;
-	transition: 0.25s;
-}
-.site-search-top .submit {
-	outline: none;
-}
-/* 搜索 */
-
 /* page navigator - 选页器 */
 .page-navigator:not(.comment-pagenav .page-navigator) {
 	display: flex;
 	justify-content: space-between
 }
 .page-navigator:not(.comment-pagenav .page-navigator) a {
-	color: #444;
+	color: var(--text-color);
 	font-size: 1.1em;
-	border: 1px solid #ddd;
+	border: 1px solid var(--gray-bg);
 	border-radius: 100%;
 	display: inline-block;
 	font-weight: bold;
@@ -1298,7 +1235,7 @@ img.alignright {
 	line-height: 1.5;
 }
 .archive-item a {
-	color: #333;
+	color: var(--text-color);
 	font-size: 1.1em;
 	padding: .3em .6em;
 	display: block;
@@ -1323,6 +1260,8 @@ img.alignright {
 	border-radius: 4px;
 	transition-property: color, background;
 	transition-duration: .3s;
+	color: var(--text-color);
+	background: var(--light-bg)
 }
 .archive-button:hover {
 	background: var(--theme-color);
@@ -1403,7 +1342,7 @@ table tr:nth-child(even) {
 }
 .tags-list li a,
 .tags-list a {
-	color: #000;
+	color: var(--text-color);
 	display: inline-block;
 	padding: .2em .5em;
 	padding-bottom: .3em;
@@ -1412,11 +1351,11 @@ table tr:nth-child(even) {
 
 .tags-list li a:hover,
 .tags-list a:hover {
-	background-color: rgb(0,0,0,.06);
+	background-color: var(--light-bg);
 	text-decoration: none
 }
 .tags-title {
-	color: #999;
+	color: var(--text-gray);
 	font-size: 1.2em;
 	margin-right: .2em
 }
@@ -1428,7 +1367,7 @@ table tr:nth-child(even) {
 	padding: .1em .5em;
 	margin-right: .2em;
 	border-radius: 3px;
-	background: rgb(0,0,0,.035);
+	background: var(--light-bg);
 }
 .post-tags-list a:hover {
 	background: var(--theme-color);
@@ -1437,7 +1376,7 @@ table tr:nth-child(even) {
 
 #search{
 	overflow: hidden;
-	border: 2px solid #666;
+	border: 2px solid var(--gray-bg);
 	border-radius: 2px;
 	transition: border-color .3s
 }
@@ -1459,7 +1398,7 @@ table tr:nth-child(even) {
 }
 #search button {
 	cursor: pointer;
-	color: #666;
+	color: var(--gray-bg);
 	transition: color .3s
 }
 #search button:hover {
@@ -1475,7 +1414,7 @@ table tr:nth-child(even) {
 	padding: .7em .9em;
 	font-size: 1.1em;
 	font-weight: bold;
-	box-shadow: 0 0 .2em rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 .2em var(--light-bg);
 	cursor: pointer;
 	position: fixed;
 	bottom: 1.5em;
@@ -1523,8 +1462,8 @@ div.code-toolbar>.toolbar>.toolbar-item>button {
 }
 div.code-toolbar>.toolbar>.toolbar-item>button:hover,
 div.code-toolbar>.toolbar>.toolbar-item>button:focus {
-	background: rgba(0, 0, 0, 0.05);
-	color: #aaa
+	background: var(--light-bg);
+	color: var(--text-gray)
 }
 div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	content: '\e94c';
@@ -1563,13 +1502,13 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 }
 
 .links-item:hover {
-	background: rgba(0, 0, 0, 0.05)
+	background: var(--light-bg)
 }
 
 .links-content {
 	display: flex;
 	flex-direction: row;
-	color: #666;
+	color: var(--text-color);
 	align-items: center
 }
 
@@ -1595,7 +1534,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 }
 .links-profile p {
 	margin: 0;
-	color: #aaa;
+	color: var(--text-gray);
 	font-size: .9em;
 	line-height: 1.1;
 	margin-top: .4em
@@ -1609,7 +1548,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 .external-icon {
 	font-size: .9em;
 	margin-right: .12em;
-	color: #ccc
+	color: var(--gray-bg)
 }
 
 /* animation */
@@ -1722,7 +1661,9 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
 	border: none;
-	background: #fafafa
+}
+.bigfoot-footnote__content {
+	color: var(--text-color)
 }
 
 .bigfoot-footnote__button:hover,

@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need("includes/head.php"); ?>
-<body class="style-journal">
+<body>
 <?php $this->need('includes/sidebar.php'); ?>
 <div id="body">
     <div class="container">

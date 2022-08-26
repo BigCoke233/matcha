@@ -1,0 +1,81 @@
+@charset 'utf-8';
+
+/**
+ * matcha.dark.css
+ * 夜间模式
+ */
+
+body.matcha-dark {
+    --theme-color: #009999; /*rgb(0, 153, 153)*/
+    --text-color: #ddd;
+    --text-gray: #aaa;
+    --light-bg: rgba(255,255,255,.05);
+    --gray-bg: rgba(255,255,255,.2);
+    --light-gray-bg: rgba(255,255,255,.02);
+
+    background: #181818;
+    color: #ddd
+}
+
+body.matcha-dark .container {
+    background: #232323
+}
+
+/* 深色背景 */
+body.matcha-dark #comment-form .textarea,
+body.matcha-dark #comment-form input:not(.submit-extra input),
+body.matcha-dark #search input {
+    background: #181818;
+}
+
+/* 去除背景 */
+body.matcha-dark .post-content pre code {
+    background: transparent
+}
+
+/* 深色蒙层 */
+body.matcha-dark img,
+body.matcha-dark iframe {
+    -webkit-filter: brightness(80%);
+    filter: brightness(80%)
+}
+
+/**
+ * 特殊元素的处理
+ */
+/* BracketDown */
+body.matcha-dark .bracketdown-block{
+    color: rgb(0, 120, 120);
+    background: rgb(0,50,50,.1);
+}
+body.matcha-dark .bracketdown-block::before {
+    background: rgba(0, 153, 153, .9)
+}
+
+body.matcha-dark .post-content [data-github] {
+    background: var(--light-bg)
+}
+
+body.matcha-dark .bigfoot-footnote__content,
+body.matcha-dark .bigfoot-footnote__wrapper,
+body.matcha-dark .bigfoot-footnote__tooltip {
+    background: #333;
+}
+body.matcha-dark .bigfoot-footnote__wrapper::before,
+body.matcha-dark .bigfoot-footnote__wrapper::after {
+    display: none
+}
+/* Comment */
+body.matcha-dark #comment-form .textarea, 
+body.matcha-dark #comment-form input:not(.submit-extra input) {
+	border: 2px solid var(--gray-bg);
+}
+/* Post */
+body.matcha-dark .post-content pre,
+body.matcha-dark .post-content pre code {
+    text-shadow:0 1px rgba(0,0,0,.05)
+}
+/* Sidebar */
+body.matcha-dark .header {
+    background: var(--light-gray-bg)
+}

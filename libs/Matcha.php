@@ -61,7 +61,9 @@ class Matcha
         array_push($local_includes,
             "toaster/toaster",
             "matcha.grid",
-            "matcha");
+            "matcha",
+            "matcha.dark"
+        );
         foreach($local_includes as $value){
             echo '<link rel="stylesheet" href="';
             Utils::indexTheme('assets/'.$value.'.css');
