@@ -1086,10 +1086,10 @@ img.alignright {
 	margin-top: 0
 }
 .page-title-atpage::before {
-	content: '「';
+	content: '\u300c';
 }
 .page-title-atpage::after {
-	content: '」';
+	content: '\u300d';
 }
 .page-title-atpage::before,
 .page-title-atpage::after {
