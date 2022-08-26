@@ -2,14 +2,13 @@
 
 # Theme Matcha
 
-<a href="#"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square"></a>
-<a href="#"><img src="https://img.shields.io/badge/made%20with-%E2%9D%A4-ff69b4.svg?style=flat-square"></a>
+<a href="https://typecho.org"><img src="https://img.shields.io/badge/typecho-1.2.0-brightgreen?style=flat-square"></a> 
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL v3.0-blue.svg?style=flat-square"></a> 
-<a href="https://typecho.org"><img src="https://img.shields.io/badge/for-Typecho-blueviolet.svg?style=flat-square"></a> 
+<a href="#"><img src="https://img.shields.io/badge/made%20with-%E2%9D%A4-ff69b4.svg?style=flat-square"></a>
+<a href="https://github.com/BigCoke233/matcha/releases"><img src="https://img.shields.io/github/v/release/BigCoke233/matcha?display_name=tag&style=flat-square"></a>
 
-Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次开发的 Typecho 主题，而 [Ringo](https://github.com/memset0/typecho-theme-ringo) 本身是移植自 Hexo 的 [Journal](https://github.com/SumiMakito/hexo-theme-Journal) 主题。所以 Matcha 主题是踩在 memset0 和 SumiMakito 两位大佬的肩膀上完成的，当然，也还并没有完成。
 
-总体上来讲，Matcha 是基于 Ringo 的代码和 Journal 的设计进行二次创作的，增加和优化了许多功能，并且加入了一些自己的设计。
+Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次开发的 Typecho 主题，而 [Ringo](https://github.com/memset0/typecho-theme-ringo) 本身是移植自 Hexo 的 [Journal](https://github.com/SumiMakito/hexo-theme-Journal) 主题。总体上来讲，Matcha 是基于 Ringo 的代码和 Journal 的设计进行二次创作的，增加和优化了许多功能，并且加入了一些自己的设计。
 
 ## 特色
 
@@ -25,6 +24,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - **文章阅览量统计**，查看有多少人点开了你的文章
 - **人性化的时间显示**，是今天、昨天，还是几天前，而不是枯燥的日期
 - **增强可读性**，精心设计的文字排版
+- **良好的兼容性**，兼容各类插件，继承曾使用过的主题数据
 - More to find
 
 <details>
@@ -74,22 +74,31 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 4. 解压到 `usr/themes/` 目录
 5. 登陆后台启用主题并更改设置
 
-Enjoy~
-
 <details>
 <summary>使用开发版</summary>
 
 1. 直接 `clone` 或者下载仓库 `main` 分支
 2. 将文件夹重命名为 `matcha`
 3. 将主题文件夹放入主题安装目录 `/usr/themes/`
-4. 登入后台进行简单的配置
+4. 登陆后台启用主题并更改设置
 
 </details>
+
+<details>
+<summary>查看历史版本和更新日志</summary>
+
+所有版本的更新日志请查看 [change-log.md](change-log.md)。
+
+Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标准发行版本号，所有 Releases 页面的发行版都遵循这一规范，除此之外，主题会为每一个次级版本命名来概述此次更新（当然并不重要）。开发版的语义化版本号，也就是 GitHub 仓库里没有被特别赋予版本号的的版本，为 `当前最新发行版版本号-alpha+最近一次 commit 的哈希码前七位`，例如[这一个 commit](https://github.com/BigCoke233/matcha/commit/1c32e661d5048530ec19df692f97ab8c1a895d4c)的版本号为 `1.0.0-alpha+3b87366`。
+
+</details>
+
+### 说明
 
 如果在使用过程中遇到任何问题，请先查看 [FAQ](doc.md)，若没能解决，再询问作者。<br>
 你也可以加入 QQ 群（924171480）与各路大佬交流。当然这并不是主题用户交流群，只要是与我作品相关的内容都可以在群里讨论，就当作是一个随意的交流群吧。
 
-## 拓展
+### 拓展
 
 这些插件可以拓展主题的功能，并且主题已经适配了它们，可以放心使用
 
@@ -98,10 +107,6 @@ Enjoy~
 - [BracketDown](https://github.com/BigCoke233/typecho-plugin-BracketDown)：语法拓展插件，如果想要在文章里使用短代码就需要安装这个插件
 - [CopyDog](https://github.com/BigCoke233/typecho-plugin-CopyDog)：版权狗插件，可以在文章末尾生成一个显示版权信息的卡片
 
-## 日志
-
-具体的更新日志请查看 [change-log.md](change-log.md)。
-
 ## 鸣谢
 
 #### 开源项目
@@ -109,7 +114,6 @@ Enjoy~
 [jQuery](https://jquery.com/) | 
 [jQuery Lazy](http://jquery.eisbehr.de/lazy/) |
 [Pjax](https://github.com/defunkt/jquery-pjax) | 
-[Pangu.php](https://github.com/cchlorine/pangu.php) | 
 [Prism.js](https://prismjs.com/) | 
 [smoothscroll.js](https://www.smoothscroll.net/) | 
 [bigfoot.js](http://bigfootjs.com/) | 
