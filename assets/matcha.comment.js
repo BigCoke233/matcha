@@ -144,7 +144,7 @@ matchaComment.core = function() {
                     }
                 }
                 matchaComment.after(true);
-                Toaster.send('评论发送成功');
+                toast('评论发送成功');
                 matchaComment.bindButton();
             }
         });

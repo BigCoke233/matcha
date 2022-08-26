@@ -1458,7 +1458,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button {
 	box-shadow: none;
 	border-radius: 3px;
 	background: transparent;
-	color: rgba(0,0,0,.1);
+	color: var(--gray-bg);
 	cursor: pointer;
 	border: none;
 	font-size: 1.1em;

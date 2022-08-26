@@ -1,4 +1,14 @@
 /**
+ * Lib
+ */
+//使用 Toaster 的快捷方式
+var toast = function(m) {
+    Toaster.toast(m, {
+        color: 'var(--theme-color)'
+    });
+}
+
+/**
  * Functions
  */
 //bigfoot.js
@@ -24,7 +34,7 @@ var prismLoad = function(){
         onClick: function (env) {
             var text = env.element.innerText;
             navigator.clipboard.writeText(text);
-            Toaster.send('已将代码复制到剪切板');
+            toast('已将代码复制到剪切板');
         }
     });
 };
@@ -76,7 +86,7 @@ var linkFlow = function(){
     }
 }
 //适配 CopyDog 插件
-copydog_copied=function(){Toaster.send('成功复制到剪切板');}
+copydog_copied=function(){toast('成功复制到剪切板');}
 //Go to Top
 /**
  @description 页面垂直平滑滚动到指定滚动高度
@@ -168,7 +178,7 @@ var CommentClosedBtn = function(){
             $('#comment-closed').remove();
         },300);
         document.cookie = 'commentsClosedKnown=y';
-        Toaster.send('短期内不会再显示此类信息');
+        toast('短期内不会再显示此类信息');
     });
 }
 //搜索功能
