@@ -31,7 +31,8 @@ body {
 	font-size: 100%;
 	font-family: 'Noto Serif SC', serif!important;
 	word-break: break-all;
-	box-sizing: border-box
+	box-sizing: border-box;
+	transition: background .3s
 }
 
 body,
@@ -1151,7 +1152,8 @@ img.alignright {
 	background: #fff;
 	min-height: 100vh;
 	position: relative;
-	padding-bottom: 8em!important
+	padding-bottom: 8em!important;
+	transition: background .3s
 }
 @media (min-width: 992px){
 	.container {
