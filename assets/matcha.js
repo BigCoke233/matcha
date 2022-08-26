@@ -75,40 +75,6 @@ var linkFlow = function(){
         });
     }
 }
-//搜索功能
-var searchInit = function(){
-    $('#input_search').on("input propertychange", function(){
-        $('#search-button').attr('href','http://'+window.location.host+'/index.php/search/'+$('#input_search').val()+'/')
-    });
-    $('#search-button').click(function(){
-        if($('#search-button').attr('href')==null){
-            Toaster.error('请输入关键词');
-        }
-    });
-    //当浏览器返回时，以上代码会失效，这里自动刷新一下页面
-    if($('#input_search').length){
-        $(document).ready(function () {
-            if (window.history && window.history.pushState) {
-                $(window).on('popstate', function () {
-                    if($('#input_search').length){
-                        $('#input_search').val('');
-                        $('body').append('<a href="'+ window.location.href +'" id="pjax-refresh" style="display:none"> </a>');
-                        $('#pjax-refresh').click()
-                    }
-                });
-            }
-        });
-    }
-}
-//归档页面展开收起
-var archiveInit = function(){
-    //监听归档页面展开收起按钮
-    $('.archive-button').click(function(){
-        var target = $(this).attr('id').replace('button', 'list');
-        $('#'+target).slideToggle();
-        $(this).toggleClass('closed');
-    });
-}
 //适配 CopyDog 插件
 copydog_copied=function(){Toaster.send('成功复制到剪切板');}
 //Go to Top
@@ -178,10 +144,22 @@ $("#back2top").on("click",function(){scrollSmoothTo(0)});
 $(window).scroll(function() {
     if ($(window).scrollTop() > 450) {
         scaleIn($('#back2top'), '0.7');
+        $('#light-switch').addClass('helpbar-up');
     } else {
         scaleOut($('#back2top'), '0.7');
+        $('#light-switch').removeClass('helpbar-up');
     }
 });
+//Light Switch
+$('#light-switch').click(function(){
+    $('body').toggleClass('matcha-dark');
+    if($('body').hasClass('matcha-dark')){
+        $(this).html('<span class="iconfont">&#xe7ee;</span>');
+    }else{
+        $(this).html('<span class="iconfont">&#xe7ac;</span>');
+    }
+});
+
 //Comment Closed Feedback
 var CommentClosedBtn = function(){
     $('#comment-closed').click(function(){
@@ -191,6 +169,40 @@ var CommentClosedBtn = function(){
         },300);
         document.cookie = 'commentsClosedKnown=y';
         Toaster.send('短期内不会再显示此类信息');
+    });
+}
+//搜索功能
+var searchInit = function(){
+    $('#input_search').on("input propertychange", function(){
+        $('#search-button').attr('href','http://'+window.location.host+'/index.php/search/'+$('#input_search').val()+'/')
+    });
+    $('#search-button').click(function(){
+        if($('#search-button').attr('href')==null){
+            Toaster.error('请输入关键词');
+        }
+    });
+    //当浏览器返回时，以上代码会失效，这里自动刷新一下页面
+    if($('#input_search').length){
+        $(document).ready(function () {
+            if (window.history && window.history.pushState) {
+                $(window).on('popstate', function () {
+                    if($('#input_search').length){
+                        $('#input_search').val('');
+                        $('body').append('<a href="'+ window.location.href +'" id="pjax-refresh" style="display:none"> </a>');
+                        $('#pjax-refresh').click()
+                    }
+                });
+            }
+        });
+    }
+}
+//归档页面展开收起
+var archiveInit = function(){
+    //监听归档页面展开收起按钮
+    $('.archive-button').click(function(){
+        var target = $(this).attr('id').replace('button', 'list');
+        $('#'+target).slideToggle();
+        $(this).toggleClass('closed');
     });
 }
 

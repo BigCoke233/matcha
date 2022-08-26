@@ -1405,8 +1405,8 @@ table tr:nth-child(even) {
 	color: var(--theme-color)
 }
 
-/* back-to-top button */
-#back2top {
+/* helpbar button */
+#helpbar button {
 	color: #fff;
 	background: var(--theme-color);
 	border: none;
@@ -1421,6 +1421,9 @@ table tr:nth-child(even) {
 	right: 1em;
 	transition: .4s;
 	z-index: 20220820
+}
+#helpbar .helpbar-up {
+	bottom: 4.5em
 }
 
 /* ScrollBar */
@@ -1539,7 +1542,6 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	line-height: 1.1;
 	margin-top: .4em
 }
-
 .links-container {
 	clear: both;
 	margin: 2em 0;
