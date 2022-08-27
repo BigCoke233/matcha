@@ -1283,6 +1283,11 @@ img.alignright {
 		padding: 2.8em;
 	}
 }
+@media (max-width: 800px) {
+	.container {
+		padding: 1em
+	}
+}
 .widget-list li ul {
 	margin-left: 0px;
 	margin-right: 30px;
