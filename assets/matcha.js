@@ -218,6 +218,7 @@ if(allowDarkMode){
 //移动端菜单按钮
 $('#nav-drop').click(function(){ $('.navbar-dropdown').fadeIn().addClass('down') });
 $('#nav-rise').click(function(){ $('.navbar-dropdown').fadeOut().removeClass('down') });
+$('.navbar-dropdown a').click(function(){ $('.navbar-dropdown').fadeOut().removeClass('down') });
 //页面不在顶部时收起导航栏
 $(window).scroll(function(event){
     if($(window).scrollTop()!=0){
