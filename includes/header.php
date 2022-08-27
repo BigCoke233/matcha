@@ -21,11 +21,11 @@ $this->need("includes/head.php"); ?>
                 <ul class="widget-list"><?php Matcha::pageNav($this, "li"); ?></ul>
                 <h2>分类</h2>
                 <ul class="widget-list widget-category">
-                    <?php $this->widget('Widget_Contents_Page_List')->to($pages);
-                        while($pages->next()): ?>
-                        <li>
-                            <a href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>
-                        </li>
+                    <?php $this->widget('Widget_Metas_Category_List')->to($categories); ?>
+                    <?php while($categories->next()): ?>
+                    <li>
+                        <a href="<?php $categories->permalink(); ?>" rel="section"><?php $categories->name(); ?></a>
+                    </li>
                     <?php endwhile; ?>
                 </ul>
             </div>
