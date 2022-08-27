@@ -135,6 +135,59 @@ var scrollSmoothTo = function (position) {
     };
     step();
 };
+//tocbot
+var tocbotLoad = function() {
+    if($('#toc').length){
+        //初始化 tocbot
+        tocbot.init({
+            tocSelector: '#toc',
+            contentSelector: '.post-content',
+            headingSelector: 'h2, h3',
+            hasInnerContainers: true,
+            smoothScroll: true,
+            headingsOffset: 20,
+            scrollSmoothOffset: -20
+        });
+
+        var sidebarTop = $('.sidebar').css('top').replace('px','');
+        $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop()
+            var newTop = sidebarTop - scrollTop;
+            if(newTop>=0) {
+                $('.sidebar.tocbar').css('top', newTop);
+            }else{
+                $('.sidebar.tocbar').css('top', 0);
+            }
+        });
+
+        //用文章目录代替侧边栏
+        var toc = $('#toc').children().html();//文章目录
+        var navList = $('.sidebar-nav .widget-list').html();//原导航内容
+        var headerContent = $('#header').html();//原 header 内容
+        var sidebarFoot = $('.sidebar-foot').html();
+
+        function openToc(){
+            $('.sidebar-foot').fadeOut().html('');
+            $('.sidebar').addClass('tocbar');
+            $('#header').addClass('toc-header').html('<h1><button id="toc-close"><span class="iconfont">&#xe650;</span></button> <span>文章目录</span></h1>');
+            $('.sidebar-nav .widget-list').html('<li><a>该文章没有目录</a></li>').html(toc).attr('id','toc');
+        }
+        openToc();
+
+        function closeToc(){
+            $('.sidebar-foot').html(sidebarFoot).fadeIn();
+            $('.sidebar').removeClass('tocbar').css('top', '2.8em');
+            $('#header').removeClass('toc-header').html(headerContent);
+            $('.sidebar-nav .widget-list').removeAttr('id').html(navList);
+        }
+
+        //关闭文章目录
+        $('#toc-close').click(closeToc);
+        $('#post-toc-toggle').click(function(){
+            if($('.sidebar').hasClass('tocbar')){ closeToc() }else{ openToc();$('#toc-close').click(closeToc); }
+        });
+    }
+}
 
 
 /**
@@ -291,11 +344,12 @@ var JSLoad = function(){
     lazyloader();
     searchInit();
     archiveInit();
+    tocbotLoad();
+    CommentClosedBtn();
     if(AjaxCommentEnabled=='able'){
         matchaComment.bindButton();
         matchaComment.core();
     }
-    CommentClosedBtn();
 }
 JSLoad();
 
@@ -307,10 +361,12 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
     }).on('pjax:send', function() {
         $('body').append('<div class="spinner" role="spinner" id="pjax-loading"><div class="spinner-icon"></div></div>');
         $("#main").removeClass("fadein").addClass("fadeout");
+        if ($('.toc').length) tocbot.destroy();
         scrollSmoothTo(0);
     }).on('pjax:complete', function() {
         $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
         JSLoad();
+        toc='';
         pjaxCallback();
         $('#pjax-loading').remove();
 });

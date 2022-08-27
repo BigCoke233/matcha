@@ -341,7 +341,9 @@ h3.comment-closed.fade {
 	margin: 0
 }
 .sidebar-nav .widget-list {
-	margin-top: .3em
+	margin-top: .3em;
+	overflow-y: auto;
+	height: fit-content
 }
 .sidebar-nav .widget-list li a {
 	display: block;
@@ -351,6 +353,10 @@ h3.comment-closed.fade {
 }
 .sidebar-nav .widget-list li a:hover {
 	background: var(--light-gray-bg)
+}
+.sidebar-nav .widget-list::-webkit-scrollbar {
+	width: 3px;
+	background: var(--light-bg)!important;
 }
 
 #footer {
@@ -1823,4 +1829,76 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 
 .fluidbox__overlay {
 	background: #fff
+}
+
+/* Post TOC */
+.post #toc {
+	display: none;
+}
+.sidebar * {
+	transition: all .3s
+}
+
+.header.toc-header {
+	padding: 0 1em;
+	padding-left: 0
+}
+.header.toc-header h1 {
+	font-size: 1.2rem;
+	line-height: 2.5;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between
+}
+
+#toc li a {
+	font-size: 1em
+}
+#toc li .toc-list {
+	font-size: .9em
+}
+#toc li .toc-list li {
+	padding: 0 1em;
+	list-style-type: none
+}
+
+#toc.widget-list .is-active-link::before {
+	display: none
+}
+#toc.widget-list li a::before {
+	display: none
+}
+
+#toc-close,
+#post-toc-toggle {
+	font-size: 1em;
+	padding: 0 .5em
+}
+#toc-close {
+	padding-left: .7em;
+	padding-right: .7em;
+	background: var(--light-gray-bg)
+}
+#toc-close:hover {
+	background: var(--gray-bg)
+}
+#post-toc-toggle {
+	display: inline-block;
+	line-height: .9em;
+	font-size: .9rem;
+	padding: 0 .6em;
+	margin-left: .5em;
+	background: var(--light-bg);
+	border-radius: 3px;
+	transition: background .3s
+}
+#post-toc-toggle:hover {
+	background: var(--gray-bg)
+}
+
+.post-title-withtoc {
+	display: flex;
+	flex-direction: row;
+	justify-content: center
 }

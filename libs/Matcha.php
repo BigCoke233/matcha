@@ -29,7 +29,8 @@ class Matcha
                     'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
                     'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
                     'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css'
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
                 );
             }
             elseif(Helper::options()->StaticCDN=='cdnjs'){
@@ -39,7 +40,8 @@ class Matcha
                     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
                     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
                     'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css'
+                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
+                    'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css'
                 );
             }
 
@@ -54,7 +56,8 @@ class Matcha
                 "normalize", 
                 "bigfoot/bigfoot",
                 "prism/prism",
-                "jquery/jquery.fluidbox.min"
+                "jquery/jquery.fluidbox.min",
+                "tocbot/tocbot"
             );
         }
         //必须要在本地引入的文件
@@ -123,7 +126,8 @@ class Matcha
                     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js',
                     'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
                     'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js'
+                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
+                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js'
                 );
             }
             elseif(Helper::options()->StaticCDN=='cdnjs'){
@@ -134,7 +138,8 @@ class Matcha
                     'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js'
+                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js'
                 );
             }
 
@@ -151,6 +156,7 @@ class Matcha
                 "jquery/jquery.lazy.min",
                 "jquery/jquery.fluidbox.min",
                 'jquery/jquery.ba-throttle-debounce.min',
+                'tocbot/tocbot.min',
                 "masonry/masonry.pkgd.min",
                 "bigfoot/bigfoot"
             );
@@ -312,13 +318,24 @@ class Matcha
     }
 
     /**
+     * 为文章标题添加id
+     */
+    static public function tocbot($text){
+        $text = preg_replace(
+			'/\<h(2|3)(.*?)\>(.*?)\<\/h(2|3)\>/s',
+			'<h${1}${2} id="heading-${3}">${3}</h${1}>',
+		$text);
+        return $text;
+    }
+
+    /**
      * 解析文章内容
      */
     static public function parseContent($data, $widget, $last)
     {
         $text = empty($last) ? $data : $last;
         if ($widget instanceof Widget_Archive) {
-			$text = Matcha::lazyLoad($text);
+			$text = Matcha::tocbot(Matcha::lazyLoad($text));
         }
         return $text;
     }

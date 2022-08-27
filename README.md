@@ -18,6 +18,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - **平滑滚动**，翻阅页面时滚动更加自然
 - **图片懒加载**，延迟加载图片，提升页面速度
 - **图片灯箱**，点击图片可放大查看
+- **文章目录**，使用 tocbot 生成的动态文章目录，支持二三级标题
 - **更好的代码高亮**，自动生成行号，附带一键复制按钮
 - **更好的字体**，借助 Google Font，采用思源系列字体
 - **访客统计**，即插即用的统计功能
@@ -120,7 +121,8 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 [toaster.js](https://github.com/bigcoke233/toaster.js) | 
 [Masonry](https://github.com/desandro/masonry) | 
 [Fluidbox](http://terrymun.github.io/Fluidbox/demo/index.html) | 
-[Throttle-Debounce](https://benalman.com/projects/jquery-throttle-debounce-plugin/)
+[Throttle-Debounce](https://benalman.com/projects/jquery-throttle-debounce-plugin/) | 
+[tocbot.js](https://tscanlin.github.io/tocbot/)
 
 
 #### 矢量图
