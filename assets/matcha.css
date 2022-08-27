@@ -1553,11 +1553,16 @@ table tr:nth-child(even) {
 	position: fixed;
 	bottom: 1.5em;
 	right: 1em;
-	transition: .4s;
-	z-index: 20220820
+	transition: .4s
 }
 #helpbar .helpbar-up {
 	bottom: 4.5em
+}
+#back2top {
+	z-index: 60
+}
+#light-switch {
+	z-index: 90
 }
 
 /* ScrollBar */
