@@ -465,7 +465,8 @@ h3.comment-closed.fade {
 }
 .post-content hr:before,
 .comment-content hr:before {
-    color: rgba(0, 0, 0, 0.2);
+    color: var(--gray-bg);
+	font-weight: 800;
     font-size: 1.1em;
     display: block;
     content: "* * *";
