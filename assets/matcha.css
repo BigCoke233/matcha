@@ -22,6 +22,7 @@
 	--light-bg: rgb(242,242,242);
 	--light-gray-bg: rgba(0,0,0,.05);
 	--gray-bg: rgba(0,0,0,.2);
+	--overlay-bg: rgba(255,255,255,.8)
 }
 
 body {
@@ -64,6 +65,13 @@ p {
 	margin-inline-end: 0px;
 }
 
+button {
+	border: none;
+	background: transparent;
+	color: var(--text-color);
+	cursor: pointer
+}
+
 .browsehappy {
 	padding: 8px 0;
 	background: #FBE3E4;
@@ -87,7 +95,7 @@ p {
 }
 
 .header a,
-#small-header a {
+.small-header a {
 	font-family: 'ZCOOL XiaoWei', serif!important;
 }
 
@@ -279,11 +287,10 @@ h3.comment-closed.fade {
 
 /* sidebar */
 
-#small-header {
+.small-header {
 	display: none;
-	padding: 40px 40px 28px;
-	border-bottom: 2px solid var(--theme-color);
-	margin-bottom: 2em
+	padding: 1em .5em;
+	border-bottom: 2px solid var(--theme-color)
 }
 .header {
 	padding-top: 40px;
@@ -790,7 +797,7 @@ img.alignright {
 
 /* header */
 .header,
-#small-header {
+.small-header {
 	/* transition: 0.25s; */
 	font-family: "Droid Serif",
 		Georgia,
@@ -803,34 +810,150 @@ img.alignright {
 		serif;
 }
 .header .site-title,
-#small-header .site-title {
+.small-header .site-title {
 	font-weight: 400;
 	color: var(--text-color);
 }
 .header .site-description,
-#small-header .site-description {
+.small-header .site-description {
 	color: #666;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 20px;
-}.header .site-name a,
-#small-header .site-name a {
+}
+.small-header .site-name {
+	margin: 1em
+}
+.header .site-name a,
+.small-header .site-name a {
 	color: var(--text-color)
 }
-#small-header {
+.small-header {
 	text-align: center;
 }
-#small-header .page-links {
+.small-header .page-links {
 	margin-top: 20px;
 }
-#small-header .page-links span:before {
+.small-header .page-links span:before {
 	content: ' · ';
 	margin-left: 10px;
 	margin-right: 10px;
 }
-#small-header .page-links span:first-child:before {
+.small-header .page-links span:first-child:before {
 	content: '';
 	margin: 0;
+}
+
+.small-header .navbar-dropdown {
+	height: 100vh;
+	top: -100vh;
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	display: none;
+	transition: top .3s;
+	text-align: left;
+	background: var(--overlay-bg);
+	backdrop-filter: blur(1em);
+	-webkit-backdrop-filter: blur(1em);
+}
+.small-header .navbar-dropdown.down {
+	top: 0;
+	bottom: 0
+}
+.small-header .navbar-dropdown h2 {
+	font-weight: 400;
+	padding: .2em 1.2em;
+	margin: 1em 0;
+	border-bottom: 1px solid var(--light-bg);
+	margin: .5em 0
+}
+
+.small-header .navbar-action {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between
+}
+.small-header .navbar-button {
+	padding: .5em;
+	line-height: 1;
+	border-radius: 2px;
+	transition: background .3s;
+	position: relative;
+}
+.small-header .navbar-button:hover {
+	background: var(--light-gray-bg)
+}
+
+.small-header .navbar-dropup {
+	padding: .1em .4em;
+	position: fixed;
+	top: 1em;
+	right: .5em
+}
+.small-header .navbar-dropup span {
+	display: inline-block;
+	transform: rotate(45deg);
+	font-size: 2em
+}
+
+.small-header .widget-list {
+	margin: 0 2em
+}
+.small-header .widget-list li {
+	display: inline-block;
+	width: 50%;
+	text-align: center
+}
+.small-header .widget-list.widget-category li {
+	width: calc(50% - .125em)
+}
+.small-header .widget-list li a {
+	font-family: 'Noto Serif SC', serif!important;
+	display: block;
+	margin: 0;
+	padding: .3em 0;
+	font-size: 1.2em;
+	color: var(--text-color);
+	border-radius: 3px
+}
+.small-header .widget-list li a:hover {
+	background: var(--light-bg)
+}
+
+.small-header.shrink {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index:80;
+	background: var(--light-bg);
+	backdrop-filter: blur(1em);
+	-webkit-backdrop-filter: blur(1em)
+}
+@media (max-width: 800px){
+	.container.with-shrunk-nav {
+		padding-top: 7em
+	}
+}
+
+.small-header.shrink p.site-description {
+	display: none
+}
+.small-header.shrink .site-name {
+	margin: 0;
+}
+.small-header.shrink .site-name .site-title {
+	font-size: 1rem;
+	position: fixed;
+	top: .4em;
+	left: 1.5em;
+	right: 1.5em;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
 }
 /* header */
 
@@ -1178,8 +1301,11 @@ img.alignright {
 }
 
 @media (max-width: 800px) {
-	#small-header {
+	.small-header {
 		display: block;
+	}
+	#helpbar {
+		display: none
 	}
 	.header {
 		display: none;

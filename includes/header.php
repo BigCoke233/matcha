@@ -3,9 +3,34 @@ $this->need("includes/head.php"); ?>
 <body<?php Matcha::ifDark(); ?>>
 <?php $this->need('includes/sidebar.php'); ?>
 <div id="body">
-    <div class="container">
-        <!-- 移动端导航 -->
-        <div class="small-header" id="small-header">
-            <div class="site-name"><?php Matcha::siteName(); ?></div>
-            <div class="page-links"><?php Matcha::pageNav($this, "span"); ?></div>
+    <!-- 移动端导航 -->
+    <div class="small-header" id="small-header">
+        <div class="navbar">
+            <div class="navbar-action">
+                <div class="navbar-action-left">
+                    <button class="navbar-button" id="nav-light"><span class="iconfont">&#xe7ac;</span></button>
+                    
+                </div>
+                <div class="navbar-action-right">
+                    <button class="navbar-button" id="nav-drop"><span class="iconfont">&#xe650;</span></button>
+                </div>
+            </div>
+            <div class="navbar-dropdown">
+                <button class="navbar-button navbar-dropup" id="nav-rise"><span>+</span></button>
+                <h2>页面</h2>
+                <ul class="widget-list"><?php Matcha::pageNav($this, "li"); ?></ul>
+                <h2>分类</h2>
+                <ul class="widget-list widget-category">
+                    <?php $this->widget('Widget_Contents_Page_List')->to($pages);
+                        while($pages->next()): ?>
+                        <li>
+                            <a href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            </div>
         </div>
+        <?php Matcha::siteName(); ?>
+    </div>
+    <!--页面主体-->
+    <div class="container">

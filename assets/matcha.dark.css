@@ -12,6 +12,7 @@ body.matcha-dark {
     --light-bg: rgba(255,255,255,.05);
     --gray-bg: rgba(255,255,255,.2);
     --light-gray-bg: rgba(255,255,255,.02);
+    --overlay-bg: rgba(0,0,0,.8);
 
     background: #181818;
     color: #ddd
@@ -78,4 +79,8 @@ body.matcha-dark .post-content pre code {
 /* Sidebar */
 body.matcha-dark .header {
     background: var(--light-gray-bg)
+}
+/* Header */
+body.matcha-dark .small-header button.navbar-button:hover {
+	background: var(--gray-bg)!important
 }

@@ -7,6 +7,30 @@ var toast = function(m) {
         color: 'var(--theme-color)'
     });
 }
+//灯开关
+function lightswitch(action = 'toggle'){
+    if(action=='toggle'){
+        $('body').toggleClass('matcha-dark');
+    }
+    else if(action=='off'){
+        $('body').addClass('matcha-dark');
+    }
+    else if(action=='on'){
+        $('body').removeClass('matcha-dark');
+    }
+
+    if($('body').hasClass('matcha-dark')){
+        $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+        $('#nav-light').html('<span class="iconfont">&#xe7ee;</span>');
+        localStorage.setItem('matchaDark', 'yes'); //localStorage 供前端调用
+        document.cookie = 'matchaDark=y'; //cookie 供后端调用
+    }else{
+        $('#light-switch').html('<span class="iconfont">&#xe7ac;</span>');
+        $('#nav-light').html('<span class="iconfont">&#xe7ac;</span>');
+        localStorage.setItem('matchaDark', 'no');
+        document.cookie = 'matchaDark=n';
+    }
+}
 
 /**
  * Functions
@@ -163,18 +187,8 @@ $(window).scroll(function() {
 //Light Switch
 if(allowDarkMode){
     //监听用户手动开关灯事件
-    $('#light-switch').click(function(){
-        $('body').toggleClass('matcha-dark');
-        if($('body').hasClass('matcha-dark')){
-            $(this).html('<span class="iconfont">&#xe7ee;</span>');
-            localStorage.setItem('matchaDark', 'yes'); //localStorage 供前端调用
-            document.cookie = 'matchaDark=y'; //cookie 供后端调用
-        }else{
-            $(this).html('<span class="iconfont">&#xe7ac;</span>');
-            localStorage.setItem('matchaDark', 'no');
-            document.cookie = 'matchaDark=n';
-        }
-    });
+    $('#light-switch').click(function(){lightswitch('toggle')});
+    $('#nav-light').click(function(){lightswitch('toggle')});
     //自动开关灯，以及自动操作后的提示
     $(document).ready(function(){
         var matchaDark = localStorage.getItem('matchaDark');
@@ -182,23 +196,38 @@ if(allowDarkMode){
         var hour = time.getHours();
         if(matchaDark=='yes' && !$('body').hasClass('matcha-dark')){
             //根据用户设置，在前端自动关灯
-            $('body').addClass('matcha-dark');
-            $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            lightswitch('off');
             toast('已为您自动关灯');
         }
         else if(window.matchMedia('(prefers-color-scheme:dark)').matches){
             //跟随系统深色模式
-            $('body').addClass('matcha-dark');
-            $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            lightswitch('off');
             toast('已为您自动关灯');
         }
         else if((hour>18 || hour<7) && $('body').hasClass('matcha-dark')){
             //后端根据时间关灯后，前端给出提示
             $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            $('#nav-light').html('<span class="iconfont">&#xe7ee;</span>');
             toast('天晚了，已为您自动关灯');
+        }else if($('body').hasClass('matcha-dark')){
+            $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            $('#nav-light').html('<span class="iconfont">&#xe7ee;</span>');
         }
     });
 }
+//移动端菜单按钮
+$('#nav-drop').click(function(){ $('.navbar-dropdown').fadeIn().addClass('down') });
+$('#nav-rise').click(function(){ $('.navbar-dropdown').fadeOut().removeClass('down') });
+//页面不在顶部时收起导航栏
+$(window).scroll(function(event){
+    if($(window).scrollTop()!=0){
+        $('#small-header').addClass('shrink');
+        $('.container').addClass('with-shrunk-nav');
+    }else{
+        $('#small-header').removeClass('shrink')
+        $('.container').removeClass('with-shrunk-nav');
+    }
+});
 
 //Comment Closed Feedback
 var CommentClosedBtn = function(){
