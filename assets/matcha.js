@@ -162,6 +162,7 @@ $(window).scroll(function() {
 });
 //Light Switch
 if(allowDarkMode){
+    //监听用户手动开关灯事件
     $('#light-switch').click(function(){
         $('body').toggleClass('matcha-dark');
         if($('body').hasClass('matcha-dark')){
@@ -174,16 +175,25 @@ if(allowDarkMode){
             document.cookie = 'matchaDark=n';
         }
     });
+    //自动开关灯，以及自动操作后的提示
     $(document).ready(function(){
         var matchaDark = localStorage.getItem('matchaDark');
         var time = new Date();
         var hour = time.getHours();
         if(matchaDark=='yes' && !$('body').hasClass('matcha-dark')){
+            //根据用户设置，在前端自动关灯
+            $('body').addClass('matcha-dark');
+            $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
+            toast('已为您自动关灯');
+        }
+        else if(window.matchMedia('(prefers-color-scheme:dark)').matches){
+            //跟随系统深色模式
             $('body').addClass('matcha-dark');
             $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
             toast('已为您自动关灯');
         }
         else if((hour>18 || hour<7) && $('body').hasClass('matcha-dark')){
+            //后端根据时间关灯后，前端给出提示
             $('#light-switch').html('<span class="iconfont">&#xe7ee;</span>');
             toast('天晚了，已为您自动关灯');
         }
