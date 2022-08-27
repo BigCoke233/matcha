@@ -185,7 +185,7 @@ $(window).scroll(function() {
     }
 });
 //Light Switch
-if(allowDarkMode){
+if(typeof(allowDarkMode)!=undefined){
     //监听用户手动开关灯事件
     $('#light-switch').click(function(){lightswitch('toggle')});
     $('#nav-light').click(function(){lightswitch('toggle')});
