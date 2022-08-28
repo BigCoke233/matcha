@@ -1896,6 +1896,11 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 #post-toc-toggle:hover {
 	background: var(--gray-bg)
 }
+@media (max-width: 800px){
+	#post-toc-toggle {
+		display: none
+	}
+}
 
 .post-title-withtoc {
 	display: flex;
