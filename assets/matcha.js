@@ -31,8 +31,16 @@ function lightswitch(action = 'toggle'){
         document.cookie = 'matchaDark=n';
     }
 }
+//判断元素是否在视野中央
+function isInViewport(el) {
+    const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight 
+    const offsetTop = el.offsetTop
+    const scrollTop = document.documentElement.scrollTop
+    const top = offsetTop - scrollTop
+    return top <= viewPortHeight*0.5
+}
 
-/**
+/**p
  * Functions
  */
 //bigfoot.js
@@ -137,6 +145,7 @@ var scrollSmoothTo = function (position) {
 };
 //tocbot
 var tocbotLoad = function() {
+    //判断页面中是否有目录容器
     if($('#toc').length){
         //初始化 tocbot
         tocbot.init({
@@ -149,8 +158,43 @@ var tocbotLoad = function() {
             scrollSmoothOffset: -20
         });
 
+        //用文章目录代替侧边栏
+        var toc = $('#toc').children().html();//文章目录
+        var navList = $('.sidebar-nav .widget-list').html();//原导航内容
+        var headerContent = $('#header').html();//原 header 内容
+        var sidebarFoot = $('.sidebar-foot').html();//侧边栏底部内容
+
+        var turnedOff = false; //文章目录是否为手动关闭
+
+        //打开目录
+        function openToc(){
+            $('.sidebar-foot').fadeOut().html('');
+            $('.sidebar').addClass('tocbar');
+            $('#header').addClass('toc-header').html('<h1><button id="toc-close"><span class="iconfont">&#xe650;</span></button> <span>文章目录</span></h1>');
+            $('.sidebar-nav .widget-list').html('<li><a>该文章没有目录</a></li>').html(toc).attr('id','toc');
+            $('#toc-close').click(closeToc);
+        }
+        openToc();
+
+        //关闭目录
+        function closeToc(manual = true){
+            $('.sidebar-foot').html(sidebarFoot).fadeIn();
+            $('.sidebar').removeClass('tocbar').css('top', '2.8em');
+            $('#header').removeClass('toc-header').html(headerContent);
+            $('.sidebar-nav .widget-list').removeAttr('id').html(navList);
+            turnedOff=manual?true:false;
+            console.log(turnedOff)
+        }
+
+        //监听关闭文章目录按钮
+        $('#post-toc-toggle').click(function(){
+            if($('.sidebar').hasClass('tocbar')){ closeToc() }else{ openToc();$('#toc-close').click(closeToc); }
+        });
+
+        //滚动监听
         var sidebarTop = $('.sidebar').css('top').replace('px','');
         $(window).scroll(function(){
+            //headroom
             var scrollTop = $(window).scrollTop()
             var newTop = sidebarTop - scrollTop;
             if(newTop>=0) {
@@ -158,33 +202,12 @@ var tocbotLoad = function() {
             }else{
                 $('.sidebar.tocbar').css('top', 0);
             }
-        });
-
-        //用文章目录代替侧边栏
-        var toc = $('#toc').children().html();//文章目录
-        var navList = $('.sidebar-nav .widget-list').html();//原导航内容
-        var headerContent = $('#header').html();//原 header 内容
-        var sidebarFoot = $('.sidebar-foot').html();
-
-        function openToc(){
-            $('.sidebar-foot').fadeOut().html('');
-            $('.sidebar').addClass('tocbar');
-            $('#header').addClass('toc-header').html('<h1><button id="toc-close"><span class="iconfont">&#xe650;</span></button> <span>文章目录</span></h1>');
-            $('.sidebar-nav .widget-list').html('<li><a>该文章没有目录</a></li>').html(toc).attr('id','toc');
-        }
-        openToc();
-
-        function closeToc(){
-            $('.sidebar-foot').html(sidebarFoot).fadeIn();
-            $('.sidebar').removeClass('tocbar').css('top', '2.8em');
-            $('#header').removeClass('toc-header').html(headerContent);
-            $('.sidebar-nav .widget-list').removeAttr('id').html(navList);
-        }
-
-        //关闭文章目录
-        $('#toc-close').click(closeToc);
-        $('#post-toc-toggle').click(function(){
-            if($('.sidebar').hasClass('tocbar')){ closeToc() }else{ openToc();$('#toc-close').click(closeToc); }
+            //当视口滚动到评论区，关闭文章目录
+            if(isInViewport(document.getElementById('comments'))){
+                if($('.sidebar').hasClass('tocbar')) closeToc(false);
+            }else{
+                if(!turnedOff) openToc();
+            }
         });
     }
 }
