@@ -387,7 +387,6 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         $("#main").removeClass("fadein").addClass("fadeout");
         if ($('.toc').length) tocbot.destroy();//摧毁文章目录
         $(window).off('scroll');//取消文章目录自动关闭的滚动绑定
-        scrollSmoothTo(0);
     }).on('pjax:complete', function() {
         $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
         JSLoad();
