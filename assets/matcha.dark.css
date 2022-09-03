@@ -12,7 +12,7 @@ body.matcha-dark {
     --light-bg: rgba(255,255,255,.05);
     --gray-bg: rgba(255,255,255,.2);
     --light-gray-bg: rgba(255,255,255,.02);
-    --overlay-bg: rgba(0,0,0,.8);
+    --overlay-bg: rgba(0,0,0,.95);
 
     background: #181818;
     color: #ddd

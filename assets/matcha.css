@@ -22,7 +22,7 @@
 	--light-bg: rgb(242,242,242);
 	--light-gray-bg: rgba(0,0,0,.05);
 	--gray-bg: rgba(0,0,0,.2);
-	--overlay-bg: rgba(255,255,255,.8)
+	--overlay-bg: rgba(255,255,255,.95)
 }
 
 body {
@@ -1828,7 +1828,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 }
 
 .fluidbox__overlay {
-	background: #fff
+	background: var(--overlay-bg)
 }
 
 /* Post TOC */
