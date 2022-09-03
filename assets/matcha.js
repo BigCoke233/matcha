@@ -183,7 +183,6 @@ var tocbotLoad = function() {
             $('#header').removeClass('toc-header').html(headerContent);
             $('.sidebar-nav .widget-list').removeAttr('id').html(navList);
             turnedOff=manual?true:false;
-            console.log(turnedOff)
         }
 
         //监听关闭文章目录按钮
@@ -203,10 +202,12 @@ var tocbotLoad = function() {
                 $('.sidebar.tocbar').css('top', 0);
             }
             //当视口滚动到评论区，关闭文章目录
-            if(isInViewport(document.getElementById('comments'))){
-                if($('.sidebar').hasClass('tocbar')) closeToc(false);
-            }else{
-                if(!turnedOff) openToc();
+            if($('#comments').length){
+                if(isInViewport(document.getElementById('comments'))){
+                    if($('.sidebar').hasClass('tocbar')) closeToc(false);
+                }else{
+                    if(!turnedOff) openToc();
+                }
             }
         });
     }
@@ -384,7 +385,8 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
     }).on('pjax:send', function() {
         $('body').append('<div class="spinner" role="spinner" id="pjax-loading"><div class="spinner-icon"></div></div>');
         $("#main").removeClass("fadein").addClass("fadeout");
-        if ($('.toc').length) tocbot.destroy();
+        if ($('.toc').length) tocbot.destroy();//摧毁文章目录
+        $(window).off('scroll');//取消文章目录自动关闭的滚动绑定
         scrollSmoothTo(0);
     }).on('pjax:complete', function() {
         $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
