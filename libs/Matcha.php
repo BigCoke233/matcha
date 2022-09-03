@@ -414,17 +414,23 @@ class Matcha
     public static function ifDark() {
         $ifDark=false;
         
-        if($_COOKIE['matchaDark']=='y') {
-            $ifDark=true;
-        }
-        elseif(Helper::options()->DarkMode=='default' && date('H')>18 && date('H')<7 && $_COOKIE['matchaDark']=='n') {
-            $ifDark=true;
-        }
-        elseif(Helper::options()->DarkMode=='dark' && !$_COOKIE['matchaDark']=='n'){
-            $ifDark=true;
-        }
-        elseif(Helper::options()->DarkMode=='always') {
-            $ifDark=true;
+        if(isset($_COOKIE['matchaDark'])) {
+            if($_COOKIE['matchaDark']=='y') {
+                $ifDark=true;
+            }
+            elseif(Helper::options()->DarkMode=='default' && date('H')>18 && date('H')<7 && $_COOKIE['matchaDark']=='n') {
+                $ifDark=true;
+            }
+            elseif(Helper::options()->DarkMode=='dark' && !$_COOKIE['matchaDark']=='n'){
+                $ifDark=true;
+            }
+            elseif(Helper::options()->DarkMode=='always') {
+                $ifDark=true;
+            }
+        }else{
+            if(Helper::options()->DarkMode=='dark' || Helper::options()->DarkMode=='always'){
+                $ifDark=true;
+            }
         }
         
         if($ifDark) echo ' class="matcha-dark"';
