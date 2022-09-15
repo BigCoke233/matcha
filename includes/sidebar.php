@@ -12,3 +12,7 @@
     </ul>
   </section>
 </div>
+
+<div id="helpbar">
+<?php if($this->options->DarkMode=='default' || $this->options->DarkMode=='dark'){ ?><button id="light-switch" title="开关灯"><span class="iconfont">&#xe7ac;</span></button><?php } ?>
+</div>

@@ -1272,9 +1272,8 @@ img.alignright {
 /* layout - 布局 & 定位 */
 .container {
 	margin-left: calc(50% - 400px);
-	margin-right: calc(50% - 600px);
-	width: 1000px !important;
-	max-width: 1000px !important;
+	width: 850px !important;
+	max-width: 850px !important;
 	padding: 1em 2em;
 	padding-top: 2.8em;
 	box-sizing: border-box;
@@ -1546,7 +1545,7 @@ table tr:nth-child(even) {
 }
 
 /* helpbar button */
-#helpbar button {
+#back2top {
 	color: #fff;
 	background: var(--theme-color);
 	border: none;
@@ -1559,16 +1558,29 @@ table tr:nth-child(even) {
 	position: fixed;
 	bottom: 1.5em;
 	right: 1em;
-	transition: .4s
-}
-#helpbar .helpbar-up {
-	bottom: 4.5em
-}
-#back2top {
+	transition: .4s;
 	z-index: 60
 }
-#light-switch {
-	z-index: 90
+
+#helpbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 1.2em 1em;
+	z-index: 60
+}
+#helpbar button {
+	border-radius: 100%;
+	color: var(--text-gray);
+	background: var(--light-bg);
+	width: 2.5em;
+	height: 2.5em;
+	display: block;
+	text-overflow: clip;
+	overflow: hidden
+}
+#helpbar button:hover {
+	background: var(--light-gray-bg)
 }
 
 /* ScrollBar */
