@@ -207,6 +207,34 @@ button {
 	clear: both;
 }
 
+.post-atmain {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	width: 100%;
+	overflow: hidden;
+	align-items: center
+}
+.post-text {
+	flex-grow: 1
+}
+.post-thumbnail {
+	width: 30%;
+	max-height: 13em;
+	margin-left: 1em;
+	flex-shrink: 0;
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.post-thumbnail img {
+	width: 100%;
+	display: block;
+}
+
 .archive-title {
 	margin: 1em 0;
 	padding-top: 20px;
@@ -1918,4 +1946,10 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	display: flex;
 	flex-direction: row;
 	justify-content: center
+}
+
+@media (max-width: 800px) {
+	[md-hidden] {
+		display: none
+	}
 }

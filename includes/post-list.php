@@ -9,16 +9,21 @@
 	<!-- 文章列表 -->
 	<?php while($this->next()): ?>
 		<article class="post post-atmain" itemscope itemtype="http://schema.org/BlogPosting">
-			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a></h2>
-			<ul class="post-meta">
-				<li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
-				<li><?php $this->category(','); ?></li>
-				<?php if($this->options->EnableViewsCount=='able'){ ?><li><?php Matcha::views($this); ?></li><?php } ?>
-				<li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 评论', '1 评论', '%d 评论'); ?></a></li>
-			</ul>
-            <div class="post-content" itemprop="articleBody">
-				<?php Matcha::excerpt($this); ?>
-            </div>
+			<div class="post-text">
+				<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a></h2>
+				<ul class="post-meta">
+					<li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
+					<li><?php $this->category(','); ?></li>
+					<?php if($this->options->EnableViewsCount=='able'){ ?><li><?php Matcha::views($this); ?></li><?php } ?>
+					<li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('0 评论', '1 评论', '%d 评论'); ?></a></li>
+				</ul>
+				<div class="post-content" itemprop="articleBody">
+					<?php Matcha::excerpt($this); ?>
+				</div>
+			</div><?php if($this->fields->thumbnail!=''): ?>
+			<div class="post-thumbnail" md-hidden>
+				<img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>">
+			</div><?php endif;?>
 		</article>
 	<?php endwhile; ?>
 	<!-- 分页按钮 -->

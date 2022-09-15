@@ -31,4 +31,10 @@ function themeFields($layout)
         _t('是否开启文章目录'), 
         _t('解析文章目录展示在文章页面左侧，代替侧边栏的位置'));
     $layout->addItem($showTOC);
+
+    $thumbnail = new Typecho_Widget_Helper_Form_Element_Text('thumbnail', NULL,
+        NULL, 
+        _t('文章缩略图'), 
+        _t('写入图片 url，展示一张图片在文章列表旁边，留空则不显示'));
+    $layout->addItem($thumbnail);
 }
