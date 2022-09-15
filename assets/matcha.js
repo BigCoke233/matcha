@@ -210,6 +210,15 @@ var tocbotLoad = function() {
                 }
             }
         });
+
+        //用户通过浏览器按钮返回时，关闭文章目录
+        $(document).ready(function () {
+            if (window.history && window.history.pushState) {
+                $(window).on('popstate', function () {
+                    if($('#toc').length) closeToc(false);
+                });
+            }
+        });
     }
 }
 
