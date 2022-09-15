@@ -252,7 +252,8 @@ var detailsAnimate = function() {
 //Back2Top Button
 $('#back2top').hide();
 $("#back2top").on("click",function(){scrollSmoothTo(0)});
-$(window).scroll(function() {
+
+var back2topShow = function(){
     if ($(window).scrollTop() > 450) {
         scaleIn($('#back2top'), '0.7');
         $('#light-switch').addClass('helpbar-up');
@@ -260,7 +261,8 @@ $(window).scroll(function() {
         scaleOut($('#back2top'), '0.7');
         $('#light-switch').removeClass('helpbar-up');
     }
-});
+}
+$(window).scroll(back2topShow);
 //Light Switch
 if(typeof(allowDarkMode)!=undefined){
     //监听用户手动开关灯事件
@@ -386,7 +388,9 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         $('body').append('<div class="spinner" role="spinner" id="pjax-loading"><div class="spinner-icon"></div></div>');
         $("#main").removeClass("fadein").addClass("fadeout");
         if ($('.toc').length) tocbot.destroy();//摧毁文章目录
-        $(window).off('scroll');//取消文章目录自动关闭的滚动绑定
+        $(window).off('scroll');
+        $(window).on('scroll', back2topShow);//取消文章目录自动关闭的滚动绑定
+        
     }).on('pjax:complete', function() {
         $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
         JSLoad();
