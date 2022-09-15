@@ -245,20 +245,23 @@ class Matcha
      */
     public static function date($created)
     {
+        //计算时间差
+        $diff = time() - $created;
+        $d = floor($diff/3600/24);
+        
         $Y = date('Y', $created);
+
         if(date('Y-m-d', $created)==date('Y-m-d')){
             return '今天';
         }
-        elseif(date('Y-m', $created)==date('Y-m')){
-            if(intval(date('d', $created))==intval(date('d')-1)){
-                return '昨天';
-            }
-            elseif(intval(date('d', $created))==intval(date('d')-2)){
-                return '前天';
-            }
-            elseif(intval(date('d', $created))<intval(date('d'))){
-                return strval(intval(date('d'))-intval(date('d', $created))).' 天前';
-            }
+        elseif($d==1){
+            return '昨天';
+        }
+        elseif($d==2){
+            return '前天';
+        }
+        elseif($d<=31){
+            return $d.' 天前';
         }
         elseif($Y==date('Y')) {
             return date('m-d', $created);
