@@ -1666,7 +1666,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	padding: .6em;
 	border-radius: 5px;
 	float: left;
-	width: 22.5%;
+	width: 30%;
 	margin: .5em 0
 }
 @media (max-width: 1200px) {
@@ -1729,6 +1729,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 }
 .links-container {
 	clear: both;
+	width: 100%;
 	margin: 2em 0;
 }
 /* other */
