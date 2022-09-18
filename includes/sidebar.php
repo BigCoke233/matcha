@@ -1,5 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div id="sidebar" class="sidebar" role="complementary">
+<!-- 侧边栏 -->
+<aside id="sidebar" class="sidebar" role="complementary">
   <section class="widget widget-nav sidebar-nav">
     <header id="header" class="header"><?php Matcha::siteName(); ?></header>
     <ul class="widget-list"><?php Matcha::pageNav($this, "li"); ?></ul>
@@ -11,8 +12,8 @@
       <li>Powered by <a rel="nofollow" target="_blank" href="http://www.typecho.org" class="no-linkTarget">Typecho</a></li>
     </ul>
   </section>
-</div>
-
+</aside>
+<!-- 工具栏 -->
 <div id="helpbar">
 <?php if($this->options->DarkMode=='default' || $this->options->DarkMode=='dark'){ ?><button id="light-switch" title="开关灯"><span class="iconfont">&#xe7ac;</span></button><?php } ?>
 </div>

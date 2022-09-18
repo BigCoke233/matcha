@@ -10,13 +10,10 @@
         <?php endif; ?>
         <div class="post-header">
             <h1 class="post-title post-title-atpage<?php 
-            if($this->is('post') && $this->fields->showTOC){ ?> post-title-withtoc<?php } 
             if($this->is('page')){ ?> page-title-atpage<?php } 
-            ?>" itemprop="name headline"><span><?php 
-                $this->title();?></span><?php
-                if($this->is('post') && $this->fields->showTOC){ 
-                ?><button title="开关文章目录" id="post-toc-toggle"><span class="iconfont">&#xe650;</span></button><?php }
-            ?></h1>
+            ?>" itemprop="name headline"><?php 
+                $this->title();?>
+            </h1>
             <?php if($this->is('post')): ?>
             <ul class="post-meta post-meta-atpage">
                 <li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
@@ -28,7 +25,6 @@
             </ul>
         <?php endif; ?>
         </div>
-        <?php if($this->is('post') && $this->fields->showTOC){ ?><div id="toc"></div><?php } ?>
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
@@ -40,6 +36,13 @@
     </article>
 
     <?php $this->need('includes/comments.php'); ?>
+
+    <?php if($this->is('post') && $this->fields->showTOC==true): ?>
+    <!-- 文章目录 -->
+    <aside id="tocbar" class="tocbar">
+        <div id="toc">该篇文章没有目录</div>
+    </aside>
+    <?php endif; ?>
 </div>
 
 <?php $this->need('includes/footer.php'); ?>

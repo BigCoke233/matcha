@@ -32,12 +32,12 @@ function lightswitch(action = 'toggle'){
     }
 }
 //判断元素是否在视野中央
-function isInViewport(el) {
+function isInViewport(el, offset = 0) {
     const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight 
     const offsetTop = el.offsetTop
     const scrollTop = document.documentElement.scrollTop
     const top = offsetTop - scrollTop
-    return top <= viewPortHeight*0.5
+    return top <= viewPortHeight*offset
 }
 
 /**p
@@ -158,65 +158,15 @@ var tocbotLoad = function() {
             scrollSmoothOffset: -20
         });
 
-        //用文章目录代替侧边栏
-        var toc = $('#toc').children().html();//文章目录
-        var navList = $('.sidebar-nav .widget-list').html();//原导航内容
-        var headerContent = $('#header').html();//原 header 内容
-        var sidebarFoot = $('.sidebar-foot').html();//侧边栏底部内容
-
-        var turnedOff = false; //文章目录是否为手动关闭
-
-        //打开目录
-        function openToc(){
-            $('.sidebar-foot').fadeOut().html('');
-            $('.sidebar').addClass('tocbar');
-            $('#header').addClass('toc-header').html('<h1><button id="toc-close"><span class="iconfont">&#xe650;</span></button> <span>文章目录</span></h1>');
-            $('.sidebar-nav .widget-list').html('<li><a>该文章没有目录</a></li>').html(toc).attr('id','toc');
-            $('#toc-close').click(closeToc);
-        }
-        openToc();
-
-        //关闭目录
-        function closeToc(manual = true){
-            $('.sidebar-foot').html(sidebarFoot).fadeIn();
-            $('.sidebar').removeClass('tocbar').css('top', '2.8em');
-            $('#header').removeClass('toc-header').html(headerContent);
-            $('.sidebar-nav .widget-list').removeAttr('id').html(navList);
-            turnedOff=manual?true:false;
-        }
-
-        //监听关闭文章目录按钮
-        $('#post-toc-toggle').click(function(){
-            if($('.sidebar').hasClass('tocbar')){ closeToc() }else{ openToc();$('#toc-close').click(closeToc); }
-        });
-
         //滚动监听
-        var sidebarTop = $('.sidebar').css('top').replace('px','');
         $(window).scroll(function(){
-            //headroom
-            var scrollTop = $(window).scrollTop()
-            var newTop = sidebarTop - scrollTop;
-            if(newTop>=0) {
-                $('.sidebar.tocbar').css('top', newTop);
-            }else{
-                $('.sidebar.tocbar').css('top', 0);
-            }
             //当视口滚动到评论区，关闭文章目录
             if($('#comments').length){
-                if(isInViewport(document.getElementById('comments'))){
-                    if($('.sidebar').hasClass('tocbar')) closeToc(false);
+                if(isInViewport(document.getElementById('comments'), 0.5)){
+                    $('#toc').fadeOut();
                 }else{
-                    if(!turnedOff) openToc();
+                    $('#toc').fadeIn();
                 }
-            }
-        });
-
-        //用户通过浏览器按钮返回时，关闭文章目录
-        $(document).ready(function () {
-            if (window.history && window.history.pushState) {
-                $(window).on('popstate', function () {
-                    if($('#toc').length) closeToc(false);
-                });
             }
         });
     }
