@@ -334,15 +334,15 @@ h3.comment-closed.fade {
 	left: 0;
 	bottom: 0;
 	text-align: right;
-	width: calc(50% - 400px);
+	width: calc(50% - 300px);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between
 	
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px){
 	.sidebar {
-		width: calc(50% - 200px)
+		width: calc(50% - 400px);
 	}
 }
 
@@ -432,7 +432,7 @@ h3.comment-closed.fade {
 	font-size: 6em;
 	margin: 0;
 }
-@media (max-width:800px) {
+@media (max-width:768px) {
 	.error-page {
 		display: block;
 		text-align: center;
@@ -794,11 +794,6 @@ img.alignright {
 	}
 }
 
-@media(min-width:1200px) {
-	.container {
-		max-width: 952px;
-	}
-}
 
 .hidden {
 	display: none!important;
@@ -967,7 +962,7 @@ img.alignright {
 	backdrop-filter: blur(1em);
 	-webkit-backdrop-filter: blur(1em)
 }
-@media (max-width: 800px){
+@media (max-width: 768px){
 	.container.with-shrunk-nav {
 		padding-top: 7em
 	}
@@ -1299,9 +1294,7 @@ img.alignright {
 
 /* layout - 布局 & 定位 */
 .container {
-	margin-left: calc(50% - 400px);
-	width: 850px !important;
-	max-width: 850px !important;
+	width: 100%;
 	padding: 1em 2em;
 	padding-top: 2.8em;
 	box-sizing: border-box;
@@ -1310,16 +1303,21 @@ img.alignright {
 	min-height: 100vh;
 	position: relative;
 	padding-bottom: 8em!important;
-	transition: background .3s
+	transition: background .3s;
+	max-width: 100%
 }
 @media (min-width: 992px){
 	.container {
+		max-width: 750px;
+		margin-left: calc(50% - 300px);
 		padding: 2.8em;
 	}
 }
-@media (max-width: 800px) {
+@media (min-width: 1200px){
 	.container {
-		padding: 1em
+		max-width: 850px;
+		margin-left: calc(50% - 400px);
+		padding: 2.8em;
 	}
 }
 .widget-list li ul {
@@ -1330,16 +1328,7 @@ img.alignright {
 	margin-top: 0px;
 }
 
-@media (max-width: 1200px) {
-	#body .container {
-		margin-left: calc(50% - 200px);
-		margin-right: calc(50% - 400px);
-		width: 600px !important;
-		max-width: 600px !important;
-	}
-}
-
-@media (max-width: 800px) {
+@media (max-width: 992px) {
 	.small-header {
 		display: block;
 	}
@@ -1351,12 +1340,6 @@ img.alignright {
 	}
 	.sidebar {
 		display: none!important;
-	}
-	#body .container {
-		margin-left: 0;
-		margin-right: 0;
-		width: 100% !important;
-		max-width: 100% !important;
 	}
 }
 /* layout - 布局 & 定位 */
@@ -1937,7 +1920,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 #post-toc-toggle:hover {
 	background: var(--gray-bg)
 }
-@media (max-width: 800px){
+@media (max-width: 768px){
 	#post-toc-toggle {
 		display: none
 	}
@@ -1949,7 +1932,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	justify-content: center
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
 	[md-hidden] {
 		display: none
 	}
