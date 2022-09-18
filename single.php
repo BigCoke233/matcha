@@ -12,8 +12,8 @@
             <h1 class="post-title post-title-atpage<?php 
             if($this->is('page')){ ?> page-title-atpage<?php } 
             ?>" itemprop="name headline"><?php 
-                $this->title();?>
-                <button id="focus-mode" title="专注模式"><span class="iconfont">&#xe869;</span></button>
+                $this->title();
+                if($this->is('post')){ ?><button class="focus-mode-btn" title="专注模式"><span class="iconfont">&#xe869;</span></button><?php } ?>
             </h1>
             <?php if($this->is('post')): ?>
             <ul class="post-meta post-meta-atpage">

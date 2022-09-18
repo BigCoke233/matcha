@@ -1579,7 +1579,8 @@ table tr:nth-child(even) {
 }
 
 /* helpbar button */
-#back2top {
+#back2top,
+#focus-mode-close {
 	color: #fff;
 	background: var(--theme-color);
 	border: none;
@@ -1626,6 +1627,10 @@ table tr:nth-child(even) {
 		margin-left: .25em;
 		display: inline-block;
 	}
+}
+
+.helpbar-up {
+	bottom: 4.8em!important
 }
 
 /* ScrollBar */
@@ -1939,9 +1944,28 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	box-shadow: 0 0 0 #fff;
 	background-color: var(--white-or-black)!important
 }
-#focus-mode {
+.focus-mode-btn {
 	color: var(--text-gray);
 	top: 0;
 	position: absolute;
 	line-height: 0
+}
+@media (max-width: 992px) {
+	.focus-mode-btn {
+		display: none
+	}
+}
+#focus-mode-close {
+	display: none;
+	position: fixed;
+	top: auto;
+	line-height: 1.2
+}
+.focus-mode #focus-mode-close {
+	display: block
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+	.focus-mode .container {
+		margin-left: auto
+	}
 }

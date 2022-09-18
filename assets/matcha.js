@@ -214,6 +214,20 @@ var detailsAnimate = function() {
     });
 }
 
+//专注模式
+var toggleFocusMode = function(){
+    $('#sidebar').fadeToggle();
+    $('#helpbar').fadeToggle();
+    $('.post-thumbnail-atpage').slideToggle();
+    $(body).toggleClass('focus-mode')
+    if($(body).hasClass('focus-mode')){
+        scaleIn($('#focus-mode-close'), '0.7');
+    }else{
+        scaleOut($('#focus-mode-close'), '0.7');
+    }
+}
+
+
 /**
  * Event Listenr
  */
@@ -225,10 +239,10 @@ $("#back2top").on("click",function(){scrollSmoothTo(0)});
 var back2topShow = function(){
     if ($(window).scrollTop() > 450) {
         scaleIn($('#back2top'), '0.7');
-        $('#light-switch').addClass('helpbar-up');
+        $('#focus-mode-close').addClass('helpbar-up');
     } else {
         scaleOut($('#back2top'), '0.7');
-        $('#light-switch').removeClass('helpbar-up');
+        $('#focus-mode-close').removeClass('helpbar-up');
     }
 }
 $(window).scroll(back2topShow);
@@ -323,14 +337,6 @@ var archiveInit = function(){
         $(this).toggleClass('closed');
     });
 }
-//专注模式
-var toggleFocusMode = function(){
-    $('#sidebar').fadeToggle();
-    $('#helpbar').fadeToggle();
-    $('.post-thumbnail-atpage').slideToggle();
-    $(body).toggleClass('focus-mode')
-}
-$('#focus-mode').click(toggleFocusMode);
 
 /**
  * JS Lib Loader
@@ -353,6 +359,7 @@ var JSLoad = function(){
         matchaComment.bindButton();
         matchaComment.core();
     }
+    $('.focus-mode-btn').click(toggleFocusMode);
 }
 JSLoad();
 
