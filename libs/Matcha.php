@@ -438,4 +438,28 @@ class Matcha
         
         if($ifDark) echo ' class="matcha-dark"';
     }
+
+    /**
+     * 主题色
+     */
+    public static function getThemeColor() {
+        if(Helper::options()->themeColor=='maple'){
+            return '#E95A2D';
+        }
+        elseif(Helper::options()->themeColor=='kirin'){
+            return '#DAA520';
+        }
+        elseif(Helper::options()->themeColor=='ocean'){
+            return '#20B2AA';
+        }
+        elseif(Helper::options()->themeColor=='violet'){
+            return '#6A5ACD';
+        }
+        elseif(Helper::options()->themeColor=='custom'){
+            return Helper::options()->themeColorCustom;
+        }
+        else{
+            return '#c5c56a';
+        }
+    }
 }

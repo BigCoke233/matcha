@@ -23,4 +23,10 @@
     //输出网站标题、css 引用和其他 head 内容 ?>
     <title><?php Matcha::title($this); ?></title>
     <?php Matcha::head(); $this->header(); ?>
+
+    <style>
+        :root {
+            --theme-color: <?php echo Matcha::getThemeColor(); ?>;
+        }
+    </style>
 </head>

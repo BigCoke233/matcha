@@ -10,6 +10,24 @@ function themeConfig($form) {
      * 基本信息
      */
 
+    //主题色
+    $themeColor = new Typecho_Widget_Helper_Form_Element_Radio('themeColor', array(
+        'matcha' => _t('抹茶绿'),
+        'ocean' => _t('海青色'),
+        'kirin' => _t('秋麒麟'),
+        'maple' => _t('枫树红'),
+        'violet' => _t('紫罗兰'),
+        'custom' => _t('自定义主题色')
+    ),
+    'matcha',
+    _t('主题色'),
+    _t('选择一个主题色'));
+    $form->addInput($themeColor->addRule('required', _t('此处必须设置')));
+    //自定义主题色
+    $themeColorCustom = new Typecho_Widget_Helper_Form_Element_Text('themeColorCustom', NULL, NULL, 
+        _t('自定义主题色'), 
+        _t('只有在上一个设置项选择「自定义主题色」，这个设置才会生效，在这里写入任何 css 支持的颜色代码'));
+    $form->addInput($themeColorCustom);
     //首页摘要显示模式
     $IndexDisplayMode = new Typecho_Widget_Helper_Form_Element_Radio('IndexDisplayMode', array(
         'FullText' => _t('根据 more 标签截断'),

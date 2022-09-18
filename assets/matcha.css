@@ -16,7 +16,6 @@
 }
 
 :root {
-	--theme-color: #c5c56a;
 	--text-color: #333;
 	--text-gray: #999;
 	--light-bg: rgb(242,242,242);
@@ -678,7 +677,6 @@ h3.comment-closed.fade {
 	background: rgb(0,50,20,.03);
 	border: 1px dashed var(--theme-color)!important;
 	position: relative;
-	color: rgba(120,120,40);
 	margin-top: .8em
 }
 .bracketdown-block::before {
@@ -689,7 +687,7 @@ h3.comment-closed.fade {
 	position: absolute;
 	top: -.7em;
 	left: 1.1em;
-	background: rgba(197,197,106,.9);
+	background: var(--theme-color);
 	font-weight: 400;
 	padding: 0 .5em
 }
