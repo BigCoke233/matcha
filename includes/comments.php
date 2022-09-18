@@ -93,8 +93,14 @@ Comments::replyScript($this); ?>
         </form>
     </div>
     <?php else: 
-    if($_COOKIE["commentsClosedKnown"]!='y'){  ?>
-    <h3 class="comment-closed" id="comment-closed">本页的评论功能已关闭</h3>
+    $show=false;
+    if(isset($_COOKIE["commentsClosedKnown"])){
+      if($_COOKIE["commentsClosedKnown"]!='y') $show=true;
+    }else{
+      $show=true;
+    }
+    if($show){ ?>
+      <h3 class="comment-closed" id="comment-closed">本页的评论功能已关闭</h3>
     <?php } endif; ?>
 
     <?php if ($comments->have()): ?>
