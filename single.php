@@ -32,7 +32,7 @@
 		<?php if($this->is('post')) $this->copyDog($this);?>
 
         <?php if ($this->is('post') && $this->tags): ?>
-        <p itemprop="keywords" class="tags-list post-tags-list"><span class="tags-title iconfont">&#xe7ae;</span> <?php $this->tags(' ', true, ''); ?></p>
+        <p itemprop="keywords" class="tags-list post-tags-list"><span class="tags-title">标签：</span> <?php $this->tags(' ', true, ''); ?></p>
         <?php endif; ?>
     </article>
 

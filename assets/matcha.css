@@ -1381,16 +1381,25 @@ img.alignright {
 	font-weight: bold;
 	transition: .3s;
 	height: 2.5em;
-	width: 2.6em;
+	width: 2.5em;
 	overflow: hidden;
-	text-align: center;
-	line-height: 2.5em
+	box-sizing: border-box;
+	line-height: 2.3em;
+	text-align: center
 }
 .page-navigator:not(.comment-pagenav .page-navigator) a:hover {
 	text-decoration: none;
 	background: var(--theme-color);
 	border-color: var(--theme-color);
 	color: #fff
+}
+.page-navigator:not(.comment-pagenav .page-navigator) #next .iconfont {
+	display: inline-block;
+	transform: rotate(90deg)
+}
+.page-navigator:not(.comment-pagenav .page-navigator) #previous .iconfont {
+	display: inline-block;
+	transform: rotate(-90deg)
 }
 /* page navigator - 选页器 */
 
@@ -1529,18 +1538,18 @@ table tr:nth-child(even) {
 }
 .tags-title {
 	color: var(--text-gray);
-	font-size: 1.2em;
-	margin-right: .2em
+	font-size: .9em;
 }
 .post-tags-list {
-	margin-top: 1.5em!important
+	margin-top: 1em!important
 }
 .post-tags-list a {
 	font-size: .95em;
-	padding: .1em .5em;
+	padding: .1em .4em;
 	margin-right: .2em;
 	border-radius: 3px;
 	background: var(--light-bg);
+	line-height: 1.4
 }
 .post-tags-list a:hover {
 	background: var(--theme-color);

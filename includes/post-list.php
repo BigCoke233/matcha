@@ -28,7 +28,7 @@
 	<?php endwhile; ?>
 	<!-- 分页按钮 -->
 	<div class="page-navigator">
-	  <span id="previous"><?php $this->pageLink('<span class="iconfont">&#xe628;</span>'); ?></span>
-      <span id="next"><?php $this->pageLink('<span class="iconfont">&#xe642;</span>','next'); ?></span>
+	  <span id="previous"><?php $this->pageLink('<span class="iconfont">&#xe749;</span>'); ?></span>
+      <span id="next"><?php $this->pageLink('<span class="iconfont">&#xe749;</span>','next'); ?></span>
     </div>
 </div>
