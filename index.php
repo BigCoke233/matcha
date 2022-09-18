@@ -4,7 +4,7 @@
  * 
  * @package Typecho Theme Matcha
  * @author memset0, Eltrac
- * @version 1.1.0
+ * @version 1.2.0-beta.1
  * @link https://github.com/memset0/typecho-theme-ringo
  */
 
