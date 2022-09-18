@@ -88,6 +88,17 @@ lazyloader = function(){
         $('.fluidbox-anchor').fluidbox('close');
     });
 };
+//ExSearch 
+function ExSearchCall(item){
+    if (item && item.length) {
+        $('.ins-close').click(); // 关闭搜索框
+        let url = item.attr('data-url'); // 获取目标页面 URL
+        $.pjax({url: url, 
+            container: '#main',
+            fragment: '#main',
+            timeout: 8000, }); // 发起一次 PJAX 请求
+    }
+}
 //auto set archor link target
 var linkTarget = function() {
     host_url=window.location.protocol+'//'+window.location.host;

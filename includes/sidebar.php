@@ -15,5 +15,6 @@
 </aside>
 <!-- 工具栏 -->
 <div id="helpbar">
-<?php if($this->options->DarkMode=='default' || $this->options->DarkMode=='dark'){ ?><button id="light-switch" title="开关灯"><span class="iconfont">&#xe7ac;</span></button><?php } ?>
+<?php if($this->options->DarkMode=='default' || $this->options->DarkMode=='dark'){ ?><button id="light-switch" title="开关灯"><span class="iconfont">&#xe7ac;</span></button><?php } 
+if(Utils::isPluginAvailable('ExSearch')) { ?><button class="search-form-input" title="搜索"><span class="iconfont">&#xe82e;</span></button><?php } ?>
 </div>
