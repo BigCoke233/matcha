@@ -83,7 +83,7 @@ Comments::replyScript($this); ?>
               </div>
               <div class="submit-extra">
                 <div class="owo"></div>
-                <?php if(Utils::isPluginAvailable('CommentToMail') || Utils::isPluginAvailable('Mailer') || Utils::isPluginAvailable('Comment2Mail')): ?>
+                <?php if(Utils::isPluginAvailable('CommentToMail') || Utils::isPluginAvailable('Mailer')): ?>
                 <div class="comments-mail-me">
                   <input aria-label="有回复时通知我" name="receiveMail" type="checkbox" value="yes" id="receiveMail" checked />
                   <label for="receiveMail">有回复时通知我</label>
