@@ -4,7 +4,7 @@
 <div class="col-12" id="main" role="main">
     <article class="post post-atpage" itemscope itemtype="http://schema.org/BlogPosting">
         <?php if($this->fields->thumbnail!=''): ?>
-        <div class="post-thumbnail-atpage">
+        <div class="post-thumbnail-atpage" md-hidden>
             <img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>">
         </div>
         <?php endif; ?>
