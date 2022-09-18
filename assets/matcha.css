@@ -163,7 +163,6 @@ button {
 
 .post {
 	padding: 15px 0 20px;
-	border-bottom: 1px solid var(--light-bg);
 	font-size: 1.05em;
 }
 .post:nth-last-of-type(1) {
