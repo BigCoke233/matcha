@@ -8,7 +8,7 @@
         ), '', ''); ?></h3><?php } ?>
 	<!-- 文章列表 -->
 	<?php while($this->next()): ?>
-		<article class="post post-atmain" itemscope itemtype="http://schema.org/BlogPosting">
+		<article class="post post-atmain<?php if($this->fields->thumbnail!='') echo ' post-with-thumbnail'; ?>" itemscope itemtype="http://schema.org/BlogPosting">
 			<div class="post-text">
 				<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title() ?></a></h2>
 				<ul class="post-meta">

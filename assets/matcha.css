@@ -162,11 +162,12 @@ button {
 }
 
 .post {
-	padding: 15px 0 20px;
+	padding: 0;
 	font-size: 1.05em;
+	margin: 2em 0
 }
-.post:nth-last-of-type(1) {
-	border: none;
+.post:first-child {
+	margin: 0
 }
 
 .post:first-child {
@@ -210,23 +211,29 @@ button {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
-	width: 100%;
 	overflow: hidden;
-	align-items: center
+	align-items: center;
+}
+.post-atmain.post-with-thumbnail {
+	position: relative;
+	padding-right: 32%
 }
 .post-text {
 	flex-grow: 1
 }
 .post-thumbnail {
 	width: 30%;
-	max-height: 13em;
 	margin-left: 1em;
 	flex-shrink: 0;
 	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	justify-content: center
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0
 }
 
 .post-thumbnail img {
