@@ -1665,27 +1665,27 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	display: block;
 	padding: .6em;
 	border-radius: 5px;
-	float: left;
-	width: 30%;
-	margin: .5em 0
+	width: 33.33%;
+	margin: .5em 0;
+	box-sizing: border-box
 }
 @media (max-width: 1200px) {
 	.links-item {
-		width: 45%
+		width: 50%
 	}
 }
 @media (max-width: 798px) {
 	.links-item {
-		width: 30%
+		width: 33.33%
 	}
 }
 @media (max-width: 674px) {
 	.links-item {
-		width: 45%
+		width: 50%
 	}
 }@media (max-width: 478px) {
 	.links-item {
-		width: 95%
+		width: 100%
 	}
 }
 
