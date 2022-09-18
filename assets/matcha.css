@@ -214,9 +214,11 @@ button {
 	overflow: hidden;
 	align-items: center;
 }
-.post-atmain.post-with-thumbnail {
-	position: relative;
-	padding-right: 32%
+@media (min-width: 768px) {
+	.post-atmain.post-with-thumbnail {
+		position: relative;
+		padding-right: 32%
+	}
 }
 .post-text {
 	flex-grow: 1
