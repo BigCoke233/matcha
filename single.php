@@ -44,6 +44,7 @@
         <div id="toc">该篇文章没有目录</div>
     </aside>
     <?php endif; ?>
+    <button class="focus-mode-btn" id="focus-mode-close" title="专注模式"><span class="iconfont">&#xe869;</span></button>
 </div>
 
 <?php $this->need('includes/footer.php'); ?>
