@@ -394,7 +394,7 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         fragment: '#main',
         timeout: 8000
     }).on('pjax:send', function() {
-        $('body').append('<div class="spinner" role="spinner" id="pjax-loading"><div class="spinner-icon"></div></div>');
+        $('body').append('<div class="progress" role="spinner" id="pjax-loading"><div class="progress-bar"></div></div>');
         $("#main").removeClass("fadein").addClass("fadeout");
         if ($('.toc').length) tocbot.destroy();//摧毁文章目录
         $(window).off('scroll');

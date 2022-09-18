@@ -1315,7 +1315,7 @@ img.alignright {
 }
 @media (min-width: 1200px){
 	.container {
-		max-width: 850px;
+		max-width: 815px;
 		margin-left: calc(50% - 400px);
 		padding: 2.8em;
 	}
@@ -1577,7 +1577,7 @@ table tr:nth-child(even) {
 	position: fixed;
 	top: 0;
 	right: 0;
-	padding: 1.2em 1em;
+	padding: .6em .5em;
 	z-index: 60
 }
 #helpbar button {
@@ -1727,36 +1727,34 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	transition: .7s;
 	opacity: 0
 }
-
-.spinner {
-	/* from nprogress, edited */
-	display: block;
+.progress {
 	position: fixed;
-	z-index: 1031;
-	top: 8px;
-	right: 8px;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 100
 }
-.spinner-icon {
-	width: 22px;
-	height: 22px;
-	box-sizing: border-box;
-  
-	border: solid 4px transparent;
-	border-top-color: var(--theme-color);
-	border-left-color: var(--theme-color);
-	border-radius: 50%;
-  
-	-webkit-animation: nprogress-spinner 400ms linear infinite;
-			animation: nprogress-spinner 400ms linear infinite;
+.progress-bar {
+	height: .2rem;
+	width: 0;
+	background-color: var(--theme-color);
+	animation: progress-loader infinite 1s;
+	-webkit-animation: progress-loader infinite 1s;
+	-moz-animation: progress-loader infinite 1s;
+	margin: 0 auto;
+	box-shadow: 0 0 0.25rem var(--theme-color)
 }
-  
-@-webkit-keyframes nprogress-spinner {
-	0%   { -webkit-transform: rotate(0deg); }
-	100% { -webkit-transform: rotate(360deg); }
-}
-@keyframes nprogress-spinner {
-	0%   { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+
+@keyframes progress-loader {
+	from {
+		width: 0
+	}
+	to {
+		width: 100%;
+		opacity: 0
+	}
 }
 
 .throbber-loader:not(:required) {
