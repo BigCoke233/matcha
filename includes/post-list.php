@@ -22,7 +22,7 @@
 				</div>
 			</div><?php if($this->fields->thumbnail!=''): ?>
 			<div class="post-thumbnail" md-hidden>
-				<img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>">
+				<a href="<?php $this->permalink() ?>"><img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>"></a>
 			</div><?php endif;?>
 		</article>
 	<?php endwhile; ?>

@@ -228,9 +228,13 @@ button {
 	flex-shrink: 0;
 	border-radius: 5px;
 	position: absolute;
-	top: 0;
-	bottom: 0;
+	top: .25em;
+	bottom: .25em;
 	right: 0
+}
+
+.post-thumbnail:hover img {
+	transform: rotate(10deg) scale(1.2)
 }
 
 .post-thumbnail,
@@ -246,6 +250,7 @@ button {
 .post-thumbnail-atpage img {
 	width: 100%;
 	display: block;
+	transition: transform .3s
 }
 
 .post-thumbnail-atpage {
