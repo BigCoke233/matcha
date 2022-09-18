@@ -1453,10 +1453,10 @@ img.alignright {
 .archive-button span.iconfont {
 	display: inline-block;
 	transition: transform .3s;
-	transform: rotate(-90deg)
+	transform: rotate(-180deg)
 }
 .archive-button.closed span.iconfont {
-	transform: rotate(0)
+	transform: rotate(-90deg)
 }
 /* archive page - 归档页面 */
 
