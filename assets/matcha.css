@@ -21,7 +21,8 @@
 	--light-bg: rgb(242,242,242);
 	--light-gray-bg: rgba(0,0,0,.05);
 	--gray-bg: rgba(0,0,0,.2);
-	--overlay-bg: rgba(255,255,255,.95)
+	--overlay-bg: rgba(255,255,255,.95);
+	--white-or-black: #fff
 }
 
 body {
@@ -82,20 +83,6 @@ button {
 	color: #8A1F11;
 	text-decoration: underline;
 	font-weight: bold;
-}
-
-.header {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	padding-right: 13px;
-	border-bottom: none;
-	border-right: 4px solid var(--theme-color);
-	background: var(--light-gray-bg)
-}
-
-.header a,
-.small-header a {
-	font-family: 'ZCOOL XiaoWei', serif!important;
 }
 
 #logo {
@@ -213,7 +200,7 @@ button {
 	overflow: hidden;
 	align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.post-atmain.post-with-thumbnail {
 		position: relative;
 		padding-right: 32%
@@ -351,13 +338,13 @@ h3.comment-closed.fade {
 	padding: 1em .5em;
 	border-bottom: 2px solid var(--theme-color)
 }
-.header {
+.header:not(.ins-search *) {
 	padding-top: 40px;
     padding-bottom: 40px;
     padding-right: 13px;
     border-bottom: none;
     border-right: 4px solid var(--theme-color);
-    background: rgba(0,0,0,.03);
+	background: var(--light-gray-bg)
 }
 .sidebar {
 	position: fixed;
@@ -375,6 +362,11 @@ h3.comment-closed.fade {
 	.sidebar {
 		width: calc(50% - 400px);
 	}
+}
+
+.header a,
+.small-header a {
+	font-family: 'ZCOOL XiaoWei', serif!important;
 }
 
 .widget {
@@ -1613,15 +1605,26 @@ table tr:nth-child(even) {
 #helpbar button {
 	border-radius: 100%;
 	color: var(--text-gray);
-	background: var(--light-bg);
+	background: var(--white-or-black);
 	width: 2.5em;
 	height: 2.5em;
 	display: block;
 	text-overflow: clip;
-	overflow: hidden
+	overflow: hidden;
+	margin-bottom: .25em;
+	box-shadow: 0 0 .15em var(--gray-bg);
+	border: 1px solid var(--light-bg);
+	transition: background .3s
 }
 #helpbar button:hover {
 	background: var(--light-gray-bg)
+}
+
+@media (min-width: 1200px) {
+	#helpbar button {
+		margin-left: .25em;
+		display: inline-block;
+	}
 }
 
 /* ScrollBar */
@@ -1883,6 +1886,18 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	background: var(--overlay-bg)
 }
 
+/* 适配 ExSearch */
+.ins-section .ins-search-item.active,.ins-section .ins-search-item:hover {
+	background: var(--theme-color)!important
+}
+.ins-close:hover {
+	color: var(--theme-color)!important
+}
+.ins-search ::-webkit-scrollbar,
+.ins-search::-webkit-scrollbar {
+	background: rgb(247,247,247)
+}
+
 /* Post TOC */
 .tocbar {
 	position: fixed;
@@ -1915,3 +1930,4 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 		display: none
 	}
 }
+
