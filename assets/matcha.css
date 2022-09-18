@@ -1278,7 +1278,8 @@ img.alignright {
 .post-title-atpage {
 	font-size: 1.7em;
 	margin-top: .9em;
-	font-weight: 400
+	font-weight: 400;
+	position: relative
 }
 .page-title-atpage {
 	font-size: 2em;
@@ -1931,3 +1932,16 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	}
 }
 
+.focus-mode {
+	background-color: var(--white-or-black)
+}
+.focus-mode .container {
+	box-shadow: 0 0 0 #fff;
+	background-color: var(--white-or-black)!important
+}
+#focus-mode {
+	color: var(--text-gray);
+	top: 0;
+	position: absolute;
+	line-height: 0
+}

@@ -105,7 +105,7 @@ var linkTarget = function() {
     $('.post-content a:not([no-linkTarget]), .comment-content a:not([no-linkTarget])').each(function(){
         if($(this).attr('href').indexOf(host_url) < 0 && $(this).attr('href').indexOf('#') < 0 && !$(this).hasClass('no-linkTarget')) {
             $(this).attr('target','_blank');
-            $(this).prepend('<span class="iconfont external-icon">&#xe832;</span>').addClass('no-linkTarget');
+            $(this).prepend('<span class="iconfont external-icon">&#xe888;</span>').addClass('no-linkTarget');
         }
     });
 }
@@ -182,7 +182,6 @@ var tocbotLoad = function() {
         });
     }
 }
-
 
 /**
  * Animation
@@ -324,6 +323,14 @@ var archiveInit = function(){
         $(this).toggleClass('closed');
     });
 }
+//专注模式
+var toggleFocusMode = function(){
+    $('#sidebar').fadeToggle();
+    $('#helpbar').fadeToggle();
+    $('.post-thumbnail-atpage').slideToggle();
+    $(body).toggleClass('focus-mode')
+}
+$('#focus-mode').click(toggleFocusMode);
 
 /**
  * JS Lib Loader
