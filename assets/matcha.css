@@ -228,19 +228,37 @@ button {
 	margin-left: 1em;
 	flex-shrink: 0;
 	border-radius: 5px;
-	overflow: hidden;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	right: 0
 }
 
-.post-thumbnail img {
+.post-thumbnail,
+.post-thumbnail-atpage {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.post-thumbnail img,
+.post-thumbnail-atpage img {
 	width: 100%;
 	display: block;
+}
+
+.post-thumbnail-atpage {
+	margin: -1.2em;
+	margin-bottom: 0;
+	height: 250px;
+	margin-bottom: 2em
+}
+@media (min-width: 992px) {
+	.post-thumbnail-atpage {
+		margin: -2.65em;
+		margin-bottom: 0
+	}
 }
 
 .archive-title {

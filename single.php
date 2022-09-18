@@ -3,6 +3,11 @@
 
 <div class="col-12" id="main" role="main">
     <article class="post post-atpage" itemscope itemtype="http://schema.org/BlogPosting">
+        <?php if($this->fields->thumbnail!=''): ?>
+        <div class="post-thumbnail-atpage">
+            <img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>">
+        </div>
+        <?php endif; ?>
         <div class="post-header">
             <h1 class="post-title post-title-atpage<?php 
             if($this->is('post') && $this->fields->showTOC){ ?> post-title-withtoc<?php } 
