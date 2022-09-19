@@ -119,7 +119,6 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 [smoothscroll.js](https://www.smoothscroll.net/) | 
 [bigfoot.js](http://bigfootjs.com/) | 
 [toaster.js](https://github.com/bigcoke233/toaster.js) | 
-[Masonry](https://github.com/desandro/masonry) | 
 [Fluidbox](http://terrymun.github.io/Fluidbox/demo/index.html) | 
 [Throttle-Debounce](https://benalman.com/projects/jquery-throttle-debounce-plugin/) | 
 [tocbot.js](https://tscanlin.github.io/tocbot/)
