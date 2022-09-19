@@ -332,7 +332,6 @@ var JSLoad = function(){
     bigfoodLoad();
     detailsAnimate();
     prismLoad();
-    linkFlow();
     lazyloader();
     searchInit();
     archiveInit();
