@@ -123,7 +123,6 @@ class Matcha
                     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js',
                     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
                     'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
-                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js',
                     'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
                     'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
                     'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
@@ -135,7 +134,6 @@ class Matcha
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
@@ -157,7 +155,6 @@ class Matcha
                 "jquery/jquery.fluidbox.min",
                 'jquery/jquery.ba-throttle-debounce.min',
                 'tocbot/tocbot.min',
-                "masonry/masonry.pkgd.min",
                 "bigfoot/bigfoot"
             );
         }

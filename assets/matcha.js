@@ -109,25 +109,6 @@ var linkTarget = function() {
         }
     });
 }
-//links
-var linkFlow = function(){
-    if(RandomLinks=='able'){
-        //先打乱友情链接的顺序
-        $(".links-item").each(function(){
-            if(Math.random() <= 0.5){
-                $(this).prependTo($(this).parent());            
-            }
-        });
-    }
-    //再启用瀑布流布局
-    if($('.links-container').length>0){
-        $('.links-container').masonry({
-            // options
-            itemSelector: '.links-item',
-            percentPosition: true
-        });
-    }
-}
 //适配 CopyDog 插件
 copydog_copied=function(){toast('成功复制到剪切板');}
 //Go to Top

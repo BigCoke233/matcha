@@ -15,8 +15,7 @@ $this->need('includes/header.php');?>
         </div>
         <div class="links-container container-fluid">
             <?php if(Utils::isPluginAvailable('Links')) {
-            Links_Plugin::output('
-            <a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
+            Links_Plugin::output('<a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
                 <div class="links-content">
                     <section class="links-avatar">
                         <img data-src="{image}" class="links-img lazy" />
