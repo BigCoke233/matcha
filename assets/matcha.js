@@ -222,8 +222,10 @@ var toggleFocusMode = function(){
     $(body).toggleClass('focus-mode')
     if($(body).hasClass('focus-mode')){
         scaleIn($('#focus-mode-close'), '0.7');
+        toast('已开启专注模式');
     }else{
         scaleOut($('#focus-mode-close'), '0.7');
+        toast('已关闭专注模式');
     }
 }
 
