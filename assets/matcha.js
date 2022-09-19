@@ -374,6 +374,7 @@ $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax],
         if ($('.toc').length) tocbot.destroy();//摧毁文章目录
         $(window).off('scroll');
         $(window).on('scroll', back2topShow);//取消文章目录自动关闭的滚动绑定
+        if($(body).hasClass('focus-mode')) toggleFocusMode();//切换页面时关闭专注模式
         
     }).on('pjax:complete', function() {
         $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
