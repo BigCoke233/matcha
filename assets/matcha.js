@@ -44,7 +44,7 @@ function isInViewport(el, offset = 0) {
  * Functions
  */
 //bigfoot.js
-var bigfoodLoad = function(){
+var bigfootLoad = function(){
     var bigfoot = $.bigfoot(
         {
             deleteOnUnhover: true,
@@ -335,7 +335,7 @@ var JSLoad = function(){
         }
     } catch(e) {}
     linkTarget();
-    bigfoodLoad();
+    bigfootLoad();
     detailsAnimate();
     prismLoad();
     lazyloader();
