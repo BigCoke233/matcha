@@ -215,12 +215,19 @@ button {
 	flex-shrink: 0;
 	border-radius: 5px;
 	position: absolute;
-	top: .25em;
-	bottom: .25em;
+	top: .3em;
+	bottom: .3em;
 	right: 0
 }
+.extrasimple .post-thumbnail {
+	border-radius: 2px
+}
 
-.post-thumbnail:hover img {
+
+.post-thumbnail a:hover {
+	opacity: 1
+}
+.post-thumbnail:not(.extrasimple *):hover img {
 	transform: scale(1.2)
 }
 
@@ -346,6 +353,11 @@ h3.comment-closed.fade {
     border-right: 4px solid var(--theme-color);
 	background: var(--light-gray-bg)
 }
+.extrasimple .header:not(.ins-search *) {
+	border: none;
+	background: transparent;
+	padding-top: .5em
+}
 .sidebar {
 	position: fixed;
 	top: 2.8em;
@@ -367,6 +379,9 @@ h3.comment-closed.fade {
 .header a,
 .small-header a {
 	font-family: 'ZCOOL XiaoWei', serif!important;
+}
+.extrasimple .header a {
+	color: var(--theme-color)!important
 }
 
 .widget {
@@ -404,6 +419,10 @@ h3.comment-closed.fade {
 }
 .sidebar-nav .widget-list li a:hover {
 	background: var(--light-gray-bg)
+}
+.extrasimple .sidebar-nav .widget-list li a:hover {
+	background: transparent;
+	color: var(--theme-color)
 }
 .sidebar-nav .widget-list::-webkit-scrollbar {
 	width: 3px;
@@ -499,6 +518,21 @@ h3.comment-closed.fade {
 	content: '#';
 	color: var(--theme-color);
 	margin-right: .4em
+}
+
+.extrasimple .post-content h2,
+.extrasimple .comment-content h2 {
+	border: none;
+	margin-left: 0;
+	padding-left: 0
+}
+.extrasimple .post-content h3,
+.extrasimple .comment-content h3 {
+	margin-left: 0
+}
+.extrasimple .post-content h3::before,
+.extrasimple .comment-content h3::before {
+	display: none
 }
 
 .post-content img,.comment-content img,.post-content video,.comment-content video {
@@ -1941,10 +1975,12 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	}
 }
 
-.focus-mode {
+.focus-mode,
+.extrasimple {
 	background-color: var(--white-or-black)
 }
-.focus-mode .container {
+.focus-mode .container,
+.extrasimple .container {
 	box-shadow: 0 0 0 #fff;
 	background-color: var(--white-or-black)!important
 }

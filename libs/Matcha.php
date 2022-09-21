@@ -105,8 +105,6 @@ class Matcha
         echo '<script>';
         echo 'siteurl="'; Utils::indexHome(); echo '";'; //站点 url
         echo 'pjaxCallback=function(){'.Helper::options()->pjaxCallback.'};';
-        echo 'AjaxCommentEnabled="'.Helper::options()->EnableAjaxComment.'";';
-        echo 'RandomLinks="'.Helper::options()->EnableRandomLinks.'";';
         if(Helper::options()->DarkMode=='default' || Helper::options()->DarkMode=='dark'){
             echo 'allowDarkMode=true;';
         }
@@ -161,9 +159,9 @@ class Matcha
         //必须要在本地引入的文件
         array_push($local_includes,
             "prism/prism",
-            "smoothscroll/smoothscroll",
             "toaster/toaster"
         );
+        if(Helper::options()->EnableExtraSimple!='able') array_push($local_includes, 'smoothscroll/smoothscroll');
         if(Helper::options()->EnableAjaxComment=='able') array_push($local_includes, 'matcha.comment');
         array_push($local_includes, 'matcha'); //主题核心文件在最后引入
         foreach($local_includes as $value){
@@ -409,11 +407,13 @@ class Matcha
     }
 
     /**
-     * 判断是否打开夜间模式
+     * 输出 body 标签的 class
      */
-    public static function ifDark() {
+    public static function bodyClass() {
+        $class_list = array();
+
+        //判断夜间模式
         $ifDark=false;
-        
         if(isset($_COOKIE['matchaDark'])) {
             if($_COOKIE['matchaDark']=='y') {
                 $ifDark=true;
@@ -432,8 +432,17 @@ class Matcha
                 $ifDark=true;
             }
         }
-        
-        if($ifDark) echo ' class="matcha-dark"';
+        if($ifDark) array_push($class_list, 'matcha-dark');
+
+        //是否开启「超简洁模式」
+        if(Helper::options()->EnableExtraSimple=='able') array_push($class_list, 'extrasimple');
+
+        if(!empty($class_list)){
+            $class_list = implode(' ', $class_list);
+            echo ' class="'.$class_list.'"';
+        }else{
+            return false;
+        }
     }
 
     /**

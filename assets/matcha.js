@@ -327,7 +327,13 @@ var archiveInit = function(){
  
 //Must load when page finish
 var JSLoad = function(){
-    SmoothScroll();
+    try {
+        if(typeof SmoothScroll === "function") SmoothScroll();
+        if(typeof matchaComment !== 'undefined'){
+            matchaComment.bindButton();
+            matchaComment.core();
+        }
+    } catch(e) {}
     linkTarget();
     bigfoodLoad();
     detailsAnimate();
@@ -337,10 +343,6 @@ var JSLoad = function(){
     archiveInit();
     tocbotLoad();
     CommentClosedBtn();
-    if(AjaxCommentEnabled=='able'){
-        matchaComment.bindButton();
-        matchaComment.core();
-    }
     $('.focus-mode-btn').click(toggleFocusMode);
 }
 JSLoad();

@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need("includes/head.php"); ?>
-<body<?php Matcha::ifDark(); ?>>
+<body<?php Matcha::bodyClass(); ?>>
 <?php $this->need('includes/sidebar.php'); ?>
 <div id="body">
     <!-- 移动端导航 -->
