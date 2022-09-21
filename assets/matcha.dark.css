@@ -34,6 +34,10 @@ body.extrasimple.matcha-dark {
     background: var(--white-or-black)
 }
 
+body.matcha-dark .small-header.shrink {
+	background: rgba(10,10,10,.7);
+}
+
 /* 去除背景 */
 body.matcha-dark .post-content pre code {
     background: transparent

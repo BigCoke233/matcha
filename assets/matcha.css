@@ -882,19 +882,6 @@ img.alignright {
 /* = = = = = = = = = = */
 
 /* header */
-.header,
-.small-header {
-	/* transition: 0.25s; */
-	font-family: "Droid Serif",
-		Georgia,
-		"Times New Roman",
-		"PingFang SC",
-		"Hiragino Sans GB",
-		"Source Han Sans CN",
-		"WenQuanYi Micro Hei",
-		"Microsoft Yahei",
-		serif;
-}
 .header .site-title,
 .small-header .site-title {
 	font-weight: 400;
@@ -1014,7 +1001,7 @@ img.alignright {
 	left: 0;
 	right: 0;
 	z-index:80;
-	background: var(--light-bg);
+	background: rgba(253,253,253,.7);
 	backdrop-filter: blur(1em);
 	-webkit-backdrop-filter: blur(1em)
 }
