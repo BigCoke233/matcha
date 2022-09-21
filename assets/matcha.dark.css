@@ -30,6 +30,10 @@ body.matcha-dark #search input {
     background: #181818;
 }
 
+body.extrasimple.matcha-dark {
+    background: var(--white-or-black)
+}
+
 /* 去除背景 */
 body.matcha-dark .post-content pre code {
     background: transparent

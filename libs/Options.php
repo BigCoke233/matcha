@@ -33,7 +33,7 @@ function themeConfig($form) {
             'able' => _t('启用'),
             'disable' => _t('停用'),
         ),
-        'able',
+        'disable',
         _t('是否启用「超简洁模式」'),
         _t('
             启用后开启超简洁模式，页面整体会更干净，也会一定程度上加快页面加载速度。

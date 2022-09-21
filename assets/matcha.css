@@ -1658,11 +1658,15 @@ table tr:nth-child(even) {
 	overflow: hidden;
 	margin-bottom: .25em;
 	box-shadow: 0 0 .15em var(--gray-bg);
-	border: 1px solid var(--light-bg);
+	border: 1px solid var(--light-gray-bg);
 	transition: background .3s
 }
 #helpbar button:hover {
-	background: var(--light-gray-bg)
+	background: var(--theme-color);
+	color: #fff
+}
+.extrasimple #helpbar button {
+	box-shadow: 0 0 0 #fff
 }
 
 @media (min-width: 1200px) {
