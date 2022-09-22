@@ -1,0 +1,126 @@
+@charset 'utf-8';
+
+/**
+ * matcha.animation.css
+ * 动画
+ */
+
+/* 淡出/入动画 */
+.fadeout {
+	transition: .7s;
+	opacity: 0
+}
+
+.fadeIn {
+	animation: fadeIn .3s
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateX(3em)
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
+/* 进度条 */
+.progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 100
+}
+
+.progress-bar {
+	height: .2rem;
+	width: 0;
+	background-color: var(--theme-color);
+	animation: progress-loader infinite 1s;
+	-webkit-animation: progress-loader infinite 1s;
+	-moz-animation: progress-loader infinite 1s;
+	margin: 0 auto;
+	box-shadow: 0 0 0.25rem var(--theme-color)
+}
+
+@keyframes progress-loader {
+	from {
+		width: 0
+	}
+	to {
+		width: 100%;
+		opacity: 0
+	}
+}
+
+/* 评论按钮的加载动画 */
+.throbber-loader:not(:required) {
+	-moz-animation: throbber-loader 1000ms 300ms infinite ease-out;
+	-webkit-animation: throbber-loader 1000ms 300ms infinite ease-out;
+	animation: throbber-loader 1000ms 300ms infinite ease-out;
+	background: #E6E6AD;
+	display: inline-block;
+	position: relative;
+	text-indent: -9999px;
+	width: 0.9em;
+	height: 1.5em;
+	margin: 0 1.6em;
+}
+.throbber-loader:not(:required):before, .throbber-loader:not(:required):after {
+	background: #E6E6AD;
+	content: '\x200B';
+	display: inline-block;
+	width: 0.9em;
+	height: 1.5em;
+	position: absolute;
+	top: 0;
+}
+.throbber-loader:not(:required):before {
+	-moz-animation: throbber-loader 1000ms 150ms infinite ease-out;
+	-webkit-animation: throbber-loader 1000ms 150ms infinite ease-out;
+	animation: throbber-loader 1000ms 150ms infinite ease-out;
+	left: -1.6em;
+}
+.throbber-loader:not(:required):after {
+	-moz-animation: throbber-loader 1000ms 450ms infinite ease-out;
+	-webkit-animation: throbber-loader 1000ms 450ms infinite ease-out;
+	animation: throbber-loader 1000ms 450ms infinite ease-out;
+	right: -1.6em;
+  }
+@-moz-keyframes throbber-loader {
+	0% {
+	  background: #E6E6AD;
+	}
+	10% {
+	  background: var(--theme-color);
+	}
+	40% {
+	  background: #E6E6AD;
+	}
+}
+@-webkit-keyframes throbber-loader {
+	0% {
+		background: #E6E6AD;
+	}
+	10% {
+		background: var(--theme-color);
+	}
+	40% {
+		background: #E6E6AD;
+	}
+}
+@keyframes throbber-loader {
+	0% {
+		background: #E6E6AD;
+	}
+	10% {
+		background: var(--theme-color);
+	}
+	40% {
+		background: #E6E6AD;
+	}
+}

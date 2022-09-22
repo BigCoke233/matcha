@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+/**
+ * matcha.css
+ * Matcha 主题核心 CSS 文件
+ */
+
+@import url('matcha.reset.css');
+@import url('matcha.grid.css');
+@import url('matcha.layout.css');
+@import url('matcha.post.css');
+@import url('matcha.page.css');
+@import url('matcha.animation.css');
+@import url('matcha.libs.css');
+@import url('matcha.dark.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&family=ZCOOL+XiaoWei&display=swap');

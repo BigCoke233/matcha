@@ -63,9 +63,7 @@ class Matcha
         //必须要在本地引入的文件
         array_push($local_includes,
             "toaster/toaster",
-            "matcha.grid",
-            "matcha",
-            "matcha.dark"
+            "matcha/matcha"
         );
         foreach($local_includes as $value){
             echo '<link rel="stylesheet" href="';
@@ -162,8 +160,8 @@ class Matcha
             "toaster/toaster"
         );
         if(Helper::options()->EnableExtraSimple!='able') array_push($local_includes, 'smoothscroll/smoothscroll');
-        if(Helper::options()->EnableAjaxComment=='able') array_push($local_includes, 'matcha.comment');
-        array_push($local_includes, 'matcha'); //主题核心文件在最后引入
+        if(Helper::options()->EnableAjaxComment=='able') array_push($local_includes, 'matcha/matcha.comment');
+        array_push($local_includes, 'matcha/matcha'); //主题核心文件在最后引入
         foreach($local_includes as $value){
             echo '<script src="';
             Utils::indexTheme('assets/'.$value.'.js');

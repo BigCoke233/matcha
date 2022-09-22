@@ -1,0 +1,161 @@
+@charset 'utf-8';
+
+/**
+ * matcha.reset.css
+ * 重设默认样式
+ */
+
+:root {
+	--text-color: #333;
+	--text-gray: #999;
+	--light-bg: rgb(242,242,242);
+	--light-gray-bg: rgba(0,0,0,.05);
+	--gray-bg: rgba(0,0,0,.2);
+	--overlay-bg: rgba(255,255,255,.95);
+	--white-or-black: #fff
+}
+
+body {
+	background: #fafafa;
+	margin: 0;
+	color: #444;
+	font-size: 100%;
+	font-family: 'Noto Serif SC', serif!important;
+	word-break: break-all;
+	box-sizing: border-box;
+	transition: background .3s
+}
+
+body,
+html {
+	scroll-behavior:smooth
+}
+
+a {
+	color: var(--theme-color);
+	text-decoration: none;
+	transition-property: opacity;
+	transition: .3s
+}
+
+a:hover {
+	opacity: .8
+}
+
+a:hover,a:active {
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.75;
+	display: block;
+	margin-block-start: 8px;
+	margin-block-end: 8px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+button {
+	border: none;
+	background: transparent;
+	color: var(--text-color);
+	cursor: pointer
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	overflow: auto;
+	width: 100%;
+}
+  
+td,
+th {
+	padding: 0;
+}
+  
+table th {
+	font-weight: 600;
+	background: #fff;
+	background-color: #bcbc6518;
+}
+  
+table td,
+table th {
+	border: 1px solid #dfe2e5;
+	padding: 6px 13px;
+}
+  
+table tr {
+	background-color: #fff;
+	border-top: 1px solid #c6cbd1;
+}
+  
+table tr:nth-child(even) {
+	background-color: #bcbc6518;
+}
+
+@media (max-width: 992px) {
+	[md-hidden] {
+		display: none
+	}
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 5px
+}
+::-webkit-scrollbar-button {
+	display: none
+}
+::-webkit-scrollbar-thumb {
+	background: var(--theme-color);
+	transition: .2s
+}
+pre::-webkit-scrollbar {
+	width: 4px!important
+}
+pre::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,.1)!important
+}
+pre::-webkit-scrollbar-corner {
+	background: #f5f2f0!important
+}
+
+/* 专注模式 */
+
+.focus-mode,
+.extrasimple {
+	background-color: var(--white-or-black)
+}
+.focus-mode .container,
+.extrasimple .container {
+	box-shadow: 0 0 0 #fff;
+	background-color: var(--white-or-black)!important
+}
+.focus-mode-btn {
+	color: var(--text-gray);
+	top: 0;
+	position: absolute;
+	line-height: 0
+}
+@media (max-width: 992px) {
+	.focus-mode-btn {
+		display: none
+	}
+}
+#focus-mode-close {
+	display: none;
+	position: fixed;
+	top: auto;
+	line-height: 1.2
+}
+.focus-mode #focus-mode-close {
+	display: block
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+	.focus-mode .container {
+		margin-left: auto
+	}
+}
