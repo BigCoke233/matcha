@@ -80,7 +80,12 @@ lazyloader = function(){
             console.log('error loading ' + element.data('src'));
         },
         onFinishedAll: function() {
-            $('.fluidbox-anchor').fluidbox();//完成后加载 Fluidbox
+            //完成后加载 Fluidbox
+            $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function(){
+                $(this).parent().css('overflow', 'visible');
+            }).on('closestart.fluidbox', function(){
+                $(this).parent().css('overflow', 'hidden');
+            });
         }
     });
     //设置 Fluidbox

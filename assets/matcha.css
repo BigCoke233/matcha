@@ -248,16 +248,8 @@ button {
 }
 
 .post-thumbnail-atpage {
-	margin: -1.2em;
-	margin-bottom: 0;
 	height: 250px;
 	margin-bottom: 2em
-}
-@media (min-width: 992px) {
-	.post-thumbnail-atpage {
-		margin: -2.65em;
-		margin-bottom: 0
-	}
 }
 
 .archive-title {
@@ -1911,7 +1903,8 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 /* Fluidbox */
 .fluidbox-anchor {
 	border: none!important;
-	display: block
+	display: block;
+	width: 100%
 }
 .fluidbox-anchor:hover {
 	opacity: 1

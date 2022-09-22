@@ -5,7 +5,7 @@
     <article class="post post-atpage" itemscope itemtype="http://schema.org/BlogPosting">
         <?php if($this->fields->thumbnail!='' && $this->options->EnableExtraSimple!='able'): ?>
         <div class="post-thumbnail-atpage" md-hidden>
-            <img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>">
+            <a class="fluidbox-anchor" href="<?php $this->fields->thumbnail(); ?>"><img class="lazy" data-src="<?php $this->fields->thumbnail(); ?>"></a>
         </div>
         <?php endif; ?>
         <div class="post-header">
