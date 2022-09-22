@@ -19,12 +19,31 @@
 }
 
 .post-title {
-	margin: .83em 0;
 	font-size: 1.2em;
+	margin: 0.5em 0;
+    font-weight: 500
+}
+.post-title > a {
+	font-weight: 400;
+	color: var(--text-color);
+}
+.post-atmain .post-title a {
+	font-weight: bolder
+}
+.post-title:not(.post-title-atpage):hover>a {
+	color: var(--theme-color)
+}
+
+.post-title-atpage {
+	font-size: 1.7em;
+	margin-top: .9em;
+	font-weight: 400;
+	position: relative;
+    font-weight: 700
 }
 
 .post-meta {
-	margin-top: -0.5em;
+	margin-top: 0;
 	padding: 0;
 	color: var(--text-gray);
 	font-size: .92857em;
@@ -41,6 +60,13 @@
 	margin-left: 0;
 	padding-left: 0;
 	border: none;
+}
+
+.post-meta * {
+	color: var(--text-gray) !important;
+}
+.post-meta a:hover {
+	color: var(--theme-color) !important;
 }
 
 .post-content {
@@ -65,37 +91,6 @@
 	}
 }
 
-.post-title {
-	margin: 0.5em 0;
-}
-.post-title > a {
-	font-weight: 400;
-	color: var(--text-color);
-}
-.post-atmain .post-title a {
-	font-weight: bolder
-}
-.post-title:not(.post-title-atpage):hover>a {
-	color: var(--theme-color)
-}
-
-
-.post-meta {
-	margin-top: 0px !important;
-}
-.post-meta * {
-	color: var(--text-gray) !important;
-}
-.post-meta a:hover {
-	color: var(--theme-color) !important;
-}
-
-.post-title-atpage {
-	font-size: 1.7em;
-	margin-top: .9em;
-	font-weight: 400;
-	position: relative
-}
 .page-title-atpage {
 	font-size: 2em;
 	margin-top: 0
