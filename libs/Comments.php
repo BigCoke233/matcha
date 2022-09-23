@@ -34,4 +34,32 @@ Class Comments {
             echo "";
         }
     }
+
+    /**
+     * 获取 Gravatar 头像链接
+     */
+    public static function gravatar($email, int $size = 100, int $useCDN = NULL)
+    {
+        //MD5 EMail
+        $email = md5($email);
+        $avatar = 'https://cn.gravatar.com/avatar/' . $email . '?s=' . $size;
+
+        return $avatar;
+    }
+
+    /**
+     * 获取评论者头像
+     */
+    public static function getAvatar($email, int $size = 100)
+    {
+        //Hash
+        $email_hash = md5(strtolower($email));
+
+        //EMail
+        $email = strtolower($email);
+
+        $avatar = self::gravatar($email, $size);
+
+        return $avatar;
+    }
 }

@@ -22,7 +22,7 @@ echo $commentClass;
 ?>">
     <div class="comment-body-inner">
       <div class="comment-avatar">
-        <?php $comments->gravatar('40', ''); ?>
+        <img class="lazy avatar" data-src="<?php echo Comments::getAvatar($comments->mail); ?>" />
         <span class="comment-reply">
 		      <?php $comments->reply('回复'); ?>
 		    </span>
