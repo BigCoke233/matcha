@@ -530,7 +530,8 @@
 	height: 3.6em;
 	width: 3.6em;
 	transition: transform .5s;
-	border-radius: 100%
+	border-radius: 100%;
+	max-width: fit-content
 }
 .links-item:hover .links-img {
 	transform: rotate(360deg)
