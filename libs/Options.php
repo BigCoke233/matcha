@@ -28,18 +28,6 @@ function themeConfig($form) {
         _t('自定义主题色'), 
         _t('只有在上一个设置项选择「自定义主题色」，这个设置才会生效，在这里写入任何 css 支持的颜色代码'));
     $form->addInput($themeColorCustom);
-    //超简洁模式
-    $EnableExtraSimple = new Typecho_Widget_Helper_Form_Element_Radio('EnableExtraSimple', array(
-            'able' => _t('启用'),
-            'disable' => _t('停用'),
-        ),
-        'disable',
-        _t('是否启用「超简洁模式」'),
-        _t('
-            启用后开启超简洁模式，页面整体会更干净，也会一定程度上加快页面加载速度。
-        ')
-    );
-    $form->addInput($EnableExtraSimple->addRule('required', _t('此处必须设置')));
     //首页摘要显示模式
     $IndexDisplayMode = new Typecho_Widget_Helper_Form_Element_Radio('IndexDisplayMode', array(
         'FullText' => _t('根据 more 标签截断'),

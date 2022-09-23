@@ -61,10 +61,7 @@ class Matcha
             );
         }
         //必须要在本地引入的文件
-        array_push($local_includes,
-            "toaster/toaster",
-            "matcha/matcha"
-        );
+        array_push($local_includes,"toaster/toaster","matcha/matcha");
         foreach($local_includes as $value){
             echo '<link rel="stylesheet" href="';
             Utils::indexTheme('assets/'.$value.'.css');

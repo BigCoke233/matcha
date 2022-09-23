@@ -95,6 +95,10 @@ table tr:nth-child(even) {
 	background-color: #bcbc6518;
 }
 
+img {
+	max-width: 100%
+}
+
 @media (max-width: 992px) {
 	[md-hidden] {
 		display: none
@@ -125,12 +129,10 @@ pre::-webkit-scrollbar-corner {
 
 /* 专注模式 */
 
-.focus-mode,
-.extrasimple {
+.focus-mode {
 	background-color: var(--white-or-black)
 }
-.focus-mode .container,
-.extrasimple .container {
+.focus-mode .container {
 	box-shadow: 0 0 0 #fff;
 	background-color: var(--white-or-black)!important
 }

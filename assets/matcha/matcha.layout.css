@@ -10,8 +10,6 @@
 	padding: 1em 2em;
 	padding-top: 2.8em;
 	box-sizing: border-box;
-	box-shadow: 0 0 1em rgba(0,0,0,.1);
-	background: #fff;
 	min-height: 100vh;
 	position: relative;
 	padding-bottom: 8em!important;
@@ -110,4 +108,116 @@
 
 .helpbar-up {
 	bottom: 4.8em!important
+}
+
+/* sidebar */
+
+.small-header {
+	display: none;
+}
+.sidebar {
+	position: fixed;
+	top: 2.8em;
+	left: 0;
+	bottom: 0;
+	text-align: right;
+	width: calc(50% - 300px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+	
+}
+@media (min-width: 1200px){
+	.sidebar {
+		width: calc(50% - 400px);
+	}
+}
+
+
+/* 缩略图 */
+
+.post-text {
+	flex-grow: 1
+}
+
+.post-thumbnail {
+	width: 30%;
+	margin-left: 1em;
+	flex-shrink: 0;
+	border-radius: 5px;
+	position: absolute;
+	top: .3em;
+	bottom: .3em;
+	right: 0
+}
+
+.post-thumbnail a:hover {
+	opacity: 1
+}
+.post-thumbnail:hover img {
+	transform: scale(1.2)
+}
+
+.post-thumbnail,
+.post-thumbnail-atpage {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none
+}
+
+.post-thumbnail img,
+.post-thumbnail-atpage img {
+	width: 100%;
+	display: block;
+	transition: transform .3s
+}
+
+.post-thumbnail-atpage {
+	height: 250px;
+	margin-bottom: 2em
+}
+
+@media (min-width: 992px) {
+	.post-atmain.post-with-thumbnail {
+		position: relative;
+		padding-right: 32%
+	}
+}
+
+
+/* page navigator - 选页器 */
+.page-navigator:not(.comment-pagenav .page-navigator) {
+	display: flex;
+	justify-content: space-between
+}
+.page-navigator:not(.comment-pagenav .page-navigator) a {
+	color: var(--text-color);
+	font-size: 1.1em;
+	border: 1px solid var(--gray-bg);
+	border-radius: 100%;
+	display: inline-block;
+	font-weight: bold;
+	transition: .3s;
+	height: 2.5em;
+	width: 2.5em;
+	overflow: hidden;
+	box-sizing: border-box;
+	line-height: 2.3em;
+	text-align: center
+}
+.page-navigator:not(.comment-pagenav .page-navigator) a:hover {
+	text-decoration: none;
+	background: var(--theme-color);
+	border-color: var(--theme-color);
+	color: #fff
+}
+.page-navigator:not(.comment-pagenav .page-navigator) #next .iconfont {
+	display: inline-block;
+	transform: rotate(90deg)
+}
+.page-navigator:not(.comment-pagenav .page-navigator) #previous .iconfont {
+	display: inline-block;
+	transform: rotate(-90deg)
 }
