@@ -18,7 +18,8 @@
 .fluidbox-anchor {
 	border: none!important;
 	display: block;
-	width: 100%
+	width: 100%;
+	cursor: zoom-in
 }
 .fluidbox-anchor:hover {
 	opacity: 1
