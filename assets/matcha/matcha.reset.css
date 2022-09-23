@@ -99,9 +99,9 @@ img {
 	max-width: 100%
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
 	[md-hidden] {
-		display: none
+		display: none!important
 	}
 }
 
