@@ -13,8 +13,7 @@
             if($this->is('page')){ ?> page-title-atpage<?php } 
             ?>" itemprop="name headline"><?php 
                 $this->title();
-                if($this->is('post')){ ?><button class="focus-mode-btn" title="专注模式"><span class="iconfont">&#xe869;</span></button><?php } ?>
-            </h1>
+                if($this->is('post')){ ?><button class="focus-mode-btn" title="专注模式"><span class="iconfont">&#xe869;</span></button><?php } ?></h1>
             <?php if($this->is('post')): ?>
             <ul class="post-meta post-meta-atpage">
                 <li><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php echo Matcha::date($this->created); ?></time></li>
