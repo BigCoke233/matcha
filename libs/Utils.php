@@ -32,6 +32,11 @@ class Utils
         Helper::options()->themeUrl($path);
     }
 
+    public static function indexThemeUrl($path = '')
+    {
+        return Helper::options()->themeUrl.'/'.$path;
+    }
+
     /**
      * 判断插件是否可用
      * 
