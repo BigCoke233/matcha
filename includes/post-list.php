@@ -7,10 +7,10 @@
             'author'    =>  _t('%s 发布的文章')
         ), '', ''); ?></h3><?php } ?>
 	<?php if($this->is('index') && $this->options->relatedLinks!='' && $this->_currentPage == 1): ?><!-- 相关链接 -->
-	<?php if($this->options->relatedLinksTitle!=''): ?><h2 class="section-title"><?php $this->options->relatedLinksTitle(); ?></h2><?php endif; ?>
+	<?php if($this->is('index') && $this->options->relatedLinksTitle!=''): ?><h2 class="section-title"><?php $this->options->relatedLinksTitle(); ?></h2><?php endif; ?>
 	<section class="indexlink"><?php Matcha::relatedLinks($this); ?></section><?php endif; ?>
 	<!-- 文章列表 -->
-	<?php if($this->options->relatedLinksTitle!='' && $this->options->relatedLinks!='' && $this->_currentPage == 1): ?><h2 class="section-title">最新文章</h2><?php endif; ?>
+	<?php if($this->is('index') && $this->options->relatedLinksTitle!='' && $this->options->relatedLinks!='' && $this->_currentPage == 1): ?><h2 class="section-title">最新文章</h2><?php endif; ?>
 	<section class="latest-post">
 	<?php while($this->next()): ?>
 		<article class="post post-atmain<?php if($this->fields->thumbnail!='') echo ' post-with-thumbnail'; ?>" itemscope itemtype="http://schema.org/BlogPosting">

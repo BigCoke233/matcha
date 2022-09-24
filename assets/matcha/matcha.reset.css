@@ -59,7 +59,8 @@ button {
 	border: none;
 	background: transparent;
 	color: var(--text-color);
-	cursor: pointer
+	cursor: pointer;
+	user-select: none
 }
 
 table {
