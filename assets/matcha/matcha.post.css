@@ -10,12 +10,8 @@
 	font-size: 1.05em;
 	margin: 2em 0
 }
-.post:first-child {
-	margin: 0
-}
-
-.post:first-child {
-	padding-top: 0
+.post-atmain:first-child {
+	margin-top: 0
 }
 
 .post-title {
@@ -608,6 +604,13 @@ h3.comment-closed.fade {
 	background: var(--theme-color)
 }
 
+/* 继续阅读按钮 */
+
+@media (min-width: 768px) {
+	.more {
+		display: none
+	}
+}
 
 /* 其他 */
 

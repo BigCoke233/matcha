@@ -6,7 +6,12 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ''); ?></h3><?php } ?>
+	<?php if($this->is('index') && $this->options->relatedLinks!=''): ?><!-- 相关链接 -->
+	<?php if($this->options->relatedLinksTitle!=''): ?><h2 class="section-title"><?php $this->options->relatedLinksTitle(); ?></h2><?php endif; ?>
+	<section class="indexlink"><?php Matcha::relatedLinks($this); ?></section><?php endif; ?>
 	<!-- 文章列表 -->
+	<?php if($this->options->relatedLinksTitle!='' && $this->options->relatedLinks!=''): ?><h2 class="section-title">最新文章</h2><?php endif; ?>
+	<section class="latest-post">
 	<?php while($this->next()): ?>
 		<article class="post post-atmain<?php if($this->fields->thumbnail!='') echo ' post-with-thumbnail'; ?>" itemscope itemtype="http://schema.org/BlogPosting">
 			<div class="post-text">
@@ -26,6 +31,7 @@
 			</div><?php endif;?>
 		</article>
 	<?php endwhile; ?>
+	</section>
 	<!-- 分页按钮 -->
 	<div class="page-navigator">
 	  <span id="previous"><?php $this->pageLink('<span class="iconfont">&#xe749;</span>'); ?></span>

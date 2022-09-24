@@ -10,6 +10,11 @@ function themeConfig($form) {
      * 基本信息
      */
 
+    echo '<div style="border:1px solid #ddd;background:#eee;padding:1em;margin-top:1em">
+        <h1 style="margin:0;font-weight:600">Matcha 主题配置</h1>
+        <p style="line-height:1.5;margin:0">主题配置有关的说明请查看<a href="https://matcha.guhub.cn/">说明文档</a></p>
+    </div>';
+
     //主题色
     $themeColor = new Typecho_Widget_Helper_Form_Element_Radio('themeColor', array(
         'matcha' => _t('抹茶绿'),
@@ -114,6 +119,15 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
+
+    
+    //首页相关链接
+    $relatedLinksTitle = new Typecho_Widget_Helper_Form_Element_Text('relatedLinksTitle', NULL, NULL, _t('首页「相关链接」标题'), _t('
+        <p class="description">下一个设置项不留空则生效，自定义相关链接之前显示的标题</p>'));
+    $form->addInput($relatedLinksTitle);
+    $relatedLinks = new Typecho_Widget_Helper_Form_Element_Textarea('relatedLinks', NULL, NULL, _t('首页「相关链接」内容'), _t('
+        <p class="description">使用特定的 JSON 格式书写，可以在首页文章目录之前展示一个相关链接版块，详情请查看说明文档</p><hr>'));
+    $form->addInput($relatedLinks);
 
     /**
      * 自定义

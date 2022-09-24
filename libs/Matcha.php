@@ -223,7 +223,7 @@ class Matcha
     public static function excerpt(Widget_Archive $archive) 
     {
         if(Helper::options()->IndexDisplayMode=='FullText'){
-            $archive->content('');
+            $archive->content('继续阅读');
         }
         elseif(Helper::options()->IndexDisplayMode=='Excerpt200'){
             $archive->excerpt(200);
@@ -443,7 +443,8 @@ class Matcha
     /**
      * 主题色
      */
-    public static function getThemeColor() {
+    public static function getThemeColor() 
+    {
         if(Helper::options()->themeColor=='maple'){
             return '#E95A2D';
         }
@@ -462,5 +463,48 @@ class Matcha
         else{
             return '#c5c56a';
         }
+    }
+
+    /**
+     * 首页相关链接
+     */
+    public static function relatedLinks($archives)
+    {
+        $data = '['.Helper::options()->relatedLinks.']';
+        if($data!=''){
+            $data=json_decode($data, true);
+            foreach($data as $item){
+                echo '<div class="indexlink-item">';
+
+                //如果是文章
+                if($item['type']=='post') {
+                    if(!isset($item['cid'])) {
+                        echo '没有设置 cid，请检查你的设置';
+                        return false;
+                    }
+                    $archives->widget('Widget_Archive@indexxiu', 'pageSize=1&type=post', 'cid='.$item['cid'])->to($post);
+                    echo '<a href="'.$post->permalink.'">
+                        <h2>'.$post->title.'</h2>
+                        <p>';
+                    $post->excerpt(30);
+                    echo '</p>
+                    </a>';
+                }
+                //如果是自定义链接
+                else {
+                    if(!isset($item['title']) || !isset($item['des']) || !isset($item['link'])) {
+                        echo '信息设置不完整，请检查你的设置';
+                        return false;
+                    }
+                    echo '<a href="'.$item['link'].'" target="_blank">
+                        <h2>'.$item['title'].'</h2>
+                        <p>'.$item['des'].'</p>
+                    </a>';
+                }
+
+                echo '</div>';
+            }
+        }
+        return false;
     }
 }

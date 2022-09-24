@@ -191,7 +191,7 @@
 }
 
 @media(max-width:768px) {
-	.header,.post-title,.post-meta {
+	.header {
 		text-align: center;
 	}
 }
@@ -558,4 +558,71 @@
 	clear: both;
 	width: 100%;
 	margin: 2em 0;
+}
+
+/* 首页相关链接 */
+
+.indexlink {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 2%;
+	align-items: stretch
+}
+
+.indexlink-item {
+	width: 100%;
+	border: 2px solid var(--light-gray-bg);
+	box-sizing: border-box;
+	transition: border-color .3s;
+	margin-bottom: 1em
+}
+@media (min-width: 674px) {
+	.indexlink-item {
+		width: 49%;
+	}
+}
+@media (min-width: 962px) {
+	.indexlink-item {
+		width: 32%;
+	}
+}
+
+.indexlink-item:hover {
+	border-color: var(--theme-color)
+}
+.indexlink-item:hover a h2 {
+	color: var(--theme-color)
+}
+
+.indexlink-item a {
+	display: block;
+	color: var(--text-color);
+	padding: 1.2em;
+	height: 100%
+}
+
+.indexlink-item a h2 {
+	transition: color .3s;
+	font-size: 1.3em
+}
+
+.indexlink-item a h2,
+.indexlink-item a p {
+	margin: .25em 0
+}
+
+/* index section */
+
+.section-title {
+	width: fit-content
+}
+
+.section-title::before {
+    bottom: 0!important;
+	height: .5em!important
+}
+
+.section-title:first-child {
+	margin-top: 0
 }

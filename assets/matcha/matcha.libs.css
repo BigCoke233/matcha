@@ -128,12 +128,14 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	padding: 0 .5em
 }
 
-.post-content .bracketdown-underline {
+.post-content .bracketdown-underline,
+.section-title {
 	text-decoration: none;
 	position: relative;
 	z-index: 1
 }
-.post-content .bracketdown-underline::before{
+.post-content .bracketdown-underline::before,
+.section-title::before {
 	content: "";
     position: absolute;
     height: .8em;
