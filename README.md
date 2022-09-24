@@ -26,44 +26,8 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - **人性化的时间显示**，是今天、昨天，还是几天前，而不是枯燥的日期
 - **增强可读性**，精心设计的文字排版
 - **良好的兼容性**，兼容各类插件，继承曾使用过的主题数据
+- **专注模式**，阅读时点击文章标题上的眼睛，隐藏文章以外的内容
 - More to find
-
-<details>
-<summary>相较于 Ringo 所做的修改</summary>
-
-- 整体设计上的改动
-    - 主题的强调色从原来的棕褐色改为抹茶色
-    - 将累赘的分页导航改为「上一页」和「下一页」的设计
-    - 去除了页面中部分元素突兀的阴影
-    - 页面字体采用「思源宋体」，并给站点标题加上了艺术字体
-    - 删除了一些设置项，化繁为简
-- 用户体验的提升
-    - 增加了 Pjax 全站无刷新功能
-	- 增加了 Ajax 评论无刷新功能
-    - 页面滚动更加平滑
-    - 完全重写了评论区的样式
-    - 完全重写了返回顶部按钮
-    - 完全重写了 404 页面
-    - 替换 Highlight.js，使用更轻量级的 Prism.js
-    - 自动检测文章中的链接是否是外部链接，如果是，则自动设置为`在新标签页打开`，并且在链接前加上明显的标识
-	- 适配了一些插件以便拓展主题功能
-	- 更人性化的时间显示
-- 文章可读性提高
-    - 使用 Pangu.php 在中英文之间自动用空格分隔
-    - 使用 bigfoot.js 优化文章脚注的显示
-    - 优化了文章内容的样式
-    - 适配 BracketDown 插件，支持在文章中加入短代码
-- 功能上的增加
-	- 增加了友情链接页面，并支持友情链接乱序显示
-	- 归档页面增加搜索功能，并兼容了 Pjax
-	- 归档页面增加标签云显示
-	- 显示代码行数，增加一键复制功能
-- 优化文件结构，代码可读性提高
-- 动画、各种组件的样式等细节上的调整
-- 修复了一些原主题遗留的 bug
-- ......
-
-</details>
 
 具体的外观可以访问[我的博客](https://blog.guhub.cn/)查看。
 
@@ -90,7 +54,7 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 
 所有版本的更新日志请查看 [change-log.md](change-log.md)。
 
-Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标准发行版本号，所有 Releases 页面的发行版都遵循这一规范，除此之外，主题会为每一个次级版本命名来概述此次更新（当然并不重要）。开发版的语义化版本号，也就是 GitHub 仓库里没有被特别赋予版本号的的版本，为 `当前最新发行版版本号-alpha+最近一次 commit 的哈希码前七位`，例如[这一个 commit](https://github.com/BigCoke233/matcha/commit/1c32e661d5048530ec19df692f97ab8c1a895d4c)的版本号为 `1.0.0-alpha+3b87366`。
+Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标准发行版本号，所有 Releases 页面的发行版都遵循这一规范，除此之外，主题会为每一个次级版本命名来概述此次更新（当然并不重要）。开发版的语义化版本号，也就是 GitHub 仓库里没有被特别赋予版本号的的版本，为 `当前最新发行版版本号-alpha.最近一次 commit 的哈希码前七位`，例如[这一个 commit](https://github.com/BigCoke233/matcha/commit/1c32e661d5048530ec19df692f97ab8c1a895d4c)的版本号为 `1.0.0-alpha.3b87366`。
 
 </details>
 
@@ -107,6 +71,7 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 - [Sticky](https://github.com/jazzi/sticky-for-typecho)：文章置顶插件，如果想要置顶一篇或多篇文章就可以使用这个插件
 - [BracketDown](https://github.com/BigCoke233/typecho-plugin-BracketDown)：语法拓展插件，如果想要在文章里使用短代码就需要安装这个插件
 - [CopyDog](https://github.com/BigCoke233/typecho-plugin-CopyDog)：版权狗插件，可以在文章末尾生成一个显示版权信息的卡片
+- [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch)：搜索增强插件 _1.2.0-beta.1 及以后版本支持_
 
 ## 鸣谢
 
