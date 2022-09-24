@@ -482,11 +482,15 @@ class Matcha
                         echo '没有设置 cid，请检查你的设置';
                         return false;
                     }
-                    $archives->widget('Widget_Archive@indexxiu', 'pageSize=1&type=post', 'cid='.$item['cid'])->to($post);
+                    $post=Helper::widgetById('Contents', $item['cid']);
                     echo '<a href="'.$post->permalink.'">
                         <h2>'.$post->title.'</h2>
                         <p>';
-                    $post->excerpt(30);
+                    if(isset($item['des'])){
+                        echo $item['des'];
+                    }else{
+                        $post->excerpt(30);
+                    }
                     echo '</p></a>';
                 }
                 //如果是自定义链接
