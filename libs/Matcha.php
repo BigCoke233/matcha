@@ -487,8 +487,7 @@ class Matcha
                         <h2>'.$post->title.'</h2>
                         <p>';
                     $post->excerpt(30);
-                    echo '</p>
-                    </a>';
+                    echo '</p></a>';
                 }
                 //如果是自定义链接
                 else {
@@ -498,8 +497,7 @@ class Matcha
                     }
                     echo '<a href="'.$item['link'].'" target="_blank">
                         <h2>'.$item['title'].'</h2>
-                        <p>'.$item['des'].'</p>
-                    </a>';
+                        <p>'.$item['des'].'</p></a>';
                 }
 
                 echo '</div>';
