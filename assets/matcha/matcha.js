@@ -79,7 +79,8 @@ lazyloader = function(){
         onError: function(element) {
             console.log('error loading ' + element.data('src'));
         },
-        afterLoad: function() {
+        afterLoad: function(el) {
+            $(el).addClass('lazy-loaded');
             //完成后加载 Fluidbox
             $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function(){
                 $(this).parent().css('overflow', 'visible');

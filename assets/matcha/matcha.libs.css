@@ -214,3 +214,9 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	border-color: var(--theme-color);
 	color: #fff
 }
+
+/* 懒加载 */
+
+.post-content img.lazy:not(lazy-loaded) {
+	max-width: 100px
+}
