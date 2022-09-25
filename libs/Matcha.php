@@ -305,7 +305,7 @@ class Matcha
     static public function lazyLoad($text){
         $text = preg_replace(
 			'/\<img(.*?)src=\"(.*?)\"(.*?)alt=\"(.*?)\"(.*?)\>/s',
-			'<figure><a href="${2}" class="fluidbox-anchor" no-linkTarget><img${1}data-src="${2}"${3}class="lazy"${4}></a><figcaption>${3}</figcaption></figure>',
+			'<figure><a href="${2}" class="fluidbox-anchor" no-linkTarget><img${1}src="'.Utils::indexThemeUrl('assets/loading.gif').'" data-src="${2}"${3}class="lazy"${4}></a><figcaption>${3}</figcaption></figure>',
 		$text);
         return $text;
     }

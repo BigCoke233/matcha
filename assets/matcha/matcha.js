@@ -79,18 +79,17 @@ lazyloader = function(){
         onError: function(element) {
             console.log('error loading ' + element.data('src'));
         },
-        onFinishedAll: function() {
+        afterLoad: function() {
             //完成后加载 Fluidbox
             $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function(){
                 $(this).parent().css('overflow', 'visible');
             }).on('closestart.fluidbox', function(){
                 $(this).parent().css('overflow', 'hidden');
             });
+            $(window).scroll(function() {
+                $('.fluidbox-anchor').fluidbox('close');
+            });
         }
-    });
-    //设置 Fluidbox
-    $(window).scroll(function() {
-        $('.fluidbox-anchor').fluidbox('close');
     });
 };
 //ExSearch 
