@@ -61,15 +61,15 @@ var prismLoad = function(){
         pres[i].className  = 'line-numbers';}
         Prism.highlightAll(true,null);
     }
-    Prism.plugins.toolbar.registerButton('copy', {
-        text: '',
-        onClick: function (env) {
-            var text = env.element.innerText;
-            navigator.clipboard.writeText(text);
-            toast('已将代码复制到剪切板');
-        }
-    });
 };
+Prism.plugins.toolbar.registerButton('copy', {
+    text: '',
+    onClick: function (env) {
+        var text = env.element.innerText;
+        navigator.clipboard.writeText(text);
+        toast('已将代码复制到剪切板');
+    }
+});
 //jquery.lazy.js loader
 lazyloader = function(){
     $('.lazy').Lazy({
