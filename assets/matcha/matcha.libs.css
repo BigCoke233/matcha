@@ -90,18 +90,20 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 	list-style-type: none
 }
 .post-content details summary::before {
-	content: '\e642';
+	content: '\e749';
 	font-family: "iconfont" !important;
 	display: inline-block;
 	transition: transform .3s;
-	margin-right: .5em
-}
-.post-content details[open]:not(.closing) summary::before {
+	margin-right: .5em;
 	transform: rotate(90deg)
+}
+.post-content details.opened:not(.closing) summary::before {
+	transform: rotate(180deg)
 }
 
 .post-content details .bracketdown-details-content {
-	margin-left: 1.5em!important
+	margin-left: 1.5em!important;
+	display: none
 }
 
 

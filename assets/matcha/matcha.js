@@ -184,17 +184,17 @@ scaleOut = function(object, time) {
 
 //details 标签，适配 BracketDown 插件
 var detailsAnimate = function() {
+    $('details').attr('open','');//强制开启，但不显示内容
     $('details').on("click",function(e){
         e.preventDefault();//阻止 details 直接显示内容
-        if(!$(this).attr('open')){
+        if(!$(this).hasClass('opened')){
             $(this).children('.bracketdown-details-content').slideDown();
-            $(this).attr('open','');
+            $(this).addClass('opened');
         }else{
             $(this).children('.bracketdown-details-content').slideUp();
             $(this).addClass('closing');
             setTimeout(() => { 
-                $(this).removeClass('closing');
-                $(this).removeAttr('open');
+                $(this).removeClass('closing').removeClass('opened');
             }, 300);
         }
     });
