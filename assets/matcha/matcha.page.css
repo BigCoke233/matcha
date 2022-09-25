@@ -68,7 +68,7 @@
 
 .small-header {
 	padding: 1em .5em;
-	border-bottom: 2px solid var(--theme-color)
+	border-bottom: 2px solid var(--theme-color);
 }
 .header:not(.ins-search *) {
 	padding-top: 40px;
@@ -314,7 +314,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index:80;
+	z-index: 998;
 	background: rgba(253,253,253,.7);
 	backdrop-filter: blur(1em);
 	-webkit-backdrop-filter: blur(1em)
