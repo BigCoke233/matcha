@@ -278,11 +278,6 @@
 	font-size: 1em;
 }
 
-/* 密码保护 */
-.protected .text {
-	width: 50%;
-}
-
 /* 文章目录 */
 .tocbar {
 	position: fixed;
@@ -612,6 +607,41 @@ h3.comment-closed.fade {
 	.more {
 		display: none
 	}
+}
+
+/* 密码保护 */
+
+.protected {
+	max-width: 400px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.protected .word {
+	display: none
+}
+
+.protected input {
+	border: 2px solid var(--light-gray-bg);
+	box-sizing: border-box;
+	padding: .4em .8em;
+	border-radius: 3px
+}
+
+.protected input[type="submit"] {
+	background: var(--theme-color);
+	color: #fff;
+	border: 2px solid var(--theme-color);
+	cursor: pointer
+}
+
+.post-atmain .protected {
+	justify-content: flex-start;
+	width: auto;
+	margin: 0
 }
 
 /* 其他 */
