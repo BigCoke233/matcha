@@ -575,7 +575,9 @@
 	border: 2px solid var(--light-gray-bg);
 	box-sizing: border-box;
 	transition: border-color .3s;
-	margin-bottom: 1em
+	margin-bottom: 1em;
+	display: flex;
+	align-items: stretch
 }
 @media (min-width: 674px) {
 	.indexlink-item {
@@ -599,7 +601,7 @@
 	display: block;
 	color: var(--text-color);
 	padding: 1.2em;
-	height: 100%
+	width: 100%
 }
 
 .indexlink-item a h2 {
