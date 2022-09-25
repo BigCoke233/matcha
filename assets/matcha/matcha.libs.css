@@ -217,6 +217,6 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 
 /* 懒加载 */
 
-.post-content img.lazy:not(lazy-loaded) {
+.post-content img.lazy:not(.lazy-loaded) {
 	max-width: 100px
 }
