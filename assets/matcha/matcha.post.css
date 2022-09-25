@@ -286,12 +286,14 @@
 /* 文章目录 */
 .tocbar {
 	position: fixed;
-	left: 100%
+	left: 100%;
+	display: none
 }
 @media (min-width: 1200px){
 	.tocbar {
 		left: calc(50% + 415px);
-		top: 4em
+		top: 4em;
+		display: block
 	}
 }
 

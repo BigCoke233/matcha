@@ -205,8 +205,8 @@ var toggleFocusMode = function(){
     $('#sidebar').fadeToggle();
     $('#helpbar').fadeToggle();
     $('.post-thumbnail-atpage').slideToggle();
-    $(body).toggleClass('focus-mode')
-    if($(body).hasClass('focus-mode')){
+    $('body').toggleClass('focus-mode')
+    if($('body').hasClass('focus-mode')){
         scaleIn($('#focus-mode-close'), '0.7');
         toast('已开启专注模式');
     }else{

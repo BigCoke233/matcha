@@ -131,12 +131,18 @@ pre::-webkit-scrollbar-corner {
 /* 专注模式 */
 
 .focus-mode {
-	background-color: var(--white-or-black)
+	background-color: var(--white-or-black);
 }
+
+.focus-mode:not(.matcha-dark *) #body {
+	background: rgb(252, 250, 246)
+}
+
 .focus-mode .container {
 	box-shadow: 0 0 0 #fff;
-	background-color: var(--white-or-black)!important
+	background-color: transparent!important
 }
+
 .focus-mode-btn {
 	color: var(--text-gray);
 	top: 0;
@@ -148,6 +154,7 @@ pre::-webkit-scrollbar-corner {
 		display: none
 	}
 }
+
 #focus-mode-close {
 	display: none;
 	position: fixed;
