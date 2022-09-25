@@ -274,6 +274,7 @@
 /* 通用页面标题 */
 .archive-title {
 	margin: 0;
+	margin-bottom: 1em;
 	color: var(--text-gray);
 	font-size: 1em;
 }
