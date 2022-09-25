@@ -517,10 +517,12 @@ h3.comment-closed.fade {
 	width: 100%
 }
 .comment-meta {
-	display: flex
+	display: flex;
+	flex-wrap: wrap
 }
 .comment-meta span {
-	display: block
+	display: block;
+	margin-top: .2em
 }
 .comment-content {
 	display: block;
@@ -529,16 +531,14 @@ h3.comment-closed.fade {
 .comment-content p {
 	margin: 0!important
 }
-.comment-meta {
-	margin-top: .2em
-}
 .comment-meta .comment-author a {
 	padding: .2em .4em;
 	display: inline-block;
 	background: var(--light-bg);
 	border-radius: 2px;
 	line-height: 1;
-	margin-right: .5em
+	margin-right: .5em;
+	white-space: nowrap
 }
 .comment-meta .comment-author a:hover {
 	color: #fff;
@@ -548,15 +548,17 @@ h3.comment-closed.fade {
 .comment-meta span.comment-at {
 	color: var(--text-color);
 	margin: 0;
-	display: inline;
+	display: inline-block;
 }
 .comment-meta span.comment-at a {
-	color: var(--text-color)
+	color: var(--text-color);
+	display: inline-block
 }
 
 .comment-date {
 	color: var(--text-gray)
 }
+
 .comment-reply {
 	display: block;
 	text-align: center;
