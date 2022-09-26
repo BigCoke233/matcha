@@ -86,10 +86,6 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 
 /* 适配 BracketDown 插件 */
 
-.post-content details {
-	margin: 1em 0
-}
-
 .post-content details summary {
 	list-style-type: none
 }

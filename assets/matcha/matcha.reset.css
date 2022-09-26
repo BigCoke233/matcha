@@ -68,6 +68,7 @@ table {
 	border-spacing: 0;
 	overflow: auto;
 	width: 100%;
+	margin: 1em 0
 }
   
 td,
