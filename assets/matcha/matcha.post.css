@@ -310,22 +310,22 @@
 
 /* 评论 */
 
-h3.comment-closed {
-	font-weight: 400;
-	color: #fff;
-	background: var(--theme-color);
-	text-align: center;
-	padding: .5em 1em;
-	width: fit-content;
-	margin: 0 auto;
-	border-radius: 3px;
-	user-select: none;
-	cursor: pointer;
-
-	transition: opacity .3s
+.comment-closed {
+	padding: 0 .8em;
+	background: var(--light-bg);
+	transition: opacity .3s;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center
 }
-h3.comment-closed.fade {
-	opacity: 0;
+
+.comment-closed p {
+	font-weight: 600
+}
+
+.comment-closed button {
+	font-size: .9rem
 }
 
 .comment-list li {

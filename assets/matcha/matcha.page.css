@@ -431,7 +431,8 @@
 	display: inline-block;
 	padding: .2em .5em;
 	padding-bottom: .3em;
-	transition: .3s
+	transition: .3s;
+	margin-bottom: .5em
 }
 
 .tags-list li a:hover,
@@ -497,7 +498,7 @@
 	padding: .6em;
 	border-radius: 5px;
 	width: 33.33%;
-	margin: .5em 0;
+	margin: .2em 0;
 	box-sizing: border-box
 }
 @media (max-width: 1200px) {
@@ -534,7 +535,7 @@
 	max-width: fit-content
 }
 .links-item:hover .links-img {
-	transform: rotate(360deg)
+	transform: scale(1.05)
 }
 
 .links-profile {
@@ -544,7 +545,7 @@
 }
 .links-profile h4 {
 	margin: 0;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 1.1em;
 }
 .links-profile p {

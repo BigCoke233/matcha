@@ -98,3 +98,10 @@ body.matcha-dark table td,
 body.matcha-dark table th {
     border-color: #444
 }
+/* Related Links */
+body.matcha-dark .indexlink-item {
+    border-color: #333
+}
+body.matcha-dark .indexlink-item:hover {
+    border-color: var(--theme-color)
+}

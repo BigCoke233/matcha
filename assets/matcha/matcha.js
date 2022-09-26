@@ -283,10 +283,7 @@ $(window).scroll(function(event){
 //Comment Closed Feedback
 var CommentClosedBtn = function(){
     $('#comment-closed').click(function(){
-        $('#comment-closed').addClass('fade');
-        setTimeout(function(){
-            $('#comment-closed').remove();
-        },300);
+        $(this).parent().slideUp();
         document.cookie = 'commentsClosedKnown=y';
         toast('短期内不会再显示此类信息');
     });

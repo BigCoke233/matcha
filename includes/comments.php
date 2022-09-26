@@ -100,7 +100,7 @@ Comments::replyScript($this); ?>
       $show=true;
     }
     if($show){ ?>
-      <h3 class="comment-closed" id="comment-closed">本页的评论功能已关闭</h3>
+      <div class="comment-closed"><p>本页的评论功能已关闭</p><button id="comment-closed">×</button></div>
     <?php } endif; ?>
 
     <?php if ($comments->have()): ?>

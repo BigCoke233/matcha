@@ -135,10 +135,6 @@ pre::-webkit-scrollbar-corner {
 	background-color: var(--white-or-black);
 }
 
-.focus-mode:not(.matcha-dark *) #body {
-	background: rgb(252, 250, 246)
-}
-
 .focus-mode .container {
 	box-shadow: 0 0 0 #fff;
 	background-color: transparent!important
