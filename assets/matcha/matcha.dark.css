@@ -93,3 +93,8 @@ body.matcha-dark .header {
 body.matcha-dark .small-header button.navbar-button:hover {
 	background: var(--gray-bg)!important
 }
+/* Table */
+body.matcha-dark table td,
+body.matcha-dark table th {
+    border-color: #444
+}

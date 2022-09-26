@@ -75,25 +75,25 @@ th {
 	padding: 0;
 }
   
-table th {
-	font-weight: 600;
-	background: #fff;
-	background-color: #bcbc6518;
-}
-  
 table td,
 table th {
-	border: 1px solid #dfe2e5;
+	border: 1px solid var(--light-gray-bg);
 	padding: 6px 13px;
 }
   
 table tr {
-	background-color: #fff;
-	border-top: 1px solid #c6cbd1;
+	background-color: var(--white-or-black);
+	border-top: 1px solid var(--light-gray-bg);
 }
-  
+
 table tr:nth-child(even) {
-	background-color: #bcbc6518;
+	background-color: var(--light-bg);
+}
+
+table thead tr {
+	font-weight: 600;
+	background-color: var(--light-bg);
+	text-align: inherit
 }
 
 img {
