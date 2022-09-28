@@ -2,16 +2,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <!-- start #optimize -->
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="dns-prefetch" href="//secure.gravatar.com" />
-    <link rel="dns-prefetch" href="//busuanzi.ibruce.info" />
-
-    <!-- 关闭百度转码 -->
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <!-- end #optimize -->
-    
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">

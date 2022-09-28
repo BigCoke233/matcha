@@ -279,6 +279,36 @@
 	font-size: 1em;
 }
 
+.tag-page-title,
+.category-page-title {
+	text-align: center;
+	font-size: 2em;
+	margin-top: 0
+}
+
+.tag-page-title::before,
+.tag-page-title::after {
+	content: '#';
+	color: var(--theme-color);
+	margin: 0 .25em
+}
+
+.category-page-title {
+	margin-bottom: 0
+}
+
+.category-page-title::before,
+.category-page-title::after {
+	content: '·';
+	color: var(--theme-color);
+	margin: 0 .25em
+}
+
+.category-page {
+	text-align: center;
+	margin-bottom: 2em
+}
+
 /* 文章目录 */
 .tocbar {
 	position: fixed;
