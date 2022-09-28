@@ -289,30 +289,25 @@ var CommentClosedBtn = function(){
     });
 }
 //搜索功能
-var searchInit = function(){
-    $('#input_search').on("input propertychange", function(){
-        $('#search-button').attr('href','http://'+window.location.host+'/index.php/search/'+$('#input_search').val()+'/')
-    });
-    $('#search-button').click(function(){
-        if($('#search-button').attr('href')==null){
-            Toaster.error('请输入关键词');
-        }
-    });
-    //当浏览器返回时，以上代码会失效，这里自动刷新一下页面
-    if($('#input_search').length){
-        $(document).ready(function () {
-            if (window.history && window.history.pushState) {
-                $(window).on('popstate', function () {
-                    if($('#input_search').length){
-                        $('#input_search').val('');
-                        $('body').append('<a href="'+ window.location.href +'" id="pjax-refresh" style="display:none"> </a>');
-                        $('#pjax-refresh').click()
-                    }
-                });
-            }
-        });
+var doSearch = function(){
+    if($('#input_search').val()==null){
+        Toaster.error('请输入关键词');
+    }else{
+        let url = window.location.protocol+'//'+window.location.host+'/index.php/search/'+$('#input_search').val()+'/';
+        $.pjax({url: url, 
+            container: '#main',
+            fragment: '#main',
+            timeout: 8000, });
     }
 }
+
+var searchInit = function(){
+    $('#search-button').click(doSearch);
+    $(document).keydown(function (e) {
+        if(e.keyCode==13 && $('#input_search').is(":focus")) doSearch();
+    });
+}
+
 //归档页面展开收起
 var archiveInit = function(){
     //监听归档页面展开收起按钮
