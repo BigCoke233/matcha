@@ -77,7 +77,8 @@ body.matcha-dark .bigfoot-footnote__wrapper::after {
 }
 /* Comment */
 body.matcha-dark #comment-form .textarea, 
-body.matcha-dark #comment-form input:not(.submit-extra input) {
+body.matcha-dark #comment-form input:not(.submit-extra input),
+body.matcha-dark .protected input {
 	border: 2px solid var(--gray-bg);
 }
 /* Post */

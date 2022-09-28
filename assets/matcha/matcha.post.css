@@ -629,6 +629,7 @@
 
 .protected input {
 	border: 2px solid var(--light-gray-bg);
+	background: var(--white-or-black);
 	box-sizing: border-box;
 	padding: .4em .8em;
 	border-radius: 3px
