@@ -3,9 +3,9 @@
  * 简洁清新的纯文字 Typecho 主题
  * 
  * @package Typecho Theme Matcha
- * @author memset0, Eltrac
- * @version 1.2.0-beta.1
- * @link https://github.com/memset0/typecho-theme-ringo
+ * @author Eltrac
+ * @version 1.2.0
+ * @link https://github.com/BigCoke233/matcha
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
