@@ -8,7 +8,7 @@
 <a href="https://github.com/BigCoke233/matcha/releases"><img src="https://img.shields.io/github/v/release/BigCoke233/matcha?display_name=tag&style=flat-square"></a>
 
 
-Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次开发的 Typecho 主题，而 [Ringo](https://github.com/memset0/typecho-theme-ringo) 本身是移植自 Hexo 的 [Journal](https://github.com/SumiMakito/hexo-theme-Journal) 主题。总体上来讲，Matcha 是基于 Ringo 的代码和 Journal 的设计进行二次创作的，增加和优化了许多功能，并且加入了一些自己的设计。
+Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次开发的 Typecho 主题，而 [Ringo](https://github.com/memset0/typecho-theme-ringo) 本身是移植自 Hexo 的 [Journal](https://github.com/SumiMakito/hexo-theme-Journal) 主题。总体上来讲，Matcha 是基于 Ringo 的代码和 Journal 的设计进行二次创作的，对代码结构进行了大幅度地重构，并添加了许多自己的设计和好用的功能。
 
 ## 特色
 
