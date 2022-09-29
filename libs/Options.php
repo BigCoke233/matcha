@@ -43,7 +43,7 @@ function themeConfig($form) {
     _t('文章摘要显示模式'),
     _t('
     <p class="description">该设置相会影响首页的文章列表内的文章内容摘要如何显示。</p>
-    <p class="description">若选择 根据 more 标签截断，主题会截取 <code><!--more--></code> 标签之前的内容，这样能保留这一文段的样式，而不是单调的文字。</p>
+    <p class="description">若选择 根据 more 标签截断，主题会截取 <code>&lt;!--more--></code> 之前的内容，这样能保留这一文段的样式，而不是单调的文字。</p>
     <p class="description">若选择 截断前200字符，主题总是会截取文章前 200 字纯文本，且不保留原本样式。</p>
     <p class="description">若选择 不输出摘要，文章列表中只会显示文章标题和元信息。</p>')
     );
