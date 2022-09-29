@@ -25,7 +25,7 @@ function themeConfig($form) {
         'custom' => _t('自定义主题色')
     ),
     'matcha',
-    _t('主题色'),
+    _t('<h2>首要设置</h2> 主题色'),
     _t('选择一个主题色'));
     $form->addInput($themeColor->addRule('required', _t('此处必须设置')));
     //自定义主题色
@@ -48,17 +48,31 @@ function themeConfig($form) {
     <p class="description">若选择 不输出摘要，文章列表中只会显示文章标题和元信息。</p>')
     );
     $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
-    //Favicon 设置
-    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, 'favicon.png', _t('浏览器图标（Favicon）'), _t('在这里填入一个指向图片文件的 url 来自定义浏览器标签栏显示的图标，留空则默认为 favicon.ico'));
+
+    /**
+     * 相关信息
+     */
+    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, 'favicon.png', _t('<h2>相关信息</h2> 浏览器图标（Favicon）'), _t('在这里填入一个指向图片文件的 url 来自定义浏览器标签栏显示的图标，留空则默认为 favicon.ico'));
     $form->addInput($favicon);
 
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
-    $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d<hr>'));
+    $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d'));
     $form->addInput($startDate);
 
     /**
-     * 附加功能 & 实验性功能
+     * 进阶功能
+     */
+    //首页相关链接
+    $relatedLinksTitle = new Typecho_Widget_Helper_Form_Element_Text('relatedLinksTitle', NULL, NULL, _t('<h2>进阶功能</h2> 首页「相关链接」标题'), _t('
+        <p class="description">下一个设置项不留空则生效，自定义相关链接之前显示的标题</p>'));
+    $form->addInput($relatedLinksTitle);
+    $relatedLinks = new Typecho_Widget_Helper_Form_Element_Textarea('relatedLinks', NULL, NULL, _t('首页「相关链接」内容'), _t('
+        <p class="description">使用特定的 JSON 格式书写，可以在首页文章目录之前展示一个相关链接版块，详情请查看说明文档</p>'));
+    $form->addInput($relatedLinks);
+
+    /**
+     * 附加功能
      */
     //启用 CDN 加速
     $StaticCDN = new Typecho_Widget_Helper_Form_Element_Select('StaticCDN', array(
@@ -67,7 +81,7 @@ function themeConfig($form) {
             'cdnjs' => _t('CDNJS'),
         ),
         'local',
-        _t('选择静态文件加速 CDN'),
+        _t('<h2>附加功能</h2> 选择静态文件加速 CDN'),
         _t('如果你的服务器速度较慢，可以选择一个 CDN 引用静态文件资源库，可以一定程度地提高页面加载速度。')
     );
     $form->addInput($StaticCDN->addRule('required', _t('此处必须设置')));
@@ -115,25 +129,18 @@ function themeConfig($form) {
         'able',
         _t('是否启用 <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a> 统计功能'),
         _t('
-            <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b><hr>
+            <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b>
         ')
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
 
-    
-    //首页相关链接
-    $relatedLinksTitle = new Typecho_Widget_Helper_Form_Element_Text('relatedLinksTitle', NULL, NULL, _t('首页「相关链接」标题'), _t('
-        <p class="description">下一个设置项不留空则生效，自定义相关链接之前显示的标题</p>'));
-    $form->addInput($relatedLinksTitle);
-    $relatedLinks = new Typecho_Widget_Helper_Form_Element_Textarea('relatedLinks', NULL, NULL, _t('首页「相关链接」内容'), _t('
-        <p class="description">使用特定的 JSON 格式书写，可以在首页文章目录之前展示一个相关链接版块，详情请查看说明文档</p><hr>'));
-    $form->addInput($relatedLinks);
-
+    /**
+     * 自定义 & 开发者设置
+     */
     //自定义时间显示
-    $timeFormat = new Typecho_Widget_Helper_Form_Element_Text('timeFormat', NULL, NULL, _t('自定义时间格式'), _t('
+    $timeFormat = new Typecho_Widget_Helper_Form_Element_Text('timeFormat', NULL, NULL, _t('<h2>开发者设置</h2> 自定义时间格式'), _t('
         <p class="description">留空则默认采用人性化时间（即“昨天、前天、几天前”），若不想要使用人性化时间则在此填入 PHP 时间格式，例如：<code>Y-m-d G:i:s</code></p>'));
     $form->addInput($timeFormat);
-
     //自定义 head
     $customHead = new Typecho_Widget_Helper_Form_Element_Textarea('customHead', NULL, NULL, _t('自定义 head 头部信息'), _t('
         <p class="description">将会输出在 head 标签结束之前，通常用于引入 css 文件。</p>'));
