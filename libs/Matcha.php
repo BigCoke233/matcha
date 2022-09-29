@@ -235,29 +235,34 @@ class Matcha
      */
     public static function date($created)
     {
-        //计算时间差
-        $diff = time() - $created;
-        $d = floor($diff/3600/24);
-        
-        $Y = date('Y', $created);
+        if(Helper::options()->timeFormat!=''){
+            return date(Helper::options()->timeFormat, $created);
+        }else{
+            //计算时间差
+            $diff = time() - $created;
+            $d = floor($diff/3600/24);
+            
+            $Y = date('Y', $created);
 
-        if(date('Y-m-d', $created)==date('Y-m-d')){
-            return '今天';
-        }
-        elseif($d==1){
-            return '昨天';
-        }
-        elseif($d==2){
-            return '前天';
-        }
-        elseif($d<=31){
-            return $d.' 天前';
-        }
-        elseif($Y==date('Y')) {
-            return date('m-d', $created);
-        }
-        else {
-            return date('Y-m-d', $created);
+            //输出时间
+            if(date('Y-m-d', $created)==date('Y-m-d')){
+                return '今天';
+            }
+            elseif($d==1){
+                return '昨天';
+            }
+            elseif($d==2){
+                return '前天';
+            }
+            elseif($d<=31){
+                return $d.' 天前';
+            }
+            elseif($Y==date('Y')) {
+                return date('m-d', $created);
+            }
+            else {
+                return date('Y-m-d', $created);
+            }
         }
     }
 

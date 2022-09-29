@@ -129,9 +129,11 @@ function themeConfig($form) {
         <p class="description">使用特定的 JSON 格式书写，可以在首页文章目录之前展示一个相关链接版块，详情请查看说明文档</p><hr>'));
     $form->addInput($relatedLinks);
 
-    /**
-     * 自定义
-     */
+    //自定义时间显示
+    $timeFormat = new Typecho_Widget_Helper_Form_Element_Text('timeFormat', NULL, NULL, _t('自定义时间格式'), _t('
+        <p class="description">留空则默认采用人性化时间（即“昨天、前天、几天前”），若不想要使用人性化时间则在此填入 PHP 时间格式，例如：<code>Y-m-d G:i:s</code></p>'));
+    $form->addInput($timeFormat);
+
     //自定义 head
     $customHead = new Typecho_Widget_Helper_Form_Element_Textarea('customHead', NULL, NULL, _t('自定义 head 头部信息'), _t('
         <p class="description">将会输出在 head 标签结束之前，通常用于引入 css 文件。</p>'));
