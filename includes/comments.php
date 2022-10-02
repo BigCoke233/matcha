@@ -59,7 +59,8 @@ Comments::replyScript($this); ?>
     <?php if($this->allow('comment')): ?>
     <div id="<?php $this->respondId(); ?>" class="respond">
         <script>login=false;</script>
-        <h2 class="comments-form-title">添加新评论<span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span></h2>
+        <h2 class="comments-form-title"><?php if(isset($GLOBALS['msgPage']) && $GLOBALS['msgPage']){ $this->title(); } else { echo '添加新评论'; }  ?><span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span></h2>
+        <?php if(isset($GLOBALS['msgPage']) && $GLOBALS['msgPage']) $this->content(); ?>
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
               <div class="submit-text submit-section">
                 <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="留下你的智慧 ~" required ><?php $this->remember('text'); ?></textarea>
