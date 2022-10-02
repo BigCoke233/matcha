@@ -634,6 +634,11 @@
 	background: var(--theme-color)
 }
 
+/* 留言页面 */
+.message-page-title {
+	margin: 0
+}
+
 /* 继续阅读按钮 */
 
 @media (min-width: 768px) {

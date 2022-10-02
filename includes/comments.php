@@ -59,7 +59,11 @@ Comments::replyScript($this); ?>
     <?php if($this->allow('comment')): ?>
     <div id="<?php $this->respondId(); ?>" class="respond">
         <script>login=false;</script>
-        <h2 class="comments-form-title"><?php if(isset($GLOBALS['msgPage']) && $GLOBALS['msgPage']){ $this->title(); } else { echo '添加新评论'; }  ?><span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span></h2>
+        <?php $msg=isset($GLOBALS['msgPage']) && $GLOBALS['msgPage']; ?>
+        <h2 class="comment-form-title<?php if($msg) echo ' message-page-title'; ?>">
+          <?php if($msg){ $this->title(); } else { echo '添加新评论'; }  ?>
+          <span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span>
+        </h2>
         <?php if(isset($GLOBALS['msgPage']) && $GLOBALS['msgPage']) $this->content(); ?>
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
               <div class="submit-text submit-section">
