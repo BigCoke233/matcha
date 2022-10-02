@@ -64,7 +64,7 @@ Comments::replyScript($this); ?>
           <?php if($msg){ $this->title(); } else { echo '添加新评论'; }  ?>
           <span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span>
         </h2>
-        <?php if(isset($GLOBALS['msgPage']) && $GLOBALS['msgPage']) $this->content(); ?>
+        <?php if($msg) $this->content(); ?>
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
               <div class="submit-text submit-section">
                 <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="留下你的智慧 ~" required ><?php $this->remember('text'); ?></textarea>
@@ -84,7 +84,7 @@ Comments::replyScript($this); ?>
                 <input class="input-email" type="email" name="mail" id="mail" class="text" placeholder="邮箱" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
                 <input class="input-url" type="url" name="url" id="url" class="text" placeholder="网址 (选填) " value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
                 <?php endif; ?>
-                <button class="submit" id="comment-submit"><?php _e('提交评论'); ?></button>
+                <button class="submit" id="comment-submit"><?php if(!$msg) { echo '提交评论'; } else { echo '写下留言'; } ?></button>
               </div>
               <div class="submit-extra">
                 <div class="owo"></div>
