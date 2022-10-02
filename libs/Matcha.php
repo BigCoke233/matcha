@@ -307,7 +307,7 @@ class Matcha
     /**
      * LazyLoad
      */
-    static public function lazyLoad($text){
+    static public function parseLazyLoad($text){
         $text = preg_replace(
 			'/\<img(.*?)src=\"(.*?)\"(.*?)alt=\"(.*?)\"(.*?)\>/s',
 			'<figure><a href="${2}" class="fluidbox-anchor" no-linkTarget><img${1}src="'.Utils::indexThemeUrl('assets/loading.gif').'" data-src="${2}"${3}class="lazy"${4}></a><figcaption>${3}</figcaption></figure>',
@@ -318,10 +318,21 @@ class Matcha
     /**
      * 为文章标题添加id
      */
-    static public function tocbot($text){
+    static public function parseTocbot($text){
         $text = preg_replace(
 			'/\<h(2|3)(.*?)\>(.*?)\<\/h(2|3)\>/s',
 			'<h${1}${2} id="heading-${3}">${3}</h${1}>',
+		$text);
+        return $text;
+    }
+
+    /**
+     * <!--less-->
+     */
+    static public function parseLess($text){
+        $text = preg_replace(
+			'/(.*?)\<\!\-\-less\-\-\>(.*?)/s',
+			'${2}',
 		$text);
         return $text;
     }
@@ -333,7 +344,19 @@ class Matcha
     {
         $text = empty($last) ? $data : $last;
         if ($widget instanceof Widget_Archive) {
-			$text = Matcha::tocbot(Matcha::lazyLoad($text));
+			$text = Matcha::parseTocbot(Matcha::parseLazyLoad($text));
+        }
+        return $text;
+    }
+
+    /**
+     * 解析摘要内容
+     */
+    static public function parseExcerpt($data, $widget, $last)
+    {
+        $text = empty($last) ? $data : $last;
+        if ($widget instanceof Widget_Archive) {
+			$text = Matcha::parseLess(Matcha::parseTocbot(Matcha::parseLazyLoad($text)));
         }
         return $text;
     }
