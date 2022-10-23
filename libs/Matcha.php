@@ -12,6 +12,7 @@ class Matcha
      * 包括 css 引用、标题
      */
     public static function head() {
+        Matcha::preconnect();
         Matcha::linkCSS();
         Matcha::iconfont();
         Helper::options()->customHead();
@@ -68,7 +69,32 @@ class Matcha
             echo '" />';
         }
     }
-
+    
+     /**
+     * 输出 preconnect 标签
+     */
+    public static function preconnect() {
+        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='local'){
+            if(Helper::options()->StaticCDN=='bytedance'){
+                $src_link = array(
+                    '//lf3-cdn-tos.bytecdntp.com/',
+                    '//lf9-cdn-tos.bytecdntp.com/',
+                    '//lf26-cdn-tos.bytecdntp.com/',
+                );
+            }
+            elseif(Helper::options()->StaticCDN=='cdnjs'){
+                $src_link = array(
+                    '://cdnjs.cloudflare.com/',
+                );
+            }
+            echo '<!-- 预连接 -->';
+            foreach($src_link as $value){
+                echo '<link rel="preconnect" href="'.$value.'" />';
+            }
+            
+        }
+    }
+    
     /**
      * 引用 iconfont
      */
@@ -290,6 +316,14 @@ class Matcha
      */
     static public function footerInfo() 
     {
+        //字数统计
+        if (Helper::options()->EnableWordsCounter=='able') {
+            
+            echo '<br />';
+            echo '一共书写了';
+            WordsCounter_Plugin::allOfCharacters();
+            echo '字';
+        }
         //备案号
         if (Helper::options()->icpNum!='') {
             echo '<br />';

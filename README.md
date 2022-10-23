@@ -93,6 +93,14 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 
 [Pixabay 用户 - OpenClipart-Vectors](https://pixabay.com/zh/vectors/screaming-surprised-smiley-emotion-146426/)：提供 404 页面使用的矢量图
 
+
+#### 公益CDN
+
+[Cravatar](https://cravatar.cn/)  | 
+[cdnjs](https://cdnjs.cloudflare.com/)  | 
+[字节跳动静态资源公共库](https://cdn.bytedance.com/)
+
+
 ---
 
 Copyright &copy; 2022 SumiMakito, memset0 & Eltrac, under GPL v3.0 License.
