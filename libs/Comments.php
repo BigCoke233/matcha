@@ -42,7 +42,7 @@ Class Comments {
     {
         //MD5 EMail
         $email = md5($email);
-        $avatar = 'https://gravatar.loli.net/avatar/' . $email . '?s=' . $size;
+        $avatar = 'https://cravatar.cn/avatar/' . $email . '?s=' . $size;
 
         return $avatar;
     }
