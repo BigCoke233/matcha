@@ -138,10 +138,10 @@ function themeConfig($form) {
         'able' => _t('启用'),
         'disable' => _t('停用'),
     ),
-    'able',
+    'disable',
     _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a> 功能'),
     _t('
-        <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a>是一个基于WordsCounter插件统计全站字数的，<b>默认启用</b>
+        <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a>是一个基于WordsCounter插件统计全站字数的
     ')
     );
     $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
