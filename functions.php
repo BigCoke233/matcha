@@ -28,7 +28,7 @@ function themeFields($layout)
         false => _t('关闭')),
         false, 
         _t('是否开启文章目录'), 
-        _t('解析文章目录展示在文章页面左侧，代替侧边栏的位置'));
+        _t('解析文章目录展示在文章页面右侧，代替侧边栏的位置'));
     $layout->addItem($showTOC);
 
     $thumbnail = new Typecho_Widget_Helper_Form_Element_Text('thumbnail', NULL,
