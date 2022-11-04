@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-cmn-Hans-CN">
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
     <!-- IE 8浏览器的页面渲染方式 & 默认使用极速内核：针对国内浏览器产商 -->
