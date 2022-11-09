@@ -36,13 +36,13 @@ Class Comments {
     }
 
     /**
-     * 获取 Gravatar 头像链接
+     * 获取 Cravatar 头像链接
      */
     public static function gravatar($email, int $size = 100, int $useCDN = NULL)
     {
         //MD5 EMail
         $email = md5($email);
-        $avatar = 'https://gravatar.loli.net/avatar/' . $email . '?s=' . $size;
+        $avatar = 'https://cravatar.cn/avatar/' . $email . '?s=' . $size;
 
         return $avatar;
     }
