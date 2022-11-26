@@ -146,6 +146,18 @@ function themeConfig($form) {
         ')
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
+    //启用字数统计
+    $EnableWordsCounter = new Typecho_Widget_Helper_Form_Element_Radio('EnableWordsCounter', array(
+        'able' => _t('启用'),
+        'disable' => _t('停用'),
+    ),
+    'disable',
+    _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a> 功能'),
+    _t('
+        <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a>是一个基于WordsCounter插件统计全站字数的
+    ')
+    );
+    $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
 
     /**
      * 自定义 & 开发者设置
