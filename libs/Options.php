@@ -176,6 +176,10 @@ function themeConfig($form) {
     $footerInfo = new Typecho_Widget_Helper_Form_Element_Text('footerInfo', NULL, NULL, _t('页脚附加信息'), _t('
         <p class="description">将会在显示在 footer 标签结束之前，即页脚版权信息和不算子统计之后，可以在这里写入备案信息等附加内容</p>'));
     $form->addInput($footerInfo);
+    //自定义导航栏
+    $customNav = new Typecho_Widget_Helper_Form_Element_Textarea('customNav', NULL, NULL, _t('自定义导航栏'), _t('
+        <p class="description">用 JSON 书写，具体格式参考文档。</p>'));
+    $form->addInput($customNav);
     //自定义 head
     $customHead = new Typecho_Widget_Helper_Form_Element_Textarea('customHead', NULL, NULL, _t('自定义 head 头部'), _t('
         <p class="description">将会输出在 head 标签结束之前，通常用于引入 css 文件。</p>'));

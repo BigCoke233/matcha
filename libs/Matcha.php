@@ -255,20 +255,35 @@ class Matcha
      */
     public static function pageNav(Widget_Archive $archive, $tag) 
     {
-        $archive->widget('Widget_Contents_Page_List')->to($pages);
-        //首页链接
-        echo '<'.$tag.'><a href="';
-        Utils::indexHome();
-        echo '">首页</a></'.$tag.'>';
-        //页面列表
-        while($pages->next()) {
+        $data = json_decode(Helper::options()->customNav, true);
+
+        if(Helper::options()->customNav!='' && $data==null) {
+            echo '导航栏设置错误';
+            return false;
+        }
+
+        if(Helper::options()->customNav=='' || $data['type']=='addition'){
+            $archive->widget('Widget_Contents_Page_List')->to($pages);
+            //首页链接
             echo '<'.$tag.'><a href="';
-            $pages->permalink(); 
-            echo '" title="';
-            $pages->title(); 
-            echo '">';
-            $pages->title(); 
-            echo '</a></'.$tag.'>';
+            Utils::indexHome();
+            echo '">首页</a></'.$tag.'>';
+            //页面列表
+            while($pages->next()) {
+                echo '<'.$tag.'><a href="';
+                $pages->permalink(); 
+                echo '" title="';
+                $pages->title(); 
+                echo '">';
+                $pages->title(); 
+                echo '</a></'.$tag.'>';
+            }
+        }
+
+        if(Helper::options()->customNav!='' && $data!=null) {
+            foreach($data['content'] as $item) {
+                echo '<'.$tag.'><a href="'.$item['link'].'" title="'.$item['text'].'">'.$item['text'].'</a></'.$tag.'>';
+            }
         }
     }
 
