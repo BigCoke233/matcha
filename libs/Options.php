@@ -92,12 +92,18 @@ function themeConfig($form) {
             'local' => _t('本地资源（不加速）'),
             'bytedance' => _t('字节跳动资源库（推荐）'),
             'cdnjs' => _t('CDNJS'),
+            'custom'=> _t('自定义')
         ),
         'local',
         _t('<h2>附加功能</h2> 选择静态文件加速 CDN'),
-        _t('如果你的服务器速度较慢，可以选择一个 CDN 引用静态文件资源库，可以一定程度地提高页面加载速度。')
+        _t('如果你的服务器速度较慢，可以选择一个 CDN 引用静态文件资源库，可以一定程度地提高页面加载速度。若选择自定义，则需要填写下一项')
     );
     $form->addInput($StaticCDN->addRule('required', _t('此处必须设置')));
+    //自定义 CDN
+    $CustomCDN = new Typecho_Widget_Helper_Form_Element_Text('CustomCDN', NULL, NULL, _t('自定义 CDN'), _t('
+    <p class="description">上一个设置选择「自定义」，则通过此处设置的 CDN 引入主题所需的静态文件。</p>
+    <p class="description">如果您拥有自己的储存服务，可以将主题的 assets 目录上传，选择「自定义」并在这里填写对应的 URL，以 “/” 结尾。</p>'));
+    $form->addInput($CustomCDN);
     //夜间模式设置
     $DarkMode = new Typecho_Widget_Helper_Form_Element_Select('DarkMode', array(
         'default' => _t('默认日间模式，自动+手动开关（默认）'),

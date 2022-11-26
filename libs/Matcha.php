@@ -22,51 +22,69 @@ class Matcha
      * 输出 link 标签引用 css
      */
     public static function linkCSS() {
-        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='local'){
-            if(Helper::options()->StaticCDN=='bytedance'){
-                $src_link = array(
-                    'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/normalize/8.0.1/normalize.min.css',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
-                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
-                );
-            }
-            elseif(Helper::options()->StaticCDN=='cdnjs'){
-                $src_link = array(
-                    'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
-                    'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css'
-                );
-            }
+        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='custom') {
+            //非自定义 CDN
+            if(Helper::options()->StaticCDN!='local'){
+                if(Helper::options()->StaticCDN=='bytedance'){
+                    $src_link = array(
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/normalize/8.0.1/normalize.min.css',
+                        'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
+                        'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
+                        'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
+                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css',
+                        'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
+                        'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
+                    );
+                }
+                elseif(Helper::options()->StaticCDN=='cdnjs'){
+                    $src_link = array(
+                        'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
+                        'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
+                        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
+                        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
+                        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css',
+                        'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
+                        'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css'
+                    );
+                }
 
-            foreach($src_link as $value){
-                echo '<link rel="stylesheet" href="'.$value.'" />';
+                foreach($src_link as $value){
+                    echo '<link rel="stylesheet" href="'.$value.'" />';
+                }
+                
+                $local_includes=array();//没有额外的本地文件
+            }else{
+                //要引入的 css 文件名
+                $local_includes=array(
+                    "normalize", 
+                    "bigfoot/bigfoot",
+                    "prism/prism",
+                    "jquery/jquery.fluidbox.min",
+                    "tocbot/tocbot"
+                );
             }
-            
-            $local_includes=array();//没有额外的本地文件
-        }else{
-            //要引入的 css 文件名
-            $local_includes=array(
+            //必须要在本地引入的文件
+            array_push($local_includes,"toaster/toaster","matcha/matcha");
+            foreach($local_includes as $value){
+                echo '<link rel="stylesheet" href="';
+                Utils::indexTheme('assets/'.$value.'.css');
+                echo '" />';
+            }
+        } else {
+            //自定义 CDN
+            $includes=array(
                 "normalize", 
                 "bigfoot/bigfoot",
                 "prism/prism",
                 "jquery/jquery.fluidbox.min",
-                "tocbot/tocbot"
+                "tocbot/tocbot",
+                "toaster/toaster",
+                "matcha/matcha"
             );
-        }
-        //必须要在本地引入的文件
-        array_push($local_includes,"toaster/toaster","matcha/matcha");
-        foreach($local_includes as $value){
-            echo '<link rel="stylesheet" href="';
-            Utils::indexTheme('assets/'.$value.'.css');
-            echo '" />';
+
+            foreach($includes as $value){
+                echo '<link rel="stylesheet" href="'.Helper::options()->CustomCDN.$value.'.css" />';
+            }
         }
     }
     
@@ -74,7 +92,7 @@ class Matcha
      * 输出 preconnect 标签
      */
     public static function preconnect() {
-        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='local'){
+        if(isset(Helper::options()->StaticCDN) && (Helper::options()->StaticCDN!=('local'||'custom'))){
             if(Helper::options()->StaticCDN=='bytedance'){
                 $src_link = array(
                     '//lf3-cdn-tos.bytecdntp.com/',
@@ -136,59 +154,82 @@ class Matcha
      * 输出 js 引用
      */
     public static function script() {
-        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='local'){
-            if(Helper::options()->StaticCDN=='bytedance'){
-                $src_link = array(
-                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js',
-                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
-                    'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
-                    'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
-                    'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                    'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
-                    'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js'
-                );
-            }
-            elseif(Helper::options()->StaticCDN=='cdnjs'){
-                $src_link = array(
-                    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
-                    'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js'
-                );
-            }
+        if(isset(Helper::options()->StaticCDN) && Helper::options()->StaticCDN!='custom') {
+            //非自定义 CDN
+            if(Helper::options()->StaticCDN!='local'){
+                if(Helper::options()->StaticCDN=='bytedance'){
+                    $src_link = array(
+                        'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js',
+                        'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
+                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
+                        'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
+                        'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js'
+                    );
+                }
+                elseif(Helper::options()->StaticCDN=='cdnjs'){
+                    $src_link = array(
+                        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+                        'https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
+                        'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
+                        'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
+                        'https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
+                        'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
+                        'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js'
+                    );
+                }
 
-            foreach($src_link as $value){
-                echo '<script src="'.$value.'"></script>';
+                foreach($src_link as $value){
+                    echo '<script src="'.$value.'"></script>';
+                }
+                
+                $local_includes=array();//没有额外的本地文件
+            }else{
+                //要引入的 js 文件名
+                $local_includes=array(
+                    "jquery/jquery.min",
+                    "jquery/jquery.pjax.min",
+                    "jquery/jquery.lazy.min",
+                    "jquery/jquery.fluidbox.min",
+                    'jquery/jquery.ba-throttle-debounce.min',
+                    'tocbot/tocbot.min',
+                    "bigfoot/bigfoot"
+                );
             }
-            
-            $local_includes=array();//没有额外的本地文件
-        }else{
-            //要引入的 js 文件名
-            $local_includes=array(
+            //必须要在本地引入的文件
+            array_push($local_includes,
+                "prism/prism",
+                "toaster/toaster",
+                'smoothscroll/smoothscroll'
+            );
+            if(Helper::options()->EnableAjaxComment=='able') array_push($local_includes, 'matcha/matcha.comment');
+            array_push($local_includes, 'matcha/matcha'); //主题核心文件在最后引入
+            foreach($local_includes as $value){
+                echo '<script src="';
+                Utils::indexTheme('assets/'.$value.'.js');
+                echo '"></script>';
+            }
+        } else {
+            //自定义 CDN
+            $includes=array(
                 "jquery/jquery.min",
                 "jquery/jquery.pjax.min",
                 "jquery/jquery.lazy.min",
                 "jquery/jquery.fluidbox.min",
                 'jquery/jquery.ba-throttle-debounce.min',
                 'tocbot/tocbot.min',
-                "bigfoot/bigfoot"
+                "bigfoot/bigfoot",
+                "prism/prism",
+                "toaster/toaster",
+                'smoothscroll/smoothscroll'
             );
-        }
-        //必须要在本地引入的文件
-        array_push($local_includes,
-            "prism/prism",
-            "toaster/toaster"
-        );
-        if(Helper::options()->EnableExtraSimple!='able') array_push($local_includes, 'smoothscroll/smoothscroll');
-        if(Helper::options()->EnableAjaxComment=='able') array_push($local_includes, 'matcha/matcha.comment');
-        array_push($local_includes, 'matcha/matcha'); //主题核心文件在最后引入
-        foreach($local_includes as $value){
-            echo '<script src="';
-            Utils::indexTheme('assets/'.$value.'.js');
-            echo '"></script>';
+            if(Helper::options()->EnableAjaxComment=='able') array_push($includes, 'matcha/matcha.comment');
+            array_push($includes, 'matcha/matcha'); //主题核心文件在最后引入
+
+            foreach($includes as $value){
+                echo '<script src="'.Helper::options()->CustomCDN.$value.'.js"></script>';
+            }
         }
     }
 
