@@ -1,11 +1,13 @@
 ## 开发版更新（即 `main` 分支）
 
 - 新增：自定义 CDN
+- 新增：自定义导航栏
 - 新增：适配字数统计插件（by @KurococLiu）
 - 新增：留言页面模板
 - 优化：适配 ISO 639-3 标准（by @KurococLiu）
 - 优化：使用 preconnect（by @KurococLiu）
 - 优化：用 Cravatar 代替 Gravatar 源（by @KurococLiu）
+- 优化：微调样式
 
 ## 1.2.0
 
