@@ -169,15 +169,19 @@ function themeConfig($form) {
      * 自定义 & 开发者设置
      */
     //自定义时间显示
-    $timeFormat = new Typecho_Widget_Helper_Form_Element_Text('timeFormat', NULL, NULL, _t('<h2>开发者设置</h2> 自定义时间格式'), _t('
+    $timeFormat = new Typecho_Widget_Helper_Form_Element_Text('timeFormat', NULL, NULL, _t('<h2>自定义</h2> 自定义时间格式'), _t('
         <p class="description">留空则默认采用人性化时间（即“昨天、前天、几天前”），若不想要使用人性化时间则在此填入 PHP 时间格式，例如：<code>Y-m-d G:i:s</code></p>'));
     $form->addInput($timeFormat);
+    //自定义页脚附加信息
+    $footerInfo = new Typecho_Widget_Helper_Form_Element_Text('footerInfo', NULL, NULL, _t('页脚附加信息'), _t('
+        <p class="description">将会在显示在 footer 标签结束之前，即页脚版权信息和不算子统计之后，可以在这里写入备案信息等附加内容</p>'));
+    $form->addInput($footerInfo);
     //自定义 head
-    $customHead = new Typecho_Widget_Helper_Form_Element_Textarea('customHead', NULL, NULL, _t('自定义 head 头部信息'), _t('
+    $customHead = new Typecho_Widget_Helper_Form_Element_Textarea('customHead', NULL, NULL, _t('自定义 head 头部'), _t('
         <p class="description">将会输出在 head 标签结束之前，通常用于引入 css 文件。</p>'));
     $form->addInput($customHead);
     //自定义 footer
-    $customFooter = new Typecho_Widget_Helper_Form_Element_Textarea('customFooter', NULL, NULL, _t('自定义 footer 页脚信息'), _t('
+    $customFooter = new Typecho_Widget_Helper_Form_Element_Textarea('customFooter', NULL, NULL, _t('自定义 footer 页脚'), _t('
         <p class="description">将会输出在 body 标签结束之前，通常用于引入 js 文件。</p>'));
     $form->addInput($customFooter);
     //自定义 pjax 回调函数

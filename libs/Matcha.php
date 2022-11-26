@@ -357,26 +357,22 @@ class Matcha
      */
     static public function footerInfo() 
     {
+        echo '<br />';
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
-            
-            echo '<br />';
-            echo '一共书写了';
+            echo '书写了 ';
             WordsCounter_Plugin::allOfCharacters();
-            echo '字';
-        }
-        //备案号
-        if (Helper::options()->icpNum!='') {
-            echo '<br />';
-            echo '<a rel="nofollow" href="http://beian.miit.gov.cn"> '.Helper::options()->icpNum.' </a>';
+            echo ' 字';
         }
         //不蒜子统计
         if (Helper::options()->EnableBusuanzi=='able') {
-            echo '<br />';
+            if (Helper::options()->EnableWordsCounter=='able') echo ' · ';
             echo '<span id="busuanzi_value_site_pv">......</span> 次访问 ·
                   <span id="busuanzi_value_site_uv">......</span> 位访客 ';
             echo '<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>';
         }
+        //附加信息
+        if (Helper::options()->footerInfo!='') echo '<div class="footer-info">'.Helper::options()->footerInfo.'</div>';
     }
 
     /**
