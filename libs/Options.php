@@ -49,6 +49,19 @@ function themeConfig($form) {
     );
     $form->addInput($IndexDisplayMode->addRule('required', _t('此处必须设置')));
 
+    //启用 ajax 评论
+    $EnableExtraSimple = new Typecho_Widget_Helper_Form_Element_Radio('EnableExtraSimple', array(
+            'able' => _t('启用'),
+            'disable' => _t('停用'),
+        ),
+        'able',
+        _t('超简洁模式（Beta）'),
+        _t('
+            
+        ')
+    );
+    $form->addInput($EnableExtraSimple->addRule('required', _t('此处必须设置')));
+
     /**
      * 相关信息
      */
