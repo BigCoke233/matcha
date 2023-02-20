@@ -72,7 +72,7 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 - [BracketDown](https://github.com/BigCoke233/typecho-plugin-BracketDown)：语法拓展插件，如果想要在文章里使用短代码就需要安装这个插件
 - [CopyDog](https://github.com/BigCoke233/typecho-plugin-CopyDog)：版权狗插件，可以在文章末尾生成一个显示版权信息的卡片
 - [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch)：搜索增强插件 _1.2.0-beta.1 及以后版本支持_
-- [WordsCounter](https://github.com/elatisy/Typecho_WordsCounter)：字数统计插件，可以统计全站的字数
+- [WordsCounter](https://github.com/KurococLiu/Typecho_WordsCounter)：字数统计插件，可以统计全站的字数 _为Matcha重新微调的版本_
 
 ## 鸣谢
 
