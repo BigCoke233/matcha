@@ -372,6 +372,11 @@ class Matcha
      */
     static public function footerInfo() 
     {
+        //ICP备案号
+        if (Helper::options()->icpNum!='') {
+            echo '<br />';
+            echo '<a rel="nofollow" href="http://beian.miit.gov.cn"> '.Helper::options()->icpNum.' </a>';
+        }
         echo '<br />';
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
