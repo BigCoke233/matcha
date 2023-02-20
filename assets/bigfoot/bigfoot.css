@@ -74,7 +74,7 @@
   }
   .bigfoot-footnote {
     position: absolute;
-    z-index: 10;
+    z-index: 991;
     top: 0;
     left: 0;
     display: inline-block;
