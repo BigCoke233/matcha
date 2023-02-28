@@ -393,6 +393,10 @@ class Matcha
         }
         //附加信息
         if (Helper::options()->footerInfo!='') echo '<div class="footer-info">'.Helper::options()->footerInfo.'</div>';
+        //umami
+        if (Helper::options()->umamiID!='') {
+            echo '<script async defer src="https://analytics.umami.is/script.js" data-website-id="'.Helper::options()->umamiID.'"></script>';
+        }
     }
 
     /**
