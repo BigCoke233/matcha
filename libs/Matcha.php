@@ -377,7 +377,6 @@ class Matcha
             echo '<br />';
             echo '<a rel="nofollow" href="http://beian.miit.gov.cn"> '.Helper::options()->icpNum.' </a>';
         }
-        echo '<br />';
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
             echo '书写了 ';
