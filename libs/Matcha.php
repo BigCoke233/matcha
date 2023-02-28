@@ -379,6 +379,7 @@ class Matcha
         }
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
+            echo '<br />';
             echo '书写了 ';
             WordsCounter_Plugin::allOfCharacters();
             echo ' 字';
