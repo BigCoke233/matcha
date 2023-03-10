@@ -190,17 +190,17 @@
 	list-style-type: decimal
 }
 
-.post-content ul>ul li,
-.post-content ol>ul li,
-.comment-content ul>ul li,
-.comment-content ol>ul li {
+.post-content ul li>ul li,
+.post-content ol li>ul li,
+.comment-content ul li>ul li,
+.comment-content ol li>ul li {
 	list-style-type: disc
 }
 
-.post-content ol>ol li,
-.post-content ul>ol li,
-.comment-content ol>ol li,
-.comment-content ul>ol li {
+.post-content ol li>ol li,
+.post-content ul li>ol li,
+.comment-content ol li>ol li,
+.comment-content ul li>ol li {
 	list-style-type: lower-roman
 }
 
