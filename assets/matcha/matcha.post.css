@@ -33,7 +33,6 @@
 .post-title-atpage {
 	font-size: 1.7em;
 	margin-top: .9em;
-	font-weight: 400;
 	position: relative;
     font-weight: 700
 }
@@ -112,6 +111,7 @@
 .post-content,.comment-content {
 	line-height: 1.5;
 	word-wrap: break-word;
+	word-break: break-word;
 }
 
 .post-content h2,
