@@ -70,6 +70,18 @@ function themeConfig($form) {
     $relatedLinks = new Typecho_Widget_Helper_Form_Element_Textarea('relatedLinks', NULL, NULL, _t('首页「相关链接」内容'), _t('
         <p class="description">使用特定的 JSON 格式书写，可以在首页文章目录之前展示一个相关链接版块，详情请查看说明文档</p>'));
     $form->addInput($relatedLinks);
+    // 分类导航
+    $categoryNav = new Typecho_Widget_Helper_Form_Element_Radio('categoryNav', array(
+        'able' => _t('启用'),
+        'disable' => _t('停用'),
+    ),
+    'disable',
+    _t('是否启用侧边栏分类导航'),
+    _t('
+        启用后，将在侧边栏首页和独立页面中间加入所有分类页面。
+    ')
+    );
+    $form->addInput($categoryNav->addRule('required', _t('此处必须设置')));
 
     /**
      * 附加功能
