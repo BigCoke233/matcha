@@ -40,8 +40,15 @@ matchaComment.core = function() {
             return false;
         }
         
-        if($('#comment-form [name="author"]').length && (!$('#comment-form [name="author"]').val().length>0 || !$('#comment-form [name="mail"]').val().length>0)) {
+        // 如果 mail 有 required 属性，则要求填写用户名和邮箱
+        if($('#comment-form [name="mail"]').attr('required') && (!$('#comment-form [name="author"]').val().length>0 || !$('#comment-form [name="mail"]').val().length>0)) {
             Toaster.error('用户名和邮箱不能为空');
+            return false;
+        }
+
+        // 如果 mail 没有 required 属性，则仅要求用户名不能为空
+        if(!$('#comment-form [name="mail"]').attr('required') && !$('#comment-form [name="author"]').val().length>0) {
+            Toaster.error('用户名不能为空');
             return false;
         }
 
