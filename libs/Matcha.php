@@ -264,10 +264,6 @@ class Matcha
 
         if(Helper::options()->customNav=='' || $data['type']=='addition'){
             $archive->widget('Widget_Contents_Page_List')->to($pages);
-            //首页链接
-            echo '<'.$tag.'><a href="';
-            Utils::indexHome();
-            echo '">首页</a></'.$tag.'>';
             //页面列表
             while($pages->next()) {
                 echo '<'.$tag.'><a href="';
@@ -283,6 +279,27 @@ class Matcha
         if(Helper::options()->customNav!='' && $data!=null) {
             foreach($data['content'] as $item) {
                 echo '<'.$tag.'><a href="'.$item['link'].'" title="'.$item['text'].'">'.$item['text'].'</a></'.$tag.'>';
+            }
+        }
+    }
+
+    /**
+     * 统一输出分类导航
+     * html 结构
+     */
+    public static function categoryNav(Widget_Archive $archive, $tag)
+    {
+        // 如果开启了分类导航，则输出分类
+        if(Helper::options()->categoryNav=='able') {
+            $archive->widget('Widget_Metas_Category_List')->to($categories);
+            while($categories->next()) {
+                echo '<'.$tag.'><a href="';
+                $categories->permalink(); 
+                echo '" title="';
+                $categories->name(); 
+                echo '">';
+                $categories->name(); 
+                echo '</a></'.$tag.'>';
             }
         }
     }

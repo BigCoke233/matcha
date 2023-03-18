@@ -33,7 +33,6 @@
 .post-title-atpage {
 	font-size: 1.7em;
 	margin-top: .9em;
-	font-weight: 400;
 	position: relative;
     font-weight: 700
 }
@@ -112,6 +111,7 @@
 .post-content,.comment-content {
 	line-height: 1.5;
 	word-wrap: break-word;
+	word-break: break-word;
 }
 
 .post-content h2,
@@ -180,27 +180,23 @@
 	padding-left: 1.2em!important
 }
 
-.post-content ul li,
-.comment-content ul li {
+.post-content ul,
+.comment-content ul {
 	list-style-type: square
 }
 
-.post-content ol li,
-.comment-content ol li {
+.post-content ol,
+.comment-content ol {
 	list-style-type: decimal
 }
 
-.post-content ul>ul li,
-.post-content ol>ul li,
-.comment-content ul>ul li,
-.comment-content ol>ul li {
+.post-content li ul,
+.comment-content li ul {
 	list-style-type: disc
 }
 
-.post-content ol>ol li,
-.post-content ul>ol li,
-.comment-content ol>ol li,
-.comment-content ul>ol li {
+.post-content li ol,
+.comment-content li ol {
 	list-style-type: lower-roman
 }
 

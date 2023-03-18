@@ -3,7 +3,11 @@
 <aside id="sidebar" class="sidebar" role="complementary">
   <section class="widget widget-nav sidebar-nav">
     <header id="header" class="header"><?php Matcha::siteName(); ?></header>
-    <ul class="widget-list"><?php Matcha::pageNav($this, "li"); ?></ul>
+    <ul class="widget-list">
+      <li><a href="<?php $this->options->siteUrl(); ?>" rel="section">首页</a></li>
+      <?php Matcha::categoryNav($this, "li"); ?>
+      <?php Matcha::pageNav($this, "li"); ?>
+    </ul>
   </section>
   <!-- 版权信息 -->
 	<section class="widget sidebar-foot">
