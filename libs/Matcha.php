@@ -389,9 +389,14 @@ class Matcha
      */
     static public function footerInfo() 
     {
-        echo '<br />';
+        //ICP备案号
+        if (Helper::options()->icpNum!='') {
+            echo '<br />';
+            echo '<a rel="nofollow" href="http://beian.miit.gov.cn"> '.Helper::options()->icpNum.' </a>';
+        }
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
+            echo '<br />';
             echo '书写了 ';
             WordsCounter_Plugin::allOfCharacters();
             echo ' 字';
@@ -405,6 +410,10 @@ class Matcha
         }
         //附加信息
         if (Helper::options()->footerInfo!='') echo '<div class="footer-info">'.Helper::options()->footerInfo.'</div>';
+        //umami
+        if (Helper::options()->umamiID!='') {
+            echo '<script async defer src="https://analytics.umami.is/script.js" data-website-id="'.Helper::options()->umamiID.'"></script>';
+        }
     }
 
     /**
