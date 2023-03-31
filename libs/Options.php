@@ -60,7 +60,7 @@ function themeConfig($form) {
     $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d'));
     $form->addInput($startDate);
     $umamiURL = new Typecho_Widget_Helper_Form_Element_Text('umamiURL', NULL, NULL, _t('umami Website URL'), _t('在这里填入对应域名的 <a rel="nofollow" target="_blank" href="https://cloud.umami.is/">Umami</a> Track URL（如 <code>https://analytics.umami.is/script.js</code> ），留空则不开启功能'));
-    $form->addInput($umamiID);
+    $form->addInput($umamiURL);
     $umamiID = new Typecho_Widget_Helper_Form_Element_Text('umamiID', NULL, NULL, _t('umami Website ID'), _t('在这里填入对应域名的 <a rel="nofollow" target="_blank" href="https://cloud.umami.is/">Umami</a> Website ID（如 <code>9caf0ded-6e8e-409c-9ds4-231fe253a8ac</code> ），留空则不开启功能'));
     $form->addInput($umamiID);
 
