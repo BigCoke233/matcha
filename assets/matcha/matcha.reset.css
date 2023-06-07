@@ -143,7 +143,7 @@ pre::-webkit-scrollbar-corner {
 .focus-mode-btn {
 	color: var(--text-gray);
 	top: 0;
-	position: absolute;
+	position: relative;
 	line-height: 0
 }
 @media (max-width: 992px) {
