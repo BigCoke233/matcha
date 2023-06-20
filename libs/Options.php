@@ -57,6 +57,10 @@ function themeConfig($form) {
 
     $icpNum = new Typecho_Widget_Helper_Form_Element_Text('icpNum', NULL, NULL, _t('网站备案号'), _t('在这里填入中国大陆的ICP网站备案号（无需带a标签，如 <code>浙ICP备19006255号-1</code> ），留空则不显示'));
     $form->addInput($icpNum);
+       $policeNum = new Typecho_Widget_Helper_Form_Element_Text('policeNum', NULL, NULL, _t('公安备案号'), _t('在这里填入中国大陆的公安网站备案号（无需带a标签，如 <code>京公网安备11010102002019号</code> ），留空则不显示'));
+    $form->addInput($policeNum);
+    $policeUrl = new Typecho_Widget_Helper_Form_Element_Text('policeUrl', NULL, NULL, _t('公安备案号链接地址'), _t('在这里填入中国大陆的公安网站备案号链接地址（无需带a标签，如 <code>http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102002019</code> ），留空则不显示'));
+    $form->addInput($policeUrl);
     $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d'));
     $form->addInput($startDate);
     $umamiURL = new Typecho_Widget_Helper_Form_Element_Text('umamiURL', NULL, NULL, _t('umami Website URL'), _t('在这里填入对应域名的 <a rel="nofollow" target="_blank" href="https://cloud.umami.is/">Umami</a> Track URL（如 <code>https://analytics.umami.is/script.js</code> ），留空则不开启功能'));

@@ -394,6 +394,11 @@ class Matcha
             echo '<br />';
             echo '<a rel="nofollow" href="http://beian.miit.gov.cn"> '.Helper::options()->icpNum.' </a>';
         }
+        //公安备案号
+        if (Helper::options()->policeNum!='') {
+            echo ' | ';
+            echo '<a target="_blank" rel="nofollow" href="'.Helper::options()->policeUrl.'">'.Helper::options()->policeNum.'<img src="/police.png" /></a>';
+        }
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
             echo '<br />';
