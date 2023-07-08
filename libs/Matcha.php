@@ -397,7 +397,7 @@ class Matcha
         //公安备案号
         if (Helper::options()->policeNum!='') {
             echo ' | ';
-            echo '<a target="_blank" rel="nofollow" href="'.Helper::options()->policeUrl.'">'.Helper::options()->policeNum.'<img src="/police.png" /></a>';
+            echo '<a target="_blank" rel="nofollow" href="'.Helper::options()->policeUrl.'"><img src="/police.png" />'.Helper::options()->policeNum.'</a>';
         }
         //字数统计
         if (Helper::options()->EnableWordsCounter=='able') {
