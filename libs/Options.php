@@ -12,7 +12,7 @@ function themeConfig($form) {
 
     echo '<div style="border:1px solid #ddd;background:#eee;padding:1em;margin-top:1em">
         <h1 style="margin:0;font-weight:600">Matcha 主题配置</h1>
-        <p style="line-height:1.5;margin:0">主题配置有关的说明请查看<a href="https://matcha.guhub.cn/">说明文档</a></p>
+        <p style="line-height:1.5;margin:0">主题配置有关的说明请查看<a rel="noreferrer" href="https://matcha.guhub.cn/">说明文档</a></p>
     </div>';
 
     //主题色
@@ -63,9 +63,9 @@ function themeConfig($form) {
     $form->addInput($policeUrl);
     $startDate = new Typecho_Widget_Helper_Form_Element_Text('startDate', NULL, date('Y-m-d'), _t('网站建立日期'), _t('用于显示在页脚的版权信息，以及计算网站建立时长，格式为 Y-m-d'));
     $form->addInput($startDate);
-    $umamiURL = new Typecho_Widget_Helper_Form_Element_Text('umamiURL', NULL, NULL, _t('umami Website URL'), _t('在这里填入对应域名的 <a rel="nofollow" target="_blank" href="https://cloud.umami.is/">Umami</a> Track URL（如 <code>https://analytics.umami.is/script.js</code> ），留空则不开启功能'));
+    $umamiURL = new Typecho_Widget_Helper_Form_Element_Text('umamiURL', NULL, NULL, _t('umami Website URL'), _t('在这里填入对应域名的 <a rel="nofollow noreferrer" target="_blank" href="https://cloud.umami.is/">Umami</a> Track URL（如 <code>https://analytics.umami.is/script.js</code> ），留空则不开启功能'));
     $form->addInput($umamiURL);
-    $umamiID = new Typecho_Widget_Helper_Form_Element_Text('umamiID', NULL, NULL, _t('umami Website ID'), _t('在这里填入对应域名的 <a rel="nofollow" target="_blank" href="https://cloud.umami.is/">Umami</a> Website ID（如 <code>9caf0ded-6e8e-409c-9ds4-231fe253a8ac</code> ），留空则不开启功能'));
+    $umamiID = new Typecho_Widget_Helper_Form_Element_Text('umamiID', NULL, NULL, _t('umami Website ID'), _t('在这里填入对应域名的 <a rel="nofollow noreferrer" target="_blank" href="https://cloud.umami.is/">Umami</a> Website ID（如 <code>9caf0ded-6e8e-409c-9ds4-231fe253a8ac</code> ），留空则不开启功能'));
     $form->addInput($umamiID);
 
     /**
@@ -153,9 +153,9 @@ function themeConfig($form) {
             'disable' => _t('停用'),
         ),
         'able',
-        _t('是否启用 <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a> 统计功能'),
+        _t('是否启用 <a rel="nofollow noreferrer" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a> 统计功能'),
         _t('
-            <a rel="nofollow" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b>
+            <a rel="nofollow noreferrer" target="_blank" href="https://busuanzi.ibruce.info/">不蒜子</a>是一个即装即用的网页 js 计数脚本，目前可与主题进行对接显示访问数，<b>默认启用</b>
         ')
     );
     $form->addInput($EnableBusuanzi->addRule('required', _t('此处必须设置')));
@@ -165,9 +165,9 @@ function themeConfig($form) {
         'disable' => _t('停用'),
     ),
     'disable',
-    _t('是否启用 <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a> 功能'),
+    _t('是否启用 <a rel="nofollow noreferrer" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a> 功能'),
     _t('
-        <a rel="nofollow" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a>是一个基于WordsCounter插件统计全站字数的
+        <a rel="nofollow noreferrer" target="_blank" href="https://github.com/elatisy/Typecho_WordsCounter">字数统计</a>是一个基于WordsCounter插件统计全站字数的
     ')
     );
     $form->addInput($EnableWordsCounter->addRule('required', _t('此处必须设置')));
