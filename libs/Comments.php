@@ -42,7 +42,14 @@ Class Comments {
     {
         //MD5 EMail
         $email = md5($email);
-        $avatar = 'https://cravatar.cn/avatar/' . $email . '?s=' . $size;
+
+        // 如果配置了 CustomGravatarCDN，则用 CustomGravatarCDN 拼接
+        if (Helper::options()->CustomGravatarCDN) {
+            $avatar = Helper::options()->CustomGravatarCDN . $email . '?s=' . $size;
+        } // 否则，使用 Cravatar
+        else {
+            $avatar = 'https://cravatar.cn/avatar/' . $email . '?s=' . $size;
+        }
 
         return $avatar;
     }
