@@ -90,6 +90,11 @@ function themeConfig($form) {
     ')
     );
     $form->addInput($categoryNav->addRule('required', _t('此处必须设置')));
+    // Gravatar CDN
+    $CustomGravatarCDN = new Typecho_Widget_Helper_Form_Element_Text('CustomGravatarCDN', NULL, NULL, _t('自定义评论头像 Gravatar CDN'), _t('
+    <p class="description">在此处填入你期望使用的 Gravatar CDN 链接，形如 <code>https://cravatar.cn/avatar/</code></p>
+    <p class="description">留空则使用 <a rel="nofollow noreferrer" target="_blank" href="https://cravatar.cn/">Cravatar</a></p>'));
+    $form->addInput($CustomGravatarCDN);
 
     /**
      * 附加功能
