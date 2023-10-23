@@ -86,6 +86,7 @@ Comments::replyScript($this); ?>
                 <?php endif; ?>
                 <button class="submit" id="comment-submit"><?php if(!$msg) { echo '提交评论'; } else { echo '写下留言'; } ?></button>
               </div>
+              <?php if (array_key_exists('CaptchaPlus', Typecho_Plugin::export()['activated'])) : CaptchaPlus_Plugin::output(); endif; ?>
               <div class="submit-extra">
                 <div class="owo"></div>
                 <?php if(Utils::isPluginAvailable('CommentToMail') || Utils::isPluginAvailable('Mailer')): ?>
