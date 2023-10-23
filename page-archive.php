@@ -9,10 +9,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('includes/header.php');
 ?>
 <div class="col-12" id="main" role="main">
-	<div id="search">
+	<!-- div id="search">
 	  	<input type="text" placeholder="搜索博客文章" name="" id="input_search" value="" />
         <a id="search-button"><span class="iconfont">&#xe82e;</span></a>
-	</div>
+	</div -->
 	<div id="tag">
 	  <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags); 	
 	   if($tags->have()): ?>

@@ -26,11 +26,6 @@ body {
 	transition: background .3s
 }
 
-body,
-html {
-	scroll-behavior:smooth
-}
-
 a {
 	color: var(--theme-color);
 	text-decoration: none;

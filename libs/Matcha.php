@@ -28,11 +28,11 @@ class Matcha
                 if(Helper::options()->StaticCDN=='bytedance'){
                     $src_link = array(
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/normalize/8.0.1/normalize.min.css',
-                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
-                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css',
-                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
                     );
                 }
@@ -160,11 +160,11 @@ class Matcha
                 if(Helper::options()->StaticCDN=='bytedance'){
                     $src_link = array(
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js',
-                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
-                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                        'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
+                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js'
                     );
                 }

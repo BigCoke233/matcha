@@ -121,24 +121,35 @@ copydog_copied=function(){toast('成功复制到剪切板');}
  @description 页面垂直平滑滚动到指定滚动高度
  @author zhangxinxu(.com)
 */
-var scrollSmoothTo = function (position) {
+var scrollSmoothTo = function(position) {
     if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function(callback, element) {
+        window.requestAnimationFrame = function(callback) {
             return setTimeout(callback, 17);
         };
     }
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var step = function () {
+    var startTime = Date.now();
+
+    var easeInOutCubic = function(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    };
+
+    var animation = function() {
+        var currentTime = Date.now();
+        var time = Math.min(1, ((currentTime - startTime) / 500)); // 500是滚动持续时间，可以根据需要调整
+
+        var easingValue = easeInOutCubic(time);
         var distance = position - scrollTop;
-        scrollTop = scrollTop + distance / 5;
-        if (Math.abs(distance) < 1) {
-            window.scrollTo(0, position);
-        } else {
-            window.scrollTo(0, scrollTop);
-            requestAnimationFrame(step);
+        var newPosition = scrollTop + (distance * easingValue);
+
+        window.scrollTo(0, newPosition);
+
+        if (time < 1) {
+            requestAnimationFrame(animation);
         }
     };
-    step();
+
+    animation();
 };
 //tocbot
 var tocbotLoad = function() {
