@@ -136,7 +136,7 @@ var scrollSmoothTo = function(position) {
 
     var animation = function() {
         var currentTime = Date.now();
-        var time = Math.min(1, ((currentTime - startTime) / 500)); // 500是滚动持续时间，可以根据需要调整
+        var time = Math.min(1, ((currentTime - startTime) / 700)); // 700是滚动持续时间，可以根据需要调整
 
         var easingValue = easeInOutCubic(time);
         var distance = position - scrollTop;
