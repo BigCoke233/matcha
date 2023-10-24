@@ -300,22 +300,21 @@ var CommentClosedBtn = function(){
     });
 }
 //搜索功能
-var doSearch = function(){
-    if($('#input_search').val()==null){
+var doSearch = function() {
+    if ($('#input_search').val() == null) {
         Toaster.error('请输入关键词');
-    }else{
-        let url = window.location.protocol+'//'+window.location.host+'/index.php/search/'+$('#input_search').val()+'/';
-        $.pjax({url: url, 
-            container: '#main',
-            fragment: '#main',
-            timeout: 8000, });
+    } else {
+        let url = window.location.protocol + '//' + window.location.host + '/search/' + $('#input_search').val() + '/';
+        window.location.href = url;
     }
 }
 
-var searchInit = function(){
+var searchInit = function() {
     $('#search-button').click(doSearch);
-    $(document).keydown(function (e) {
-        if(e.keyCode==13 && $('#input_search').is(":focus")) doSearch();
+    $(document).keydown(function(e) {
+        if (e.keyCode == 13 && $('#input_search').is(":focus")) {
+            doSearch();
+        }
     });
 }
 

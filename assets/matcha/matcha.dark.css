@@ -27,6 +27,7 @@ body.matcha-dark .container {
 body.matcha-dark #comment-form .textarea,
 body.matcha-dark #comment-form input:not(.submit-extra input),
 body.matcha-dark #search input {
+    color: #ddd;
     background: #181818;
 }
 
