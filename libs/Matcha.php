@@ -347,7 +347,7 @@ class Matcha
             if(date('Y-m-d', $created)==date('Y-m-d')){
                 return '今天';
             }
-            elseif($d==1){
+            elseif($d<=1){
                 return '昨天';
             }
             elseif($d==2){
