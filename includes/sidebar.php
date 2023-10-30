@@ -12,7 +12,7 @@
   <!-- 版权信息 -->
 	<section class="widget sidebar-foot">
     <ul class="widget-list">
-      <li>Theme <a rel="nofollow" target="_blank" href="https://github.com/BigCoke233/matcha" class="no-linkTarget">Matcha</a> by <a  target="_blank" href="https://github.com/BigCoke233/" class="no-linkTarget">Eltrac</a></li>
+      <li>Theme <a rel="nofollow" target="_blank" href="https://github.com/BigCoke233/matcha" class="no-linkTarget">Matcha</a></li>
       <li>Powered by <a rel="nofollow" target="_blank" href="http://www.typecho.org" class="no-linkTarget">Typecho</a></li>
     </ul>
   </section>
