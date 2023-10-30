@@ -237,7 +237,7 @@
 }
 .post-content pre code,
 .comment-content pre code {
-	padding: 3px;
+	padding: 0px;
 	color: var(--text-color);
 }
 
