@@ -323,8 +323,8 @@ class Matcha
         if(Helper::options()->IndexDisplayMode=='FullText'){
             $archive->content('继续阅读');
         }
-        elseif(Helper::options()->IndexDisplayMode=='Excerpt200'){
-            $archive->excerpt(200);
+        elseif(Helper::options()->IndexDisplayMode=='Excerpt170'){
+            $archive->excerpt(170);
         }
     }
 
