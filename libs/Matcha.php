@@ -31,7 +31,6 @@ class Matcha
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
-                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
                     );
@@ -42,7 +41,6 @@ class Matcha
                         'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
                         'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
                         'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
-                        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css',
                         'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
                         'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css'
                     );
