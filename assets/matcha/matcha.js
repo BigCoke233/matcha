@@ -71,27 +71,29 @@ Prism.plugins.toolbar.registerButton('copy', {
     }
 });
 //jquery.lazy.js loader
-lazyloader = function(){
-    $('.lazy').Lazy({
-        effect: 'fadeIn',
-        visibleOnly: true,
-        effectTime: 300,
-        onError: function(element) {
-            console.log('error loading ' + element.data('src'));
-        },
-        afterLoad: function(el) {
-            $(el).addClass('lazy-loaded');
-            //完成后加载 Fluidbox
-            $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function(){
-                $(this).parent().css('overflow', 'visible');
-            }).on('closestart.fluidbox', function(){
-                $(this).parent().css('overflow', 'hidden');
-            });
-            $(window).scroll(function() {
-                $('.fluidbox-anchor').fluidbox('close');
-            });
-        }
-    });
+lazyloader = function() {
+  $('.lazy').Lazy({
+    effect: 'fadeIn',
+    visibleOnly: true,
+    effectTime: 300,
+    onError: function(element) {
+      console.log('error loading ' + element.data('src'));
+    },
+    afterLoad: function(el) {
+      $(el).addClass('lazy-loaded');
+      // 完成后加载 Fluidbox
+      $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function() {
+        $(this).parent().css('overflow', 'visible');
+        $('body').css('overflow', 'hidden'); // 添加隐藏滚动条的样式
+      }).on('closestart.fluidbox', function() {
+        $(this).parent().css('overflow', 'hidden');
+        $('body').css('overflow', 'visible'); // 恢复滚动条的显示
+      });
+      $(window).scroll(function() {
+        $('.fluidbox-anchor').fluidbox('close');
+      });
+    }
+  });
 };
 //ExSearch 
 function ExSearchCall(item){
