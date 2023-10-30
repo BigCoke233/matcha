@@ -96,6 +96,7 @@ class Matcha
             if(Helper::options()->StaticCDN=='bytedance'){
                 $src_link = array(
                     '//lf3-cdn-tos.bytecdntp.com/',
+                    '//lf6-cdn-tos.bytecdntp.com/',
                     '//lf9-cdn-tos.bytecdntp.com/',
                     '//lf26-cdn-tos.bytecdntp.com/',
                 );
