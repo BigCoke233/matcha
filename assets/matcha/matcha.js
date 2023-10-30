@@ -85,16 +85,21 @@ lazyloader = function() {
       $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function() {
         $(this).parent().css('overflow', 'visible');
         $('body').css('overflow', 'hidden'); // 添加隐藏滚动条的样式
+        $(window).off('scroll.fluidbox'); // 关闭滚动事件
       }).on('closestart.fluidbox', function() {
         $(this).parent().css('overflow', 'hidden');
         $('body').css('overflow', 'visible'); // 恢复滚动条的显示
-      });
-      $(window).scroll(function() {
-        $('.fluidbox-anchor').fluidbox('close');
+        $(window).on('scroll.fluidbox', closeFluidbox); // 启用滚动事件
       });
     }
   });
 };
+// 关闭所有的灯箱
+function closeFluidbox() {
+  $('.fluidbox').fluidbox('close');
+}
+// 初始化时启用滚动事件
+$(window).on('scroll.fluidbox', closeFluidbox);
 //ExSearch 
 function ExSearchCall(item){
     if (item && item.length) {
