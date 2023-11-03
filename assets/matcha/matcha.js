@@ -287,16 +287,6 @@ if(typeof(allowDarkMode)!=undefined){
 $('#nav-drop').click(function(){ $('.navbar-dropdown').fadeIn().addClass('down') });
 $('#nav-rise').click(function(){ $('.navbar-dropdown').fadeOut().removeClass('down') });
 $('.navbar-dropdown a').click(function(){ $('.navbar-dropdown').fadeOut().removeClass('down') });
-//页面不在顶部时收起导航栏
-$(window).scroll(function(event){
-    if($(window).scrollTop()!=0){
-        $('#small-header').addClass('shrink');
-        $('.container').addClass('with-shrunk-nav');
-    }else{
-        $('#small-header').removeClass('shrink')
-        $('.container').removeClass('with-shrunk-nav');
-    }
-});
 
 //Comment Closed Feedback
 var CommentClosedBtn = function(){
