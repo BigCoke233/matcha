@@ -19,15 +19,6 @@ $this->need("includes/head.php"); ?>
                 <button class="navbar-button navbar-dropup" id="nav-rise"><span>+</span></button>
                 <h2>页面</h2>
                 <ul class="widget-list"><li><a href="<?php $this->options->siteUrl(); ?>" rel="section">首页</a></li><?php Matcha::pageNav($this, "li"); ?></ul>
-                <h2>分类</h2>
-                <ul class="widget-list widget-category">
-                    <?php $this->widget('Widget_Metas_Category_List')->to($categories); ?>
-                    <?php while($categories->next()): ?>
-                    <li>
-                        <a href="<?php $categories->permalink(); ?>" rel="section"><?php $categories->name(); ?></a>
-                    </li>
-                    <?php endwhile; ?>
-                </ul>
             </div>
         </div>
         <?php Matcha::siteName(); ?>

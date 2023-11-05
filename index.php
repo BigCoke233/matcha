@@ -3,9 +3,9 @@
  * 简洁清新的纯文字 Typecho 主题
  * 
  * @package Typecho Theme Matcha
- * @author Eltrac
- * @version 1.2.0
- * @link https://github.com/BigCoke233/matcha
+ * @author Eltrac & Bingyin
+ * @version 1.2.1
+ * @link https://github.com/9bingyin/matcha
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
