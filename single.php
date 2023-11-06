@@ -5,7 +5,7 @@
     <article class="post post-atpage" itemscope itemtype="http://schema.org/BlogPosting">
         <?php if($this->fields->thumbnail!=''): ?>
         <div class="post-thumbnail-atpage" md-hidden>
-            <a class="fluidbox-anchor" href="<?php $this->fields->thumbnail(); ?>"><img class="lazy" src="<?php Utils::indexTheme('assets/loading.gif'); ?>" data-src="<?php $this->fields->thumbnail(); ?>"></a>
+            <a class="fluidbox-anchor" href="<?php $this->fields->thumbnail(); ?>"><img class="lazy" src="<?php $this->fields->thumbnail(); ?>"></a>
         </div>
         <?php endif; ?>
         <div class="post-header">

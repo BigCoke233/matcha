@@ -18,7 +18,7 @@ $this->need('includes/header.php');?>
             Links_Plugin::output('<a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
                 <div class="links-content">
                     <section class="links-avatar">
-                        <img src="'.Utils::indexThemeUrl('assets/loading.gif').'" data-src="{image}" class="links-img lazy" />
+                        <img src="{image}" class="links-img lazy" />
                     </section>
                     <section class="links-profile">
                         <h4 class="links-name">{name}</h4>

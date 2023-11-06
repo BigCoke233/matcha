@@ -21,7 +21,7 @@ if($this->is('index') && $this->options->relatedLinksTitle!='' && $this->options
 				</div>
 			</div><?php if($this->fields->thumbnail!=''): ?>
 			<div class="post-thumbnail" md-hidden>
-				<a href="<?php $this->permalink() ?>"><img class="lazy" src="<?php Utils::indexTheme('assets/loading.gif'); ?>" data-src="<?php $this->fields->thumbnail(); ?>"></a>
+				<a href="<?php $this->permalink() ?>"><img class="lazy" src="<?php $this->fields->thumbnail(); ?>"></a>
 			</div><?php endif;?>
 		</article>
 	<?php endwhile;
