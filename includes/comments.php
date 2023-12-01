@@ -22,7 +22,7 @@ echo $commentClass;
 ?>">
     <div class="comment-body-inner">
       <div class="comment-avatar">
-        <img class="lazy avatar" src="<?php echo Comments::getAvatar($comments->mail); ?>"/>
+        <img class="lazy avatar" src="<?php Utils::indexTheme('assets/loading.gif'); ?>" data-src="<?php echo Comments::getAvatar($comments->mail); ?>" />
         <span class="comment-reply">
 		      <?php $comments->reply('回复'); ?>
 		    </span>
