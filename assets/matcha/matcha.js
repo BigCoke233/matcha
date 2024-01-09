@@ -353,24 +353,41 @@ JSLoad();
 
 //Load Pjax
 $(document).pjax('a[href^="' + siteurl + '"]:not(a[target="_blank"], a[no-pjax], .cancel-comment-reply a, .comment-reply a)', {
-        container: '#main',
-        fragment: '#main',
-        timeout: 8000
-    }).on('pjax:send', function() {
-        $('body').append('<div class="progress" role="spinner" id="pjax-loading"><div class="progress-bar"></div></div>');
-        $("#main").removeClass("fadein").addClass("fadeout");
-        if ($('.toc').length) tocbot.destroy();//摧毁文章目录
-        $(window).off('scroll');
-        $(window).on('scroll', back2topShow);//取消文章目录自动关闭的滚动绑定
-        if($('body').hasClass('focus-mode')) toggleFocusMode();//切换页面时关闭专注模式
-        
-    }).on('pjax:complete', function() {
-        $("#main").removeClass("fadeout").addClass("fadein").hide().fadeIn(700);
-        JSLoad();
-        toc='';
-        pjaxCallback();
-        $('#pjax-loading').remove();
+    container: '#main',
+    fragment: '#main',
+    timeout: 8000
+}).on('pjax:send', function() {
+    // 显示Loading状态
+    showLoading();
+    // 禁用相关元素，防止用户多次点击
+    disablePjaxLinks();
+    // 其他操作，例如取消滚动事件绑定等
+}).on('pjax:complete', function() {
+    // 隐藏Loading状态
+    hideLoading();
+    // 启用Pjax相关元素
+    enablePjaxLinks();
+    // 其他操作，例如执行JSLoad()、pjaxCallback()等
+    JSLoad();
+    toc = '';
+    pjaxCallback();
 });
+
+function showLoading() {
+    $('body').append('<div class="progress" role="spinner" id="pjax-loading"><div class="progress-bar"></div></div>');
+}
+
+function hideLoading() {
+    $('#pjax-loading').remove();
+}
+
+function disablePjaxLinks() {
+    $('a[href^="' + siteurl + '"]').attr('disabled', 'disabled');
+}
+
+function enablePjaxLinks() {
+    $('a[href^="' + siteurl + '"]').removeAttr('disabled');
+}
 
 /**
  * Copyright
