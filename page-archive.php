@@ -31,8 +31,8 @@ $this->need('includes/header.php');
     $number = 0;
     foreach($archives as $year => $posts) {
         $open = ($number === 0) ? NULL : ' closed';
-		echo '<h2 class="archive-year">'.$year.' 年 <button id="archive-button-'.$year.'" class="archive-button'.$open.'"><span class="iconfont">&#xe749;</span></button></h2>';
-        echo '<ol id="archive-list-'.$year.'" class="archive-list'.$open.'">';
+		echo '<h2 class="archive-year">'.$year.' 年</h2>';
+        echo '<ol id="archive-list-'.$year.'" class="archive-list">';
     		foreach($posts as $created => $post) {
         		echo '<li class="archive-item"><a href="'.$post['permalink'].'" class="no-line">
 				<span class="archive-date">'.date('m-d', $created).'</span> · 
