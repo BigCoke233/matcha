@@ -60,7 +60,7 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 
 ### 说明
 
-如果在使用过程中遇到任何问题，请先查看[说明文档](https://matcha.guhub.cn/)或 [FAQ](doc.md)，若没能解决，再询问作者。
+如果在使用过程中遇到任何问题，请先查看[说明文档](https://matcha.corpusi.com/)或 [FAQ](doc.md)，若没能解决，再询问作者。
 
 ### 拓展
 
