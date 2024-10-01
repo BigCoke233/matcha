@@ -18,7 +18,7 @@
     <?php } 
     //输出网站标题、css 引用和其他 head 内容 ?>
     <title><?php Matcha::title($this); ?></title>
-    <?php Matcha::head(); $this->header(); ?>
+    <?php Matcha::head(); $this->header('rss1=&rss2=&atom='); ?>
 
     <style>
         :root {

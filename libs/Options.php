@@ -103,7 +103,7 @@ function themeConfig($form) {
     $StaticCDN = new Typecho_Widget_Helper_Form_Element_Select('StaticCDN', array(
             'local' => _t('本地资源（不加速）'),
             'bytedance' => _t('字节跳动资源库（推荐）'),
-            'cdnjs' => _t('CDNJS'),
+            'zstatic' => _t('Zstatic CDN'),
             'custom'=> _t('自定义')
         ),
         'local',

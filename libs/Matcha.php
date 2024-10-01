@@ -35,14 +35,14 @@ class Matcha
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
                     );
                 }
-                elseif(Helper::options()->StaticCDN=='cdnjs'){
+                elseif(Helper::options()->StaticCDN=='zstatic'){
                     $src_link = array(
-                        'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
-                        'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
-                        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css',
-                        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
-                        'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
-                        'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css'
+                        'https://s4.zstatic.net/ajax/libs/normalize/8.0.1/normalize.min.css',
+                        'https://s4.zstatic.net/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
+                        'https://s4.zstatic.net/ajax/libs/prism/1.28.0/themes/prism.min.css',
+                        'https://s4.zstatic.net/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
+                        'https://s4.zstatic.net/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
+                        'https://s4.zstatic.net/ajax/libs/tocbot/4.18.2/tocbot.css'
                     );
                 }
 
@@ -99,9 +99,9 @@ class Matcha
                     '//lf26-cdn-tos.bytecdntp.com/',
                 );
             }
-            elseif(Helper::options()->StaticCDN=='cdnjs'){
+            elseif(Helper::options()->StaticCDN=='zstatic'){
                 $src_link = array(
-                    '://cdnjs.cloudflare.com/',
+                    '://s4.zstatic.net/',
                 );
             }
             echo '<!-- 预连接 -->';
@@ -167,15 +167,15 @@ class Matcha
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js'
                     );
                 }
-                elseif(Helper::options()->StaticCDN=='cdnjs'){
+                elseif(Helper::options()->StaticCDN=='zstatic'){
                     $src_link = array(
-                        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
-                        'https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js'
+                        'https://s4.zstatic.net/ajax/libs/jquery/3.6.0/jquery.min.js',
+                        'https://s4.zstatic.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js',
+                        'https://s4.zstatic.net/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
+                        'https://s4.zstatic.net/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
+                        'https://s4.zstatic.net/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
+                        'https://s4.zstatic.net/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
+                        'https://s4.zstatic.net/ajax/libs/tocbot/4.18.2/tocbot.min.js'
                     );
                 }
 

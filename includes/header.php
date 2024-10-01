@@ -1,3 +1,5 @@
+<link rel="alternate" type="application/rss+xml" title="冰音Project" href="https://www.9bingyin.com/rss.xml">
+<link rel="sitemap" type="application/xml" title="站点地图" href="<?php $this->options->siteUrl(); ?>sitemap.xml" />
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need("includes/head.php"); ?>
 <body<?php Matcha::bodyClass(); ?>>
