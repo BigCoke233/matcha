@@ -70,8 +70,8 @@ Prism.plugins.toolbar.registerButton('copy', {
         toast('已将代码复制到剪切板');
     }
 });
-//jquery.lazy.js loader
-lazyloader = function() {
+// jQuery Lazy loader with new tab image opening (replacing lightbox)
+const lazyloader = function() {
   $('.lazy').Lazy({
     effect: 'fadeIn',
     visibleOnly: true,
@@ -81,25 +81,31 @@ lazyloader = function() {
     },
     afterLoad: function(el) {
       $(el).addClass('lazy-loaded');
-      // 完成后加载 Fluidbox
-      $('.fluidbox-anchor').fluidbox().on('openstart.fluidbox', function() {
-        $(this).parent().css('overflow', 'visible');
-        $('body').css('overflow', 'hidden'); // 添加隐藏滚动条的样式
-        $(window).off('scroll.fluidbox'); // 关闭滚动事件
-      }).on('closestart.fluidbox', function() {
-        $(this).parent().css('overflow', 'hidden');
-        $('body').css('overflow', 'visible'); // 恢复滚动条的显示
-        $(window).on('scroll.fluidbox', closeFluidbox); // 启用滚动事件
-      });
+      
+      // Replace lightbox functionality with new tab opening
+      if ($(el).closest('.fluidbox-anchor').length) {
+        let $anchor = $(el).closest('.fluidbox-anchor');
+        $anchor.off('click.fluidbox');  // Remove any existing Fluidbox click handlers
+        $anchor.on('click', function(e) {
+          e.preventDefault();
+          const imageUrl = $(this).attr('href') || $(el).attr('src');
+          window.open(imageUrl, '_blank');
+        });
+      }
     }
   });
 };
-// 关闭所有的灯箱
-function closeFluidbox() {
-  $('.fluidbox').fluidbox('close');
-}
-// 初始化时启用滚动事件
-$(window).on('scroll.fluidbox', closeFluidbox);
+
+// Remove any global Fluidbox initializations
+$(document).ready(function() {
+  // Remove any existing Fluidbox bindings
+  if ($.fn.fluidbox) {
+    $('.fluidbox-anchor').fluidbox('destroy');
+  }
+  
+  // Initialize our modified lazy loader
+  lazyloader();
+});
 //ExSearch 
 function ExSearchCall(item){
     if (item && item.length) {
