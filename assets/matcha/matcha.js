@@ -70,7 +70,7 @@ Prism.plugins.toolbar.registerButton('copy', {
         toast('已将代码复制到剪切板');
     }
 });
-// jQuery Lazy loader with new tab image opening (replacing lightbox)
+// jQuery Lazy loader with image new tab opening
 const lazyloader = function() {
   $('.lazy').Lazy({
     effect: 'fadeIn',
@@ -82,10 +82,9 @@ const lazyloader = function() {
     afterLoad: function(el) {
       $(el).addClass('lazy-loaded');
       
-      // Replace lightbox functionality with new tab opening
+      // Add click handler to open images in new tab
       if ($(el).closest('.fluidbox-anchor').length) {
         let $anchor = $(el).closest('.fluidbox-anchor');
-        $anchor.off('click.fluidbox');  // Remove any existing Fluidbox click handlers
         $anchor.on('click', function(e) {
           e.preventDefault();
           const imageUrl = $(this).attr('href') || $(el).attr('src');
@@ -96,14 +95,8 @@ const lazyloader = function() {
   });
 };
 
-// Remove any global Fluidbox initializations
+// Initialize lazy loader on document ready
 $(document).ready(function() {
-  // Remove any existing Fluidbox bindings
-  if ($.fn.fluidbox) {
-    $('.fluidbox-anchor').fluidbox('destroy');
-  }
-  
-  // Initialize our modified lazy loader
   lazyloader();
 });
 //ExSearch 

@@ -31,7 +31,6 @@ class Matcha
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot-default.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/themes/prism.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/prism/1.27.0/plugins/toolbar/prism-toolbar.min.css',
-                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/css/fluidbox.min.css',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.css'
                     );
                 }
@@ -41,7 +40,6 @@ class Matcha
                         'https://s4.zstatic.net/ajax/libs/bigfoot/2.1.4/bigfoot-default.min.css',
                         'https://s4.zstatic.net/ajax/libs/prism/1.28.0/themes/prism.min.css',
                         'https://s4.zstatic.net/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css',
-                        'https://s4.zstatic.net/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css',
                         'https://s4.zstatic.net/ajax/libs/tocbot/4.18.2/tocbot.css'
                     );
                 }
@@ -57,7 +55,6 @@ class Matcha
                     "normalize", 
                     "bigfoot/bigfoot",
                     "prism/prism",
-                    "jquery/jquery.fluidbox.min",
                     "tocbot/tocbot"
                 );
             }
@@ -74,7 +71,6 @@ class Matcha
                 "normalize", 
                 "bigfoot/bigfoot",
                 "prism/prism",
-                "jquery/jquery.fluidbox.min",
                 "tocbot/tocbot",
                 "toaster/toaster",
                 "matcha/matcha"
@@ -163,7 +159,6 @@ class Matcha
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.lazy/1.7.11/jquery.lazy.min.js',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bigfoot/2.1.4/bigfoot.min.js',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                        'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
                         'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js'
                     );
                 }
@@ -174,7 +169,6 @@ class Matcha
                         'https://s4.zstatic.net/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js',
                         'https://s4.zstatic.net/ajax/libs/bigfoot/2.1.4/bigfoot.min.js',
                         'https://s4.zstatic.net/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js',
-                        'https://s4.zstatic.net/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js',
                         'https://s4.zstatic.net/ajax/libs/tocbot/4.18.2/tocbot.min.js'
                     );
                 }
@@ -190,7 +184,6 @@ class Matcha
                     "jquery/jquery.min",
                     "jquery/jquery.pjax.min",
                     "jquery/jquery.lazy.min",
-                    "jquery/jquery.fluidbox.min",
                     'jquery/jquery.ba-throttle-debounce.min',
                     'tocbot/tocbot.min',
                     "bigfoot/bigfoot"
@@ -215,7 +208,6 @@ class Matcha
                 "jquery/jquery.min",
                 "jquery/jquery.pjax.min",
                 "jquery/jquery.lazy.min",
-                "jquery/jquery.fluidbox.min",
                 'jquery/jquery.ba-throttle-debounce.min',
                 'tocbot/tocbot.min',
                 "bigfoot/bigfoot",

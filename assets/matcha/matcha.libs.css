@@ -14,19 +14,16 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Fluidbox */
+/* Image anchor styles */
 .fluidbox-anchor {
 	border: none!important;
 	display: block;
 	width: 100%;
-	cursor: zoom-in
+	cursor: pointer;
+	transition: opacity 0.2s ease;
 }
 .fluidbox-anchor:hover {
-	opacity: 1
-}
-
-.fluidbox__overlay {
-	background: var(--overlay-bg)
+	opacity: 0.8;
 }
 
 /* 覆盖 bigfoot */
