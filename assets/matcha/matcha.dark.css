@@ -107,3 +107,38 @@ body.matcha-dark .indexlink-item {
 body.matcha-dark .indexlink-item:hover {
     border-color: var(--theme-color)
 }
+
+/**
+ * Cap 人机验证黑暗模式适配
+ */
+body.matcha-dark cap-widget {
+    /* 核心颜色变量 */
+    --cap-background: #2a2a2a;  /* 深灰色背景，介于页面和容器背景之间 */
+    --cap-color: #ddd;          /* 浅色文字，与主题文字颜色一致 */
+    --cap-spinner-color: #009999;  /* 使用主题色作为加载动画颜色 */
+    --cap-spinner-background-color: #333;  /* 深色加载背景 */
+    
+    /* 验证成功状态的颜色 - 使用主题色的深色版本作为背景 */
+    --cap-success-background: rgba(0, 153, 153, 0.15);  /* 主题色的半透明背景 */
+    --cap-success-color: #00cccc;  /* 更亮的主题色作为勾的颜色 */
+    
+    /* 添加过渡效果，使切换更平滑 */
+    transition: all 0.3s ease;
+}
+
+/* Cap 验证码按钮样式（如果有的话） */
+body.matcha-dark cap-widget::part(button) {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    border-color: #444;
+}
+
+body.matcha-dark cap-widget::part(button):hover {
+    background-color: var(--gray-bg);
+    border-color: #555;
+}
+
+/* Cap 验证码容器边框（如果需要） */
+body.matcha-dark cap-widget {
+    border-color: #444;
+}

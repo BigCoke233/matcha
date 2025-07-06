@@ -219,3 +219,27 @@ div.code-toolbar>.toolbar>.toolbar-item>button::before {
 .post-content img.lazy:not(.lazy-loaded) {
 	max-width: 100px
 }
+
+/* Cap 人机验证样式适配 */
+cap-widget {
+	/* 移除所有圆角，使用直角 */
+	--cap-border-radius: 0 !important;
+	--cap-button-border-radius: 0 !important;
+	--cap-checkbox-border-radius: 0 !important;
+	
+	/* 确保整体容器也是直角 */
+	border-radius: 0 !important;
+}
+
+/* 如果 Cap 使用了其他元素，确保它们也是直角 */
+cap-widget * {
+	border-radius: 0 !important;
+}
+
+/* Cap 验证码内部的所有圆角元素都改为直角 */
+cap-widget input[type="checkbox"],
+cap-widget button,
+cap-widget .cap-checkbox,
+cap-widget .cap-container {
+	border-radius: 0 !important;
+}
