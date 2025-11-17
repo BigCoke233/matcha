@@ -51,12 +51,12 @@ class Matcha
                 foreach($src_link as $value){
                     echo '<link rel="stylesheet" href="'.$value.'" />';
                 }
-                
+
                 $local_includes=array();//没有额外的本地文件
             }else{
                 //要引入的 css 文件名
                 $local_includes=array(
-                    "normalize", 
+                    "normalize",
                     "bigfoot/bigfoot",
                     "prism/prism",
                     "jquery/jquery.fluidbox.min",
@@ -73,7 +73,7 @@ class Matcha
         } else {
             //自定义 CDN
             $includes=array(
-                "normalize", 
+                "normalize",
                 "bigfoot/bigfoot",
                 "prism/prism",
                 "jquery/jquery.fluidbox.min",
@@ -87,7 +87,7 @@ class Matcha
             }
         }
     }
-    
+
      /**
      * 输出 preconnect 标签
      */
@@ -109,10 +109,10 @@ class Matcha
             foreach($src_link as $value){
                 echo '<link rel="preconnect" href="'.$value.'" />';
             }
-            
+
         }
     }
-    
+
     /**
      * 引用 iconfont
      */
@@ -120,7 +120,7 @@ class Matcha
         echo "<style>@font-face {font-family: 'iconfont';src: url('";
         Utils::indexTheme('assets/iconfont/iconfont.woff2');
         echo "') format('woff2'),url('";
-        Utils::indexTheme('assets/iconfont/iconfont.woff'); 
+        Utils::indexTheme('assets/iconfont/iconfont.woff');
         echo "') format('woff'),url('";
         Utils::indexTheme('assets/iconfont/iconfont.ttf');
         echo "') format('truetype');}</style>";
@@ -183,7 +183,7 @@ class Matcha
                 foreach($src_link as $value){
                     echo '<script src="'.$value.'"></script>';
                 }
-                
+
                 $local_includes=array();//没有额外的本地文件
             }else{
                 //要引入的 js 文件名
@@ -238,7 +238,7 @@ class Matcha
     /**
      * 输出完备的标题
      */
-    public static function title(Widget_Archive $archive) 
+    public static function title(Widget_Archive $archive)
     {
         $archive->archiveTitle(array(
             'category'  =>  '%s',
@@ -253,7 +253,7 @@ class Matcha
      * 统一输出页面导航
      * html 结构
      */
-    public static function pageNav(Widget_Archive $archive, $tag) 
+    public static function pageNav(Widget_Archive $archive, $tag)
     {
         $data = json_decode(Helper::options()->customNav, true);
 
@@ -267,11 +267,11 @@ class Matcha
             //页面列表
             while($pages->next()) {
                 echo '<'.$tag.'><a href="';
-                $pages->permalink(); 
+                $pages->permalink();
                 echo '" title="';
-                $pages->title(); 
+                $pages->title();
                 echo '">';
-                $pages->title(); 
+                $pages->title();
                 echo '</a></'.$tag.'>';
             }
         }
@@ -294,11 +294,11 @@ class Matcha
             $archive->widget('Widget_Metas_Category_List')->to($categories);
             while($categories->next()) {
                 echo '<'.$tag.'><a href="';
-                $categories->permalink(); 
+                $categories->permalink();
                 echo '" title="';
-                $categories->name(); 
+                $categories->name();
                 echo '">';
-                $categories->name(); 
+                $categories->name();
                 echo '</a></'.$tag.'>';
             }
         }
@@ -308,7 +308,7 @@ class Matcha
      * 统一输出站点标题及副标题
      * html 结构
      */
-    public static function siteName() 
+    public static function siteName()
     {
         echo '<div class="site-name"><a id="logo" href="';
         Utils::indexHome();
@@ -319,7 +319,7 @@ class Matcha
      * 首页文章摘要显示
      * html 结构
      */
-    public static function excerpt(Widget_Archive $archive) 
+    public static function excerpt(Widget_Archive $archive)
     {
         if(Helper::options()->IndexDisplayMode=='FullText'){
             $archive->content('继续阅读');
@@ -340,7 +340,7 @@ class Matcha
             //计算时间差
             $diff = time() - $created;
             $d = floor($diff/3600/24);
-            
+
             $Y = date('Y', $created);
 
             //输出时间
@@ -368,7 +368,7 @@ class Matcha
     /**
      * 页脚版权信息 年份
      */
-    static public function copyrightYear() 
+    static public function copyrightYear()
     {
         if(Helper::options()->startDate==''){
 			echo date('Y');
@@ -387,7 +387,7 @@ class Matcha
     /**
      * 页脚 额外信息
      */
-    static public function footerInfo() 
+    static public function footerInfo()
     {
         //ICP备案号
         if (Helper::options()->icpNum!='') {
@@ -490,7 +490,7 @@ class Matcha
 
         //若不存在 vies 项，则创建并返回 0
         if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
-            $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+            $db->query('ALTER TABLE ' . $prefix . 'contents ADD views INT DEFAULT 0;');
             return 0;
         }
 
@@ -533,7 +533,7 @@ class Matcha
          ->order('table.contents.created', Typecho_Db::SORT_DESC)
         ->where('table.contents.type = ?', 'post')
         ->where('table.contents.status = ?', 'publish'));
-          
+
         $stat = array();
         foreach ($rows as $row) {
             $row = $widget->filter($row);
@@ -588,7 +588,7 @@ class Matcha
     /**
      * 主题色
      */
-    public static function getThemeColor() 
+    public static function getThemeColor()
     {
         if(Helper::options()->themeColor=='maple'){
             return '#E95A2D';
