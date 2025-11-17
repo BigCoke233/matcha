@@ -14,7 +14,7 @@ $this->need('includes/header.php');
         <a id="search-button"><span class="iconfont">&#xe82e;</span></a>
 	</div>
 	<div id="tag">
-	  <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags); 	
+	  <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0&limit=30')->to($tags);
 	   if($tags->have()): ?>
 	   <h2>标签云</h2>
 	   <ul class="tags-list">
@@ -34,8 +34,9 @@ $this->need('includes/header.php');
 		echo '<h2 class="archive-year">'.$year.' 年 <button id="archive-button-'.$year.'" class="archive-button'.$open.'"><span class="iconfont">&#xe749;</span></button></h2>';
         echo '<ol id="archive-list-'.$year.'" class="archive-list'.$open.'">';
     		foreach($posts as $created => $post) {
+                if ($post['created'] > time()) continue;
         		echo '<li class="archive-item"><a href="'.$post['permalink'].'" class="no-line">
-				<span class="archive-date">'.date('m-d', $created).'</span> · 
+				<span class="archive-date">'.date('m-d', $created).'</span> ·
 				'.$post['title'].'
 				</a></li>';
 			}
