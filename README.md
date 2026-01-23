@@ -29,8 +29,6 @@ Matcha 是基于 [Ringo](https://github.com/memset0/typecho-theme-ringo) 二次�
 - **专注模式**，阅读时点击文章标题上的眼睛，隐藏文章以外的内容
 - More to find
 
-具体的外观可以访问[我的博客](https://blog.guhub.cn/)查看。
-
 ## 使用
 
 1. 前往 [Releases](https://github.com/BigCoke233/matcha/releases) 页面
@@ -60,7 +58,7 @@ Matcha 主题采用[语义化版本 2.0.0](https://semver.org/lang/zh-CN/) 标�
 
 ### 说明
 
-如果在使用过程中遇到任何问题，请先查看[说明文档](https://matcha.corpusi.com/)或 [FAQ](doc.md)，若没能解决，再询问作者。
+如果在使用过程中遇到任何问题，请先查看[说明文档](https://bigcoke233.github.io/matcha-wiki/)或 [FAQ](doc.md)，若没能解决，再询问作者。
 
 ### 拓展
 
