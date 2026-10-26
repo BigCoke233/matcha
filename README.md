@@ -1,3 +1,6 @@
+> [!warning]
+> 主题尚未对 8.2 以上修复了 php2shell 漏洞的 PHP 版本做适配，可能会有不兼容的情况。如果无法使用修复了漏洞 PHP 版本，建议暂时不要使用这个主题。我会在一段时间后发布新版本，你也可以阅读[贡献指南](./CONTRIBUTING.md)，提交 Pull Request 帮忙适配。
+
 ![](screenshot.png)
 
 # Theme Matcha
